@@ -6,4 +6,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/bottom', function(req, res, next) {
+	  res.render('front/bottom', { });
+	});
+
+router.get('/top', function(req, res, next) {
+	  res.render('front/top', { });
+	});
+
+
+
+
 module.exports = router;
