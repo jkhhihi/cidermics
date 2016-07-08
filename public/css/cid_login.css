@@ -5,7 +5,7 @@
 body{font-family: 'Nanum Gothic', serif;}
 
 
-
+.form-control{color:#333333;}
 #menu{display:none;}
 .mob-header{display:none;}
 .mob-main-banner{display:none;}
@@ -19,10 +19,10 @@ header .search{width:5%; padding-top:28px;}
 .menu ul li{float:left; list-style:none; padding:25px;}
 .main-menu{background:url(../../views/front/cid_main/img/mainimg.jpg); background-size: cover;
     background-position: center; font-family: 'Nanum Gothic', serif; width:100% !important; height:700px; padding-top:50px;}
-.main-menu .bg{background-color: rgba( 255, 255, 255, 0.7 ); width:500px; height:600px; border-radius:10px;}
+.main-menu .bg{background-color: rgba( 255, 255, 255, 0.7 ); width:600px; height:600px; border-radius:10px;}
 .main-menu .bg .col-xs-12{float:none !important;}
-.main-menu .bg .email input{border-bottom:solid 2px #2f8ecd; color:#2f8ecd !important; border-top:0; border-left:0; border-right:0; margin:70px 0 10px 0;}
-.main-menu .bg .password input{border-bottom:solid 2px #2f8ecd; color:#2f8ecd !important; border-top:0; border-left:0; border-right:0;}
+.main-menu .bg .email input{border-bottom:solid 2px #2f8ecd; border-top:0; border-left:0; border-right:0; margin:70px 0 10px 0;}
+.main-menu .bg .password input{border-bottom:solid 2px #2f8ecd;  border-top:0; border-left:0; border-right:0;}
 .main-menu .bg .btn-login{width:75%; height:70px; background-color:#2f8ecd; color:#FFFFFF; font-size:24px; margin:20px 0 20px 0; padding-top:20px;}
 .main-menu .bg .text{width:75%; color:#2f8ecd; font-size:18px; font-weight:300; margin-bottom:50px; text-align:left;}
 .main-menu .bg .btn-facelogin{width:75%; height:70px; background-color:#546c9b; color:#FFFFFF; font-size:24px; margin-bottom:20px; padding-top:20px;}
