@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);/*font-family: 'Nanum Gothic', serif;*/
-@import url("../font/font-BMDOHYEON-wallel.css");/* font-family: "BMD", sans-serif;*/
+@import url("/font/font-BMDOHYEON-wallel.css");/* font-family: "BMD", sans-serif;*/
 /* CSS Document */
 body{font-family: 'Nanum Gothic', serif;}
 
@@ -60,7 +60,7 @@ html.open {
   right : 0px;
   top : 0px;
   z-index : 1;
-  background-image:url(../../views/front/cid_main/img/icon_close.png);
+  background-image:url(/page_imgs/fixed_img/icon_close.png);
   background-size : 50%;
   background-repeat : no-repeat;
   background-position : center;
