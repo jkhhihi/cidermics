@@ -17,7 +17,7 @@ header .menu{width:65%; font-size:16px; font-weight:600;}
 header .login{width:25%; text-align:right; padding-right:10px; font-size:14px; padding-top:28px; font-weight:600;}
 header .search{width:5%; padding-top:28px;}
 .menu ul li{float:left; list-style:none; padding:25px;}
-.main-menu{background:url(../../views/front/cid_main/img/mainimg.jpg); background-size: cover;
+.main-menu{background:url(/page_imgs/fixed_img/mainimg.jpg); background-size: cover;
     background-position: center; font-family: "BMD", sans-serif; color:#FFFFFF; width:100% !important; height:700px;}
 .main-menu .mainlogoimg img{padding-top:120px;}
 .main-menu p{font-size:38px; text-align:center; margin:60px 0 60px 0;}
