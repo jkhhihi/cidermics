@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>cid_main</title>
+<title>사이다경제 | </title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_main.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>=
+<script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-<% include ../top %>
+<% include top %>
 
 
 <div class="row" style="margin:0; padding:0">
@@ -20,20 +20,20 @@
 		<p>경제의 첫걸음 <span>사이다경제</span>와함께!</p>
 		<div class="container">
 				<div class="menu row">
-						<div class="col-sm-3" align="center"><img class="img-responsive" src="/page_imgs/main_img/mainicon_economy.png">
-								<p>경제</p>
+						<div class="col-sm-3" align="center"><a href="/contents"><img class="img-responsive" src="/page_imgs/main_img/mainicon_economy.png"></a>
+								<p><a href="/contents">경제</a></p>
 						</div>
-						<div class="col-sm-2" align="center"><img class="img-responsive" src="/page_imgs/main_img/mainicon_finance.png">
-								<p>금융</p>
+						<div class="col-sm-2" align="center"><a href="/contents"><img class="img-responsive" src="/page_imgs/main_img/mainicon_finance.png"></a>
+								<p><a href="/contents">금융</a></p>
 						</div>
-						<div class="col-sm-2" align="center"><img class="img-responsive" src="/page_imgs/main_img/mainicon_company.png">
-								<p>기업</p>
+						<div class="col-sm-2" align="center"><a href="/contents"><img class="img-responsive" src="/page_imgs/main_img/mainicon_company.png"></a>
+								<p><a href="/contents">기업</a></p>
 						</div>
-						<div class="col-sm-2" align="center"><img class="img-responsive" src="/page_imgs/main_img/mainicon_stock.png">
-								<p>주식</p>
+						<div class="col-sm-2" align="center"><a href="/contents"><img class="img-responsive" src="/page_imgs/main_img/mainicon_stock.png"></a>
+								<p><a href="/contents">주식</a></p>
 						</div>
-						<div class="col-sm-3" align="center"><img class="img-responsive" src="/page_imgs/main_img/mainicon_consulting.png">
-								<p>재무상담</p>
+						<div class="col-sm-3" align="center"><a href="/consulting"><img class="img-responsive" src="/page_imgs/main_img/mainicon_consulting.png"></a>
+								<p><a href="/consulting">재무상담</a></p>
 						</div>
 				</div>
 		</div>
@@ -51,10 +51,14 @@
 <!--콘텐츠뿌림-->
 <div class="contents container">
 		<div class="row">
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con1.jpg">
-						<p>[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
+			<% for(var i=0; i<6; i++) { //contents.length %> 
+				<div class="col-sm-4 col-xs-6"><a href="contents_detail/<%= contents[i].con_no %>"><img class="img-responsive" src="<%= contents[i].con_photo %>"/></a>
+						<p><a href="contents_detail/<%= contents[i].con_no %>"><%= contents[i].con_title %></a></p>
 				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con2.jpg">
+				
+			<% } %>
+			
+				<!--div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con2.jpg">
 						<p>[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
 								블리자드!</p>
 				</div>
@@ -83,14 +87,14 @@
 				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="img/img_con3.jpg">
 						<p>[사이다경제] 매출 1조 달성한 유니클로,
 								그 비결은?</p>
-				</div>
+				</div-->
 		</div>
 		<div class="icon-plus_con" align="center"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.png"></div>
 </div>
 
 
 
-<% include ../bottom %>
+<% include bottom %>
 
 </body>
 </html>
