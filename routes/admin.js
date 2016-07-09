@@ -80,9 +80,17 @@ router.get('/contents', function(req, res, next) {
 });
 
 router.get('/contents/insert', function(req, res, next) {
-	var CP = 1;
-	console.log(CP);
-	res.render('admin/contents/insert', { CP : CP });
+	
+	var CP = 1;	
+	mysql.select('select * from cider.cid_con_cate', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		console.log(data);
+		res.render('admin/contents/insert', {cate : data, CP : CP });
+		
+    });
+	
 });
 
 router.get('/contents/files/:page', function(req, res, next){
@@ -216,13 +224,20 @@ router.get('/contents/detail/:no', function(req, res, next) {
 	
 	var CP = 2;
 	var no = req.params.no;
+	var cate = 
 	
-	mysql.select('select * from cider.cid_contents where con_no = '+ no +'', function (err, data){
+	mysql.select('select * from cider.cid_con_cate', function (err, data){
 		if(err){
 			res.redirect('back');
 		}
-		res.render('admin/contents/update', {contents : data, CP : CP});
-    	
+			mysql.select('select * from cider.cid_contents where con_no = '+ no +'', function (err, data2){
+				if(err){
+					res.redirect('back');
+				}
+				res.render('admin/contents/update', {contents : data2, CP : CP, cate : data,});
+				
+			});
+		
     });
 	
 });

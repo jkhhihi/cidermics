@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Raonomics Admin</title>
+    <title>Cidermics Admin</title>
     <link rel='stylesheet' href='/css/materialize.css' />
     <link rel='stylesheet' href='/css/style.css' />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -38,11 +38,12 @@
 					<div class="input-field col s12">
 						<select name="category">
 					      <option value="" disabled>카테고리를 정해주세요</option>
-					      <option value="total" <% if( contents[0].con_category == 'total'){ %> selected <% } %>>전체</option>
-					      <option value="kr" <% if( contents[0].con_category == 'kr'){ %> selected <% } %>>한국어</option>
-					      <option value="en" <% if( contents[0].con_category == 'en'){ %> selected <% } %>>영어</option>
-					      <option value="jp" <% if( contents[0].con_category == 'jp'){ %> selected <% } %>>일본어</option>
-					      <option value="cn" <% if( contents[0].con_category == 'cn'){ %> selected <% } %>>중국어</option>
+					      
+					      <% for(var i=0; i < cate.length; i++) {  %> 
+    					      <option value="<%=cate[i].cate_no%>" <% if( contents[0].con_category == cate[i].cate_no){ %> selected <% } %> > <%=cate[i].cate_name%> </option>
+    					      
+					      <% } %>
+					      
 					    </select>
 				    	<label>카테고리</label>
 				   </div>
