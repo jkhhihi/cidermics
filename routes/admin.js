@@ -81,6 +81,7 @@ router.get('/contents', function(req, res, next) {
 
 router.get('/contents/insert', function(req, res, next) {
 	var CP = 1;
+	console.log(CP);
 	res.render('admin/contents/insert', { CP : CP });
 });
 
