@@ -5,210 +5,152 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cid_main</title>
-<link href="../../../public/css/bootstrap.min.css" rel="stylesheet">
-<link href="../../../public/css/cid_contents_in.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cid_contents_in.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="../../../public/js/bootstrap.min.js"></script>
-<script src="../../../public/js/cid_contents.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="mob-header">
-		<header class="container-fulid">
-				<div class="mob-menu" align="left"><img class="img-responsive" src="img/mob_icon_menu.png"></div>
-				<div class="mob-logo" align="center"><img class="img-responsive" src="img/mob_icon_logo.png"></div>
-				<div class="mob-search" align="right"><img class="img-responsive" src="img/mob_icon_search.png"></div>
-		</header>
-</div>
-<div id="menu">
-		<div class="close"></div>
-		<div class="nav">
-				<ul>
-						<li>콘텐츠</li>
-						<li>재무상담</li>
-						<li>소통공간</li>
-						<li>ABOUT</li>
-						<li>CONTACT</li>
-				</ul>
-		</div>
-		<div onClick="history.back();" class="page_cover"></div>
-		<div onClick="history.back();" class="close"></div>
-</div>
-<div class="header">
-		<header class="container">
-				<div class="logo"><img src="img/logo.jpg"></div>
-				<div class="menu">
-						<ul>
-								<li>콘텐츠</li>
-								<li>재무상담</li>
-								<li>소통공간</li>
-						</ul>
-				</div>
-				<div class="login">로그인 | 회원가입</div>
-				<div class="search"><img src="img/icon_search.png"></div>
-		</header>
-</div>
+<% include ../top %>
+
+
 <div class="contents container">
 		<div class="row">
 				<div class="col-xs-12 title">[사이다주식] 브렉시트에 제대로 한방 맞은 우리 은행,
 						앞으로 주가의 행방은?</div>
-				<div class="col-xs-12 icon-menu"><img src="img/icon_menu_in.png"></div>
-				<div class="col-xs-6 date-view"><span class="date">2016.06.29</span><br><span class="views">77777읽음</span></div>
-				<div class="col-xs-6 editor" align="right"><br>written by Suk-Min Jo</div>
+				<div class="col-xs-12 icon-menu"><img src="/page_imgs/contents_img/icon_menu_in.png"></div>
+				<div class="col-xs-6 date-view"><span class="date">2016.06.29</span><br>
+						<span class="views">77777읽음</span></div>
+				<div class="col-xs-6 editor" align="right"><br>
+						written by Suk-Min Jo</div>
 				<div class="col-xs-12 line-1px"></div>
-				<div class="col-xs-12 contents-in"><img src="img/contents_in.png"></div>
+				<div class="col-xs-12 contents-in"><img src="/page_imgs/contents_img/contents_in.png"></div>
 		</div>
 		<div class="row editor-introduce">
 				<div class="col-xs-12 line-1px"></div>
-				
 				<div class="col-xs-12 mob-editor-con">
 						<div class="row">
-								<div class="col-xs-12 editor-picture" align="center"><img width="80" src="img/editor_picture.png"></div>
+								<div class="col-xs-12 editor-picture" align="center"><img width="80" src="/page_imgs/contents_img/editor_picture.png"></div>
 								<div class="col-xs-12 editor-intro" align="left">
 										<p>에디터 : 조석민</p>
 										<p>에디터曰"찡구를 만나느라 샤사사샤 24시간~"</p>
 										<p>iam_shocked@naver.com</p>
 								</div>
-								<div class="col-xs-12 editor-sns" align="right"><img width="35" src="img/icon_editor_facebook.png"><img width="35" src="img/icon_editor_inst.png"><img width="35" src="img/icon_editor_twitt.png"></div>
+								<div class="col-xs-12 editor-sns" align="right"><img width="35" src="/page_imgs/contents_img/icon_editor_facebook.png">
+									<img width="35" src="/page_imgs/contents_img/icon_editor_inst.png">
+									<img width="35" src="/page_imgs/contents_img/icon_editor_twitt.png"></div>
 						</div>
 				</div>
-				
 				<div class="col-xs-12 web-editor-con">
 						<div class="row">
-								<div class="col-xs-2 editor-picture"><img src="img/editor_picture.png"></div>
+								<div class="col-xs-2 editor-picture"><img src="/page_imgs/contents_img/editor_picture.png"></div>
 								<div class="col-xs-6 editor-intro">
 										<p>에디터 : 조석민</p>
 										<p>에디터曰"찡구를 만나느라 샤사사샤 24시간~"</p>
 										<p>iam_shocked@naver.com</p>
 								</div>
-								<div class="col-xs-4 editor-sns" align="right"><img src="img/icon_editor_facebook.png"><img src="img/icon_editor_inst.png"><img src="img/icon_editor_twitt.png"></div>
+								<div class="col-xs-4 editor-sns" align="right"><img src="/page_imgs/contents_img/icon_editor_facebook.png">
+									<img src="/page_imgs/contents_img/icon_editor_inst.png">
+									<img src="/page_imgs/contents_img/icon_editor_twitt.png"></div>
 						</div>
 				</div>
 				<div class="col-xs-12 line-1px"></div>
 		</div>
+</div>
+<!--배너뿌림-->
+<div class="mob-banner">
+		<div class="banner"></div>
+</div>
+<div class="web-banner container">
+		<div class="banner"></div>
+</div>
+<div class="contents container">
 		<div class="row like" align="center">
-				<div class="col-xs-12 btn-like"><img src="img/btn_like.png"></div>
+				<div class="col-xs-12 btn-like"><img src="/page_imgs/contents_img/btn_like.png"></div>
 				<div class="col-xs-12 number-like">
 						<p>777</p>
 				</div>
 		</div>
 		<div class="row share" align="center">
-				<div class="col-xs-12"><img src="img/btn_share.png"></div>
+				<div class="col-xs-12"><img src="/page_imgs/contents_img/btn_share.png"></div>
 		</div>
 		<div class="row comment" align="center">
-				<div class="col-xs-12"><img src="img/com_facebook.png"></div>
+				<div class="col-xs-12"><img src="/page_imgs/contents_img/com_facebook.png"></div>
 		</div>
 		<div class="row pre-next">
-				<div class="col-xs-6 con-pre"><p>이전 편</p><p class="pre-title">[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p></div>
-				<div class="col-xs-6 con-next"><p>다음 편</p><p class="next-title">[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
-								블리자드!</p></div>
+				<div class="col-xs-6 con-pre">
+						<p>이전 편</p>
+						<p class="pre-title">[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
+				</div>
+				<div class="col-xs-6 con-next">
+						<p>다음 편</p>
+						<p class="next-title">[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
+								블리자드!</p>
+				</div>
 		</div>
-				<p class="title-relation">함께 읽으면 좋을 연관글</p>
+		<p class="title-relation">함께 읽으면 좋을 연관글</p>
 		<div class="row relation">
 				<div class="col-xs-12 col-sm-6">
-					<div class="row ">
-						<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
-								그 비결은?</div>
-						<div class="col-xs-4 img" align="right"><img src="img/img_rela1.png"></div>
-					</div>
+						<div class="row ">
+								<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
+										그 비결은?</div>
+								<div class="col-xs-4 img" align="right"><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
+						</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<div class="row">
-						<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
-								그 비결은?</div>
-						<div class="col-xs-4 img" align="right"><img src="img/img_rela1.png"></div>
-					</div>
+						<div class="row">
+								<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
+										그 비결은?</div>
+								<div class="col-xs-4 img" align="right"><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
+						</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<div class="row">
-						<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
-								그 비결은?</div>
-						<div class="col-xs-4 img" align="right"><img src="img/img_rela1.png"></div>
-					</div>
+						<div class="row">
+								<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
+										그 비결은?</div>
+								<div class="col-xs-4 img" align="right"><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
+						</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
-					<div class="row">
-						<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
-								그 비결은?</div>
-						<div class="col-xs-4 img" align="right"><img src="img/img_rela1.png"></div>
-					</div>
+						<div class="row">
+								<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
+										그 비결은?</div>
+								<div class="col-xs-4 img" align="right"><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
+						</div>
 				</div>
 		</div>
-				<p class="title-recommendation">사이다경제 추천</p>
+		<p class="title-recommendation">사이다경제 추천</p>
 		<div class="row recommendation">
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="img/img_con1.jpg">
+				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con1.jpg">
 						<p>[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
 				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="img/img_con2.jpg">
+				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con2.jpg">
 						<p>[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
 								블리자드!</p>
 				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="img/img_con3.jpg">
+				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con3.jpg">
 						<p>[사이다경제] 매출 1조 달성한 유니클로,
 								그 비결은?</p>
 				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="img/img_con4.jpg">
+				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con4.jpg">
 						<p>[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
 				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="img/img_con5.jpg">
+				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con5.jpg">
 						<p>[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
 								블리자드!</p>
 				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="img/img_con6.jpg">
+				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con6.jpg">
 						<p>[사이다경제] 매출 1조 달성한 유니클로,
 								그 비결은?</p>
 				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="img/img_con1.jpg">
+				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con1.jpg">
 						<p>[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
 				</div>
 		</div>
 </div>
-<div class="web-footer">
-		<div class="container">
-				<div class="row">
-						<div class="col-sm-1 logo"> <img src="img/logo.jpg"> </div>
-						<div class="col-sm-5 intro"><span>망설이지말고 주저하지말고 어서빨리<br>
-								내게 다가와 꾸물대지말고 빙빙돌지말고<br>
-								니사랑을 내게 모두 가져와<br>
-								너랑 나랑 사랑하자 야이야이야이</span> </div>
-						<div class="col-sm-3 about">
-								<p>ABOUT</p>
-								<div class="line-about"></div>
-								<div class="about-con">
-										<p>Our Company</p>
-										<p>Our Team</p>
-										<p>Approach</p>
-								</div>
-						</div>
-						<div class="col-sm-3 ourworks">
-								<p>OUR WORKS</p>
-								<div class="line-about"></div>
-								<div class="ourworks-con">
-										<p>NAVER blog</p>
-										<p>Tistory blog</p>
-										<p>Facebook page</p>
-										<p>KAKAOTALK Group chat</p>
-								</div>
-						</div>
-				</div>
-				<div class="line-1px"></div>
-				<div class="row company-con">
-						<div class="col-sm-2">
-								<p>ⓒFORTT Co., Ltd</p>
-						</div>
-						<div class="col-sm-6">
-								<p>Call. 010-0000-0000 대표 김의현 개인정보책임 김의현 주소 서울특별시 당산로 45길 7 502</p>
-						</div>
-						<div class="col-sm-4">
-								<p>파트너 제휴문의 010-0000-0000 email. cidermics@naver.com</p>
-						</div>
-				</div>
-		</div>
-</div>
-<div class="mob-footer">
-		<div class="logo" align="center"><img src="img/mob_icon_footer_logo.png"></div>
-		<p>Call. 010-0000-0000 대표 김의현<br>
-				개인정보책임 김의현<br>
-				주소 서울특별시 당산로 45길 7 502</p>
-</div>
+
+
+<% include ../bottom %>
+
 </body>
 </html>
