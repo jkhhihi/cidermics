@@ -1,5 +1,6 @@
 .margin0{margin:0 !important;}
 .padding0{padding:0 !important;}
+.mob-header{display:none;} 
 .mob-banner{display:none;}
 .contents{font-family: 'Nanum Gothic', serif; color:#212121;}
 .contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:100px 0 50px 0;}
@@ -41,7 +42,6 @@
 .recommendation{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
 .recommendation div{margin:10px 0 50px 0;}
 .recommendation p{margin-top:20px;}
-
 
 @media all and (max-width:1024px) {
 .web-banner{display:none;}
