@@ -1,27 +1,9 @@
-@charset "utf-8";
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);/*font-family: 'Nanum Gothic', serif;*/
-@import url("../font/font-BMDOHYEON-wallel.css");/* font-family: "BMD", sans-serif;*/
-/* CSS Document */
-body{font-family: 'Nanum Gothic', serif;}
-
-
 input{border-bottom:solid 2px #2f8ecd; border-top:0; border-left:0; border-right:0; color:#333333; height:30px;display:inline; background-color: rgba( 255, 255, 255, 0 ) ;    padding: 6px 12px; box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);}
-#menu{display:none;}
-.mob-header{display:none;}
 .mob-main-banner{display:none;}
-.mob-footer{display:none;}
-.header{height:70px; font-family: 'Nanum Gothic', serif; color:#2f8ecd;}
-header div{float:left;}
-header .logo{width:5%;}
-header .menu{width:65%; font-size:16px; font-weight:600;}
-header .login{width:25%; text-align:right; padding-right:10px; font-size:14px; padding-top:28px; font-weight:600;}
-header .search{width:5%; padding-top:28px;}
-.menu ul li{float:left; list-style:none; padding:25px;}
-.main-menu{background:url(../../views/front/cid_main/img/mainimg.jpg); background-size: cover;
+.main-menu{background:url(/page_imgs/fixed_img/mainimg.jpg); background-size: cover;
     background-position: center; font-family: 'Nanum Gothic', serif; width:100% !important; height:700px; padding-top:50px;}
 .main-menu .bg{background-color: rgba( 255, 255, 255, 0.7 ); width:600px; height:600px; border-radius:10px;}
 .main-menu .bg .join{width:75%; padding-top:30px; font-family: 'Nanum Gothic', serif;}
-
 .join .join-step img{margin-left:20px; width:85px;}
 .step2 .title p{ font-size:22px; color:212121; font-weight:bold; margin:60px 0 30px 0;}
 .step2 .star{color:#c02e88;}
@@ -40,14 +22,6 @@ header .search{width:5%; padding-top:28px;}
 .step2 .id p, .nicname p, .birth p, .sex p{display:inline-block; float:left; margin-right:10px; width:100px; text-align:center;}
 .join .step2 .step2-btn{width:100%; margin:0;}
 .join .step2 .step2-btn div img{margin-top:20px;}
-.web-footer{width:100%; height:280px; background-color:#ececec; padding-top:30px; color:#82878b; line-height:1.5em;}
-.web-footer .about p{font-family: "BMD", sans-serif; font-size:20px; color:#2f8ecd;}
-.web-footer .line-about{width:auto; height:3px; background-color:#2f8ecd; margin:-8px 0 10px 0;}
-.web-footer .about-con p{font-family:"BMD", sans-serif; font-size:18px; color:#82878b;}
-.web-footer .ourworks p{font-family: "BMD", sans-serif; font-size:20px; color:#2f8ecd;}
-.web-footer .ourworks-con p{font-family:"BMD", sans-serif; font-size:18px; color:#82878b;}
-.web-footer .line-1px{width:auto; height:1px; background-color:#2f8ecd;}
-.web-footer .company-con{font-size:12px; margin-top:10px;}
 
 @media all and (max-width: 424px) {
 .step2 .id{margin-bottom:20px;}
@@ -82,7 +56,7 @@ html.open {
   right : 0px;
   top : 0px;
   z-index : 1;
-  background-image:url(../../views/front/cid_main/img/icon_close.png);
+  background-image:url(/page_img/fixed_img/icon_close.png);
   background-size : 50%;
   background-repeat : no-repeat;
   background-position : center;
@@ -108,8 +82,6 @@ html.open {
 #menu ul{margin-top:80px;}
 #menu ul li{color:#FFFFFF; font-family:font-family: 'Nanum Gothic', serif; font-size:22px; font-weight:600; margin-bottom:20px;}
 
-
-
 .header{display:none;}
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}
@@ -124,20 +96,16 @@ html.open {
 .mob-header .mob-search img{height:25px; margin:10px;}
 .main-menu .bg{width:95%;}
 .main-menu .bg .join{width:90%; padding-top:40px;}
-
-
 .step2 .id p, .nicname p, .birth p, .sex p{display:block; float:none; margin-right:0; width:100px; text-align:left;}
 .join .join-step img{margin-left:10px; width:60px;}
 .step2 .title p{font-size:20px; color:212121; font-weight:bold; margin:30px 0 20px 0;}
 .step2 .sex .man, .woman{width:80px; height:30px; background-color:#999999; color:#FFFFFF; font-size:14px; padding-top:5px; display:inline-block; text-align:center;}
 .join .step2 .step2-btn{width:100%;}
 .join .step2 .step2-btn div img{margin-top:20px; height:30px;}
-
 .mob-footer{width:100%; height:180px; background-color:#ececec; padding-top:20px;}
 .mob-footer .logo img{height:50px; margin-bottom:20px;}
 .mob-footer p{font-family: 'Nanum Gothic', serif; text-align:center; line-height:1.8em; color:#82878b;}
 .nav ul li{list-style:none;}
-
 }
 @media all and (min-width: 768px) and (max-width: 1024px) {
 
@@ -166,7 +134,7 @@ html.open {
   right : 0px;
   top : 0px;
   z-index : 1;
-  background-image:url(../../views/front/cid_main/img/icon_close.png);
+  background-image:url(/page_img/fixed_img/icon_close.png);
   background-size : 50%;
   background-repeat : no-repeat;
   background-position : center;
@@ -191,8 +159,6 @@ html.open {
 }
 #menu ul{margin-top:80px;}
 #menu ul li{color:#FFFFFF; font-family:font-family: 'Nanum Gothic', serif; font-size:22px; font-weight:600; margin-bottom:20px;}
-
-
 
 .header{display:none;}
 .web-main-banner{display:none;}
