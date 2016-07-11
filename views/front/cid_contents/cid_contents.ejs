@@ -27,10 +27,18 @@
 <!--콘텐츠뿌림-->
 <div class="contents container">
 		<div class="row">
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con1.jpg">
-						<p>[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
+			<% for(var i=0; i<contents.length; i++) { %>
+				<div class="col-sm-4 col-xs-6">
+					
+					<a href="/contents_detail/<%= contents[i].con_no %>">
+					<img class="img-responsive" src="<%= contents[i].con_photo %>"></a>
+					
+					
+					<p><a href="/contents_detail/<%= contents[i].con_no %>">
+						<%= contents[i].con_title %></a></p>
 				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con2.jpg">
+			<% } %>
+				<!--div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con2.jpg">
 						<p>[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
 								블리자드!</p>
 				</div>
@@ -59,7 +67,7 @@
 				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con3.jpg">
 						<p>[사이다경제] 매출 1조 달성한 유니클로,
 								그 비결은?</p>
-				</div>
+				</div-->
 		</div>
 		<div class="icon-plus_con" align="center"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.png"></div>
 </div>
