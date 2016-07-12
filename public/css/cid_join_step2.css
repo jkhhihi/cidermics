@@ -94,6 +94,7 @@ html.open {
 .mob-header .mob-menu img{height:25px; margin:10px;}
 .mob-header .mob-logo img{height:40px; margin:5px;}
 .mob-header .mob-search img{height:25px; margin:10px;}
+.main-menu {display: block !important;}
 .main-menu .bg{width:95%;}
 .main-menu .bg .join{width:90%; padding-top:40px;}
 .step2 .id p, .nicname p, .birth p, .sex p{display:block; float:none; margin-right:0; width:100px; text-align:left;}
@@ -172,6 +173,7 @@ html.open {
 .mob-header .mob-menu img{height:25px; margin:10px;}
 .mob-header .mob-logo img{height:40px; margin:5px;}
 .mob-header .mob-search img{height:25px; margin:10px;}
+.main-menu {display: block !important;}
 .main-menu .bg{width:95%;}
 .main-menu .bg .join{width:90%; padding-top:40px;}
 .join .join-step img{margin-left:10px; width:60px;}

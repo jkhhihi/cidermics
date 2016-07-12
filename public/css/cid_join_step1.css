@@ -12,8 +12,7 @@
 .join .step1 .step1-btn div img{margin-top:20px;}
 
 @media all and (max-width:1024px) {
-.web-main-banner{display:none;}
-.mob-main-banner{display:block;}
+.main-menu {display: block !important;}
 .main-menu .bg{width:95%;}
 .main-menu .bg .join{width:90%; padding-top:80px;}
 .join .join-step img{margin-left:10px; width:60px;}

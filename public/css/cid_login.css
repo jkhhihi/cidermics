@@ -1,5 +1,4 @@
 .form-control{color:#333333;}
-.mob-main-banner{display:none;}
 .main-menu{background:url(/page_imgs/fixed_img/mainimg.jpg); background-size: cover;
     background-position: center; font-family: 'Nanum Gothic', serif; width:100% !important; height:700px; padding-top:50px;}
 .main-menu .bg{background-color: rgba( 255, 255, 255, 0.7 ); width:600px; height:600px; border-radius:10px;}
@@ -12,8 +11,7 @@
 .main-menu .bg .btn-kakaologin{width:75%; height:70px; background-color:#c7b100; color:#FFFFFF; font-size:24px; padding-top:20px;}
 
 @media all and (max-width:1024px) {
-.web-main-banner{display:none;}
-.mob-main-banner{display:block;}
+.main-menu {display: block !important;}
 .main-menu .bg{width:90%;}
 .main-menu .bg .email input{margin-top:80px;}
 .main-menu .bg .btn-login{height:70px; padding-top:25px; font-size:18px;}

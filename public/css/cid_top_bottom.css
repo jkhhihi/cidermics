@@ -77,7 +77,7 @@ html.open {
 #menu.open {
   left : 0px;
 }
-#menu ul{margin-top:80px;}
+#menu ul{margin-top:80px; padding:0;}
 #menu ul li{color:#FFFFFF; font-family:font-family: 'Nanum Gothic', serif; font-size:22px; font-weight:600; margin-bottom:20px;}
 
 .header{display:none;}
