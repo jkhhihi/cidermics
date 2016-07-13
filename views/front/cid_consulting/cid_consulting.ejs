@@ -7,6 +7,7 @@
 <title>사이다경제 | 재무상담</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_consulting.css" rel="stylesheet">
+<link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
@@ -14,11 +15,49 @@
 <% include ../top %>
 <!--배너뿌림-->
 <div class="mob-main-banner">
-		<div class="banner"></div>
+				<!-- Swiper -->
+				<div class="swiper-container">
+						<div class="swiper-wrapper">
+								<div class="swiper-slide"><img class="img-responsive" src="/page_imgs/main_img/banner1.jpg"></div>
+								<div class="swiper-slide"><img class="img-responsive" src="/page_imgs/main_img/banner2.jpg"></div>
+								<div class="swiper-slide"><img class="img-responsive" src="/page_imgs/main_img/banner1.jpg"></div>
+								<div class="swiper-slide"><img class="img-responsive" src="/page_imgs/main_img/banner2.jpg"></div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+				</div>
 </div>
 <div class="web-main-banner container">
-		<div class="banner"></div>
+				<!-- Swiper -->
+				<div class="swiper-container">
+						<div class="swiper-wrapper">
+								<div class="swiper-slide"><img class="img-responsive" src="/page_imgs/main_img/banner1.jpg"></div>
+								<div class="swiper-slide"><img class="img-responsive" src="/page_imgs/main_img/banner2.jpg"></div>
+								<div class="swiper-slide"><img class="img-responsive" src="/page_imgs/main_img/banner1.jpg"></div>
+								<div class="swiper-slide"><img class="img-responsive" src="/page_imgs/main_img/banner2.jpg"></div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+				</div>
 </div>
+
+<!-- Swiper JS -->
+<script src="/js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+				effect: 'fade',
+        centeredSlides: true,
+        autoplay: 2000,
+        autoplayDisableOnInteraction: false
+    });
+    </script>
+
 <div class="consulting-company container">
 		<div class="row" align="center">
 				<div class="col-lg-4 col-sm-6">

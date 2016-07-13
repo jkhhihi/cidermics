@@ -6,9 +6,8 @@
 .main-menu .menu p{margin:10px 0 10px 0; font-size:28px;}
 .main-menu .menu img{height:80px;}
 .menu p a{color:#fff;}
-.web-main-banner{margin-bottom:80px;}
+.web-main-banner{margin-bottom:50px;}
 .web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#2f8ecd; margin:80px 0 10px 0;}
-.web-main-banner .banner{width:100%; height:300px; background-color:#2f8ecd;}
 .contents{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
 .contents div div{margin:10px 0 50px 0;}
 .contents div div p{margin-top:20px;}
@@ -21,7 +20,6 @@
 .mob-main-banner{display:block;}
 .mob-main-banner{margin-bottom:10px;}
 .mob-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#2f8ecd; margin:20px 0 5px 5px;}
-.mob-main-banner .banner{width:100%; height:300px; background-color:#2f8ecd;}
 .contents div div{margin:10px 0 10px 0;}
 .contents div div p{margin-top:10px;}
 .contents .icon-plus_con{margin:10px 0 30px 0;}
