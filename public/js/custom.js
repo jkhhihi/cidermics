@@ -32,7 +32,7 @@ $(document).ready(function (){
 	//썸네일 이미지 등록
 	$('.btn-thumb').click(function(){
 		if($('.img-selected').length > 1){
-			alert('하나만 선탣해주세요~');
+			alert('하나만 선택해주세요~');
 			return;
 		}
 		var src = $('.img-selected').find('img').attr('src');
@@ -41,6 +41,7 @@ $(document).ready(function (){
 		$('.preview').find('input').attr('value', src);
 		$('#modal1').closeModal();
 	});
+	
 	
 });
 
@@ -161,6 +162,12 @@ $(document).ready(function(){
 		var cate = $('[name=category]').val();
 		var title = $('#title').val();
 		var photo = $('[name=photo]').val();
+		var userinfo = $('#user').val();
+		
+		var arr = userinfo.split("/");
+		var userNo = arr[0];
+		var writer = arr[1];
+		
 		if(cate == null) {
 			alert('카테고리를 지정해주세요');
 			return;
@@ -173,10 +180,16 @@ $(document).ready(function(){
 			alert('썸네일 설정해주세요');
 			return;
 		}
+		if(userinfo == ""){
+			alert('에디터를 선택해주세요');
+			return;
+		}
 		
 		console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title );
 		$('[name=title]').val(title);
 		$('[name=contents]').val(contents);
+		$('[name=userNo]').val(userNo);
+		$('[name=writer]').val(writer);
 		
 		$('#cform').attr('action', '/adm/contents/insert');
 		$('#cform').attr('method', 'post');
@@ -190,6 +203,7 @@ $(document).ready(function(){
 //		
 //		xhr.open("POST", '/adm/contents/insert');
 //		xhr.send(formData);
+		
 	});
 	
 	$('#update').click(function(e){
@@ -198,6 +212,12 @@ $(document).ready(function(){
 		var cate = $('[name=category]').val();
 		var title = $('#title').val();
 		var photo = $('[name=photo]').val();
+		var userinfo = $('#user').val();
+		
+		var arr = userinfo.split("/");
+		var userNo = arr[0];
+		var writer = arr[1];
+		
 		if(cate == null) {
 			alert('카테고리를 지정해주세요');
 			return;
@@ -210,10 +230,16 @@ $(document).ready(function(){
 			alert('썸네일 설정해주세요');
 			return;
 		}
+		if(userinfo == ""){
+			alert('에디터를 선택해주세요');
+			return;
+		}
 		
 		console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title );
 		$('[name=title]').val(title);
 		$('[name=contents]').val(contents);
+		$('[name=userNo]').val(userNo);
+		$('[name=writer]').val(writer);
 		
 		$('#cform').attr('action', '/adm/contents/update');
 		$('#cform').attr('method', 'post');

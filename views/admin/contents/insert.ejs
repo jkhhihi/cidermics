@@ -101,9 +101,28 @@
 							
 				</div>
 				
-				<input type="hidden" name="contents">			
-				<input type="hidden" name="title">			
-							
+				
+				<div class="input-field col s12">
+                    <select id="user">
+                        <option value="">에디터를 정해주세요</option>
+                        <% for(var i=0; i < user.length; i++) {  %> 
+                          
+                            <option value="<%=user[i].user_no%>/<%=user[i].user_name%>" data-icon="<%=user[i].profile_img%>"> <%=user[i].user_name%> </option>
+                         
+                        <% } %>
+                    </select>
+                    <label>에디터</label>
+                </div>
+				<div class="input-field col s12">
+				    <textarea name="userText" class="materialize-textarea">
+				    </textarea>
+                    <label>에디터 한마디</label>
+				</div>
+				<input type="hidden" name="contents">
+				<input type="hidden" name="writer">			
+				<input type="hidden" name="userNo">
+				<input type="hidden" name="title">
+				
 			</form>
 			<div class="center-align">
 				<button class="btn waves-effect waves-light" id="insert">등록하기

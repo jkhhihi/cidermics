@@ -4,7 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var debug = require('debug')('cidermics:server');
+var http = require('http');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
@@ -81,5 +82,12 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.set('port', process.env.PORT || 80);
 
-module.exports = app;
+var server = app.listen(app.get('port'), function() {
+//http.createServer(app).listen(app.get('port'), function(){
+//	console.log('Express server listening on port ' + app.get('port'));
+
+  debug('Express server listening on port ' + server.address().port);
+});
+

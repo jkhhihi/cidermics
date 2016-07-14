@@ -82,12 +82,24 @@ router.get('/contents', function(req, res, next) {
 router.get('/contents/insert', function(req, res, next) {
 	
 	var CP = 1;	
+	var cate;
+	var user;
+	
 	mysql.select('select * from cider.cid_con_cate', function (err, data){
 		if(err){
 			res.redirect('back');
 		}
-		console.log(data);
-		res.render('admin/contents/insert', {cate : data, CP : CP });
+		cate = data;
+		mysql.select('select * from cider.cid_user where user_level="2"', function (err, data2){
+			if(err){
+				res.redirect('back');
+			}
+			user = data2;
+			console.log(user);
+			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP });
+			
+	    });
+		
 		
     });
 	
@@ -167,9 +179,12 @@ router.post('/contents/insert', function(req, res, next) {
 	var contents = req.body.contents;
 	var category = req.body.category;
 	var photo = req.body.photo;
+	var userNo = req.body.userNo;
+	var writer = req.body.writer;
+	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date };
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText };
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 		
