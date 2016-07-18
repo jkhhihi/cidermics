@@ -3,7 +3,7 @@
 .main-menu .bg{background-color: rgba( 255, 255, 255, 0.7 ); width:600px; height:600px; border-radius:10px;}
 .main-menu .bg .col-xs-12{float:none !important;}
 .main-menu .bg .mainlogoimg{margin:80px 0 40px 0; width:140px;}
-.main-menu .bg .btn-join{width:70%; height:70px; background-color:#2f8ecd; color:#FFFFFF; font-size:24px; margin:20px 0 30px 0; padding-top:20px;}
+.main-menu .bg .btn-join{width:70%; height:70px; background-color:#1b87c9; color:#FFFFFF; font-size:24px; margin:20px 0 30px 0; padding-top:20px;}
 .main-menu .bg .btn-facejoin{width:70%; height:70px; background-color:#546c9b; color:#FFFFFF; font-size:24px; margin-bottom:30px; padding-top:20px;}
 .main-menu .bg .btn-kakaojoin{width:70%; height:70px; background-color:#c7b100; color:#FFFFFF; font-size:24px; padding-top:20px;}
 

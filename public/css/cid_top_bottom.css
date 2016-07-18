@@ -6,24 +6,23 @@ body{font-family: 'Nanum Gothic', serif;}
 a{color:#333;}
 #menu{display:none;}
 .mob-header{display:none;}
-.header{height:70px; font-family: 'Nanum Gothic', serif; color:#2f8ecd;}
+.header{height:70px; font-family: 'Nanum Gothic', serif; color:#1b87c9;}
 header div{float:left;}
 header .logo{width:5%;}
 header .menu{width:65%; font-size:16px; font-weight:600;}
 header .login{width:25%; text-align:right; padding-right:10px; font-size:14px; padding-top:28px; font-weight:600;}
 header .search{width:5%; padding-top:28px;}
 .menu ul li{float:left; list-style:none; padding:25px;}
-.menu ul li a{color:#2f8ecd;}
-.login a{color:#2f8ecd;}
-.search a{color:#2f8ecd;}
-.web-footer{display:none;}
+.menu ul li a{color:#1b87c9;}
+.login a{color:#1b87c9;}
+.search a{color:#1b87c9;}
 .mob-search-box{display:none;}
 .web-search-box{display:none;}
 .web-search-box input {
 	display:inline-block;
 	width:400px;
 	border-radius:20px;
-	border: solid 1px #2f8ecd;
+	border: solid 1px #1b87c9;
 	margin: 20px 0 10px 0;
 }
 .web-search-box .form-control {
@@ -34,15 +33,16 @@ header .search{width:5%; padding-top:28px;}
 }
 .mob-footer{display:none;}
 .web-footer{width:100%; height:280px; background-color:#ececec; padding-top:20px; color:#82878b; line-height:1.5em;}
-.web-footer .about p{font-family: "BMD", sans-serif; font-size:20px; color:#2f8ecd;}
+.web-footer .about p{font-family: "BMD", sans-serif; font-size:20px; color:#1b87c9;}
 .web-footer .about p a{color:#82878b;}
-.web-footer .line-about{width:auto; height:3px; background-color:#2f8ecd; margin:-8px 0 10px 0;}
+.web-footer .line-about{width:auto; height:3px; background-color:#1b87c9; margin:-8px 0 10px 0;}
 .web-footer .about-con p{font-family:"BMD", sans-serif; font-size:18px; color:#82878b;}
-.web-footer .ourworks p{font-family: "BMD", sans-serif; font-size:20px; color:#2f8ecd;}
+.web-footer .ourworks p{font-family: "BMD", sans-serif; font-size:20px; color:#1b87c9;}
 .web-footer .ourworks p a{color:#82878b;}
 .web-footer .ourworks-con p{font-family:"BMD", sans-serif; font-size:18px; color:#82878b;}
-.web-footer .line-1px{width:auto; height:1px; background-color:#2f8ecd;}
+.web-footer .line-1px{width:auto; height:1px; background-color:#1b87c9;}
 .web-footer .company-con{font-size:12px; margin-top:10px;}
+
 
 @media all and (max-width:1024px) {
 	#menu{display:block;}
@@ -83,7 +83,7 @@ html.open {
   top : 0;
   left :-90%;
   z-index : 10;
-  background-color : #2f8ecd;
+  background-color : #1b87c9;
   text-align : center;
   transition: All 0.2s ease; 
   	-webkit-transition: All 0.2s ease; 
@@ -103,7 +103,7 @@ html.open {
 	display:inline-block;
 	width:250px;
 	border-radius:20px;
-	border: solid 1px #2f8ecd;
+	border: solid 1px #1b87c9;
 	margin: 20px 0 5px 0;
 }
 .mob-search-box .form-control {
@@ -114,7 +114,7 @@ html.open {
 }
 .web-footer{display:none;}
 .mob-footer{display:block;}
-.mob-header{display:block; height:50px; background-color:#2f8ecd;}
+.mob-header{display:block; height:50px; background-color:#1b87c9;}
 .mob-header .mob-menu{width:20%;}
 .mob-header .mob-logo{width:60%;}
 .mob-header .mob-search{width:20%;}
