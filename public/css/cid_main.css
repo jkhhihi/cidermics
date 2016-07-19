@@ -5,6 +5,7 @@
 .main-menu p{font-size:38px; text-align:center; margin:60px 0 60px 0;}
 .main-menu .menu p{margin:10px 0 10px 0; font-size:28px;}
 .main-menu .menu img{height:80px;}
+.main-menu .menu img:hover{height:100px;}
 .menu p a{color:#fff;}
 .web-main-banner{margin-bottom:50px;}
 .web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;}
