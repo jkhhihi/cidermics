@@ -40,6 +40,7 @@ app.use('/cid_contents', express.static(__dirname + '/views/cid_contents'));
 app.use('/cid_member', express.static(__dirname + '/views/cid_member'));
 
 
+
 app.use('/', routes);
 app.use('/users', users);
 app.use('/adm', admin);

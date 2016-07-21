@@ -11,6 +11,16 @@
 <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!--페이스북 연동 스크립트-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>	
+	
 <% include ../top %>
 
 
@@ -22,7 +32,7 @@
 				<div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_regDate %></span><br>
 						<span class="views"><%=contents[0].con_viewCount%> 읽음</span></div>
 				<div class="col-xs-6 editor" align="right"><br>
-						written by Suk-Min Jo</div>
+						written by <%=contents[0].con_writer%></div>
 				<div class="col-xs-12 line-1px"></div>
 				<div class="col-xs-12 contents-in"><img src="/page_imgs/contents_img/contents_in.png"></div>
 		</div>
@@ -32,8 +42,8 @@
 						<div class="row">
 								<div class="col-xs-12 editor-picture" align="center"><img width="80" src="/page_imgs/contents_img/editor_picture.png"></div>
 								<div class="col-xs-12 editor-intro" align="left">
-										<p>에디터 : 조석민</p>
-										<p>에디터曰"찡구를 만나느라 샤사사샤 24시간~"</p>
+										<p>에디터 : <%=contents[0].con_writer%></p>
+										<p>에디터曰"<%=contents[0].user_comment%>"</p>
 										<p>iam_shocked@naver.com</p>
 								</div>
 								<div class="col-xs-12 editor-sns" align="right"><img width="35" src="/page_imgs/contents_img/icon_editor_facebook.png">
@@ -45,9 +55,9 @@
 						<div class="row">
 								<div class="col-xs-2 editor-picture"><img src="/page_imgs/contents_img/editor_picture.png"></div>
 								<div class="col-xs-6 editor-intro">
-										<p>에디터 : 조석민</p>
-										<p>에디터曰"찡구를 만나느라 샤사사샤 24시간~"</p>
-										<p>iam_shocked@naver.com</p>
+										<p>에디터 : <%=contents[0].con_writer%></p>
+										<p>에디터曰"<%=contents[0].user_comment%>"</p>
+										<p><%=contents[0].user_email%></p>
 								</div>
 								<div class="col-xs-4 editor-sns" align="right"><img src="/page_imgs/contents_img/icon_editor_facebook.png">
 									<img src="/page_imgs/contents_img/icon_editor_inst.png">
@@ -75,7 +85,11 @@
 				<div class="col-xs-12"><img src="/page_imgs/contents_img/btn_share.png"></div>
 		</div>
 		<div class="row comment" align="center">
-				<div class="col-xs-12"><img src="/page_imgs/contents_img/com_facebook.png"></div>
+				<div class="col-xs-12">
+					
+						<div class="fb-comments" data-href="/contents_detail/<%= contents[0].con_no%>" data-width="100%" data-numposts="5"></div>	
+					
+				</div>
 		</div>
 		<div class="row pre-next">
 				<div class="col-xs-6 con-pre">

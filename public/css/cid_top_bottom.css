@@ -16,7 +16,7 @@ header .search{width:5%; padding-top:28px;}
 .menu ul li a{color:#2f8ecd;}
 .login a{color:#2f8ecd;}
 .search a{color:#2f8ecd;}
-.web-footer{display:none;}
+.web-footer{display:block;}
 .mob-search-box{display:none;}
 .web-search-box{display:none;}
 .web-search-box input {
