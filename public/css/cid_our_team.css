@@ -1,10 +1,10 @@
 
 .mob-main-banner{display:none;}
-.team{ font-family: 'Nanum Gothic', serif; color:#2f8ecd;}
+.team{ font-family: 'Nanum Gothic', serif; color:#1b87c9;}
 .team .title{margin-top:30px; font-size:26px;}
-.team .title span{font-size:22px; border-bottom:2px solid #c02e88; font-weight:900; padding-bottom:5px;}
+.team .title span{font-size:22px; border-bottom:2px solid #ce2ca8; font-weight:900; padding-bottom:5px;}
 .team .title p{font-size:18px; font-weight:bold; text-align:center; margin:50px 0 100px 0;}
-.team .title p span{color:#c02e88; font-size:20px; border:none;}
+.team .title p span{color:#ce2ca8; font-size:20px; border:none;}
 .team .editor-intro{margin-bottom:100px;}
 .team .editor-intro img.img-center {margin: 0 auto;}
 .team .editor-intro .row div{margin-bottom:50px;}
@@ -15,5 +15,5 @@
 .mob-main-banner{display:block;}
 .team{text-align:center;}
 .team .title p{font-size:14px; font-weight:bold; text-align:center; margin:50px 0 100px 0; line-height:1.5em;}
-.team .title p span{color:#c02e88; font-size:16px; border:none;}
+.team .title p span{color:#ce2ca8; font-size:16px; border:none;}
 }
