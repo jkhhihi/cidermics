@@ -123,9 +123,29 @@
 							
 				</div>
 				
+				
+				<div class="input-field col s12">
+                    <select id="user">
+                        <option value="">에디터를 정해주세요</option>
+                        <% for(var i=0; i < user.length; i++) {  %> 
+                          
+                            <option value="<%=user[i].user_no%>/<%=user[i].user_name%>" data-icon="<%= user[i].profile_img %>" <% if( contents[0].user_no == user[i].user_no){ %> selected <%} %>> <%=user[i].user_name%> </option>
+                         
+                        <% } %>
+                    </select>
+                    <label>에디터</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea name="userText" class="materialize-textarea"><%- contents[0].user_comment %>
+                    </textarea>
+                    <label>에디터 한마디</label>
+                </div>
+				
 				 
 				<input type="hidden" name="contents">			
-				<input type="hidden" name="title">			
+				<input type="hidden" name="title">
+				<input type="hidden" name="writer">         
+                <input type="hidden" name="userNo">			
 							
 			</form>
 			<div class="center-align">
