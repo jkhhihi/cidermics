@@ -16,7 +16,7 @@ router.get('/contents', function(req, res, next) {
 
 });
 
-router.get('/contents_detail/:no', function(req, res, next) {
+router.get('/contents/detail/:no', function(req, res, next) {
 	
 
 	var no = req.params.no;
