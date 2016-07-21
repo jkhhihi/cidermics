@@ -5,9 +5,10 @@
 .main-menu p{font-size:38px; text-align:center; margin:60px 0 60px 0;}
 .main-menu .menu p{margin:10px 0 10px 0; font-size:28px;}
 .main-menu .menu img{height:80px;}
+.main-menu .menu img:hover{height:100px;}
 .menu p a{color:#fff;}
 .web-main-banner{margin-bottom:50px;}
-.web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#2f8ecd; margin:80px 0 10px 0;}
+.web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;}
 .contents{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
 .contents div div{margin:10px 0 50px 0;}
 .contents div div p{margin-top:20px;}
@@ -19,7 +20,7 @@
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}
 .mob-main-banner{margin-bottom:10px;}
-.mob-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#2f8ecd; margin:20px 0 5px 5px;}
+.mob-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:20px 0 5px 5px;}
 .contents div div{margin:10px 0 10px 0;}
 .contents div div p{margin-top:10px;}
 .contents .icon-plus_con{margin:10px 0 30px 0;}

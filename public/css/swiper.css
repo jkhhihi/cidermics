@@ -64,7 +64,7 @@
   -ms-touch-action: pan-x;
   touch-action: pan-x;
 }
-/* Arrows È­»ìÇ¥*/
+/* Arrows È­ï¿½ï¿½Ç¥*/
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
@@ -114,7 +114,7 @@
 .swiper-container-rtl .swiper-button-prev.swiper-button-white {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 }
-/* Pagination Styles µ¿±×¶ó¹Ì ¹öÆ°*/
+/* Pagination Styles ï¿½ï¿½ï¿½×¶ï¿½ï¿½ ï¿½ï¿½Æ°*/
 .swiper-pagination {
   position: absolute;
   text-align: center;
@@ -135,7 +135,7 @@
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-container-horizontal > .swiper-pagination-bullets {
-  bottom: 10px;
+  bottom: 2px;
   left: 0;
   width: 100%;
 }
@@ -166,7 +166,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #c02e88;
+  background: #ce2ca8;
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
   background: #fff;
@@ -263,3 +263,4 @@ button.swiper-pagination-bullet {
   pointer-events: auto;
 }
 }
+
