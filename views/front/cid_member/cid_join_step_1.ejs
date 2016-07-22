@@ -8,10 +8,9 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_join_step1.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  
-<script type="text/javascript">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
 function checkboxclick(){
 	 if(document.chebox.value==""){
 	 alert("아이디를 입력해 주세요.");
@@ -23,6 +22,7 @@ function checkboxclick(){
 		window.location = (/join_step_2);
 	}
 }
+
 </script>
 </head>
 <body>
@@ -40,6 +40,9 @@ function checkboxclick(){
 		
 				<div class="bg">
 						<div class="row join">
+							
+							<form name="mem_join" action="/join_step_2" method="get" >
+							
 								<div class="col-xs-12 join-step" align="right" style="padding:0;">
 									<img src="/page_imgs/member_img/ch_join_1.png">
 									<img src="/page_imgs/member_img/join_2.png">
@@ -50,7 +53,7 @@ function checkboxclick(){
 												<div class="btn-group" data-toggle="buttons">
 			
 			<label class="btn btn-primary">
-				<input type="checkbox" autocomplete="off">
+				<input type="checkbox" name="checkbox1" autocomplete="off" value="1">
 				<span class="glyphicon glyphicon-ok"></span>
 			</label>					
 		
@@ -62,7 +65,7 @@ function checkboxclick(){
 												<div class="btn-group" data-toggle="buttons">
 			
 			<label class="btn btn-primary">
-				<input type="checkbox" autocomplete="off">
+				<input type="checkbox" name="checkbox2" autocomplete="off" value="1">
 				<span class="glyphicon glyphicon-ok"></span>
 			</label>					
 		
@@ -74,11 +77,13 @@ function checkboxclick(){
 												
 												<!--div class="col-xs-4 btn-check" align="center"><img src="/page_imgs/member_img/btn-check.png"></div-->
 												<div class="col-xs-4 next" align="right">
-												<input type="checkbox" id="chebox"><a onClick="checkboxclick()" style="cursor:pointer">클릭</a>	
+												<a onClick="checkboxclick()" style="cursor:pointer">클릭</a></div>
 												<!--button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button></div-->
 										</div>
 								</div>
 						</div>
+						
+						</form>
 				</div>
 		</div>
 </div>

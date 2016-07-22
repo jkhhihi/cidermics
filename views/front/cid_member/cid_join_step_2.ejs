@@ -51,6 +51,29 @@ function mem_join_next(){
 	  return;
 	}
 	
+	for (i=0; i<document.mem_join.mem_email_id.value.length; i++)
+        {
+         var ch = document.mem_join.mem_email_id.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+	if ( ( ch < "a" || ch > "z") && (ch < "A" || ch > "Z") && (ch < "0" || ch > "9" ) )
+    	{
+            alert("아이디는 영문 소문자로만 입력 가능 합니다!");
+            document.mem_join.mem_email_id.focus();
+            return;
+         }
+		}
+	
+	
+	for (i=0; i<document.mem_join.mem_year.value.length; i++)
+     {
+     	 var ch = document.mem_join.mem_year.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+		if ( ch < "0" || ch > "9" )
+    	 {
+            alert("번호는 숫자로만 입력 가능 합니다!");
+            document.mem_join.mem_year.focus();
+            return;
+         }
+      }
+	
 	 
 	 	document.mem_join.submit();
 }
