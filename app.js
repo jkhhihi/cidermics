@@ -6,6 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('cidermics:server');
 var http = require('http');
+var passport = require('passport')
+, LocalStrategy = require('passport-local').Strategy;
+var mysql = require("./routes/model/mysql");
+var flash = require('req-flash');
+var session = require('express-session');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
@@ -30,7 +36,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({ secret: 'fortt', resave: true, saveUninitialized: true }))
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 //express.static ADD
 app.use('/cid_about', express.static(__dirname + '/views/cid_about'));
@@ -38,6 +47,8 @@ app.use('/cid_cmn', express.static(__dirname + '/views/cid_cmn'));
 app.use('/cid_consulting', express.static(__dirname + '/views/cid_consulting'));
 app.use('/cid_contents', express.static(__dirname + '/views/cid_contents'));
 app.use('/cid_member', express.static(__dirname + '/views/cid_member'));
+app.use(flash());
+
 
 
 
@@ -51,6 +62,46 @@ app.use('/',cmn);
 app.use('/',consulting);
 app.use('/',contents);
 app.use('/',member);
+
+
+passport.use('local', new LocalStrategy({
+	
+    usernameField : 'email',
+    passwordField : 'pw',
+    passReqToCallback : true
+}
+
+,function(req, email, pw, done) {
+	
+	mysql.select('select * from cider.cid_user where user_email ="'+email+'" and user_password = "'+pw+'"', function (err, data){
+		console.log("data");
+		console.log(data.length);
+		if(data.length < 1){
+			console.log('fail');
+			return done(null, false);
+		}else {
+			console.log('success');
+			return done(null, data);
+		}
+		if(err){
+			res.redirect('back');
+		}
+		
+    });
+	
+}
+));
+
+passport.serializeUser(function(user, done) {
+    done(null, user);
+    // if you use Model.id as your idAttribute maybe you'd want
+    // done(null, user.id);
+});
+
+passport.deserializeUser(function(user, done) {
+    done(null, user);
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

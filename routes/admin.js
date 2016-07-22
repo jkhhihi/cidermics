@@ -9,7 +9,7 @@ var upload = multer({ dest: '../public/uploads/' });
 var formidable = require('formidable');
 var dir = require('node-dir');
 var mysql = require("./model/mysql");
-
+var passport = require('passport');
 
 //시간 설정
 function getWorldTime(tzOffset) { // 24시간제
@@ -52,39 +52,36 @@ router.get('/', function(req, res, next) {
 		res.render('admin/admin', {CP:CP});
 	}
 });
-router.post('/login', function(req, res, next) {
+
+router.post('/login', passport.authenticate('local', { failureRedirect: '/adm', failureFlash: true }), function(req, res, next) {
 	var CP = 0;
-	var id = req.body.id;
-	var pw = req.body.pw;
+	res.redirect('/adm/contents');
+//	var id = req.body.id;
+//	var pw = req.body.pw;
 	
-	console.log(id, pw);
-	if(id == "superadmin" && pw == "boto7aws!"){
-		res.cookie('auth', true);
-		res.redirect('/adm/contents');
-	}else {
-		res.redirect('/adm');
-	}
+//	console.log(id, pw);
+//	if(id == "superadmin" && pw == "boto7aws!"){
+//		res.cookie('auth', true);
+//		res.redirect('/adm/contents');
+//	}else {
+//		res.redirect('/adm');
+//	}
 });
 
 
-router.get('/contents', function(req, res, next) {
+router.get('/contents', ensureAuthenticated, function(req, res, next) {
 	var CP = 1;
-	if(req.cookies.auth){
-		 mysql.select('select * from cider.cid_contents order by con_no desc', function (err, data){
+		mysql.select('select * from cider.cid_contents order by con_no desc', function (err, data){
 			 res.render('admin/contents/contents', { CP : CP, contents : data });	    	
 		});
-	}else {
-		res.redirect("/adm");
-	}
 	 
 });
 
-router.get('/contents/insert', function(req, res, next) {
+router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	
 	var CP = 1;	
 	var cate;
 	var user;
-	
 	mysql.select('select * from cider.cid_con_cate', function (err, data){
 		if(err){
 			res.redirect('back');
@@ -105,7 +102,7 @@ router.get('/contents/insert', function(req, res, next) {
 	
 });
 
-router.get('/contents/files/:page', function(req, res, next){
+router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next){
 	var page;
 	if (typeof req.params.page == 'undefined'){
 		page = 1;
@@ -146,7 +143,7 @@ router.get('/contents/files/:page', function(req, res, next){
 	res.send({'pagination' : pagination, 'files': obj});
 	
 });
-router.post('/contents/insert/upload', function(req, res, next) {
+router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, next) {
 	
 	var form = new formidable.IncomingForm();
 	
@@ -171,9 +168,9 @@ router.post('/contents/insert/upload', function(req, res, next) {
 
 });
 
-router.post('/contents/insert', function(req, res, next) {
+router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 2;
+	var CP = 1;
 	
 	var title = req.body.title;
 	var contents = req.body.contents;
@@ -196,20 +193,23 @@ router.post('/contents/insert', function(req, res, next) {
     });
 });
 
-router.post('/contents/update', function(req, res, next) {
+router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 2;
+	var CP = 1;
 	
 	var no = req.body.no;
 	var title = req.body.title;
 	var contents = req.body.contents;
 	var category = req.body.category;
 	var photo = req.body.photo;
+	var userNo = req.body.userNo;
+	var writer = req.body.writer;
+	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date };
+	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer  };
 	
-	mysql.update('update cider.cid_contents set con_category = :con_category,  con_title = :con_title, con_content = :con_content, con_photo = :con_photo,  con_upDate = :con_upDate where con_no = :con_no', sets, function (err, data){
+	mysql.update('update cider.cid_contents set con_category = :con_category,  con_title = :con_title, con_content = :con_content, con_photo = :con_photo,  con_upDate = :con_upDate, user_no = :user_no, user_comment = :user_comment, con_writer = :con_writer where con_no = :con_no', sets, function (err, data){
 		
 		console.log(err);
 		console.log(data);
@@ -220,9 +220,9 @@ router.post('/contents/update', function(req, res, next) {
 });
 
 
-router.get('/contents/delete/:no', function(req, res, next) {
+router.get('/contents/delete/:no', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 2;
+	var CP = 1;
 	var no = req.params.no;
 	
 	mysql.del('delete from cider.cid_contents where con_no = '+ no +'', function (err, data){
@@ -235,21 +235,30 @@ router.get('/contents/delete/:no', function(req, res, next) {
     });
 });
 
-router.get('/contents/detail/:no', function(req, res, next) {
+router.get('/contents/detail/:no', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 2;
+	var CP = 1;
 	var no = req.params.no;
-	var cate = 
+	var cate;
+	var user;
 	
 	mysql.select('select * from cider.cid_con_cate', function (err, data){
 		if(err){
 			res.redirect('back');
 		}
-			mysql.select('select * from cider.cid_contents where con_no = '+ no +'', function (err, data2){
+			mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount, c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data2){
 				if(err){
 					res.redirect('back');
 				}
-				res.render('admin/contents/update', {contents : data2, CP : CP, cate : data,});
+				mysql.select('select * from cider.cid_user where user_level="2"', function (err, data3){
+					if(err){
+						res.redirect('back');
+					}
+					user = data3;
+					console.log(user);
+					res.render('admin/contents/update', {contents : data2, CP : CP, cate : data, user : user});
+					
+			    });
 				
 			});
 		
@@ -258,21 +267,110 @@ router.get('/contents/detail/:no', function(req, res, next) {
 });
 
 
-router.get('/consumption', function(req, res, next) {
+router.get('/consulting', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
-	if(req.cookies.auth){
-		res.render('admin/consumption/consumption', { CP : CP });
-	}else {
-		res.redirect("/adm");
-	}
+	mysql.select('select * from cider.cid_consulting order by cons_no desc', function (err, data){
+		 res.render('admin/consulting/consulting', { CP : CP, consulting : data });
+	});
+	
 });
 
-router.get('/consumption/insert', function(req, res, next) {
+router.post('/consulting/insert', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
+	
+	var contents = req.body.contents;
+	var url = req.body.url;
+	var name = req.body.name;
+	var photo = req.body.photo;
+	var date = getWorldTime(+9);
+	
+	var sets = {cons_name : name, cons_img : photo, cons_site_url : url, cons_content : contents, cons_regDate : date, cons_upDate : date };
+	
+	mysql.insert('insert into cider.cid_consulting set ?', sets,  function (err, data){
+		
+    	res.redirect('/adm/consulting');
+    	if (err){
+    		res.redirect('/adm/consulting');
+    	}
+    });
+});
 
-	res.render('admin/consumption/insert', { CP : CP });
+router.get('/consulting/insert', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	res.render('admin/consulting/insert', { CP : CP });
+	
+});
+
+router.get('/consulting/detail/:no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	var no = req.params.no;
+	var user;
+	
+	mysql.select('select * from cider.cid_user where user_level="2"', function (err, data2){
+		if(err){
+			res.redirect('back');
+		}
+		user = data2;
+		mysql.select('select * from cider.cid_consulting where cons_no = '+ no +'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			res.render('admin/consulting/update', {consulting : data, CP : CP, user: user});
+			
+		});
+		
+    });
+	
+});
+
+router.post('/consulting/update', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	
+	var no = req.body.no;
+	var name = req.body.name;
+	var contents = req.body.contents;
+	var img = req.body.photo;
+	var url = req.body.url;
+	var date = getWorldTime(+9);
+	
+	var sets = {cons_no : no, cons_name : name, cons_content : contents, cons_img : img, cons_site_url : url, cons_upDate : date };
+	
+	mysql.update('update cider.cid_consulting set cons_name = :cons_name,  cons_img = :cons_img, cons_site_url = :cons_site_url, cons_content = :cons_content,  cons_upDate = :cons_upDate where cons_no = :cons_no', sets, function (err, data){
+		
+		console.log(err);
+		console.log(data);
+		
+    	res.redirect('/adm/consulting');
+    	
+    });
 });
 
 
+router.get('/consulting/delete/:no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	var no = req.params.no;
+	
+	mysql.del('delete from cider.cid_consulting where cons_no = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/consulting');
+		}else{
+			res.redirect('/adm/consulting');
+		}
+    	
+    });
+});
+
+
+
+function ensureAuthenticated(req, res, next) {
+    // 로그인이 되어 있으면, 다음 파이프라인으로 진행
+    if (req.isAuthenticated()) { return next(); }
+    // 로그인이 안되어 있으면, login 페이지로 진행
+    res.redirect('/adm');
+}
 
 module.exports = router;

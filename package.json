@@ -17,6 +17,11 @@
     "multer": "^1.1.0",
     "node-dir": "^0.1.11",
     "serve-favicon": "~2.3.0",
-    "xhr": "^2.2.0"
+    "xhr": "^2.2.0",
+    "passport" : "*",
+    "passport-local" : "*",
+    "connect-flash" : "*",
+    "express-session" : "*",
+    "req-flash" : "*"
   }
 }
