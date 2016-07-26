@@ -56,16 +56,16 @@ router.get('/', function(req, res, next) {
 router.post('/login', passport.authenticate('local', { failureRedirect: '/adm', failureFlash: true }), function(req, res, next) {
 	var CP = 0;
 	res.redirect('/adm/contents');
-//	var id = req.body.id;
-//	var pw = req.body.pw;
+	/*var id = req.body.id;
+	var pw = req.body.pw;
 	
-//	console.log(id, pw);
-//	if(id == "superadmin" && pw == "boto7aws!"){
-//		res.cookie('auth', true);
-//		res.redirect('/adm/contents');
-//	}else {
-//		res.redirect('/adm');
-//	}
+	console.log(id, pw);
+	if(id == "superadmin" && pw == "boto7aws!"){
+		res.cookie('auth', true);
+		res.redirect('/adm/contents');
+	}else {
+		res.redirect('/adm');
+	}*/
 });
 
 
@@ -74,18 +74,24 @@ router.get('/contents', ensureAuthenticated, function(req, res, next) {
 		mysql.select('select * from cider.cid_contents order by con_no desc', function (err, data){
 			 res.render('admin/contents/contents', { CP : CP, contents : data });	    	
 		});
-	 
 });
+
 
 router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 1;	
+	var CP = 1;
 	var cate;
 	var user;
+	console.log(cate);
+	console.log(user);
 	mysql.select('select * from cider.cid_con_cate', function (err, data){
 		if(err){
 			res.redirect('back');
+			
+			console.log(data);
+			console.log(user);
 		}
+		
 		cate = data;
 		mysql.select('select * from cider.cid_user where user_level="2"', function (err, data2){
 			if(err){
@@ -94,7 +100,6 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 			user = data2;
 			console.log(user);
 			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP });
-			
 	    });
 		
 		
@@ -208,11 +213,12 @@ router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
 	var date = getWorldTime(+9);
 	
 	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer  };
-	
+	console.log(sets);
 	mysql.update('update cider.cid_contents set con_category = :con_category,  con_title = :con_title, con_content = :con_content, con_photo = :con_photo,  con_upDate = :con_upDate, user_no = :user_no, user_comment = :user_comment, con_writer = :con_writer where con_no = :con_no', sets, function (err, data){
 		
 		console.log(err);
 		console.log(data);
+		
 		
     	res.redirect('/adm/contents');
     	

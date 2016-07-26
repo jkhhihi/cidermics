@@ -9,7 +9,14 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="/js/materialize.js"></script>
     <script type="text/javascript" src="/smart_editor/js/HuskyEZCreator.js" charset="utf-8"></script>
-    
+    <style>
+div#fixed {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+}
+</style>
   </head>
   <body>
   	<% var data= CP; %>
@@ -55,21 +62,36 @@
 						<!-- Modal Trigger -->
 					    <a class="waves-effect waves-light btn modal-trigger1" href="#modal1">이미지 설정</a>
 					    
-						
+							    	
 					 	<!-- Modal Structure -->
+
 					    <div id="modal1" class="modal">
-						    <div class="modal-content">
-						      <div class="images">
-						      	
-						      </div>
-						      <ul class="pagination">
-					
-						      </ul>
-						    </div>
-						    <div class="modal-footer">
+					    	<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+					   
+					    
+					    	<ul class="pagination"></ul>
+					    	<div class="modal-footer">
 						      <a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a>
 						      <a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a>
 						    </div>
+						 
+						 
+					
+						    <div class="modal-content">
+						      <div class="images">
+						      </div>
+						    </div>
+						    
 					    </div>
 					    
 						<div class="preview row" style="display:none;">
@@ -114,15 +136,13 @@
                     <label>에디터</label>
                 </div>
 				<div class="input-field col s12">
-				    <textarea name="userText" class="materialize-textarea">
-				    </textarea>
+				    <textarea name="userText" class="materialize-textarea"></textarea>
                     <label>에디터 한마디</label>
 				</div>
 				<input type="hidden" name="contents">
 				<input type="hidden" name="writer">			
 				<input type="hidden" name="userNo">
 				<input type="hidden" name="title">
-				
 			</form>
 			<div class="center-align">
 				<button class="btn waves-effect waves-light" id="insert">등록하기

@@ -4241,6 +4241,14 @@ nav .input-field label.active {
           transform: translateY(0);
 }
 
+.modal .navbar-fixed{
+	 position: relative;
+  height: 56px;
+  z-index: 998;
+}
+.modal .navbar-fixed nav {
+  position: fixed;
+}
 .navbar-fixed {
   position: relative;
   height: 56px;
@@ -5247,7 +5255,10 @@ a.waves-effect .waves-ripple {
   padding: 4px 6px;
   height: 56px;
   width: 100%;
+ 
 }
+
+
 
 .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
   float: right;

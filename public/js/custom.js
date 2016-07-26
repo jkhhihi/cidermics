@@ -185,7 +185,7 @@ $(document).ready(function(){
 			return;
 		}
 		
-		console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title + ' | url + ' + url );
+		//console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title + ' | url + ' + url );
 		$('[name=title]').val(title);
 		$('[name=contents]').val(contents);
 		$('[name=userNo]').val(userNo);

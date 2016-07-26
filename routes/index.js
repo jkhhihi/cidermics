@@ -6,7 +6,7 @@ var mysql = require("./model/mysql");
 router.get('/', function(req, res, next) {
 	
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents  order by con_no desc limit 0,12',
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents  order by con_viewCount desc limit 0,12',
 	 function (err, data){
 		if (err) throw err;
 		console.log("data");

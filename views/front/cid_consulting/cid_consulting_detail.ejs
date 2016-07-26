@@ -21,33 +21,18 @@
 				<p>사이트 소개</p>
 		</div>
 		<div class="site">
-				<p>사이트명 : 재무보좌관</p>
-				<img src="/page_imgs/consulting_img/img_site.jpg"></div>
-		<div class="visit">사이트 방문하기</div>
+				<p>사이트명 : <%= consulting[0].cons_name %></p>
+				<img class="img-responsive" src="<%= consulting[0].cons_img %>">
+				
+				<!--img src="/page_imgs/consulting_img/img_site.jpg"--></div>
+		<div class="visit"><a href="<%= consulting[0].cons_site_url %>">사이트 방문하기</a></div>
+		
 		<div class="intro">
 				<p>사이트 소개</p>
 				<div class="intro-in">
-						<p>전 국민 작은부자 만들기 프로젝트!<br>
-								항상 꾸준한 유입을 자랑하는 재무설계머천트<br>
-								<재무보좌관>
-								입니다.<br>
-								<br>
-								재무보좌관은 서민들을 위한, 서민들에게<br>
-								꼭 필요한 재무설계를 진행하고 있는 머천트입니다.<br>
-								요즘같이 어려운 경제에 수입이 적은 서민들은<br>
-								불안함속에서 하루하루를 지내고 있습니다.<br>
-								누구보다도 절실함이 있기때문에 가계금융의 안정적 자산을 마련하기 위해<br>
-								출처를 알수 없는 곳에서 자금을 빌리게 되어<br>
-								더욱 위험한 상황으로 노출되기도 하는데요,<br>
-								<br>
-								또한 경제적으로 어려운 분들에게 철저한 자산관리와,<br>
-								재테크로 매월 3,000명 넘게 도움을 드리고 있으며<br>
-								최고의 수석FA분들로부터 재무플랜을 받을 수 있습니다.<br>
-								<br>
-								따라서 허황된 꿈이 아닌 현실적으로 가능한 재테크방법으로<br>
-								무료포트폴리오 제공받고 꼭 필요한 부분만을 선택하여 <br>
-								진행해보라는 내용으로 포스팅을 작성해주신다면,<br>
-								서민부자를 꿈꾸는 분들로부터 많은 DB유입을 기대해볼 수 있겠습니다.<br>
+						<p>
+							
+							<%- consulting[0].cons_content %>
 						</p>
 				</div>
 		</div>
@@ -68,7 +53,7 @@
 								중간중간에 이미지 들어갈수있게 뒷단작업 필요함(이미지 많이 들어감)</p>
 				</div>
 		</div>
-		<div class="visit">사이트 방문하기</div>
+		<div class="visit"><a href="http://www.naver.com">사이트 방문하기</a></div>
 </div>
 
 <% include ../bottom %>

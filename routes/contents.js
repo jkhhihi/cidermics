@@ -5,7 +5,7 @@ var mysql = require("./model/mysql");
 router.get('/contents', function(req, res, next) {
 	
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = "1" order by con_no desc limit 0,12', function (err, data){
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,12', function (err, data){
 		 if (err) throw err;
 		 console.log("data");
 		 console.log(data);
@@ -15,6 +15,25 @@ router.get('/contents', function(req, res, next) {
 	});
 
 });
+
+
+
+router.get('/contents/:no', function(req, res, next) {
+	
+	var no = req.params.no;
+	var sets = {con_category : no};
+	var row;
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = :con_category order by con_no desc limit 0,12', function (err, data){
+		 if (err) throw err;
+		 console.log("data");
+		 console.log(data);
+		 
+		 row = data;
+		 res.render('front/cid_contents/cid_contents', { contents : row});
+	});
+
+});
+
 
 router.get('/contents/detail/:no', function(req, res, next) {
 	
