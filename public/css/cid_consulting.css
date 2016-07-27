@@ -8,7 +8,7 @@
 @media all and (max-width:1024px) {
 .main-menu{display:none;}
 .web-main-banner{display:none;}
-.mob-main-banner{display:block;}
+.mob-main-banner{display:block; margin-top:0; margin-bottom:15px;}
 .mob-main-banner{margin:10px 0 50px 0;}
 
 }

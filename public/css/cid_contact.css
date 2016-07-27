@@ -1,4 +1,4 @@
-.mob-main-banner{display:none;}
+
 .contact{ font-family: 'Nanum Gothic', serif; color:#333;}
 .contact .title{margin-top:30px; color:#2f8ecd; font-size:26px;}
 .contact .title span{font-size:22px; border-bottom:2px solid #c02e88; font-weight:900; padding-bottom:5px;}
@@ -9,8 +9,5 @@
 
 
 @media all and (max-width:1024px) {
-.main-menu{display:none;}
-.web-main-banner{display:none;}
-.mob-main-banner{display:block;}
 .contact .title{text-align:center;}
 }
