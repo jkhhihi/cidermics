@@ -28,35 +28,46 @@
 		<div class="row">
 				<div class="col-xs-12 title">[사이다주식] 브렉시트에 제대로 한방 맞은 우리 은행,
 						앞으로 주가의 행방은?</div>
-				<div class="col-xs-12 icon-menu"><img src="/page_imgs/contents_img/icon_menu_in.png"></div>
+				<div class="col-xs-12 icon-menu">
+					
+					<%= contents[0].cate_name %>
+					<img src="/page_imgs/contents_img/icon_menu_in.png"></div>
 				<div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_regDate %></span><br>
 						<span class="views"><%=contents[0].con_viewCount%> 읽음</span></div>
 				<div class="col-xs-6 editor" align="right"><br>
 						written by <%=contents[0].con_writer%></div>
 				<div class="col-xs-12 line-1px"></div>
-				<div class="col-xs-12 contents-in"><img src="/page_imgs/contents_img/contents_in.png"></div>
+				
+				
+				<div class="col-xs-12 contents-in">
+					<%- contents[0].con_content %>
+				</div>
 		</div>
+		
+		
 		<div class="row editor-introduce">
 				<div class="col-xs-12 line-1px"></div>
 				<div class="col-xs-12 mob-editor-con">
 						<div class="row">
-								<div class="col-xs-12 editor-picture" align="center"><img width="80" src="/page_imgs/contents_img/editor_picture.png"></div>
+								<div class="col-xs-12 editor-picture" align="center"><img class="img-responsive" width=80 src="<%= contents[0].user_sns_icon %>"></div>
 								<div class="col-xs-12 editor-intro" align="left">
 										<p>에디터 : <%=contents[0].con_writer%></p>
-										<p>에디터曰"<%=contents[0].user_comment%>"</p>
-										<p>iam_shocked@naver.com</p>
+										<p>에디터曰 " <%=contents[0].user_comment%> " </p>
+										<p><%=contents[0].user_email%></p>
 								</div>
-								<div class="col-xs-12 editor-sns" align="right"><img width="35" src="/page_imgs/contents_img/icon_editor_facebook.png">
+								<div class="col-xs-12 editor-sns" align="right">
+									<img width="35" src="/page_imgs/contents_img/icon_editor_facebook.png">
 									<img width="35" src="/page_imgs/contents_img/icon_editor_inst.png">
-									<img width="35" src="/page_imgs/contents_img/icon_editor_twitt.png"></div>
+									<img width="35" src="/page_imgs/contents_img/icon_editor_twitt.png">
+								</div>
 						</div>
 				</div>
 				<div class="col-xs-12 web-editor-con">
 						<div class="row">
-								<div class="col-xs-2 editor-picture"><img src="/page_imgs/contents_img/editor_picture.png"></div>
+								<div class="col-xs-2 editor-picture"><img class="img-responsive" src="<%= contents[0].user_sns_icon %>"></div>
 								<div class="col-xs-6 editor-intro">
 										<p>에디터 : <%=contents[0].con_writer%></p>
-										<p>에디터曰"<%=contents[0].user_comment%>"</p>
+										<p>에디터曰 " <%=contents[0].user_comment%> " </p>
 										<p><%=contents[0].user_email%></p>
 								</div>
 								<div class="col-xs-4 editor-sns" align="right"><img src="/page_imgs/contents_img/icon_editor_facebook.png">
@@ -66,6 +77,8 @@
 				</div>
 				<div class="col-xs-12 line-1px"></div>
 		</div>
+		
+		
 </div>
 <!--배너뿌림-->
 <div class="mob-banner">
@@ -86,22 +99,45 @@
 		</div>
 		<div class="row comment" align="center">
 				<div class="col-xs-12">
-					
 						<div class="fb-comments" data-href="/contents_detail/<%= contents[0].con_no%>" data-width="100%" data-numposts="5"></div>	
-					
 				</div>
 		</div>
 		<div class="row pre-next">
+		
+		<% for(var i=0; i<contents.length; i++) {
+		
+		if (preNext[i].con_no < contents[i].con_no && preNext[i+1] == null) { %>
+			<a href="/contents/detail/<%= preNext[i].con_no %>">
 				<div class="col-xs-6 con-pre">
-						<p>이전 편</p>
-						<p class="pre-title">[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
+					
+						<p>이전 편<%= preNext[i].con_no %></p>
+						<p class="pre-title"><%= preNext[i].con_title %></p>
 				</div>
+			</a>
+		<% } else if (preNext[i].con_no > contents[i].con_no && preNext[i+1] == null) {%>
+			<a href="/contents/detail/<%= preNext[i].con_no %>">
 				<div class="col-xs-6 con-next">
 						<p>다음 편</p>
-						<p class="next-title">[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
-								블리자드!</p>
+						<p class="next-title"><%= preNext[i].con_title %></p>
 				</div>
+			</a>	
+		<% } else { %>
+				<a href="/contents/detail/<%= preNext[i].con_no %>">
+				<div class="col-xs-6 con-pre">
+						<p>이전 편</p>
+						<p class="pre-title"><%= preNext[i].con_title %></p>
+				</div>
+				</a>
+				<a href="/contents/detail/<%= preNext[i+1].con_no %>">
+				<div class="col-xs-6 con-next">
+						<p>다음 편</p>
+						<p class="next-title"><%= preNext[i].con_title %></p>
+				</div>
+				</a>
+				<% } %>
 		</div>
+		
+		<% } %>
 		<p class="title-relation">함께 읽으면 좋을 연관글</p>
 		<div class="row relation">
 				<div class="col-xs-12 col-sm-6">

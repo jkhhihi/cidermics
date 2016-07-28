@@ -47,7 +47,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 		if(err){
 			res.redirect('back');
 		}
-		mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount, c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data){
+		mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount, c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon, cate.cate_no, cate.cate_name from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no left join cider.cid_con_cate cate on c.con_category = cate.cate_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data){
 			
 			if(err){
 				res.redirect('back');
@@ -56,14 +56,14 @@ router.get('/contents/detail/:no', function(req, res, next) {
 			contents = data;
 			
 //			mysql.select('SELECT con_no, con_title FROM raonomics.rw_content WHERE con_no > '+ no +' and con_category = "'+ lang +'" LIMIT 1 UNION ALL ( SELECT con_no, con_title FROM raonomics.rw_content WHERE con_no < '+ no +' and con_category = "'+ lang +'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){
-//			mysql.select('(SELECT con_no, con_title FROM cider.cid_contents WHERE con_no > '+ no +' and con_category = "'+ lang +'" LIMIT 1) UNION ( SELECT con_no, con_title FROM cider.cid_contents WHERE con_no < '+ no +' and con_category = "'+ lang +'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){				
-//				if(err){
-//					res.redirect('back');
-//				}
+			mysql.select('(SELECT con_no, con_title FROM cider.cid_contents WHERE con_no > '+ no +' and con_category = "'+ lang +'" LIMIT 1) UNION ( SELECT con_no, con_title FROM cider.cid_contents WHERE con_no < '+ no +' and con_category = "'+ lang +'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){				
+				if(err){
+					res.redirect('back');
+				}
 				
-//				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data});
-				res.render('front/cid_contents/cid_contents_detail', {contents : contents});
-//			});
+				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data});
+				//res.render('front/cid_contents/cid_contents_detail', {contents : contents});
+			});
 		});
 	});
 
