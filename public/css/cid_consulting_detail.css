@@ -20,4 +20,5 @@
 .consulting-detail .intro .intro-in p{width:100%; height:auto; background-color:#f0f0f0; color:#666666; font-size:14px; line-height:2.0em; padding:10px 0 30px 10px; margin-bottom:30px;}
 .consulting-detail .analysis p{font-size:18px; color:#1b87c9; font-weight:bold;}
 .consulting-detail .analysis .analysis-in p{width:100%; height:auto; background-color:#f0f0f0; color:#666666; font-size:14px; line-height:2.0em; padding:10px 0 30px 10px;}
+.consulting-company .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 }
