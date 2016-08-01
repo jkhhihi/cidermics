@@ -66,8 +66,6 @@ router.get('/contents/detail/:no', function(req, res, next) {
 			});
 		});
 	});
-
-
 });
 
 

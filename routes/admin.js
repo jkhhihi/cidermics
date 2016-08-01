@@ -82,6 +82,8 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var CP = 1;
 	var cate;
 	var user;
+	var contents1;
+	var contetns2;
 	console.log(cate);
 	console.log(user);
 	mysql.select('select * from cider.cid_con_cate', function (err, data){
@@ -99,12 +101,42 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 			}
 			user = data2;
 			console.log(user);
-			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP });
-	    });
-		
-		
+			
+			mysql.select('select * from cider.cid_contents where con_category="1" order by con_no desc', function (err, data3){
+				if(err){
+					res.redirect('back');
+					
+					console.log(data);
+					console.log(user);
+				}
+				mysql.select('select * from cider.cid_contents where con_category="2" order by con_no desc', function (err, data4){
+					if(err){
+						res.redirect('back');
+						
+						console.log(data);
+						console.log(user);
+					}
+					mysql.select('select * from cider.cid_contents where con_category="3" order by con_no desc', function (err, data5){
+						if(err){
+							res.redirect('back');
+							
+							console.log(data);
+							console.log(user);
+						}
+						mysql.select('select * from cider.cid_contents where con_category="4" order by con_no desc', function (err, data6){
+							if(err){
+								res.redirect('back');
+								
+								console.log(data);
+								console.log(user);
+							}
+			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP, contents1 : data3,contents2 : data4,contents3 : data5 ,contents4 : data5   });
+			});
+		   });
+		});
+	  });
     });
-	
+ });
 });
 
 router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next){
