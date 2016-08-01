@@ -10,7 +10,7 @@
 .web-main-banner{margin-bottom:50px;}
 .web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;}
 .contents{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
-.contents div div{margin:10px 0 50px 0;}
+.contents div div{margin:10px 0 10px 0;}
 .contents div div p{margin-top:20px;}
 .contents .icon-plus_con{margin:60px 0 50px 0;}
 
@@ -25,4 +25,5 @@
 .contents div div p{margin-top:10px;}
 .contents .icon-plus_con{margin:10px 0 30px 0;}
 .contents .icon-plus_con img{height:80px;}
+.contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 }
