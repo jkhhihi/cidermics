@@ -30,11 +30,9 @@
 						앞으로 주가의 행방은?</div>
 				<div class="col-xs-12 icon-menu">
 					<%= contents[0].cate_name %>
+					<%= contents[0].check_no1 %>
 
 					<!--img src="/page_imgs/contents_img/icon_menu_in.png"--></div>
-
-
-					<img src="/page_imgs/contents_img/icon_menu1_in.png"></div>
 				<div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_regDate %></span><br>
 						<span class="views"><%=contents[0].con_viewCount%> 읽음</span></div>
 				<div class="col-xs-6 editor" align="right"><br>
@@ -134,7 +132,7 @@
 				<a href="/contents/detail/<%= preNext[i+1].con_no %>">
 				<div class="col-xs-6 con-next">
 						<p>다음 편</p>
-						<p class="next-title"><%= preNext[i].con_title %></p>
+						<p class="next-title"><%= preNext[i+1].con_title %></p>
 				</div>
 				</a>
 				<% } %>

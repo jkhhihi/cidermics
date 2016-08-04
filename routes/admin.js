@@ -130,7 +130,7 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 								console.log(data);
 								console.log(user);
 							}
-			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP, contents1 : data3,contents2 : data4,contents3 : data5 ,contents4 : data5   });
+			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP, contents1 : data3,contents2 : data4,contents3 : data5 ,contents4 : data6   });
 			});
 		   });
 		});
@@ -216,18 +216,27 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var userNo = req.body.userNo;
 	var writer = req.body.writer;
 	var userText = req.body.userText;
+	var check_no1 = req.body.check_no1;
+	var check_no2 = req.body.check_no2;
+	var check_no3 = req.body.check_no3;
+	var check_no4 = req.body.check_no4;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText };
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, check_no1 : check_no1, check_no2 : check_no2, check_no3 : check_no3, check_no4 : check_no4 };
 	
-	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
-		
+	//mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
+
+	console.log(check_no1);
+	console.log(check_no2);
+	console.log(check_no3);
+	console.log(check_no4);
+	console.log(writer);
 		console.log(err);
 		console.log(data);
 		
-    	res.redirect('/adm/contents');
+    	//res.redirect('/adm/contents');
     	
-    });
+    //});
 });
 
 router.post('/contents/update', ensureAuthenticated, function(req, res, next) {

@@ -128,7 +128,7 @@ div#fixed {
                     <select id="user">
                         <option value="">에디터를 정해주세요</option>
                         <% for(var i=0; i < user.length; i++) {  %> 
-                          <option value="<%=cate[i].cate_no%>"> <%=cate[i].cate_name%> </option>
+                          <option value="<%=user[i].user_no%>"> <%=user[i].user_name%> </option>
                         <% } %>
                     </select>
                     <label>에디터</label>
@@ -176,7 +176,7 @@ div#fixed {
         <tbody>
     	<% for(var i = 0; i<contents1.length; i++) {%>
 			<tr>
-				<td><input type="checkbox" id="<%= contents1[i].con_no%>" /><label for="<%= contents1[i].con_no%>"></label></td>
+				<td><input type="checkbox" name="check_no1" value="<%= contents1[i].con_no%>" id="<%= contents1[i].con_no%>" /><label for="<%= contents1[i].con_no%>"></label></td>
 				<td><%= contents1[i].con_no %></td>
 				<td><a href="/adm/contents/detail/<%= contents1[i].con_no %>"><%= contents1[i].con_title %></a></td>
 				<td><%= contents1[i].con_regDate %></td>
@@ -204,7 +204,7 @@ div#fixed {
         <tbody>
         <% for(var i = 0; i<contents2.length; i++) {%>
 			<tr>
-				<td><input type="checkbox" id="<%= contents2[i].con_no%>" /><label for="<%= contents2[i].con_no%>"></label></td>
+				<td><input type="checkbox" name="check_no2"  value="<%= contents2[i].con_no%>"  id="<%= contents2[i].con_no%>" /><label for="<%= contents2[i].con_no%>"></label></td>
 				<td><%= contents2[i].con_no %></td>
 				<td><a href="/adm/contents/detail/<%= contents2[i].con_no %>"><%= contents2[i].con_title %></a></td>
 				<td><%= contents2[i].con_regDate %></td>
@@ -230,7 +230,7 @@ div#fixed {
         <tbody>
         <% for(var i = 0; i<contents3.length; i++) {%>
 			<tr>
-				<td><input type="checkbox" id="<%= contents3[i].con_no%>" /><label for="<%= contents3[i].con_no%>"></label></td>
+				<td><input type="checkbox" name="check_no3"  value="<%= contents3[i].con_no%>"  id="<%= contents3[i].con_no%>" /><label for="<%= contents3[i].con_no%>"></label></td>
 				<td><%= contents3[i].con_no %></td>
 				<td><a href="/adm/contents/detail/<%= contents3[i].con_no %>"><%= contents3[i].con_title %></a></td>
 				<td><%= contents3[i].con_regDate %></td>
@@ -240,6 +240,8 @@ div#fixed {
         </tbody>
     </table>
     </div>
+    
+    
     <div id="test4" class="col s12">
     	<table class="bordered">
         <thead>
@@ -255,7 +257,7 @@ div#fixed {
         <tbody>
         <% for(var i = 0; i<contents4.length; i++) {%>
 			<tr>
-				<td><input type="checkbox" id="<%= contents4[i].con_no%>" /><label for="<%= contents4[i].con_no%>"></label></td>
+				<td><input type="checkbox" name="check_no4"  value="<%= contents4[i].con_no%>"  id="<%= contents4[i].con_no%>" /><label for="<%= contents4[i].con_no%>"></label></td>
 				<td><%= contents4[i].con_no %></td>
 				<td><a href="/adm/contents/detail/<%= contents4[i].con_no %>"><%= contents4[i].con_title %></a></td>
 				<td><%= contents4[i].con_regDate %></td>

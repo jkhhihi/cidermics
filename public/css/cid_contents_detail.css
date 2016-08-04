@@ -33,11 +33,12 @@
 .title-relation{font-size:18px; color:#ce2ca8; font-weight:bold; margin:50px 0 30px 0;}
 .relation div.col-sm-6{margin-bottom:20px;}
 .relation .title{font-size:18px; margin-top:0; font-weight:inherit;}
-.relation img{width:100px;}
+.relation .img{padding:0;}
+.relation .img img{padding:0; width:100%;}
 .relation .ad .ad-title{font-size:18px; margin-top:0; font-weight:inherit;}
-.relation .ad img{width:100px;}
-.relation .ad .ad-img{position:relative;}
-.relation .ad .ad-img span{position:absolute; width:40px; padding:5px 10px; text-align:left; background:rgba(0,0,0,0.5); color:#FFFFFF;}
+.relation .ad img{width:100%;}
+.relation .ad .ad-img{position:relative; padding:0;}
+.relation .ad .ad-img span{position:absolute; top:0; left:0; width:40px; padding:5px 10px; text-align:left; background:rgba(0,0,0,0.5); color:#FFFFFF;}
 .title-recommendation{font-size:18px; color:#ce2ca8; font-weight:bold; margin:50px 0 30px 0;}
 .recommendation{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
 .recommendation div{margin:10px 0 50px 0;}
