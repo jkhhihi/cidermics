@@ -17,13 +17,17 @@ div#fixed {
     width:100%;
 }
 </style>
+
+
   </head>
   <body>
   	<% var data= CP; %>
     <% include ../include/nav.ejs %>
     
     <div class="container">
-		<div class="row">
+    	
+    	
+		<div class="row">			
 			<h5>콘텐츠 등록하기</h5>
 			<form action="/adm/contents/insert/upload" method="post" enctype="multipart/form-data">
 			    <!-- <input type="file" name="file" />
@@ -31,7 +35,7 @@ div#fixed {
 				<div class="file-field input-field">
 			    	<div class="btn">
 						<span>이미지 등록</span>
-				    	<input type="file" name="file">
+				    	<input type="file" name="file" multiple>
 			    	</div>
 			      	<div class="file-path-wrapper">
 			        	<input class="file-path validate" type="text">

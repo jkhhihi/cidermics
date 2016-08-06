@@ -189,19 +189,26 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
 //		console.log('upload come on3');
 //		
 //    });
- 
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
         	var filePath = __dirname + '/../public/uploads/' + file.name;
+        	
         	fs.writeFile(filePath, data, function(error){
         		if(error){
-        			res.redirect('back');
+        			//throw err;
+        			//res.redirect('back');
         		}else {
-        			res.redirect('back');
+        			//form.on("end", function() {
+        				 // res.redirect('back');
+        				//});
         		}
         	});
-        })
+        });
     });
+    
+    form.on("end", function() {
+		  res.redirect('back');
+		});
 
 });
 
@@ -224,7 +231,7 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	
 	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, check_no1 : check_no1, check_no2 : check_no2, check_no3 : check_no3, check_no4 : check_no4 };
 	
-	//mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
+	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 
 	console.log(check_no1);
 	console.log(check_no2);
@@ -234,9 +241,9 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 		console.log(err);
 		console.log(data);
 		
-    	//res.redirect('/adm/contents');
+    	res.redirect('/adm/contents');
     	
-    //});
+    });
 });
 
 router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
