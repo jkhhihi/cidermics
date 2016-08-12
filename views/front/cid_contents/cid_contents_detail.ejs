@@ -26,17 +26,10 @@
 
 <div class="contents container">
 		<div class="row">
-				<div class="col-xs-12 title">[사이다주식] 브렉시트에 제대로 한방 맞은 우리 은행,
-						앞으로 주가의 행방은?</div>
+				<div class="col-xs-12 title"><%= contents[0].con_title%></div>
 				<div class="col-xs-12 icon-menu">
 					<%= contents[0].cate_name %>
 					
-					<%= contents[0].check_no1 %>
-					<input type="hidden" name="check_no1"  value="<%= contents[0].check_no1%>"> 
-					<%= contents[0].check_no2 %>
-					<%= contents[0].check_no3 %>
-					<%= contents[0].check_no4 %>
-
 					<!--img src="/page_imgs/contents_img/icon_menu_in.png"--></div>
 				<div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_regDate %></span><br>
 						<span class="views"><%=contents[0].con_viewCount%> 읽음</span></div>
@@ -144,39 +137,39 @@
 		</div>
 		
 		<% } %>
-		<p class="title-relation">함께 읽으면 좋을 연관글</p>
+		<!---p class="title-relation">함께 읽으면 좋을 연관글</p> 주석처리했는데 checkno[0,1,2,3]에러나서 임시적으로 바꿈
 		<div class="row relation">
 				<div class="col-xs-12 col-sm-6">
 						<div class="row ">
-								<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
+								<div class="col-xs-8 title"><%=contents[0].con_title%>[사이다경제] 매출 1조 달성한 유니클로,
 										그 비결은?</div>
-								<div class="col-xs-4 img" align="right"><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
+								<div class="col-xs-4 img" align="right"><img src="<%=contents[0].con_photo%>"></div>
 						</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 						<div class="row">
-								<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
+								<div class="col-xs-8 title"><%=contents[0].con_title%>[사이다경제] 매출 1조 달성한 유니클로,
 										그 비결은?</div>
-								<div class="col-xs-4 img" align="right"><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
+								<div class="col-xs-4 img" align="right"><img src="<%=contents[0].con_photo%>"></div>
 						</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 						<div class="row">
-								<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
+								<div class="col-xs-8 title"><%=contents[0].con_title%>[사이다경제] 매출 1조 달성한 유니클로,
 										그 비결은?</div>
-								<div class="col-xs-4 img" align="right"><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
+								<div class="col-xs-4 img" align="right"><img src="<%=contents[0].con_photo%>"></div>
 						</div>
 				</div>
 				<div class="col-xs-12 col-sm-6">
 						<div class="row">
-								<div class="col-xs-8 title">[사이다경제] 매출 1조 달성한 유니클로,
+								<div class="col-xs-8 title"><%=contents[0].con_title%>[사이다경제] 매출 1조 달성한 유니클로,
 										그 비결은?</div>
-								<div class="col-xs-4 img" align="right"><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
+								<div class="col-xs-4 img" align="right"><img src="<%=contents[0].con_photo%>"></div>
 						</div>
 				</div>
 				
 				<!--광고콘텐츠-->
-				<div class="col-xs-12 col-sm-6">
+				<!--div class="col-xs-12 col-sm-6">
 						<div class="row ad">
 								<div class="col-xs-8 ad-title">[사이다경제] 매출 1조 달성한 유니클로,
 										그 비결은?</div>
@@ -193,9 +186,7 @@
 								<div class="col-xs-4 ad-img" align="right"><span>AD</span><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
 						</div>
 				</div>
-				<!---->
-				
-		</div>
+		</div-->
 		<p class="title-recommendation">사이다경제 추천</p>
 		<div class="row recommendation">
 			
@@ -210,31 +201,7 @@
 						<%= contents[i].con_title %></a></p>
 				</div>
 			<% } %>
-				<!--div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con1.jpg">
-						<p>[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
-				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con2.jpg">
-						<p>[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
-								블리자드!</p>
-				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con3.jpg">
-						<p>[사이다경제] 매출 1조 달성한 유니클로,
-								그 비결은?</p>
-				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con4.jpg">
-						<p>[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
-				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con5.jpg">
-						<p>[사이다경제] 오버워치로 왕좌 탈환을 꿈꾸는
-								블리자드!</p>
-				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con6.jpg">
-						<p>[사이다경제] 매출 1조 달성한 유니클로,
-								그 비결은?</p>
-				</div>
-				<div class="col-sm-4 col-xs-6"><img class="img-responsive" src="/page_imgs/contents_upload_thum/img_con1.jpg">
-						<p>[사이다경제] EPL을 뒤흔드는 브렉시트의 공포!</p>
-				</div-->
+				
 		</div>
 </div>
 

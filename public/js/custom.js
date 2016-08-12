@@ -32,7 +32,7 @@ $(document).ready(function (){
 	//썸네일 이미지 등록
 	$('.btn-thumb').click(function(){
 		if($('.img-selected').length > 1){
-			alert('하나만 선택해주세요~by 정기훈');
+			alert('하나만 선택해주세요~!');
 			return;
 		}
 		var src = $('.img-selected').find('img').attr('src');

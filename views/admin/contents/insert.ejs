@@ -17,6 +17,20 @@ div#fixed {
     width:100%;
 }
 </style>
+<SCRIPT language="JavaScript">
+function Check()
+{
+	alert("ffff");
+if (Form.keyword.value.length < 1) {
+	//alert("검색어를 입력하세요.");
+	
+	Form.keyword.focus(); 
+         return false;
+	}
+	
+	document.Form.submit();
+}
+</SCRIPT>
 
 
   </head>
@@ -71,23 +85,22 @@ div#fixed {
 
 					    <div id="modal1" class="modal">
 					    	<div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-					   
-					    
-					    	<ul class="pagination"></ul>
-					    	<div class="modal-footer">
+    							<nav>
+      								<div class="nav-wrapper">
+        							<a class="brand-logo"><h5>이미지 등록</h5></a>
+        							<ul class="right hide-on-med-and-down">
+          								<li><a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a></li>
+          								<li><a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a></li>
+        							</ul>
+      								</div>
+    							</nav>
+  							</div>
+  							
+						    <ul class="pagination"></ul>
+					    	<!--div class="modal-footer">
 						      <a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a>
 						      <a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a>
-						    </div>
+						    </div-->
 						 
 						 
 					
@@ -150,20 +163,38 @@ div#fixed {
 		
                 
  <!-- 연관 게시글 선택 -->
- <label>연관 게시글 선택</label>
-                
-   <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#test1">경제</a></li>
-        <li class="tab col s3"><a href="#test2">금융</a></li>
-        <li class="tab col s3"><a href="#test3">기업</a></li>
-        <!--li class="tab col s3 disabled"><a href="#test3">Disabled Tab</a></li-->
-        <li class="tab col s3"><a href="#test4">주식</a></li>
-      </ul>
-    </div>
-    
-    
+ <!--label>연관 게시글 선택</label>
+ <div class="input-field col s12">
+ 	<form action="/adm/contents/insert/search" name='Form' method="post" OnSubmit='return Check()' >
+	
+ 	<div class="input-field col s12">
+    <select name='key'>
+				<option value='title' selected>글제목으로 검색하기</font></option>
+				<option value='name'>작성자이름으로 검색하기</font></option>
+	</select>
+	</div>
+	<div class="input"><input type="text" name='keyword' class="form-control mob-search-box" placeholder="search"></div>
+	<input type="submit" class="btn waves-effect waves-light" value="검색" />
+	</form>
+	
+	<% /*
+	for(var i = 0; i<search.length; i++) {%>
+			<tr>
+				<td><input type="checkbox" name="check_no1" value="<%= search[i].con_no%>" id="<%= 
+
+search[i].con_no%>" /><label for="<%= search[i].con_no%>"></label></td>
+				<td><%= contents1[i].con_no %></td>
+				<td><a href="/adm/contents/detail/<%= search[i].con_no %>"><%= search[i].con_title 
+
+%></a></td>
+				<td><%= search[i].con_regDate %></td>
+				<td><img class="img-responsive" src="<%= search[i].con_photo %>" width=50></td>
+			</tr>
+		<% } */%>	
+ </div>
+ 
+ 
+ 
     <div id="test1" class="col s12">
     	
     	<table class="bordered">
@@ -190,92 +221,8 @@ div#fixed {
     	
         </tbody>
     </table>
-	</div>
-		
-		
-    <div id="test2" class="col s12">
-    	<table class="bordered">
-        <thead>
-          <tr>
-          	  <th data-field="con_box">체크박스</th>
-          	  <th data-field="no">번호</th>
-              <th data-field="title">제목</th>
-              <th data-field="date">날짜</th>
-              <th data-field="viewCount">썸네일이미지</th>
-              <th data-field=""></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% for(var i = 0; i<contents2.length; i++) {%>
-			<tr>
-				<td><input type="checkbox" name="check_no2"  value="<%= contents2[i].con_no%>"  id="<%= contents2[i].con_no%>" /><label for="<%= contents2[i].con_no%>"></label></td>
-				<td><%= contents2[i].con_no %></td>
-				<td><a href="/adm/contents/detail/<%= contents2[i].con_no %>"><%= contents2[i].con_title %></a></td>
-				<td><%= contents2[i].con_regDate %></td>
-				<td><img class="img-responsive" src="<%= contents2[i].con_photo %>" width=50></td>
-			</tr>
-		<% } %>
-        </tbody>
-    </table>
-    </div>
-    
-    <div id="test3" class="col s12">
-    	<table class="bordered">
-        <thead>
-          <tr>
-          	  <th data-field="con_box">체크박스</th>
-          	  <th data-field="no">번호</th>
-              <th data-field="title">제목</th>
-              <th data-field="date">날짜</th>
-              <th data-field="viewCount">썸네일이미지</th>
-              <th data-field=""></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% for(var i = 0; i<contents3.length; i++) {%>
-			<tr>
-				<td><input type="checkbox" name="check_no3"  value="<%= contents3[i].con_no%>"  id="<%= contents3[i].con_no%>" /><label for="<%= contents3[i].con_no%>"></label></td>
-				<td><%= contents3[i].con_no %></td>
-				<td><a href="/adm/contents/detail/<%= contents3[i].con_no %>"><%= contents3[i].con_title %></a></td>
-				<td><%= contents3[i].con_regDate %></td>
-				<td><img class="img-responsive" src="<%= contents3[i].con_photo %>" width=50></td>
-			</tr>
-		<% } %>
-        </tbody>
-    </table>
-    </div>
-    
-    
-    <div id="test4" class="col s12">
-    	<table class="bordered">
-        <thead>
-          <tr>
-          	  <th data-field="con_box">체크박스</th>
-          	  <th data-field="no">번호</th>
-              <th data-field="title">제목</th>
-              <th data-field="date">날짜</th>
-              <th data-field="viewCount">썸네일이미지</th>
-              <th data-field=""></th>
-          </tr>
-        </thead>
-        <tbody>
-        <% for(var i = 0; i<contents4.length; i++) {%>
-			<tr>
-				<td><input type="checkbox" name="check_no4"  value="<%= contents4[i].con_no%>"  id="<%= contents4[i].con_no%>" /><label for="<%= contents4[i].con_no%>"></label></td>
-				<td><%= contents4[i].con_no %></td>
-				<td><a href="/adm/contents/detail/<%= contents4[i].con_no %>"><%= contents4[i].con_title %></a></td>
-				<td><%= contents4[i].con_regDate %></td>
-				<td><img class="img-responsive" src="<%= contents4[i].con_photo %>" width=50></td>
-			</tr>
-		<% } %>
-        </tbody>
-    </table>
-    </div>
-  </div>
-
-				
-				
-				
+	</div-->
+ 
 			</form>
 			<div class="center-align">
 				<button class="btn waves-effect waves-light" id="insert">등록하기

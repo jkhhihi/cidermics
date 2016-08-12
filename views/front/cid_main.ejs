@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -120,7 +122,8 @@
 			<% } %>
 			</ul>
 		</div>
-		<div class="icon-plus_con" align="center"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.png"></div>
+		
+		<div class="icon-plus_con" align="center"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.png" onclick="addMore()"></div>
 </div>
 <script src="/js/masonry.pkgd.min.js"></script>
 		<script src="/js/imagesloaded.js"></script>
@@ -134,9 +137,48 @@
 			} );
 		</script>
 
-
-
 <% include bottom %>
+
+<script>
+		var idx = 2;
+		//var lang= "kr";
+		function addMore (){
+			var contents = '';
+			$.ajax({
+				url : '/addMore/'+idx,
+				method : 'get',
+				success : function(data){
+					if (data.contents.length == 0){
+						alert('마지막 콘텐츠입니다.');
+						return;
+					}
+					idx ++;
+					$.each(data.contents, function (index, value){
+						contents += '<li> ' +
+							 			'<div class="con-border bg-w"> ' + 
+												'<a href="/contents/detail/'+value.con_no+'"> ' +
+													'<div class="con-img"> ' +
+														'<img src="'+value.con_photo+'"/> ' + 
+													'</div> ' +
+												'</a> ' +
+							 					'<a href="/contents/detail/'+value.con_no+'"> ' +
+							 						'<div class="con-title"><span><center>' + value.con_title +'</center></span></div>' +
+							 					'</a> '+
+							 			'</div> '+
+							 		'</li> ';
+							
+					});
+					$('#grid').append(contents);
+					new AnimOnScroll( document.getElementById( 'grid' ), {
+						minDuration : 0.4,
+						maxDuration : 0.7,
+						viewportFactor : 0.2
+					} );
+				}
+			});
+		}
+		
+	</script>
 
 </body>
 </html>

@@ -47,32 +47,55 @@ $(document).ready(function(){
 		<div class="close"></div>
 		<div class="nav">
 				<ul>
-						<li><a href="/login">로그인</a></li>
+						<!--li><a href="/login">로그인</a></li-->
 						<div class="line1"></div>
 						<li><a href="/contents">콘텐츠</a></li>
-						<li><a href="/consulting">재무상담</a></li>
-						<li><a href="/cmn_list">소통공간</a></li>
+						<!--li><a href="/consulting">재무상담</a></li>
+						<li><a href="/cmn_list">소통공간</a></li-->
 						<div class="line1"></div>
 						<li>Our Company</li>
 						<li>Our Team</li>
 						<li>Contact Us</li>
 						
 				</ul>
+				
+				
 		</div>
 		<div onClick="history.back();" class="page_cover"></div>
 		<div onClick="history.back();" class="close"></div> 
+		
+		
 </div>
 <div class="header row">
 		<header class="container">
 				<div class="logo col-sm-1"><a href="/"><img src="../../page_imgs/fixed_img/logo.jpg"></a></div>
-				<div class="menu col-sm-5">
+					
+				
+			<div class="dropdown col-sm-5">
+  <button class="btn btn-default dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    사이다 콘텐츠
+    <!--span class="caret"></span-->
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">경제이야기</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">금융이야기</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">기업이야기</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">주식이야기</a></li>
+    
+  </ul>
+</div>
+				
+				<!--div class="menu col-sm-5">
 						<ul>
-								<li><a href="/contents">콘텐츠</a></li>
+								<li><a href="/contents">사이다 콘텐츠</a></li>
 								<li><a href="/consulting">재무상담</a></li>
 								<li><a href="/cmn_list">소통공간</a></li>
 						</ul>
-				</div>
-				<div class="login col-sm-5" align="right"><a href="/login">로그인</a> | <a href="/join">회원가입</a>	
+				</div-->
+				<div class="login col-sm-5" align="right"><!--a href="/login">로그인</a> | <a href="/join">회원가입</a-->	
 				<input type="text" class="form-control web-search-box" placeholder="search"></div>
 				<div id="search" class="search col-sm-1"><img src="../../page_imgs/fixed_img/icon_search.png"></div>
 		</header>

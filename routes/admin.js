@@ -83,15 +83,13 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var cate;
 	var user;
 	var contents1;
-	var contetns2;
+	var key = req.body.key;
+	var keyword = req.body.keyword;
 	console.log(cate);
 	console.log(user);
 	mysql.select('select * from cider.cid_con_cate', function (err, data){
 		if(err){
 			res.redirect('back');
-			
-			console.log(data);
-			console.log(user);
 		}
 		
 		cate = data;
@@ -100,44 +98,25 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 				res.redirect('back');
 			}
 			user = data2;
-			console.log(user);
-			
+
 			mysql.select('select * from cider.cid_contents where con_category="1" order by con_no desc', function (err, data3){
 				if(err){
 					res.redirect('back');
-					
+								
 					console.log(data);
 					console.log(user);
-				}
-				mysql.select('select * from cider.cid_contents where con_category="2" order by con_no desc', function (err, data4){
-					if(err){
-						res.redirect('back');
-						
-						console.log(data);
-						console.log(user);
 					}
-					mysql.select('select * from cider.cid_contents where con_category="3" order by con_no desc', function (err, data5){
-						if(err){
-							res.redirect('back');
+				
 							
-							console.log(data);
-							console.log(user);
-						}
-						mysql.select('select * from cider.cid_contents where con_category="4" order by con_no desc', function (err, data6){
-							if(err){
-								res.redirect('back');
-								
-								console.log(data);
-								console.log(user);
-							}
-			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP, contents1 : data3,contents2 : data4,contents3 : data5 ,contents4 : data6   });
+			
+			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP, contents1:data3});
 			});
-		   });
 		});
-	  });
     });
  });
-});
+
+
+
 
 router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next){
 	var page;
@@ -178,8 +157,31 @@ router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next
 	}
 	pagination.push(totalPage, startPage, lastPage, next, parseInt(page));
 	res.send({'pagination' : pagination, 'files': obj});
-	
 });
+
+/*router.post('/contents/insert/search', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var search;
+	var key = req.body.key;
+	var keyword = req.body.keyword;
+	console.log(keyword+"=============123");
+	mysql.select('SELECT * from cider.cid_contents where con_title like \'%' + keyword + '%\' order by con_no desc', function (err, data){
+		if(err){
+			res.redirect('back');
+			search = data;
+			console.log(search);
+			console.log('=====================');
+			console.log('=====================');
+			console.log(keyword);
+			console.log('=====================');
+			console.log('=====================');
+		}
+		res.render('admin/contents/insert', {CP : CP, search:data});
+	
+	});
+});*/
+
 router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, next) {
 	
 	var form = new formidable.IncomingForm();
@@ -372,11 +374,8 @@ router.get('/consulting/detail/:no', ensureAuthenticated, function(req, res, nex
 				res.redirect('back');
 			}
 			res.render('admin/consulting/update', {consulting : data, CP : CP, user: user});
-			
 		});
-		
     });
-	
 });
 
 router.post('/consulting/update', ensureAuthenticated, function(req, res, next) {
@@ -417,9 +416,6 @@ router.get('/consulting/delete/:no', ensureAuthenticated, function(req, res, nex
     	
     });
 });
-
-
-
 function ensureAuthenticated(req, res, next) {
     // 로그인이 되어 있으면, 다음 파이프라인으로 진행
     if (req.isAuthenticated()) { return next(); }

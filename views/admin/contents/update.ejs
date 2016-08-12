@@ -24,7 +24,7 @@
 				<div class="file-field input-field">
 			    	<div class="btn">
 						<span>이미지 등록</span>
-				    	<input type="file" name="file">
+				    	<input type="file" name="file" multiple>
 			    	</div>
 			      	<div class="file-path-wrapper">
 			        	<input class="file-path validate" type="text">
@@ -60,18 +60,31 @@
 						
 					 	<!-- Modal Structure -->
 					    <div id="modal1" class="modal">
-						    <div class="modal-content">
-						      <div class="images">
-						      	
-						      </div>
-						      <ul class="pagination">
-					
-						      </ul>
-						    </div>
-						    <div class="modal-footer">
+					    	<div class="navbar-fixed">
+    							<nav>
+      								<div class="nav-wrapper">
+        							<a class="brand-logo"><h5>이미지 등록</h5></a>
+        							<ul class="right hide-on-med-and-down">
+          								<li><a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a></li>
+          								<li><a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a></li>
+        							</ul>
+      								</div>
+    							</nav>
+  							</div>
+  							
+						    <ul class="pagination"></ul>
+					    	<!--div class="modal-footer">
 						      <a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a>
 						      <a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a>
+						    </div-->
+						 
+						 
+					
+						    <div class="modal-content">
+						      <div class="images">
+						      </div>
 						    </div>
+						    
 					    </div>
 					    
 						<div class="preview row" style="display:block;">

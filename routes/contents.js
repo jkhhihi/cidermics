@@ -57,16 +57,16 @@ router.get('/contents/detail/:no', function(req, res, next) {
 			} 
 			var lang = data[0].con_category;
 			contents = data;
-			console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
-			console.log(data[0].check_no1);
-			console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
 			
-//			mysql.select('SELECT con_no, con_title FROM raonomics.rw_content WHERE con_no > '+ no +' and con_category = "'+ lang +'" LIMIT 1 UNION ALL ( SELECT con_no, con_title FROM raonomics.rw_content WHERE con_no < '+ no +' and con_category = "'+ lang +'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){
 			mysql.select('(SELECT con_no, con_title FROM cider.cid_contents WHERE con_no > '+ no +' and con_category = "'+ lang +'" LIMIT 1) UNION ( SELECT con_no, con_title FROM cider.cid_contents WHERE con_no < '+ no +' and con_category = "'+ lang +'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){				
 				if(err){
 					res.redirect('back');
 				}
-				mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_no = check_no1 order by con_viewCount desc limit 0,12', function (err, data){
+				
+				
+					
+
+				/*mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_no = check_no1 order by con_viewCount desc limit 0,12', function (err, data){
 				//mysql.select('(SELECT con_title, con_photo FROM cider.cid_contents WHERE con_no = check_no1' , function (err, data){				
 					if(err){
 						
@@ -77,15 +77,48 @@ router.get('/contents/detail/:no', function(req, res, next) {
 						console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
 						//console.log(data[0].con_title);
 						console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
-						console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
+						console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");*/
 
-				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data, checkno : checkno});
+				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data});
 				//res.render('front/cid_contents/cid_contents_detail', {contents : contents});
 			});
-		 });	
+		
 		});
 	});
 });
 
+
+/* 연관검색어 체크로 하는거 
+ * 
+ * mysql.select('SELECT *  FROM cider.cid_contents  where  con_no IN (	SELECT check_no1  FROM cider.cid_contents where con_no='+no+' ) or  con_no  IN (SELECT check_no2  FROM cider.cid_contents where con_no='+no+') or  con_no  IN (SELECT check_no3  FROM cider.cid_contents where con_no='+no+') or  con_no  IN (SELECT check_no4  FROM cider.cid_contents where con_no='+no+')', function (err, data){
+					if(err){
+						res.redirect('back');
+					}
+					console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
+					checkno = data;
+					console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
+					
+					res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data, checkno:checkno});
+					
+					});
+ */
+
+
+router.get('/addMore/:idx', function(req, res, next) {
+	
+	var idx = req.params.idx;
+	//var lang = req.params.lang;
+	var start = (idx - 1) * 12;
+	var end = idx * 12;
+	console.log(start, end);
+	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+		 if (err) throw err;
+		 console.log("data");
+		 console.log(data);
+		 
+		 res.send({ contents : data });
+	});
+	
+});
 
 module.exports = router;
