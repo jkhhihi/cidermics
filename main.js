@@ -26,6 +26,7 @@ var member = require('./routes/member');
 var app = express();
 
 // view engine setup
+app.set('port', process.env.PORT || 8081);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -133,8 +134,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-app.set('port', process.env.PORT || 80);
 
 var server = app.listen(app.get('port'), function() {
 //http.createServer(app).listen(app.get('port'), function(){
