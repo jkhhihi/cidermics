@@ -7,6 +7,10 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_contact.css" rel="stylesheet">
 <link href="/css/cid_top_bottom.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -125,9 +129,11 @@ function search_submit_mob(){
 								<li><a href="/cmn_list">소통공간</a></li>
 						</ul>
 				</div-->
-				<div class="login col-sm-5" align="right"><!--a href="/login">로그인</a> | <a href="/join">회원가입</a-->	
+					
 				<form name="search_box" action="/search/process" method="post">
-				<input type="text" class="form-control web-search-box" placeholder="search" name="keyword" value=''><a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img"><img src="../../page_imgs/fixed_img/search_btn.png" ></a></div>
+				<div class="login col-sm-5" align="right"><!--a href="/login">로그인</a> | <a href="/join">회원가입</a-->
+				<input type="text" class="form-control web-search-box" placeholder="search" name="keyword" value=''>
+				<a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img"><img src="../../page_imgs/fixed_img/search_btn.png" ></a></div>
 				<div id="search" class="search col-sm-1"><img src="../../page_imgs/fixed_img/icon_search.svg" ></div>
 				</form>
 				

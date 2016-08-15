@@ -4,6 +4,7 @@
 .contents div div p{margin-top:20px;}
 .contents .icon-plus_con{margin:60px 0 50px 0;}
 
+
 @media all and (max-width:1024px) {
 .contents-menu{display:none;}
 .contents{margin-top:20px;}
@@ -11,10 +12,8 @@
 .contents .icon-plus_con img{height:80px;}
 .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 
-.mob-header-menu{display:block;}
 }
 
 @media all and (min-width:1024px) {
-.mob-header-menu{display:none;}
-.mob_menu{height:100px;}
+	.contents-mob_menu{display:none;}
 }

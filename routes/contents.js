@@ -38,12 +38,12 @@ router.get('/contents/detail/:no', function(req, res, next) {
 
 	var no = req.params.no;
 	
+	var x = Math.floor((Math.random() * 270) + 1);
 	
+	var row;
 	var sets = {con_no : no};
 	var next = {};
 	var pre = {};
-	var contents;
-	var checkno;
 	mysql.update('update cider.cid_contents set con_viewCount = con_viewCount + 1 where con_no = :con_no', sets ,function (err, data){
 		if(err){
 			res.redirect('back');
@@ -56,13 +56,16 @@ router.get('/contents/detail/:no', function(req, res, next) {
 			var lang = data[0].con_category;
 			contents = data;
 			
-			mysql.select('(SELECT con_no, con_title FROM cider.cid_contents WHERE con_no > '+ no +' and con_category = "'+ lang +'" LIMIT 1) UNION ( SELECT con_no, con_title FROM cider.cid_contents WHERE con_no < '+ no +' and con_category = "'+ lang +'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){				
+			mysql.select('(SELECT con_no, con_title, con_photo FROM cider.cid_contents WHERE con_no > '+ no +' and con_category = "'+ lang +'" LIMIT 1) UNION ( SELECT con_no, con_title ,con_photo FROM cider.cid_contents WHERE con_no < '+ no +' and con_category = "'+ lang +'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){				
 				if(err){
 					res.redirect('back');
 				}
 				
-				
-					
+				mysql.select('(select con_no, con_photo, con_title from cider.cid_contents where con_no = '+x+' order by con_no desc limit 0,12)UNION(select con_no, con_photo, con_title from cider.cid_contents where con_no ="43" limit 1) order by con_no desc', function (err, data1){
+					 if (err) throw err;
+					 
+					 
+					 row = data1;
 
 				/*mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_no = check_no1 order by con_viewCount desc limit 0,12', function (err, data){
 				//mysql.select('(SELECT con_title, con_photo FROM cider.cid_contents WHERE con_no = check_no1' , function (err, data){				
@@ -70,17 +73,12 @@ router.get('/contents/detail/:no', function(req, res, next) {
 						
 						res.redirect('back');
 					}
-						checkno = data;
-						console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
-						console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
-						//console.log(data[0].con_title);
-						console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");
-						console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmm");*/
+						checkno = data;*/
 
-				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data});
+				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data, cont : row});
 				//res.render('front/cid_contents/cid_contents_detail', {contents : contents});
 			});
-		
+		  });
 		});
 	});
 });
