@@ -4,10 +4,27 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+
 var multer = require('multer');
-var upload = multer({ dest: '../public/uploads/' });
+
+var storage = multer.diskStorage({
+	destination: function (req, file, callback) {
+		callback(null, './public/uploads');
+	},
+	filename: function (req, file, callback) {
+		callback(null, file.originalname);
+	}
+});
+var upload = multer({ storage : storage});
+
 var formidable = require('formidable');
 var dir = require('node-dir');
+
+
+//var multer = require('multer');
+//var upload = multer({ dest: '../public/uploads/' });
+//var formidable = require('formidable');
+//var dir = require('node-dir');
 var mysql = require("./model/mysql");
 var passport = require('passport');
 
@@ -82,9 +99,7 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var CP = 1;
 	var cate;
 	var user;
-	var contents1;
-	var key = req.body.key;
-	var keyword = req.body.keyword;
+	
 	console.log(cate);
 	console.log(user);
 	mysql.select('select * from cider.cid_con_cate', function (err, data){
@@ -93,27 +108,19 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 		}
 		
 		cate = data;
+		
 		mysql.select('select * from cider.cid_user where user_level="2"', function (err, data2){
 			if(err){
 				res.redirect('back');
 			}
 			user = data2;
 
-			mysql.select('select * from cider.cid_contents where con_category="1" order by con_no desc', function (err, data3){
-				if(err){
-					res.redirect('back');
-								
-					console.log(data);
-					console.log(user);
-					}
-				
-							
 			
-			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP, contents1:data3});
+			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP});
 			});
 		});
     });
- });
+
 
 
 
@@ -225,21 +232,13 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var userNo = req.body.userNo;
 	var writer = req.body.writer;
 	var userText = req.body.userText;
-	var check_no1 = req.body.check_no1;
-	var check_no2 = req.body.check_no2;
-	var check_no3 = req.body.check_no3;
-	var check_no4 = req.body.check_no4;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, check_no1 : check_no1, check_no2 : check_no2, check_no3 : check_no3, check_no4 : check_no4 };
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 
-	console.log(check_no1);
-	console.log(check_no2);
-	console.log(check_no3);
-	console.log(check_no4);
-	console.log(writer);
+		console.log(writer);
 		console.log(err);
 		console.log(data);
 		

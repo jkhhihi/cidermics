@@ -3,8 +3,8 @@
 .company .title{margin-top:30px; font-size:26px;}
 .company .title span{font-size:22px; border-bottom:2px solid #ce2ca8; font-weight:900; padding-bottom:5px;}
 .company .logo{margin:20px 0 20px 0;}
-.company .contents{font-size:16px; font-weight:bold; line-height:3.0em; margin-bottom:250px;}
-.company .contents span{font-size:18px; color:#ce2ca8;}
+.company .contents{font-size:16px; font-weight:bold; line-height:2.0em; margin-bottom:250px;}
+.company .contents span{font-size:18px; color:#1b87c9;}
 
 
 @media all and (max-width:1024px) {

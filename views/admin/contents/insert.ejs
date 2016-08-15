@@ -162,66 +162,8 @@ if (Form.keyword.value.length < 1) {
 			
 		
                 
- <!-- 연관 게시글 선택 -->
- <!--label>연관 게시글 선택</label>
- <div class="input-field col s12">
- 	<form action="/adm/contents/insert/search" name='Form' method="post" OnSubmit='return Check()' >
-	
- 	<div class="input-field col s12">
-    <select name='key'>
-				<option value='title' selected>글제목으로 검색하기</font></option>
-				<option value='name'>작성자이름으로 검색하기</font></option>
-	</select>
-	</div>
-	<div class="input"><input type="text" name='keyword' class="form-control mob-search-box" placeholder="search"></div>
-	<input type="submit" class="btn waves-effect waves-light" value="검색" />
-	</form>
-	
-	<% /*
-	for(var i = 0; i<search.length; i++) {%>
-			<tr>
-				<td><input type="checkbox" name="check_no1" value="<%= search[i].con_no%>" id="<%= 
-
-search[i].con_no%>" /><label for="<%= search[i].con_no%>"></label></td>
-				<td><%= contents1[i].con_no %></td>
-				<td><a href="/adm/contents/detail/<%= search[i].con_no %>"><%= search[i].con_title 
-
-%></a></td>
-				<td><%= search[i].con_regDate %></td>
-				<td><img class="img-responsive" src="<%= search[i].con_photo %>" width=50></td>
-			</tr>
-		<% } */%>	
- </div>
+ <!-- 연관 게시글 선택 지웠음 -->
  
- 
- 
-    <div id="test1" class="col s12">
-    	
-    	<table class="bordered">
-        <thead>
-          <tr>
-          	  <th data-field="con_box">체크박스</th>
-          	  <th data-field="no">번호</th>
-              <th data-field="title">제목</th>
-              <th data-field="date">날짜</th>
-              <th data-field="viewCount">썸네일이미지</th>
-              <th data-field=""></th>
-          </tr>
-        </thead>
-        <tbody>
-    	<% for(var i = 0; i<contents1.length; i++) {%>
-			<tr>
-				<td><input type="checkbox" name="check_no1" value="<%= contents1[i].con_no%>" id="<%= contents1[i].con_no%>" /><label for="<%= contents1[i].con_no%>"></label></td>
-				<td><%= contents1[i].con_no %></td>
-				<td><a href="/adm/contents/detail/<%= contents1[i].con_no %>"><%= contents1[i].con_title %></a></td>
-				<td><%= contents1[i].con_regDate %></td>
-				<td><img class="img-responsive" src="<%= contents1[i].con_photo %>" width=50></td>
-			</tr>
-		<% } %>	
-    	
-        </tbody>
-    </table>
-	</div-->
  
 			</form>
 			<div class="center-align">

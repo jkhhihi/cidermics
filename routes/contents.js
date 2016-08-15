@@ -23,10 +23,8 @@ router.get('/contents/:no', function(req, res, next) {
 	var no = req.params.no;
 	var sets = {con_category : no};
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = :con_category order by con_no desc limit 0,12', function (err, data){
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,12', function (err, data){
 		 if (err) throw err;
-		 console.log("data");
-		 console.log(data);
 		 
 		 row = data;
 		 res.render('front/cid_contents/cid_contents', { contents : row});
@@ -50,7 +48,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 		if(err){
 			res.redirect('back');
 		}
-		mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount, c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, c.check_no1,c.check_no2,c.check_no3,c.check_no4, u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon, cate.cate_no, cate.cate_name from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no left join cider.cid_con_cate cate on c.con_category = cate.cate_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data){
+		mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount, c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment,  u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon, cate.cate_no, cate.cate_name from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no left join cider.cid_con_cate cate on c.con_category = cate.cate_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data){
 			
 			if(err){
 				res.redirect('back');
@@ -102,6 +100,8 @@ router.get('/contents/detail/:no', function(req, res, next) {
 					
 					});
  */
+
+
 
 
 router.get('/addMore/:idx', function(req, res, next) {

@@ -14,31 +14,61 @@ $(document).ready(function(){
         var state = $('.web-search-box').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
         if(state == 'none'){ // state가 none 상태일경우 
             $('.web-search-box').show(); // ID가 moreMenu인 요소를 show();
+            $('.web-search-box-img').show();
         }else{ // 그 외에는
-            $('.web-search-box').hide(); // ID가 moreMenu인 요소를 hide();         
+            $('.web-search-box').hide();
+            $('.web-search-box-img').hide(); // ID가 moreMenu인 요소를 hide();         
         }
     });
+    
+    
     $('#mob-search').click(function(){ // ID가 toggleButton인 요소를 클릭하면
         var state = $('.mob-search-box').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
-        if(state == 'none'){ // state가 none 상태일경우 
+        var state2 = $('.mob-search-box-img').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
+        if(state == 'none' && state2 == 'none'){ // state가 none 상태일경우 
             $('.mob-search-box').show(); // ID가 moreMenu인 요소를 show();
+            $('.mob-search-box-img').show(); // ID가 moreMenu인 요소를 show();
         }else{ // 그 외에는
-            $('.mob-search-box').hide(); // ID가 moreMenu인 요소를 hide();         
+            $('.mob-search-box').hide(); // ID가 moreMenu인 요소를 hide();     
+            $('.mob-search-box-img').hide(); // ID가 moreMenu인 요소를 hide();     
         }
     });    
     
 });
+
+function search_submit(){
+	if(document.search_box.keyword.value==""){
+	 alert("검색어를 입력해 주세요.");
+	document.search_box.keyword.focus();
+	  return;
+	}
+	 	document.search_box.submit();
+}
+function search_submit_mob(){
+	if(document.search_box_mob.keyword.value==""){
+	 alert("검색어를 입력해 주세요.");
+	document.search_box_mob.keyword.focus();
+	  return;
+	}
+	 	document.search_box_mob.submit();
+}
 </script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/cid_top_bottom.js"></script>
 <body>
 <div class="mob-header">
 		<header class="container-fulid">
-				<div class="mob-menu" align="left"><img class="img-responsive" src="../../page_imgs/fixed_img/mob_icon_menu.png"></div>
+				<div class="mob-menu" align="left"><img class="img-responsive" src="../../page_imgs/fixed_img/mob_icon_menu.svg"></div>
 				<div class="mob-logo" align="center"><a href="/"><img class="img-responsive" src="../../page_imgs/fixed_img/mob_icon_logo.png"></a></div>
-				<div id="mob-search" class="mob-search" align="right"><img src="../../page_imgs/fixed_img/mob_icon_search.png"></div>
+				
+				
+				<div id="mob-search" class="mob-search" align="right"><img src="../../page_imgs/fixed_img/mob_icon_search.svg"></div>
+				
+				<form name="search_box_mob" action="/search/process" method="post">
+					<div class="input"><input type="text" class="form-control mob-search-box" placeholder="search"  name="keyword" value=''>
+						<a onClick="search_submit_mob()" style="cursor:pointer" class="mob-search-box-img" ><img src="../../page_imgs/fixed_img/search_btn.png" ></a></div>
+					</form>
 		</header>
-		<div class="input"><input type="text" class="form-control mob-search-box" placeholder="search"></div>
 </div>
 
 
@@ -53,9 +83,9 @@ $(document).ready(function(){
 						<!--li><a href="/consulting">재무상담</a></li>
 						<li><a href="/cmn_list">소통공간</a></li-->
 						<div class="line1"></div>
-						<li>Our Company</li>
-						<li>Our Team</li>
-						<li>Contact Us</li>
+						<li><a href="/our_company">Our Company</a></li>
+						<li><a href="/our_team">Our Team</a></a></li>
+						<li><a href="/contact">Contact Us</a></li>
 						
 				</ul>
 				
@@ -77,13 +107,13 @@ $(document).ready(function(){
     <!--span class="caret"></span-->
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">경제이야기</a></li>
+    <li><a href="/contents/1">경제이야기</a></li>
     <li role="separator" class="divider"></li>
-    <li><a href="#">금융이야기</a></li>
+    <li><a href="/contents/2">금융이야기</a></li>
     <li role="separator" class="divider"></li>
-    <li><a href="#">기업이야기</a></li>
+    <li><a href="/contents/3">기업이야기</a></li>
     <li role="separator" class="divider"></li>
-    <li><a href="#">주식이야기</a></li>
+    <li><a href="/contents/4">주식이야기</a></li>
     
   </ul>
 </div>
@@ -96,9 +126,13 @@ $(document).ready(function(){
 						</ul>
 				</div-->
 				<div class="login col-sm-5" align="right"><!--a href="/login">로그인</a> | <a href="/join">회원가입</a-->	
-				<input type="text" class="form-control web-search-box" placeholder="search"></div>
-				<div id="search" class="search col-sm-1"><img src="../../page_imgs/fixed_img/icon_search.png"></div>
+				<form name="search_box" action="/search/process" method="post">
+				<input type="text" class="form-control web-search-box" placeholder="search" name="keyword" value=''><a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img"><img src="../../page_imgs/fixed_img/search_btn.png" ></a></div>
+				<div id="search" class="search col-sm-1"><img src="../../page_imgs/fixed_img/icon_search.svg" ></div>
+				</form>
+				
 		</header>
+		
 </div>
 
 
