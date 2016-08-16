@@ -40,6 +40,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 	
 	var x = Math.floor((Math.random() * 270) + 1);
 	
+	
 	var row;
 	var sets = {con_no : no};
 	var next = {};
@@ -61,10 +62,9 @@ router.get('/contents/detail/:no', function(req, res, next) {
 					res.redirect('back');
 				}
 				
-				mysql.select('(select con_no, con_photo, con_title from cider.cid_contents where con_no = '+x+' order by con_no desc limit 0,12)UNION(select con_no, con_photo, con_title from cider.cid_contents where con_no ="43" limit 1) order by con_no desc', function (err, data1){
+				
+				mysql.select('select con_no, con_photo, con_title from cider.cid_contents ORDER BY RAND() LIMIT 0,18', function (err, data1){
 					 if (err) throw err;
-					 
-					 
 					 row = data1;
 
 				/*mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_no = check_no1 order by con_viewCount desc limit 0,12', function (err, data){

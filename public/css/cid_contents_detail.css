@@ -1,7 +1,7 @@
 .margin0{margin:0 !important;}
 .padding0{padding:0 !important;}
 .mob-header{display:none;} 
-.mob-banner{display:none;}
+.mob-main-banner{display:none;}
 .contents{font-family: 'Nanum Gothic', serif; color:#212121;}
 .contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:100px 0 50px 0;}
 .contents .icon-menu{margin-bottom:20px;}
@@ -17,8 +17,8 @@
 .web-editor-con .editor-intro{padding-top:20px;}
 .web-editor-con .editor-intro p{height:30px;}
 .web-editor-con .editor-sns img{margin:80px 0 0 5px;}
-.web-banner{margin-bottom:80px;}
-.web-banner .banner{width:100%; height:300px; background-color:#1b87c9;}
+.web-main-banner{margin-bottom:50px;}
+.web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;}
 .like .number-like{width:60px; height:30px; border:1px solid #CCCCCC; border-radius:5px; padding-top:5px; margin-top:65px; float:inherit;}
 .share{margin:30px 0 30px 0;}
 .share img{width:95%;}/*img 빼기*/
@@ -39,7 +39,7 @@
 .relation .ad img{width:100%;}
 .relation .ad .ad-img{position:relative; padding:0;}
 .relation .ad .ad-img span{position:absolute; top:0; left:0; width:40px; padding:5px 10px; text-align:left; background:rgba(0,0,0,0.5); color:#FFFFFF;}
-.title-recommendation{font-size:18px; color:#ce2ca8; font-weight:bold; margin:50px 0 30px 0;}
+.title-recommendation{font-size:18px; color:#a51082; font-weight:600; margin:50px 0 30px 0;}
 .recommendation{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
 .recommendation div{margin:10px 0 50px 0;}
 .recommendation p{margin-top:20px;}
@@ -58,8 +58,10 @@
 .editor-introduce .mob-editor-con{height:270px; border:solid 1px #1b87c9; border-radius:10px; margin:20px 0; padding-top:20px;}
 .mob-editor-con .editor-intro{margin:10px 0 10px 0;}
 .mob-editor-con .editor-sns img{margin-left:5px;}
-.mob-banner{margin-bottom:30px;}
-.mob-banner .banner{width:100%; height:300px; background-color:#1b87c9;}
+.web-main-banner{display:none;}
+.mob-main-banner{display:block;}
+.mob-main-banner{margin-bottom:10px;}
+.mob-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:20px 0 5px 5px;}
 .like .btn-like img{width:50px;}
 .pre-next .con-pre{width:50%; font-size:12px;}
 .con-pre p{margin-top:10px;}
