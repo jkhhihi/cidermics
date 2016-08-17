@@ -20,6 +20,10 @@ var upload = multer({ storage : storage});
 var formidable = require('formidable');
 var dir = require('node-dir');
 
+var multiparty = require('connect-multiparty');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+
 
 //var multer = require('multer');
 //var upload = multer({ dest: '../public/uploads/' });
@@ -200,6 +204,7 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
         	var filePath = __dirname + '/../public/uploads/' + file.name;
+			
         	
         	fs.writeFile(filePath, data, function(error){
         		if(error){
@@ -211,6 +216,9 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
         				//});
         		}
         	});
+			
+		
+				
         });
     });
     

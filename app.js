@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var multiparty = require('connect-multiparty');
+//var multiparty = require('connect-multiparty');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('cidermics:server');
@@ -43,8 +43,8 @@ app.use(logger('dev'));
 
 app.use(cookieParser());
 app.use(bodyParser.json({ limit: '3000mb' }));
-app.use(multiparty({uploadDir:__dirname+'/multipart'}));
-app.use(bodyParser.urlencoded({limit: '3000mb', extended: false }));
+//app.use(multiparty({uploadDir:__dirname+'/multipart'}));
+app.use(bodyParser.urlencoded({limit: '3000mb', extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'fortt', resave: true, saveUninitialized: true}));
