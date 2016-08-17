@@ -15,7 +15,10 @@
 .contents .icon-plus_con{margin:60px 0 50px 0;}
 
 
+.contents_detail-mob_menu {display:none;}
 @media all and (max-width:1024px) {
+.contents_detail-mob_menu {display:block;}
+
 .main-menu{display:none;}
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}

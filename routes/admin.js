@@ -115,7 +115,6 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 			}
 			user = data2;
 
-			
 			res.render('admin/contents/insert', {cate : cate, user : user, CP : CP});
 			});
 		});

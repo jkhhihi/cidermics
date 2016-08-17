@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var multiparty = require('connect-multiparty');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('cidermics:server');
@@ -26,6 +27,10 @@ var search = require('./routes/search');
 
 var app = express();
 
+//app.use(bodyParser.json({ limit: '20M' }));
+//app.use(bodyParser.urlencoded({limit: '20M', extended: true}));
+
+
 // view engine setup
 app.set('port', process.env.PORT || 80);
 app.set('views', path.join(__dirname, 'views'));
@@ -34,9 +39,13 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+
+
 app.use(cookieParser());
+app.use(bodyParser.json({ limit: '3000mb' }));
+app.use(multiparty({uploadDir:__dirname+'/multipart'}));
+app.use(bodyParser.urlencoded({limit: '3000mb', extended: false }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'fortt', resave: true, saveUninitialized: true}));
 
@@ -51,6 +60,8 @@ app.use('/cid_contents', express.static(__dirname + '/views/cid_contents'));
 app.use('/cid_member', express.static(__dirname + '/views/cid_member'));
 app.use('/cid_search', express.static(__dirname + '/views/cid_search'));
 app.use(flash());
+
+
 
 
 

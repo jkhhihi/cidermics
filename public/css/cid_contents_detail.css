@@ -1,10 +1,11 @@
+
 .margin0{margin:0 !important;}
 .padding0{padding:0 !important;}
 .mob-header{display:none;} 
 .mob-main-banner{display:none;}
-.contents{font-family: 'Nanum Gothic', serif; color:#212121;}
+.contents{font-family: 'Nanum Gothic', serif; color:#212121;  }
 .contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:100px 0 50px 0;}
-.contents .icon-menu{margin-bottom:20px;}
+.contents .icon-menu{margin-bottom:20px; }
 .contents .date-view span{margin-right:5px; font-size:16px;}
 .contents .date-view span.bar{color:#ce2ca8;}
 .contents .editor{font-size:16px;}
@@ -18,16 +19,16 @@
 .web-editor-con .editor-intro p{height:30px;}
 .web-editor-con .editor-sns img{margin:80px 0 0 5px;}
 .web-main-banner{margin-bottom:50px;}
-.web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;}
+.web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;;}
 .like .number-like{width:60px; height:30px; border:1px solid #CCCCCC; border-radius:5px; padding-top:5px; margin-top:65px; float:inherit;}
 .share{margin:30px 0 30px 0;}
 .share img{width:95%;}/*img 빼기*/
 .comment img{width:95%;}/*img 빼기*/
 .pre-next{margin:40px 0 40px 0;}
-.pre-next .con-pre{height:150px; background-color:#CC3300; color:#FFFFFF; font-size:16px;}
+.pre-next .con-pre{height:150px; background-color:#1b87c9; color:#FFFFFF; font-size:16px;}
 .con-pre p{margin-top:10px;}
 .con-pre p.pre-title{font-size:18px; line-height:1.5em;}
-.pre-next .con-next{height:150px; background-color:#FF6600; color:#FFFFFF; font-size:16px;}
+.pre-next .con-next{height:150px; background-color:#c3c0c0fc; color:#000000; font-size:16px; border: 1px solid #988585;}
 .con-next p{margin-top:10px;}
 .con-next p.next-title{font-size:18px; line-height:1.5em;}
 .title-relation{font-size:18px; color:#ce2ca8; font-weight:bold; margin:50px 0 30px 0;}
@@ -45,11 +46,13 @@
 .recommendation p{margin-top:20px;}
 
 
-
+.contents_detail-mob_menu {display:none;}
 @media all and (max-width:1024px) {
+.contents_detail-mob_menu {display:block;}
+
 .web-banner{display:none;}
 .mob-banner{display:block;}
-.contents .title{font-size:22px; margin:20px 0 10px 0;}
+.contents .title{font-size:22px; margin:20px 0 10px 0; }
 .contents .date-view span{margin-right:5px; font-size:12px;}
 .contents .date-view span.bar{color:#ce2ca8;}
 .contents .editor{font-size:12px;}

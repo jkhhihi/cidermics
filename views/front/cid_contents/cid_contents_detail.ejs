@@ -14,8 +14,8 @@
 <meta property="og:title" content="<%= contents[0].con_title %>" />	
 <meta property="og:site_name" content="사이다경제">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" />
-<meta property="og:description" content="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" />
+<meta property="og:url" content="http://www.cidermics.com/contents/detail/<%= contents[0].con_no%>" />
+<meta property="og:description" content="사이다경제" />
 
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,13 +29,27 @@
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
 
+<script src="/js/gotoup.js"></script>
 
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
+<!--구글 애널리틱스 -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-82643610-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </head>
 <body>
+<!--위로가기 버튼-->
+<div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <!--페이스북 연동 스크립트-->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -48,8 +62,10 @@
 	
 <% include ../top %>
 
+<div class="contents_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
 
 <div class="contents container">
+	
 		<div class="row">
 				<div class="col-xs-12 title"><%= contents[0].con_title%></div>
 				<div class="col-xs-12 icon-menu">
@@ -68,35 +84,45 @@
 				</div>
 		</div>
 		
-		
+		<div class="contents container">
+				<p>&nbsp;</p>
+				<div class="row like" align="center">
+					<div class="fb-like" data-href="https://www.cidermics.com/contents/detail/<%= contents[0].con_no %>'" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"> </div>
+				<!--div class="col-xs-12 btn-like"><img src="/page_imgs/contents_img/btn_like.png"></div>
+				<div class="col-xs-12 number-like">
+						<p>777</p-->
+				</div>
+		</div>
+		<div class="row share" align="center">
+				<div class="col-xs-12"><div class="fb-share-button" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-layout="button" data-size="large" data-mobile-iframe="true">
+					<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cidermics.com%2F&amp;src=sdkpreparse">공유하기</a></div>
+				</div>
+		</div>
 		<div class="row editor-introduce">
-				<div class="col-xs-12 line-1px"></div>
+				
 				<div class="col-xs-12 mob-editor-con">
 						<div class="row">
-								<div class="col-xs-12 editor-picture" align="center"><img class="img-responsive" width=80 src="<%= contents[0].user_sns_icon %>"></div>
+								<div class="col-xs-12 editor-picture" align="center"><img class="img-responsive" width="80" src="<%= contents[0].user_sns_icon %>"></div>
 								<div class="col-xs-12 editor-intro" align="left">
 										<p>에디터 : <%=contents[0].con_writer%></p>
-										<p>에디터曰 " <%=contents[0].user_comment%> " </p>
+										<p>" <%=contents[0].user_comment%> " </p>
 										<p><%=contents[0].user_email%></p>
 								</div>
 								<div class="col-xs-12 editor-sns" align="right">
-									<img width="35" src="/page_imgs/contents_img/icon_editor_facebook.png">
-									<img width="35" src="/page_imgs/contents_img/icon_editor_inst.png">
-									<img width="35" src="/page_imgs/contents_img/icon_editor_twitt.png">
+									<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_facebook.png"></a>
 								</div>
 						</div>
 				</div>
 				<div class="col-xs-12 web-editor-con">
 						<div class="row">
-								<div class="col-xs-2 editor-picture"><img class="img-responsive" src="<%= contents[0].user_sns_icon %>"></div>
+								<div class="col-xs-2 editor-picture"><img class="img-responsive" width="135" src="<%= contents[0].user_sns_icon %>"></div>
 								<div class="col-xs-6 editor-intro">
 										<p>에디터 : <%=contents[0].con_writer%></p>
-										<p>에디터曰 " <%=contents[0].user_comment%> " </p>
+										<p>" <%=contents[0].user_comment%> " </p>
 										<p><%=contents[0].user_email%></p>
 								</div>
-								<div class="col-xs-4 editor-sns" align="right"><img src="/page_imgs/contents_img/icon_editor_facebook.png">
-									<img src="/page_imgs/contents_img/icon_editor_inst.png">
-									<img src="/page_imgs/contents_img/icon_editor_twitt.png"></div>
+								<div class="col-xs-4 editor-sns" align="right"><a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_facebook.png"></a>
+								</div>
 						</div>
 				</div>
 				<div class="col-xs-12 line-1px"></div>
@@ -156,19 +182,7 @@
     });
     </script>
 
-		<div class="contents container">
-				<div class="row like" align="center">
-					<div class="fb-like" data-href="https://www.cidermics.com/contents/detail/<%= contents[0].con_no %>'" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"> </div>
-				<!--div class="col-xs-12 btn-like"><img src="/page_imgs/contents_img/btn_like.png"></div>
-				<div class="col-xs-12 number-like">
-						<p>777</p-->
-				</div>
-		</div>
-		<div class="row share" align="center">
-				<div class="col-xs-12"><div class="fb-share-button" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-layout="button" data-size="large" data-mobile-iframe="true">
-					<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cidermics.com%2F&amp;src=sdkpreparse">공유하기</a></div>
-				</div>
-		</div>
+		
 		<div class="row comment" align="center">
 				<div class="col-xs-12">
 					<div class="fb-comments" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-width="100%" data-numposts="5" data-mobile></div>
@@ -183,7 +197,7 @@
 				<div class="col-xs-6 con-pre">
 					
 						<!--img class="img-responsive" src="<%=preNext[i].con_photo%>"-->
-						<p>이전 편</p>
+						<p>다음 편</p>
 						<p class="pre-title"><%= preNext[i].con_title %></p>
 					
 				</div>
@@ -191,7 +205,7 @@
 		<% } else if (preNext[i].con_no > contents[i].con_no && preNext[i+1] == null) { %>
 			<a href="/contents/detail/<%= preNext[i].con_no %>">
 				<div class="col-xs-6 con-next">
-						<p>다음 편</p>
+						<p>이전 편</p>
 						<p class="next-title"><%= preNext[i].con_title %></p>
 				</div>
 			</a>	
@@ -200,14 +214,14 @@
 				<div class="col-xs-6 con-pre">
 					
 						<!--img class="img-responsive" src="<%=preNext[i].con_photo%>"-->
-						<p>이전 편</p>
+						<p>다음 편</p>
 						<p class="pre-title"><%= preNext[i].con_title %></p>
 					
 				</div>
 				</a>
 				<a href="/contents/detail/<%= preNext[i+1].con_no %>">
 				<div class="col-xs-6 con-next">
-						<p>다음 편</p>
+						<p>이전 편</p>
 						<p class="next-title"><%= preNext[i+1].con_title %></p>
 				</div>
 				</a>
@@ -268,20 +282,20 @@
 		</div-->
 		<p class="title-recommendation" align="center">사이다경제 추천</p>
 		
-		<div class="row recommendation">
+		<div class="recommendation">
 
 			<ul class="grid effect-2" id="grid">
 				<% for(var j = 0; j<cont.length; j++){ %>
 					
 				<li>
-				<div class="col-sm-12 col-xs-12">
+				<div>
 					
 					<a href="/contents/detail/<%= cont[j].con_no %>">
 					<img class="img-responsive" src="<%= cont[j].con_photo %>"></a>
 					<p><a href="/contents/detail/<%= cont[j].con_no %>"><%= cont[j].con_title %></a></p>
 					
 				</div>
-			</li>
+				</li>
 			<% } %>
 			</ul>
 				

@@ -1,6 +1,6 @@
 
 .contact{ font-family: 'Nanum Gothic', serif; color:#333;}
-.contact .title{margin-top:30px; color:#2f8ecd; font-size:26px;}
+.contact .title{margin-top:0px; color:#2f8ecd; font-size:26px;}
 .contact .title span{font-size:22px; border-bottom:2px solid #c02e88; font-weight:900; padding-bottom:5px;}
 .contact .map #googleMap{margin:20px 0 20px 0;}
 .contact .contents{font-size:16px; font-weight:900; line-height:3.0em; margin:50px 0 100px; color:#2f8ecd;}

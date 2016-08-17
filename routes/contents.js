@@ -5,7 +5,7 @@ var mysql = require("./model/mysql");
 router.get('/contents', function(req, res, next) {
 	
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,12', function (err, data){
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,24', function (err, data){
 		 if (err) throw err;
 		 console.log("data");
 		 console.log(data);
@@ -23,7 +23,7 @@ router.get('/contents/:no', function(req, res, next) {
 	var no = req.params.no;
 	var sets = {con_category : no};
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,12', function (err, data){
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,24', function (err, data){
 		 if (err) throw err;
 		 
 		 row = data;
@@ -63,7 +63,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 				}
 				
 				
-				mysql.select('select con_no, con_photo, con_title from cider.cid_contents ORDER BY RAND() LIMIT 0,18', function (err, data1){
+				mysql.select('select con_no, con_photo, con_title from cider.cid_contents ORDER BY RAND() LIMIT 0,24', function (err, data1){
 					 if (err) throw err;
 					 row = data1;
 
@@ -105,11 +105,12 @@ router.get('/contents/detail/:no', function(req, res, next) {
 router.get('/addMore/:idx', function(req, res, next) {
 	
 	var idx = req.params.idx;
-	//var lang = req.params.lang;
-	var start = (idx - 1) * 12;
-	var end = idx * 12;
+	console.log(idx+"=================");
+	var lang = req.params.lang;
+	var start = (idx - 1) * 24;
+	var end = idx * 24;
 	console.log(start, end);
-	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ idx +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
 		 if (err) throw err;
 		 console.log("data");
 		 console.log(data);
