@@ -7,15 +7,8 @@
 
 @media all and (max-width:1024px) {
 .contents-menu{display:none;}
-
 .contents .icon-plus_con{margin:10px 0 30px 0;}
 .contents .icon-plus_con img{height:80px;}
 .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 .contents-mob_menu{display:block;}
-.contents-mob_menu .menu{margin-top:0px;}
-
-}
-
-@media all and (min-width:1024px) {
-	.contents-mob_menu{display:none;}
 }

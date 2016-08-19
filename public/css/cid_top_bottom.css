@@ -44,7 +44,30 @@ header .search{padding-top:19px;}
 
 
 @media all and (max-width:1024px) {
-	#menu{display:block;}
+
+
+
+
+//스크롤기능 이부분만 추가한듯함
+
+#menu .scrollBlind{
+	width:100%;
+    height:100%;
+    overflow-y:scroll;
+}
+.view{
+    width:100%;
+    height:100%;
+    position: absolute;
+    border:1px solid #fff ;
+    overflow: hidden;
+}
+
+//
+
+
+
+#menu{display:block;}
 html.open {
     overflow: hidden;
 }

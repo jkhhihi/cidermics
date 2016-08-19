@@ -88,8 +88,7 @@
 				<p>&nbsp;</p>
 				<div class="row like" align="center">
 					<!-- LikeBtn.com BEGIN -->
-<span class="likebtn-wrapper" data-theme="custom" data-dislike_enabled="false" data-btn_size="35" data-icon_l="hrt1" data-icon_d="thmb6" data-icon_size="18" data-icon_l_c_v="#0559fb" data-icon_d_c_v="#0559fb" data-i18n_like="추천"  data-identifier="item_1" >
-	
+<span class="likebtn-wrapper" data-href="https://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-theme="custom" data-dislike_enabled="false" data-btn_size="40" data-icon_l="hrt1" data-icon_d="thmb6" data-icon_size="23" data-icon_l_c_v="#0559fb" data-icon_d_c_v="#0559fb" data-i18n_like="추천"  data-identifier="item_1" >
 </span>
 <script>
 (function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
@@ -199,21 +198,20 @@
 		<div class="row pre-next">
 		
 		<% for(var i=0; i<contents.length; i++) {
-		
-		if (preNext[i].con_no < contents[i].con_no && preNext[i+1] == null) { %>
+		if (preNext[i].con_no > contents[i].con_no && preNext[i+1] == null){ %>
 			<a href="/contents/detail/<%= preNext[i].con_no %>">
 				<div class="col-xs-6 con-pre">
 					
 						<!--img class="img-responsive" src="<%=preNext[i].con_photo%>"-->
-						<p>다음 편</p>
+						<p>이전 편</p>
 						<p class="pre-title"><%= preNext[i].con_title %></p>
 					
 				</div>
 			</a>
-		<% } else if (preNext[i].con_no > contents[i].con_no && preNext[i+1] == null) { %>
+		<% } else if (preNext[i].con_no < contents[i].con_no && preNext[i+1] == null) { %>
 			<a href="/contents/detail/<%= preNext[i].con_no %>">
 				<div class="col-xs-6 con-next">
-						<p>이전 편</p>
+						<p>다음 편</p>
 						<p class="next-title"><%= preNext[i].con_title %></p>
 				</div>
 			</a>	
@@ -222,14 +220,14 @@
 				<div class="col-xs-6 con-pre">
 					
 						<!--img class="img-responsive" src="<%=preNext[i].con_photo%>"-->
-						<p>다음 편</p>
+						<p>이전 편</p>
 						<p class="pre-title"><%= preNext[i].con_title %></p>
 					
 				</div>
 				</a>
 				<a href="/contents/detail/<%= preNext[i+1].con_no %>">
 				<div class="col-xs-6 con-next">
-						<p>이전 편</p>
+						<p>다음 편</p>
 						<p class="next-title"><%= preNext[i+1].con_title %></p>
 				</div>
 				</a>

@@ -10,7 +10,7 @@
 .contents .date-view span.bar{color:#ce2ca8;}
 .contents .editor{font-size:16px;}
 .contents .line-1px{width:100%; height:1px; background-color:#1b87c9; margin:10px 0 10px 0;}
-.contents .contents-in img{width:95%; margin-top:60px;}/*img 빼기*/
+.contents .contents-in img{margin-top:60px;}/*img 빼기*/
 .editor-introduce{margin:30px 0 30px 0;}
 .editor-introduce .line-1px{width:100%; height:1px; background-color:#1b87c9;}
 .mob-editor-con{display:none;}
@@ -49,7 +49,7 @@
 .contents_detail-mob_menu {display:none;}
 @media all and (max-width:1024px) {
 .contents_detail-mob_menu {display:block;}
-
+.contents .contents-in img{width:95%; margin-top:60px;}/*img 빼기*/
 .web-banner{display:none;}
 .mob-banner{display:block;}
 .contents .title{font-size:22px; margin:20px 0 10px 0; }
@@ -59,7 +59,7 @@
 .web-editor-con{display:none;}
 .mob-editor-con{display:block;}
 .editor-introduce .mob-editor-con{height:270px; border:solid 1px #1b87c9; border-radius:10px; margin:20px 0; padding-top:20px;}
-.mob-editor-con .editor-intro{margin:10px 0 10px 0;}
+.mob-editor-con .editor-intro{margin:20px 0 5px 0;}
 .mob-editor-con .editor-sns img{margin-left:5px;}
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}
