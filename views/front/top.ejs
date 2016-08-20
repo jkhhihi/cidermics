@@ -80,12 +80,14 @@ function search_submit_mob(){
 				
 				<div id="mob-search" class="mob-search" align="right"><img src="../../page_imgs/fixed_img/mob_icon_search.svg"></div>
 				
-				<form name="search_box_mob" action="/search/process" method="post">
+				<form name="search_box_mob" action="/search/process" method="post" align="center">
 					<div class="input"><input type="text" class="form-control mob-search-box" placeholder="search"  name="keyword" value=''>
-						<a onClick="search_submit_mob()" style="cursor:pointer" class="mob-search-box-img" ><img src="../../page_imgs/fixed_img/search_btn.png" ></a></div>
+						<a onClick="search_submit_mob()" style="cursor:pointer" class="mob-search-box-img" >검색<!--img src="../../page_imgs/fixed_img/search_btn.png"--></a></div>
 					</form>
 		</header>
 </div>
+
+
 
 <div id="menu">
 		<div class="close"></div>
@@ -131,17 +133,14 @@ function search_submit_mob(){
 </div>
 
 
-
-
-
 <div class="header row">
 		<header class="container">
 				<div class="logo col-sm-1"><a href="/"><img src="../../page_imgs/fixed_img/logo.jpg"></a></div>
 					
 				
-			<div class="dropdown col-sm-5">
+	<div class="dropdown col-sm-5">
   <button class="btn btn-default dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    사이다 콘텐츠
+    <span>사이다 콘텐츠<span>
     <!--span class="caret"></span-->
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -167,7 +166,7 @@ function search_submit_mob(){
 				<form name="search_box" action="/search/process" method="post">
 				<div class="login col-sm-5" align="right"><!--a href="/login">로그인</a> | <a href="/join">회원가입</a-->
 				<input type="text" class="form-control web-search-box" placeholder="search" name="keyword" value=''>
-				<a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img"><img src="../../page_imgs/fixed_img/search_btn.png" ></a></div>
+				<a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img">검색<!--img src="../../page_imgs/fixed_img/search_btn.png"--></a></div>
 				<div id="search" class="search col-sm-1"><img src="../../page_imgs/fixed_img/icon_search.svg" ></div>
 				</form>
 				
