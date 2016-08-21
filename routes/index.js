@@ -34,12 +34,6 @@ router.get('/modal', function(req, res, next) {
 
 });
 
-router.get('/navera2e4371fe1e3027de1e1d39f2faafbea.html', function(req, res, next) {
-
-	res.render('front/navera2e4371fe1e3027de1e1d39f2faafbea', { });
-
-});
-
 
 
 
