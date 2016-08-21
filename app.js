@@ -1,4 +1,7 @@
-var express = require('express');
+
+var express = require('express')
+  , http = require('http');
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -6,7 +9,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('cidermics:server');
-var http = require('http');
+//var http = require('http');
 var passport = require('passport')
 , LocalStrategy = require('passport-local').Strategy;
 var mysql = require("./routes/model/mysql");

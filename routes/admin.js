@@ -20,9 +20,9 @@ var upload = multer({ storage : storage});
 var formidable = require('formidable');
 var dir = require('node-dir');
 
-var multiparty = require('connect-multiparty');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+//var multiparty = require('connect-multiparty');
+//var cookieParser = require('cookie-parser');
+//var bodyParser = require('body-parser');
 
 
 //var multer = require('multer');
@@ -347,7 +347,7 @@ router.post('/consulting/insert', ensureAuthenticated, function(req, res, next) 
 	var date = getWorldTime(+9);
 	
 	var sets = {cons_name : name, cons_img : photo, cons_site_url : url, cons_content : contents, cons_regDate : date, cons_upDate : date };
-	console.log('insert into cider.cid_consulting set ? '+sets);
+	//console.log('insert into cider.cid_consulting set ? '+sets);
 	mysql.insert('insert into cider.cid_consulting set ?', sets,  function (err, data){
 		
 		console.log(err);

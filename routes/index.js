@@ -4,17 +4,13 @@ var mysql = require("./model/mysql");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	
 	var row;
 	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_no desc limit 0,24',
 	 function (err, data){
 		if (err) throw err;
 		console.log("data");
 		console.log(data);
-		 
 		 row = data;
-		 
-		 
 	res.render('front/cid_main', { contents : row});
   });
 });
@@ -35,6 +31,12 @@ router.get('/bottom', function(req, res, next) {
 router.get('/modal', function(req, res, next) {
 
 	res.render('front/modal', { });
+
+});
+
+router.get('/navera2e4371fe1e3027de1e1d39f2faafbea.html', function(req, res, next) {
+
+	res.render('front/navera2e4371fe1e3027de1e1d39f2faafbea', { });
 
 });
 
