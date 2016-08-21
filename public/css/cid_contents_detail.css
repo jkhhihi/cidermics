@@ -58,7 +58,7 @@
 .contents .editor{font-size:12px;}
 .web-editor-con{display:none;}
 .mob-editor-con{display:block;}
-.editor-introduce .mob-editor-con{height:270px; border:solid 1px #1b87c9; border-radius:10px; margin:20px 0; padding-top:20px;}
+.editor-introduce .mob-editor-con{height:270px; border:solid 1px #1b87c9; border-radius:10px; margin:20px 0; padding:10px;}
 .mob-editor-con .editor-intro{margin:20px 0 5px 0;}
 .mob-editor-con .editor-sns img{margin-left:5px;}
 .web-main-banner{display:none;}
