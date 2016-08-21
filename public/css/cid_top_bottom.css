@@ -48,8 +48,6 @@ header .search{padding-top:19px;}
 
 
 
-//스크롤기능 이부분만 추가한듯함
-
 #menu .scrollBlind{
 	width:100%;
     height:100%;
@@ -63,7 +61,7 @@ header .search{padding-top:19px;}
     overflow: hidden;
 }
 
-//
+
 
 
 

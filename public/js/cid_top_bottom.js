@@ -21,9 +21,10 @@ window.onhashchange = function () {
 
 });
 
-
+/*
 $(document).ready(function(){
     $(".contents_menu").click(function(){
         $(".contents_sub_menu").slideToggle();
     });
 });
+*/

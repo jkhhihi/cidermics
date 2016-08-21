@@ -164,8 +164,9 @@ $(document).ready(function(){
 		
 		var arr = userinfo.split("/");
 		var userNo = arr[0];
-		var writer = arr[1];
-		
+		//var writer = arr[1];
+		//var writer=$("#user option:selected").text();
+		//alert(writer);
 		if(cate == null) {
 			alert('카테고리를 지정해주세요');
 			return;
@@ -174,10 +175,10 @@ $(document).ready(function(){
 			alert('제목을 작성해주세요');
 			return;
 		}
-		//if(photo == ""){
-			//alert('썸네일 설정해주세요');
-			//return;
-		//}
+		if(photo == ""){
+			alert('썸네일 설정해주세요');
+			return;
+		}
 		if(userinfo == ""){
 			alert('에디터를 선택해주세요');
 			return;

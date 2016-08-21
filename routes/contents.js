@@ -63,7 +63,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 				}
 				
 				
-				mysql.select('select con_no, con_photo, con_title from cider.cid_contents ORDER BY RAND() LIMIT 0,24', function (err, data1){
+				mysql.select('select con_no, con_photo, con_title from cider.cid_contents ORDER BY RAND() LIMIT 0,36', function (err, data1){
 					 if (err) throw err;
 					 row = data1;
 
@@ -102,17 +102,16 @@ router.get('/contents/detail/:no', function(req, res, next) {
 
 
 
-router.get('/addMore/:idx/:num', function(req, res, next) {
+
+router.get('/addMore/:idx', function(req, res, next) {
 	
 	var idx = req.params.idx;
 	console.log(idx+"=================");
-	var num = req.params.num;
-	console.log(num+"=================");
+	var lang = req.params.lang;
 	var start = (idx - 1) * 12;
-	console.log(start);
 	var end = idx * 12;
 	console.log(start, end);
-	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ num +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ idx +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
 		 if (err) throw err;
 		 console.log("data");
 		 console.log(data);

@@ -347,15 +347,29 @@ router.post('/consulting/insert', ensureAuthenticated, function(req, res, next) 
 	var date = getWorldTime(+9);
 	
 	var sets = {cons_name : name, cons_img : photo, cons_site_url : url, cons_content : contents, cons_regDate : date, cons_upDate : date };
-	console.log('insert into cider.cid_consulting set ? '+sets);
+	
+	//var sets = {cons_name : name, cons_img : photo, cons_site_url : url, cons_content : contents, cons_viewCount:0, cons_regDate : date, cons_upDate : date };
+	//res.send(sets);
+	//res.end();
+	
+	//console.log("============");
 	mysql.insert('insert into cider.cid_consulting set ?', sets,  function (err, data){
+		//console.log("============");	
+		//console.log(err);
+		//console.log(data);
+		//res.send(err);
 		
-		console.log(err);
-		console.log(data);
+		//res.end();
 		
-    	res.redirect('/adm/consulting');
+		res.redirect('/adm/consulting');
+		//res.send("<script>alert('1111');</script>");
+		//res.append('Link', ['<http://localhost/>', '/adm/consulting']);
+		//res.send(data);
+		//response.end();
+    	
     	if (err){
-    		res.redirect('/adm/consulting');
+    		//res.redirect('/adm/consulting');
+    		res.send(err);
     	}
     });
 });

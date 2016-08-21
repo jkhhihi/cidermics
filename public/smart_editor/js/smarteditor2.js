@@ -21012,6 +21012,7 @@ nhn.husky.HuskyCore.mixin(nhn.husky.SE2M_Hyperlink, {
 						this.oApp.exec("EXECCOMMAND", ["unlink", false, "", {bDontAddUndoHistory: true}]);
 						
 						var sTempUrl = "<a href='" + sURL + "' target="+sTarget+">";
+						
  						
 						jindo.$A(this.oSelection.getNodes(true)).forEach(function(value, index, array){
 							var oEmptySelection = this.oApp.getEmptySelection();
