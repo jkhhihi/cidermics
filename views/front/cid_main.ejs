@@ -51,6 +51,21 @@ function openWinKA(){
 }
 </script>
 
+<script>
+var now = new Date(); 
+var todayAtMidn = new Date(now.getFullYear(), now.getMonth(), now.getDate(),now.getHours());
+ 
+// Set specificDate to a specified date at midnight.
+var specificDate = new Date("2016/8/20/2");
+ 
+// Compare the two dates by comparing the millisecond
+// representations.
+if (todayAtMidn.getTime() == specificDate.getTime())
+{
+    location.href="cid_main";
+}
+</script>
+
 
 <!--구글 애널리틱스 -->
 <script>
