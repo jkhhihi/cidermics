@@ -4,7 +4,6 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-
 var multer = require('multer');
 
 var storage = multer.diskStorage({
@@ -19,17 +18,13 @@ var upload = multer({ storage : storage});
 
 var formidable = require('formidable');
 var dir = require('node-dir');
-
-//var multiparty = require('connect-multiparty');
-//var cookieParser = require('cookie-parser');
-//var bodyParser = require('body-parser');
-
-
-//var multer = require('multer');
-//var upload = multer({ dest: '../public/uploads/' });
-//var formidable = require('formidable');
-//var dir = require('node-dir');
 var mysql = require("./model/mysql");
+
+var multiparty = require('connect-multiparty');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+
+//var upload = multer({ dest: '../public/uploads/' });
 var passport = require('passport');
 
 //시간 설정

@@ -191,11 +191,12 @@ function openWinKA(){
 
 <script>
 		var idx = 2;
-		//var lang= "kr";
+
+		var no = 0;
 		function addMore (){
 			var contents = '';
 			$.ajax({
-				url : '/addMore/'+idx,
+				url : '/addMore/'+idx+'/'+no,
 				method : 'get',
 				success : function(data){
 					if (data.contents.length == 0){

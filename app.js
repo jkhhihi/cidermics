@@ -16,6 +16,10 @@ var mysql = require("./routes/model/mysql");
 var flash = require('req-flash');
 var session = require('express-session');
 
+
+var app = express();
+
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
@@ -27,8 +31,6 @@ var consulting = require('./routes/consulting');
 var contents = require('./routes/contents');
 var member = require('./routes/member');
 var search = require('./routes/search');
-
-var app = express();
 
 //app.use(bodyParser.json({ limit: '20M' }));
 //app.use(bodyParser.urlencoded({limit: '20M', extended: true}));
@@ -45,13 +47,13 @@ app.use(logger('dev'));
 
 
 
-//app.use(bodyParser.json({ limit: '3000mb' }));
+app.use(bodyParser.json({limit: '100mb'}));
 //app.use(multiparty({uploadDir:__dirname+'/multipart'}));
-//app.use(bodyParser.urlencoded({limit: '3000mb', extended: true }));
+app.use(bodyParser.urlencoded({limit: '100mb', extended: false }));
 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false }));
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({extended: false }));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -84,7 +86,7 @@ app.use('/',cmn);
 app.use('/',consulting);
 app.use('/',contents);
 app.use('/',member);
-app.use('/',search)
+app.use('/',search);
 
 
 passport.use('local', new LocalStrategy({

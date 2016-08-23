@@ -5,7 +5,7 @@ var mysql = require("./model/mysql");
 router.get('/contents', function(req, res, next) {
 	
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,24', function (err, data){
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,12', function (err, data){
 		 if (err) throw err;
 		 console.log("data");
 		 console.log(data);
@@ -23,11 +23,21 @@ router.get('/contents/:no', function(req, res, next) {
 	var no = req.params.no;
 	var sets = {con_category : no};
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,24', function (err, data){
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,12', function (err, data){
 		 if (err) throw err;
 		 
 		 row = data;
+		 if(no == 1){
+			 res.render('front/cid_contents/cid_contents_ec', { contents : row});
+		 }else if(no == 2){
+			 res.render('front/cid_contents/cid_contents_fi', { contents : row});
+		 }else if(no == 3){
+			 res.render('front/cid_contents/cid_contents_co', { contents : row});
+		 }else if(no == 4){
+			 res.render('front/cid_contents/cid_contents_st', { contents : row});
+		 }else{
 		 res.render('front/cid_contents/cid_contents', { contents : row});
+		 }
 	});
 
 });
@@ -103,21 +113,31 @@ router.get('/contents/detail/:no', function(req, res, next) {
 
 
 
-router.get('/addMore/:idx', function(req, res, next) {
+router.get('/addMore/:idx/:no', function(req, res, next) {
 	
 	var idx = req.params.idx;
-	console.log(idx+"=================");
-	var lang = req.params.lang;
+	console.log("================="+idx+"=================");
+	var no = req.params.no;
+	console.log("================="+no+"=================");
 	var start = (idx - 1) * 12;
 	var end = idx * 12;
 	console.log(start, end);
-	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ idx +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
-		 if (err) throw err;
-		 console.log("data");
-		 console.log(data);
-		 
+	if(no == 0){
+		mysql.select('select con_no, con_photo, con_title  from cider.cid_contents order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+			if (err) throw err;
+			 console.log("data");
+			 console.log(data);
+			 res.send({ contents : data });
+		});
+		
+		}else{
+	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ no +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+		if (err) throw err;
 		 res.send({ contents : data });
 	});
+		
+	}	 
+		
 	
 });
 

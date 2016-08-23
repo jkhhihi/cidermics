@@ -12,7 +12,7 @@
 
 <!--공유 meta tags-->
 <meta name="title" content="<%= contents[0].con_title %>" />
-<meta property="og:image" content="<%= contents[0].con_photo %>" />
+<meta property="og:image" content="http://www.cidermics.com<%= contents[0].con_photo %>" />
 
 <meta property="og:title" content="<%= contents[0].con_title %>" />	
 <meta property="og:site_name" content="사이다경제">
@@ -62,7 +62,6 @@
   js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.7";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-	
 <% include ../top %>
 
 <div class="contents_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
@@ -90,12 +89,13 @@
 		<div class="contents container">
 				<p>&nbsp;</p>
 				<div class="row like" align="center">
+					<div class="fb-like" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
 					<!-- LikeBtn.com BEGIN -->
-<span class="likebtn-wrapper" data-href="https://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-theme="custom" data-dislike_enabled="false" data-btn_size="40" data-icon_l="hrt1" data-icon_d="thmb6" data-icon_size="23" data-icon_l_c_v="#0559fb" data-icon_d_c_v="#0559fb" data-i18n_like="추천"  data-identifier="item_1" >
+<!--span class="likebtn-wrapper" data-href="https://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-theme="custom" data-dislike_enabled="false" data-btn_size="40" data-icon_l="hrt1" data-icon_d="thmb6" data-icon_size="23" data-icon_l_c_v="#0559fb" data-icon_d_c_v="#0559fb" data-i18n_like="추천"  data-identifier="item_1" >
 </span>
 <script>
 (function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
-</script>
+</script-->
 <!-- LikeBtn.com END -->
 					<!--div class="fb-like" data-href="https://www.cidermics.com/contents/detail/<%= contents[0].con_no %>'" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"> </div-->
 				<!--div class="col-xs-12 btn-like"><img src="/page_imgs/contents_img/btn_like.png"></div>
@@ -103,11 +103,11 @@
 						<p>777</p-->
 				</div>
 		</div>
-		<div class="row share" align="center">
+		<!--div class="row share" align="center">
 				<div class="col-xs-12"><div class="fb-share-button" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-layout="button" data-size="large" data-mobile-iframe="true">
 					<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cidermics.com%2F&amp;src=sdkpreparse">공유하기</a></div>
 				</div>
-		</div>
+		</div-->
 		<div class="row editor-introduce">
 				
 				<div class="col-xs-12 mob-editor-con">
@@ -201,37 +201,39 @@
 		<div class="row pre-next">
 		
 		<% for(var i=0; i<contents.length; i++) {
-		if (preNext[i].con_no > contents[i].con_no && preNext[i+1] == null){ %>
+		if (preNext[i].con_no < contents[i].con_no && preNext[i+1] == null) { %>
+			<a href="/contents/detail/<%= preNext[i].con_no %>">
+				<div class="col-xs-6 con-next">
+						<p>이전 편</p>
+						<p class="next-title"><%= preNext[i].con_title %></p>
+				</div>
+			</a>
+		
+		<% } else if (preNext[i].con_no > contents[i].con_no && preNext[i+1] == null){ %>
 			<a href="/contents/detail/<%= preNext[i].con_no %>">
 				<div class="col-xs-6 con-pre">
 					
 						<!--img class="img-responsive" src="<%=preNext[i].con_photo%>"-->
-						<p>이전 편</p>
+						<p>다음 편</p>
 						<p class="pre-title"><%= preNext[i].con_title %></p>
 					
 				</div>
 			</a>
-		<% } else if (preNext[i].con_no < contents[i].con_no && preNext[i+1] == null) { %>
-			<a href="/contents/detail/<%= preNext[i].con_no %>">
-				<div class="col-xs-6 con-next">
-						<p>다음 편</p>
-						<p class="next-title"><%= preNext[i].con_title %></p>
-				</div>
-			</a>	
 		<% } else { %>
+				
+				<a href="/contents/detail/<%= preNext[i+1].con_no %>">
+				<div class="col-xs-6 con-next">
+						<p>이전 편</p>
+						<p class="next-title"><%= preNext[i+1].con_title %></p>
+				</div>
+				</a>
 				<a href="/contents/detail/<%= preNext[i].con_no %>">
 				<div class="col-xs-6 con-pre">
 					
 						<!--img class="img-responsive" src="<%=preNext[i].con_photo%>"-->
-						<p>이전 편</p>
+						<p>다음 편</p>
 						<p class="pre-title"><%= preNext[i].con_title %></p>
 					
-				</div>
-				</a>
-				<a href="/contents/detail/<%= preNext[i+1].con_no %>">
-				<div class="col-xs-6 con-next">
-						<p>다음 편</p>
-						<p class="next-title"><%= preNext[i+1].con_title %></p>
 				</div>
 				</a>
 				<% } %>
