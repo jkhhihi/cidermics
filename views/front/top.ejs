@@ -8,6 +8,9 @@
 <!--meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"-->
+
+<!--meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /-->
+
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_contact.css" rel="stylesheet">
 <link href="/css/cid_top_bottom.css" rel="stylesheet">
@@ -29,6 +32,14 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
+
+$(document).ready(function(){
+    $(".contents_menu").click(function(){
+        $(".contents_sub_menu").slideToggle();
+    });
+});
+
+
 $(document).ready(function(){
     $('#search').click(function(){ // ID가 toggleButton인 요소를 클릭하면
         var state = $('.web-search-box').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
@@ -97,7 +108,7 @@ function search_submit_mob(){
 		<div class="close"></div>
 		<div class="nav">
 		<div class="view">
-		<!--div class="scrollBlind"-->
+		<div class="scrollBlind">
 				<ul>
 						<div class="logo" align="center"><a href="/"><img src="../../page_imgs/fixed_img/cicon.png"></a></div>
 						<!--li><a href="/login">로그인</a></li-->
@@ -105,7 +116,7 @@ function search_submit_mob(){
 						
 						<!--li><a href="/contents">사이다경제 콘텐츠</a></li-->
 						
-						<li class="contents_menu">사이다경제 콘텐츠</li>
+						<li class="contents_menu">사이다경제 콘텐츠 ▶</li>
 						
 						<!--li><a href="/consulting">재무상담</a></li>
 						<li><a href="/cmn_list">소통공간</a></li-->
@@ -125,10 +136,8 @@ function search_submit_mob(){
 						<li><a href="/contact">Contact Us</a></li>
 						
 				</ul>
-				<!--/div-->
-				</div>
-				
-				
+		</div>
+		</div>
 		</div>
 		<div onClick="history.back();" class="page_cover"></div>
 		<div onClick="history.back();" class="close"></div> 
