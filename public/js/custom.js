@@ -166,6 +166,7 @@ $(document).ready(function(){
 		var userNo = arr[0];
 		var writer = arr[1];
 		
+		
 		if(cate == null) {
 			alert('카테고리를 지정해주세요');
 			return;
@@ -182,6 +183,8 @@ $(document).ready(function(){
 			alert('에디터를 선택해주세요');
 			return;
 		}
+		
+		
 		
 		//console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title + ' | url + ' + url );
 		$('[name=title]').val(title);
@@ -212,9 +215,12 @@ $(document).ready(function(){
 		var photo = $('[name=photo]').val();
 		var userinfo = $('#user').val();
 		
+		var rdate =  $('#rdate').val();
+		
 		var arr = userinfo.split("/");
 		var userNo = arr[0];
 		var writer = arr[1];
+		//var num_check=/^[0-9]*$/; //0~9만 인정하겠다는 정규식
 		
 		if(cate == null) {
 			alert('카테고리를 지정해주세요');
@@ -232,6 +238,27 @@ $(document).ready(function(){
 			alert('에디터를 선택해주세요');
 			return;
 		}
+		if(rdate == ""){
+			alert('날짜를 입력해주세요');
+			return;
+		}
+		/*
+		if(num_check.test(rdate))
+		{
+			//if( L_szNum < 3 || L_szNum > 6 )
+			if( L_szNum < 12 )
+			{
+			alert("3~6글자만 입력할수 있습니다.");
+			document.rdate.value="";
+			document.rdate.focus();
+			return false;
+			}
+		}
+		else{
+			alert ( "숫자만 입력할 수 있습니다." );
+			document.rdate.value="";
+			document.rdate.focus();
+		}*/
 		
 		console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title );
 		$('[name=title]').val(title);

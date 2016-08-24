@@ -5,13 +5,13 @@ var mysql = require("./model/mysql");
 router.get('/contents', function(req, res, next) {
 	
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,12', function (err, data){
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,50', function (err, data){
 		 if (err) throw err;
 		 console.log("data");
 		 console.log(data);
 		 
 		 row = data;
-		 res.render('front/cid_contents/cid_contents', { contents : row});
+		 res.render('front/cid_contents/cid_contents_popular', { contents : row});
 	});
 
 });
@@ -21,12 +21,47 @@ router.get('/contents', function(req, res, next) {
 router.get('/contents/:no', function(req, res, next) {
 	
 	var no = req.params.no;
-	var sets = {con_category : no};
+	
+	var now = new Date();
+	 var _year=  now.getFullYear();
+   var _mon =   now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+   var _date=now.getDate ();
+   var _hor = now.getHours  ()
+	 _hor =""+_hor;
+	 if (_hor.length < 2 )
+	 {
+	    _hor="0"+_hor;
+	 }
+	 var _min=now.getMinutes();
+	  _min =""+_min;
+	 if (_min.length < 2 )
+	 {
+	    _min="0"+_min;
+	 }
+	 
+	 var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+	
+	
+	var sets = {con_category : no, con_release : _tot};
 	var row;
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,12', function (err, data){
-		 if (err) throw err;
+	
+	qry="select con_no, con_photo, con_title from cider.cid_contents where con_category = '"+no+"' and con_release <= '"+_tot+"' order by con_no desc limit 0,12";
+
+	
+	//mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,12', function (err, data){
+	mysql.select(qry,
+			 function (err, data){	 
+				if (err) throw err;
 		 
 		 row = data;
+		 res.render('front/cid_contents/cid_contents', { contents : row,no : no});
+		
+		 /*
 		 if(no == 1){
 			 res.render('front/cid_contents/cid_contents_ec', { contents : row});
 		 }else if(no == 2){
@@ -38,8 +73,8 @@ router.get('/contents/:no', function(req, res, next) {
 		 }else{
 		 res.render('front/cid_contents/cid_contents', { contents : row});
 		 }
+		 */
 	});
-
 });
 
 
@@ -113,6 +148,51 @@ router.get('/contents/detail/:no', function(req, res, next) {
 
 
 
+router.get('/addMore/:idx', function(req, res, next) {
+	
+	var idx = req.params.idx;
+	
+	
+	console.log(idx+"=================");
+	var lang = req.params.lang;
+	var start = (idx - 1) * 12;
+	var end = 12;
+	
+	console.log(start, end);
+	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+
+		 if (err) throw err;
+		 console.log("data");
+		 console.log(data);
+		 res.send({ contents : data });
+	});
+	
+});
+
+
+router.get('/addMore2/:idx/:p', function(req, res, next) {
+	
+	var idx = req.params.idx;
+	var p=req.params.p;
+	
+	console.log(idx+"=================");
+	var lang = req.params.lang;
+	var start = (idx - 1) * 12;
+	var end = 12;
+	var qry='';
+	console.log(start, end);
+			qry='select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ p +'" order by con_no desc limit '+ start +', '+ end +''
+	console.log(qry);
+	mysql.select(qry, function (err, data){
+		 if (err) throw err;
+		 console.log("data");
+		 console.log(data);
+		 console.log('select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'');
+		 res.send({ contents : data });
+	});
+	
+});
+/*
 router.get('/addMore/:idx/:no', function(req, res, next) {
 	
 	var idx = req.params.idx;
@@ -139,6 +219,6 @@ router.get('/addMore/:idx/:no', function(req, res, next) {
 	}	 
 		
 	
-});
+});*/
 
 module.exports = router;

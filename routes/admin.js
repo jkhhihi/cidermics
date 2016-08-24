@@ -211,9 +211,7 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
         				//});
         		}
         	});
-			
-		
-				
+
         });
     });
     
@@ -236,7 +234,7 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText};
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201608250000'};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 
@@ -261,11 +259,14 @@ router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
 	var userNo = req.body.userNo;
 	var writer = req.body.writer;
 	var userText = req.body.userText;
+	var rdate   = req.body.rdate;
+	
+	console.log(rdate);
 	var date = getWorldTime(+9);
 	
-	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer  };
+	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer,con_release : rdate   };
 	console.log(sets);
-	mysql.update('update cider.cid_contents set con_category = :con_category,  con_title = :con_title, con_content = :con_content, con_photo = :con_photo,  con_upDate = :con_upDate, user_no = :user_no, user_comment = :user_comment, con_writer = :con_writer where con_no = :con_no', sets, function (err, data){
+	mysql.update('update cider.cid_contents set con_category = :con_category,  con_title = :con_title, con_content = :con_content, con_photo = :con_photo,  con_upDate = :con_upDate, user_no = :user_no, user_comment = :user_comment, con_writer = :con_writer ,con_release= :con_release  where con_no = :con_no', sets, function (err, data){
 		
 		console.log(err);
 		console.log(data);
@@ -303,7 +304,7 @@ router.get('/contents/detail/:no', ensureAuthenticated, function(req, res, next)
 		if(err){
 			res.redirect('back');
 		}
-			mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount, c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data2){
+			mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount, c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, c.con_release, u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data2){
 				if(err){
 					res.redirect('back');
 				}

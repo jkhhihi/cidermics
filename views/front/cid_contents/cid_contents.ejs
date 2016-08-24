@@ -98,6 +98,7 @@
 			<% } %>
 			</ul>
 </div>
+
 <div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.png"></div>
 
 <script src="/js/masonry.pkgd.min.js"></script>
@@ -118,13 +119,13 @@
 
 <script>
 		var idx = 2;
+		var p=2;
 		
-		var no = 0;
 		
 		function addMore (){
 			var contents = '';
 			$.ajax({
-				url : '/addMore/'+idx+'/'+no,
+				url : '/addMore2/'+idx+"/"+<%=no%>,
 				method : 'get',
 				success : function(data){
 					if (data.contents.length == 0){

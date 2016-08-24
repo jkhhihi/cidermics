@@ -5,6 +5,8 @@
 .contents .icon-plus_con{margin:60px 0 50px 0;}
 .contents-mob_menu{display:none;}
 
+.contents h4{color:#C02E88;}
+
 @media all and (max-width:1024px) {
 .contents-menu{display:none;}
 .contents .icon-plus_con{margin:10px 0 30px 0;}
