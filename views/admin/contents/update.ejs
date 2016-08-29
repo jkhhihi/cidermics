@@ -143,23 +143,18 @@
 				<div class="input-field col s12">
                     <select id="user">
                         <option value="">에디터를 정해주세요</option>
-                        <% for(var i=0; i < user.length; i++) {  %> 
-                          
+                        <% for(var i=0; i < user.length; i++) {  %>
                             <option value="<%=user[i].user_no%>/<%=user[i].user_name%>" data-icon="<%= user[i].profile_img %>" <% if( contents[0].user_no == user[i].user_no){ %> selected <%} %>> <%=user[i].user_name%> </option>
-                         
                         <% } %>
                     </select>
                     <label>에디터</label>
                 </div>
                 <div class="input-field col s12">
-                    <textarea name="userText" class="materialize-textarea"><%- contents[0].user_comment %>
-                    </textarea>
+                    <textarea name="userText" class="materialize-textarea"><%- contents[0].user_comment %></textarea>
                     <label>에디터 한마디</label>
                 </div>
 				 <div class="input-field col s12">
-				
 				<input id="rdate" name="rdate" type="text" class="validate" maxlength="12" value="<%= contents[0].con_release %>">
-				
 				<label>보여지는 일자변경(예:201601011300) *띄어쓰기없이 12자리 년월일시분</label>
 				</div>
 				

@@ -2,11 +2,13 @@
 	<div class="nav-wrapper container">
 		<a id="logo-container" href="#" class="brand-logo">Cidermics</a>
 		<ul class="right hide-on-med-and-down">
+			<li <% if(data == 0) { %> class="active" <% } %> > <a href="/adm/index">더미페이지</a></li>
 			<li <% if(data == 1) { %> class="active" <% } %> > <a href="/adm/contents">콘텐츠</a></li>
 			<li <% if(data == 2) { %> class="active" <% } %> > <a href="/adm/consulting">재무</a></li>
 		</ul>
 	
 		<ul id="nav-mobile" class="side-nav">
+			<li <% if(data == 0) { %> class="active" <% } %> > <a href="/adm/contents">더미페이지</a></li>
 			<li <% if(data == 1) { %> class="active" <% } %> > <a href="/adm/contents">콘텐츠</a></li>
 			<li <% if(data == 2) { %> class="active" <% } %> > <a href="/adm/consulting">재무</a></li>
 		</ul>

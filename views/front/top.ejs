@@ -33,6 +33,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript">
 
+$(document).ready(function() {
+    $(document).bind("contextmenu", function(e){
+        alert("우클릭 금지합니다.");
+        return false;
+    });
+ 
+    $('img').bind("contextmenu",function(e){ 
+        alert("우클릭 금지합니다."); 
+        return false; 
+    }); 
+ 
+    $('img').bind("selectstart",function(e){ 
+        alert("우클릭 금지합니다."); 
+        return false;  
+    }); 
+});
+document.oncontextmenu=function(){return false;} // 우클릭 방지
+document.onselectstart=function(){return false;} // 드래그 방지
+document.ondragstart=function(){return false;} // 선택 방지
+//document.onmousedown=function(){return false;}
+
+
+
 $(document).ready(function(){
     $(".contents_menu").click(function(){
         $(".contents_sub_menu").slideToggle();

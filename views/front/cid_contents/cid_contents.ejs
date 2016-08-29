@@ -59,6 +59,7 @@
 						<a href="/contents/2"><img src="/page_imgs/contents_img/icon_menu2.png" width='90' height='120'></a>
 						<a href="/contents/3"><img src="/page_imgs/contents_img/icon_menu3.png" width='90' height='120'></a>
 						<a href="/contents/4"><img src="/page_imgs/contents_img/icon_menu4.png" width='90' height='120'></a>
+					
 				</div>
 		</div>
 </div>
@@ -80,10 +81,7 @@
 
 <!--콘텐츠뿌림-->
 <div class="contents container">
-	<h4>콘텐츠 인기 TOP 30</h4>
 			<ul class="grid effect-2" id="grid">
-				
-				
 			
 				<% for(var i=0; i<contents.length; i++) { %>
 				<li>
@@ -101,6 +99,8 @@
 			</ul>
 </div>
 
+<div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.svg"></div>
+
 <script src="/js/masonry.pkgd.min.js"></script>
 		<script src="/js/imagesloaded.js"></script>
 		<script src="/js/classie.js"></script>
@@ -117,5 +117,47 @@
 <% include ../bottom %>
 
 
+<script>
+		var idx = 2;
+		var p=2;
+		
+		
+		function addMore (){
+			var contents = '';
+			$.ajax({
+				url : '/addMore2/'+idx+"/"+<%=no%>,
+				method : 'get',
+				success : function(data){
+					if (data.contents.length == 0){
+						alert('마지막 콘텐츠입니다.');
+						return;
+					}
+					idx ++;
+					$.each(data.contents, function (index, value){
+						contents += '<li> ' +
+							 			'<div class="con-border bg-w"> ' + 
+												'<a href="/contents/detail/'+value.con_no+'"> ' +
+													'<div class="con-img"> ' +
+														'<img src="'+value.con_photo+'"/> ' + 
+													'</div> ' +
+												'</a> ' +
+							 					'<a href="/contents/detail/'+value.con_no+'"> ' +
+							 						'<div class="con-title"><span><center>' + value.con_title +'</center></span></div>' +
+							 					'</a> '+
+							 			'</div> '+
+							 		'</li> ';
+							
+					});
+					$('#grid').append(contents);
+					new AnimOnScroll( document.getElementById( 'grid' ), {
+						minDuration : 0.4,
+						maxDuration : 0.7,
+						viewportFactor : 0.2
+					} );
+				}
+			});
+		}
+		
+	</script>
 </body>
 </html>

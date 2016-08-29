@@ -47,9 +47,9 @@ app.use(logger('dev'));
 
 
 
-app.use(bodyParser.json({limit: '100mb'}));
+app.use(bodyParser.json({limit: '1000mb'}));
 //app.use(multiparty({uploadDir:__dirname+'/multipart'}));
-app.use(bodyParser.urlencoded({limit: '100mb', extended: false }));
+app.use(bodyParser.urlencoded({limit: '1000mb', extended: false }));
 
 
 //app.use(bodyParser.json());

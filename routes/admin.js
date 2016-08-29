@@ -63,7 +63,7 @@ router.get('/', function(req, res, next) {
 	var CP = 0;
 	console.log(req.cookies);
 	if(req.cookies.auth){
-		res.redirect('/adm/contents');
+		res.redirect('/adm/index');
 	}else{
 		res.render('admin/admin', {CP:CP});
 	}
@@ -71,7 +71,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/login', passport.authenticate('local', { failureRedirect: '/adm', failureFlash: true }), function(req, res, next) {
 	var CP = 0;
-	res.redirect('/adm/contents');
+	res.redirect('/adm/index');
 	/*var id = req.body.id;
 	var pw = req.body.pw;
 	
@@ -89,6 +89,13 @@ router.get('/contents', ensureAuthenticated, function(req, res, next) {
 	var CP = 1;
 		mysql.select('select * from cider.cid_contents order by con_no desc', function (err, data){
 			 res.render('admin/contents/contents', { CP : CP, contents : data });	    	
+		});
+});
+
+router.get('/index', ensureAuthenticated, function(req, res, next) {
+	var CP = 0;
+		mysql.select('SELECT * from cider.cid_contents where con_title like \'%더미%\' order by con_no desc;', function (err, data){
+			 res.render('admin/admin_index', { CP : CP, contents : data });	    	
 		});
 });
 
@@ -234,7 +241,7 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201608250000'};
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201609290000'};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 
@@ -322,6 +329,58 @@ router.get('/contents/detail/:no', ensureAuthenticated, function(req, res, next)
 		
     });
 	
+});
+
+
+
+//2016년 8월 25일 기능추가
+//관리자 입력 오류 부분 때문에 임시로 만든 부분
+router.get('/contents/insert2', ensureAuthenticated, function(req, res, next) {
+
+var CP = 1;
+var now = new Date();
+ var _year=  now.getFullYear();
+  var _mon =   now.getMonth()+1;
+ _mon=""+_mon;
+ if (_mon.length < 2 )
+ {
+    _mon="0"+_mon;
+ }
+  var _date=now.getDate ();
+  var _hor = now.getHours()+1;
+ _hor =""+_hor;
+ if (_hor.length < 2 )
+ {
+    _hor="0"+_hor;
+ }
+ var _min=now.getMinutes();
+  _min =""+_min;
+ if (_min.length < 2 )
+ {
+    _min="0"+_min;
+ }
+ 
+ var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+var title = "test";
+var contents = "test";
+var category = "1";
+var photo = "";
+var userNo = "";
+var writer = "";
+var userText ="";
+var date = getWorldTime(+9);
+var cdate = _tot;
+var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText,con_release : cdate};
+
+mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
+
+   console.log(writer);
+   console.log(err);
+   console.log(data);
+   
+    res.redirect('/adm/contents');
+    
+ });
 });
 
 

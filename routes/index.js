@@ -44,7 +44,6 @@ router.get('/', function(req, res, next) {
 	//mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_no desc limit 0,24',
 	*/
 	var now = new Date();
-	console.log(now);
 	 var _year=  now.getFullYear();
      var _mon =   now.getMonth()+1;
 	 _mon=""+_mon;
@@ -82,8 +81,6 @@ router.get('/', function(req, res, next) {
 	res.render('front/cid_main', { contents : row});
   });
 });
-
-
 
 
 router.get('/top', function(req, res, next) {

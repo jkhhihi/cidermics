@@ -150,7 +150,7 @@ html.open {
 .btn-default:hover
 {background-color:#FFFFFF; border:0px;}
 .open>.dropdown-toggle.btn-default
-{   background-color: #ececec;
+{   background-color: #f1689d;
     color: #fff;
     border: none;
     border-radius: inherit;}
