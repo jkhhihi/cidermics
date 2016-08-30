@@ -31,6 +31,8 @@ var consulting = require('./routes/consulting');
 var contents = require('./routes/contents');
 var member = require('./routes/member');
 var search = require('./routes/search');
+var finance = require('./routes/finance');
+
 
 //app.use(bodyParser.json({ limit: '20M' }));
 //app.use(bodyParser.urlencoded({limit: '20M', extended: true}));
@@ -69,6 +71,7 @@ app.use('/cid_consulting', express.static(__dirname + '/views/cid_consulting'));
 app.use('/cid_contents', express.static(__dirname + '/views/cid_contents'));
 app.use('/cid_member', express.static(__dirname + '/views/cid_member'));
 app.use('/cid_search', express.static(__dirname + '/views/cid_search'));
+app.use('/cid_finance', express.static(__dirname + '/views/cid_finance'));
 app.use(flash());
 
 
@@ -87,6 +90,7 @@ app.use('/',consulting);
 app.use('/',contents);
 app.use('/',member);
 app.use('/',search);
+app.use('/',finance);
 
 
 passport.use('local', new LocalStrategy({
