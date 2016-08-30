@@ -361,10 +361,10 @@ var now = new Date();
  }
  
  var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
-var title = "test";
-var contents = "test";
+var title = "더미";
+var contents = " ";
 var category = "1";
-var photo = "";
+var photo = "/uploads/leverage-in-the-financial-markets.jpg";
 var userNo = "";
 var writer = "";
 var userText ="";
