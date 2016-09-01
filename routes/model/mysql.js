@@ -4,7 +4,8 @@ var pool = mysql.createPool({
 	  connectionLimit : 8,
 	  host     : 'cider.cjvgnltk0cex.ap-northeast-1.rds.amazonaws.com',
 	  user     : 'frank',
-	  password : 'ss1gyk4w'
+	  password : 'ss1gyk4w',
+	  multipleStatements: true
 });
 
 exports.select = function(sql, callback) {	
@@ -12,9 +13,9 @@ exports.select = function(sql, callback) {
 		connection.query(sql, function(err, rows, fields) {
 			
 			if (err) throw err;
-			console.log(err);
-			console.log('result : ');
-			console.log(rows);
+			//console.log(err);
+			//console.log('result : ');
+			//console.log(rows);
 			
 			connection.release();
 			callback(err, rows);
@@ -28,9 +29,9 @@ exports.insert = function(sql, sets, callback) {
 		connection.query(sql, sets, function(err, rows, fields) {
 			
 			if (err) throw err;
-			console.log(err);
-			console.log('result : ');
-			console.log(rows);
+			//console.log(err);
+			//console.log('result : ');
+			//console.log(rows);
 			
 			connection.release();
 			callback(err, rows);
@@ -55,9 +56,9 @@ exports.update = function(sql, sets, callback) {
 		connection.query(sql, sets, function(err, rows, fields) {
 			
 			if (err) throw err;
-			console.log(err);
-			console.log('result : ');
-			console.log(rows);
+			//console.log(err);
+			//console.log('result : ');
+			//console.log(rows);
 			
 			connection.release();
 			callback(err, rows);
@@ -71,9 +72,9 @@ exports.del = function(sql, callback) {
 		connection.query(sql, function(err, rows, fields) {
 			
 			if (err) throw err;
-			console.log(err);
-			console.log('result : ');
-			console.log(rows);
+			//console.log(err);
+			//console.log('result : ');
+			//console.log(rows);
 			
 			connection.release();
 			callback(err, rows);

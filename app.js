@@ -49,14 +49,14 @@ app.use(logger('dev'));
 
 
 
-app.use(bodyParser.json({limit: '1000mb'}));
-//app.use(multiparty({uploadDir:__dirname+'/multipart'}));
-app.use(bodyParser.urlencoded({limit: '1000mb', extended: false }));
+//app.use(bodyParser.json({limit: '1000mb'}));
+app.use(multiparty({uploadDir:__dirname+'/multipart'}));
+app.use(bodyParser.urlencoded({limit: '1000mb', extended: true }));
 
-
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({extended: false }));
 app.use(cookieParser());
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({extended: true }));
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'fortt', resave: true, saveUninitialized: true}));

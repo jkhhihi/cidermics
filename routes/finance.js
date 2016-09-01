@@ -14,9 +14,9 @@ router.post('/finance', function(req, res, next) {
 	console.log(consult_name);
 	
 	
-	var posts = {consult_name : consult_name};
+	var sets = {consult_name : consult_name};
 	
-	//mysql.insert('insert into cider.cid_finance set = '+consult_name, function (err, data){ res.redirect('/finance'); });
+	//mysql.insert('insert into cider.cid_finance set = '+consult_name,consult_name, function (err, data){ res.redirect('/finance');
 	
 	//mysql.insert('insert into cider.cid_finance SET ?', posts,  function (err, data){
 	
