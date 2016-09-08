@@ -45,6 +45,10 @@
 
 </script>
 
+<script>
+$('#coupon-modal').modal(options)
+</script>
+
 </head>
 <body>
 <!--위로가기 버튼-->
@@ -53,13 +57,35 @@
 
 <div class="line"></div>
 
+
+
+
+
+
 <div class="apply" align="center">
 		<div class="title">
 				<p>수강료</p>
 		</div>
 		<div class="line1"></div>
 		<div class="price">200,000원
-				<div class="btn-coupon">쿠폰입력</div>
+				<div class="btn-coupon"><button type="button" data-toggle="modal" data-target="#coupon-modal">쿠폰입력</button></div>
+				
+				<div id="coupon-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+       				 <div class="modal-dialog">
+           			 <div class="modal-content">
+                	 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title">쿠폰번호를 입력하세요.</h4>
+                	 </div>
+                	 <div class="modal-body">
+                   		<input type="text" style="color:#212121;"><button type="button" class="btn btn-primary">입력</button>
+                   		<a href="#"><p>할인쿠폰 신청하기</p></a>
+                 	 </div>
+           		     </div>
+        			 </div>
+    		   </div>
+
+			
 		</div>
 		<div class="deposit-account">입금계좌  :  110-0000-0000 (신한,예금주:사이다경제) </div>
 </div>
