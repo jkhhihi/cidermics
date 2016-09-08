@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사이다경제 | 콘텐츠</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/cid_contents.css" rel="stylesheet">
+<link href="/css/cid_lecture_apply.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
@@ -45,13 +45,88 @@
 
 </script>
 
+<script>
+$('#coupon-modal').modal(options)
+</script>
+
 </head>
 <body>
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include ../top %>
 
+<div class="line"></div>
 
+
+
+
+
+
+<div class="apply" align="center">
+		<div class="title">
+				<p>수강료</p>
+		</div>
+		<div class="line1"></div>
+		<div class="price">200,000원
+				<div class="btn-coupon"><button type="button" data-toggle="modal" data-target="#coupon-modal">쿠폰입력</button></div>
+				
+				<div id="coupon-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+       				 <div class="modal-dialog">
+           			 <div class="modal-content">
+                	 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title">쿠폰번호를 입력하세요.</h4>
+                	 </div>
+                	 <div class="modal-body">
+                   		<input type="text" style="color:#212121;"><button type="button" class="btn btn-primary">입력</button>
+                   		<a href="#"><p>할인쿠폰 신청하기</p></a>
+                 	 </div>
+           		     </div>
+        			 </div>
+    		   </div>
+
+			
+		</div>
+		<div class="deposit-account">입금계좌  :  110-0000-0000 (신한,예금주:사이다경제) </div>
+</div>
+<div class="apply-input container" align="center">
+		<div class="row name" align="left">
+				<div class="col-xs-5 col-lg-3"><span>입금자명 : </span></div>
+				<div class="col-xs-7 col-lg-7"><input type="text"></div>
+		</div>
+		<div class="row cell" align="left">
+				<div class="col-xs-5 col-lg-3"><span>휴대폰 번호 : </span></div>
+				<div class="col-xs-7 col-lg-7"><input type="text"><p style="color:#FF0000; margin-top:15px; font-size:14px;">- 없이 입력해주시기 바랍니다.</p></div>
+		</div>
+		<div class="row mail" align="left">
+				<div class="col-xs-5 col-lg-3"><span>이메일 주소 : </span></div>
+				<div class="col-xs-7 col-lg-7"><input type="text"></div>
+		</div>
+		<div class="row job" align="left">
+				<div class="col-xs-5 col-lg-3"><span>소속 및 직무 : </span></div>
+				<div class="col-xs-7 col-lg-7"><input type="text"></div>
+		</div>
+		<div class="row route" align="left">
+				<div class="col-xs-5 col-lg-3"><span>알게 된 경로 : </span></div>
+				<div class="col-xs-7 col-lg-7"><input type="text"></div>
+		</div>
+		<div class="btn-apply">신청하기</div>
+</div>
+<div class="container" align="center">
+		<p style="font-size:16px; font-weight:bold; color:#FF0000; width:600px; margin-top:50px; margin-left:15px;" align="left">※취소 및 환불규정</p>
+		<div class="apply-cancle" align="center">
+				<div class="cancle-con" align="left">
+						<p>1. 강연 환불 기준</p>
+						<p style="margin-left:18px;">강연 개시 1주전 100%<br>
+								72시간전 70%<br>
+								48시간전 50%<br>
+								48시간이내 0%</p>
+						<p style="margin-top:30px;">2. 수강신청 취소 및 환불 방법</p>
+						<p style="margin-left:18px;">전화(010-8834-5754) 또는<br>
+								이메일(contact@cidermics.com) 통해 가능합니다.</p>
+				</div>
+		</div>
+</div>
 
 <% include ../bottom %>
 

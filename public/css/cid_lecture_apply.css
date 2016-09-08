@@ -1,0 +1,34 @@
+.apply{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; margin-top:50px;}
+.apply .title p{font-size:24px; font-weight:bold;}
+.apply .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px; margin-bottom:20px;}
+.apply .price{font-size:36px; font-weight:bold; color:#FF0000;}
+.apply .btn-coupon button{background-color: initial; width:120px; height:35px; border-radius:2px; color:#1b87c9; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin:20px; 0;}
+.apply-input{width:800px !important; font-size:18px; font-weight:bold;}
+.apply-input .row{margin:50px 0;}
+.apply-input .name input{border-bottom:#1b87c9 2px solid; width:250px; border-top:none; border-left:none; border-right:none;}
+.apply-input .cell input{border-bottom:#1b87c9 2px solid; width:250px; border-top:none; border-left:none; border-right:none;}
+.apply-input .mail input{border-bottom:#1b87c9 2px solid; width:250px; border-top:none; border-left:none; border-right:none;}
+.apply-input .job input{border-bottom:#1b87c9 2px solid; width:250px; border-top:none; border-left:none; border-right:none;}
+.apply-input .route input{border-bottom:#1b87c9 2px solid; width:250px; border-top:none; border-left:none; border-right:none;}
+.apply-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:100px 0 50px 0;}
+.apply .deposit-account{font-size:24px; font-weight:bold; color:212121; margin-top:30px; line-height:1.5em;}
+.apply-cancle{border:#ececec 3px solid; width:600px; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:100px;}
+.apply-cancle .cancle-con{font-size:14px; color:#666;line-height:2.0em}
+
+.modal-title{color:#1b87c9;}
+.modal-body{margin-top:20px;}
+.modal-body input{border-bottom:#1b87c9 2px solid; height:70px; width:200px; border-top:none; border-left:none; border-right:none;}
+.modal-body button{background-color:##1b87c9; width:80px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
+.modal-body p{font-size:16px; color:#ff0000; margin-top:30px; margin-bottom:20px; text-decoration:underline;}
+
+
+@media all and (max-width:1024px) {
+.line{height:1px;}
+.apply-cancle{width:95%;}
+.apply-input{width:100% !important; font-size:16px;}
+.apply-input .name input{width:100%;}
+.apply-input .cell input{width:100%;}
+.apply-input .mail input{width:100%;}
+.apply-input .job input{width:100%;}
+.apply-input .route input{width:100%;}
+}
