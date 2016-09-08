@@ -53,24 +53,7 @@
 
 
 <!--콘텐츠뿌림-->
-<div class="contents container">
-			<ul class="grid effect-2" id="grid">
-			
-				<% for(var i=0; i<contents.length; i++) { %>
-				<li>
-				<div>
-					
-					<a href="/contents/detail/<%= contents[i].con_no %>">
-					<img class="img-responsive" src="<%= contents[i].con_photo %>"></a>
-					
-					
-					<p><a href="/contents/detail/<%= contents[i].con_no %>">
-						<%= contents[i].con_title %></a></p>
-				</div>
-			</li>
-			<% } %>
-			</ul>
-</div>
+
 
 <div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.svg" style="width:40px; margin-bottom:20px;"></div>
 
@@ -89,48 +72,5 @@
 
 <% include ../bottom %>
 
-
-<script>
-		var idx = 2;
-		var p=2;
-		
-		
-		function addMore (){
-			var contents = '';
-			$.ajax({
-				url : '/addMore2/'+idx+"/"+<%=no%>,
-				method : 'get',
-				success : function(data){
-					if (data.contents.length == 0){
-						alert('마지막 콘텐츠입니다.');
-						return;
-					}
-					idx ++;
-					$.each(data.contents, function (index, value){
-						contents += '<li> ' +
-							 			'<div class="con-border bg-w"> ' + 
-												'<a href="/contents/detail/'+value.con_no+'"> ' +
-													'<div class="con-img"> ' +
-														'<img src="'+value.con_photo+'"/> ' + 
-													'</div> ' +
-												'</a> ' +
-							 					'<a href="/contents/detail/'+value.con_no+'"> ' +
-							 						'<div class="con-title"><span><center>' + value.con_title +'</center></span></div>' +
-							 					'</a> '+
-							 			'</div> '+
-							 		'</li> ';
-							
-					});
-					$('#grid').append(contents);
-					new AnimOnScroll( document.getElementById( 'grid' ), {
-						minDuration : 0.4,
-						maxDuration : 0.7,
-						viewportFactor : 0.2
-					} );
-				}
-			});
-		}
-		
-	</script>
 </body>
 </html>
