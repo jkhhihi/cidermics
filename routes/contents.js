@@ -31,7 +31,12 @@ router.get('/contents/:no', function(req, res, next) {
 	    _mon="0"+_mon;
 	 }
    var _date=now.getDate ();
-   var _hor = now.getHours  ()
+   _date =""+_date;
+   if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+   var _hor = now.getHours  ();
 	 _hor =""+_hor;
 	 if (_hor.length < 2 )
 	 {
@@ -94,7 +99,12 @@ router.get('/contents/detail/:no', function(req, res, next) {
 	    _mon="0"+_mon;
 	 }
 	 var _date=now.getDate ();
-	 var _hor = now.getHours  ()
+	 _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+	 var _hor = now.getHours  ();
 	 _hor =""+_hor;
 	 if (_hor.length < 2 )
 	 {
@@ -175,7 +185,12 @@ router.get('/addMore/:idx', function(req, res, next) {
        _mon="0"+_mon;
     }
      var _date=now.getDate ();
-     var _hor = now.getHours ()
+     _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+     var _hor = now.getHours ();
     _hor =""+_hor;
     if (_hor.length < 2 )
     {
@@ -226,7 +241,12 @@ router.get('/addMore2/:idx/:p', function(req, res, next) {
        _mon="0"+_mon;
     }
      var _date=now.getDate ();
-     var _hor = now.getHours ()
+     _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+     var _hor = now.getHours ();
     _hor =""+_hor;
     if (_hor.length < 2 )
     {

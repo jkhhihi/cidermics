@@ -347,6 +347,11 @@ var now = new Date();
     _mon="0"+_mon;
  }
   var _date=now.getDate ();
+  _date =""+_date;
+  if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
   var _hor = now.getHours()+1;
  _hor =""+_hor;
  if (_hor.length < 2 )

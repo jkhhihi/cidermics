@@ -5,20 +5,15 @@ var express = require('express')
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-//var multiparty = require('connect-multiparty');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var debug = require('debug')('cidermics:server');
-//var http = require('http');
+var session = require('express-session');
 var passport = require('passport')
 , LocalStrategy = require('passport-local').Strategy;
-var mysql = require("./routes/model/mysql");
 var flash = require('req-flash');
-var session = require('express-session');
-
+var mysql = require("./routes/model/mysql");
 
 var app = express();
-
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -33,34 +28,29 @@ var member = require('./routes/member');
 var search = require('./routes/search');
 var finance = require('./routes/finance');
 
-
-//app.use(bodyParser.json({ limit: '20M' }));
-//app.use(bodyParser.urlencoded({limit: '20M', extended: true}));
-
-
-// view engine setup
 app.set('port', process.env.PORT || 80);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(bodyParser.json());
+
+app.use(cookieParser());
+app.use(session({
+	  cookieName: 'session',
+	  secret: 'raonomics_secret',
+	  //duration: 30 * 60 * 1000,
+	  duration: 60 * 90 * 1000,
+	  //activeDuration: 5 * 60 * 1000,
+	  activeDuration: 25 * 70 * 1000,
+	}));
+
+app.use(session({ secret: 'fortt', resave: true, saveUninitialized: true}));
+
 app.use(logger('dev'));
 
 
-
-
-//app.use(multiparty({uploadDir:__dirname+'/multipart'}));
-app.use(bodyParser.json({limit: '1000mb'}));
-app.use(bodyParser.urlencoded({limit: '1000mb', extended: true }));
-
-app.use(cookieParser());
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({extended: true }));
-
-
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'fortt', resave: true, saveUninitialized: true}));
+
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -76,9 +66,15 @@ app.use('/cid_finance', express.static(__dirname + '/views/cid_finance'));
 app.use(flash());
 
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
-
-
+//development only
+if ('development' == app.get('env')) {
+//  app.use(express.errorHandler());
+}
 
 app.use('/', routes);
 app.use('/users', users);
@@ -164,10 +160,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var server = app.listen(app.get('port'), function() {
-//http.createServer(app).listen(app.get('port'), function(){
-//	console.log('Express server listening on port ' + app.get('port'));
-
-  debug('Express server listening on port ' + server.address().port);
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
 });
-

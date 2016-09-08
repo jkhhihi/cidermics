@@ -52,6 +52,11 @@ router.get('/', function(req, res, next) {
 	    _mon="0"+_mon;
 	 }
      var _date=now.getDate ();
+     _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
      var _hor = now.getHours ()
 	 _hor =""+_hor;
 	 if (_hor.length < 2 )
@@ -70,6 +75,7 @@ router.get('/', function(req, res, next) {
 	 //alert(_tot);
 	
 	 qry="select con_no, con_photo, con_title from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit 0,12";
+	 console.log(_tot);
 	 //qry="select con_no, con_photo, con_title from cider.cid_contents where con_release < '201501010000' order by con_no desc limit 0,24";
 	  //console.log(qry);
 	mysql.select(qry,
