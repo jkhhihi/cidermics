@@ -107,6 +107,12 @@ router.get('/modal', function(req, res, next) {
 
 });
 
+router.get('/502', function(req, res, next) {
+
+	res.render('front/502', { });
+
+});
+
 
 
 
