@@ -44,9 +44,11 @@
 .recommendation{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
 .recommendation div{margin:10px 0 50px 0;}
 .recommendation p{margin-top:20px;}
-
-
 .contents_detail-mob_menu {display:none;}
+
+.contents iframe{width:100% !important; height:100% !important;}
+
+
 @media all and (max-width:1024px) {
 .contents_detail-mob_menu {display:block;}
 .contents .contents-in img{width:95%; margin-top:60px;}/*img 빼기*/
