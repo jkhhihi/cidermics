@@ -20,9 +20,11 @@
 .modal-body input{border-bottom:#1b87c9 2px solid; height:70px; width:200px; border-top:none; border-left:none; border-right:none;}
 .modal-body button{background-color:##1b87c9; width:80px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
 .modal-body p{font-size:16px; color:#ff0000; margin-top:30px; margin-bottom:20px; text-decoration:underline;}
-
+.modal-lg{max-width:500px;}
 
 @media all and (max-width:1024px) {
+.modal-lg{width:95%}
+.modal-body input{width:150px;}
 .line{height:1px;}
 .apply-cancle{width:95%;}
 .apply-input{width:100% !important; font-size:16px;}
@@ -31,4 +33,5 @@
 .apply-input .mail input{width:100%;}
 .apply-input .job input{width:100%;}
 .apply-input .route input{width:100%;}
+.cancle p{width:95% !important;}
 }
