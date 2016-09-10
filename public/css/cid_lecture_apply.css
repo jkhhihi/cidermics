@@ -11,21 +11,23 @@
 .apply-input .job input{border-bottom:#1b87c9 2px solid; width:250px; border-top:none; border-left:none; border-right:none;}
 .apply-input .route input{border-bottom:#1b87c9 2px solid; width:250px; border-top:none; border-left:none; border-right:none;}
 .apply-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:100px 0 50px 0;}
-.apply .deposit-account{font-size:24px; font-weight:bold; color:212121; margin-top:30px; line-height:1.5em;}
+.apply .deposit-account{font-size:30px; font-weight:bold; color:#212121; margin-top:30px; line-height:1.5em;}
 .apply-cancle{border:#ececec 3px solid; width:600px; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:100px;}
 .apply-cancle .cancle-con{font-size:14px; color:#666;line-height:2.0em}
 
 .modal-title{color:#1b87c9;}
 .modal-body{margin-top:20px;}
-.modal-body input{border-bottom:#1b87c9 2px solid; height:70px; width:200px; border-top:none; border-left:none; border-right:none;}
-.modal-body button{background-color:##1b87c9; width:80px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
-.modal-body p{font-size:16px; color:#ff0000; margin-top:30px; margin-bottom:20px; text-decoration:underline;}
+.modal-body input{border-bottom:#1b87c9 2px solid; height:50px; width:80%; border-top:none; border-left:none; border-right:none;}
+.modal-body button{background-color:#1b87c9; width:55px; height:38px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
+.modal-body p{font-size:16px; color:#f24646; margin:30px 0 20px 0; width:120px; height:auto; border-radius:15px; background-color:#ececec; padding:10px;}
 .modal-lg{max-width:500px;}
 
 @media all and (max-width:1024px) {
 .modal-lg{width:95%}
-.modal-body input{width:150px;}
+.modal-body{padding:2px !important;}
+.modal-body input{width:220px;}
 .line{height:1px;}
+.apply .deposit-account{padding:5px; font-size:22px;}
 .apply-cancle{width:95%;}
 .apply-input{width:100% !important; font-size:16px;}
 .apply-input .name input{width:100%;}

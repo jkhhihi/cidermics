@@ -10,8 +10,8 @@
 .contents .date-view span.bar{color:#ce2ca8;}
 .contents .editor{font-size:16px;}
 .contents .line-1px{width:100%; height:1px; background-color:#1b87c9; margin:10px 0 10px 0;}
-.contents .contents-in img{margin-top:60px;}/*img 빼기*/
-.editor-introduce{margin:30px 0 30px 0;}
+.contents .contents-in img{margin-top:60px; width:50%;}/*img 빼기*/
+.editor-introduce{margin-top:30px;}
 .editor-introduce .line-1px{width:100%; height:1px; background-color:#1b87c9;}
 .mob-editor-con{display:none;}
 .editor-introduce .web-editor-con{height:180px; border:solid 1px #1b87c9; border-radius:10px; margin:20px 0; padding-top:20px;}
@@ -48,19 +48,19 @@
 
 .contents iframe{width:100% !important; height:100% !important;}
 
-
 @media all and (max-width:1024px) {
 .contents_detail-mob_menu {display:block;}
-.contents .contents-in img{width:95%; margin-top:60px;}/*img 빼기*/
+.contents .contents-in img{width:90% !important; margin-top:60px;}/*img 빼기*/
 .web-banner{display:none;}
 .mob-banner{display:block;}
 .contents .title{font-size:22px; margin:20px 0 10px 0; }
 .contents .date-view span{margin-right:5px; font-size:12px;}
 .contents .date-view span.bar{color:#ce2ca8;}
 .contents .editor{font-size:12px;}
+.contents .contents-in img{width:100%;}
 .web-editor-con{display:none;}
 .mob-editor-con{display:block;}
-.editor-introduce .mob-editor-con{height:270px; border:solid 1px #1b87c9; border-radius:10px; margin:20px 0; padding:10px;}
+.editor-introduce .mob-editor-con{height:auto; border:solid 1px #1b87c9; border-radius:10px; margin:20px 0; padding:10px;}
 .mob-editor-con .editor-intro{margin:20px 0 5px 0;}
 .mob-editor-con .editor-sns img{margin-left:5px;}
 .web-main-banner{display:none;}
@@ -68,6 +68,7 @@
 .mob-main-banner{margin-bottom:10px;}
 .mob-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:20px 0 5px 5px;}
 .like .btn-like img{width:50px;}
+.pre-next{width:98%;}
 .pre-next .con-pre{width:50%; font-size:12px;}
 .con-pre p{margin-top:10px;}
 .con-pre p.pre-title{font-size:14px; line-height:1.5em;}

@@ -22,7 +22,7 @@
 .lecture .apply{width:95%; border:#ececec 3px solid;}
 .web-professor-con{display:none;}
 .mob-professor-con{display:block;}
-.professor-introduce .mob-professor-con{height:270px; border:solid 1px #2f8ecd; border-radius:10px; margin:20px 0; padding-top:20px;}
+.professor-introduce .mob-professor-con{height:auto; border:solid 1px #2f8ecd; border-radius:10px; margin:20px 0; padding:10px;}
 .mob-professor-con .professor-intro{margin:10px 0 10px 0;}
 .mob-professor-con .professor-sns img{margin-left:5px;}
 }
