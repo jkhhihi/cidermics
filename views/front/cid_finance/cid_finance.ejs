@@ -5,34 +5,53 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>test</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<SCRIPT type="text/javascript"> 
-//document.location.reload(true);
-    //setTimeout("location.reload()",5000);
-//$(document).ready(function(){
-   // $("form").submit(function(){
-    //    alert("Submitted");
-    //});
-//});
-</SCRIPT> 
+
 </head>
 <body>
-<!--콘텐츠뿌림-->
-<form action="/finance" method="post">
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br> NEW
-	<div class="input-field col l12">
-		<input name="consult_name" type="text">
-		<input type="submit" value="Submit">
-	</div>
-	<input type="hidden" name="consult_no">
-</form>
+<% include ../top %>
 
 
+<!--배너뿌림-->
+
+<div class="container consulting-detail">
+		<div class="title">
+				<p>사이트 소개</p>
+		</div>
+		<div class="site">
+				<p>사이트명 : </p>
+				<img class="img-responsive" src="">
+				
+				<!--img src="/page_imgs/consulting_img/img_site.jpg"--></div>
+		<div class="visit"><a href="">사이트 방문하기</a></div>
+		
+		<div class="intro">
+				<p>사이트 소개</p>
+				<div class="intro-in">
+						<p>
+							
+						</p>
+				</div>
+		</div>
+		<div class="analysis">
+				<p>사이트 상세분석</p>
+				<div class="analysis-in">
+						<p>매우 좋은 사이트<br>
+								디자인 굿<br>
+								I oh I oh I got me feeling drunk and high so high so hig<br>
+								oh i oh i oh i<br>
+								now i’m feeling drunk and high so high so hig<br>
+								oh angel sent from up above i feel you coursing through my blood<br>
+								that i shot across the sky<br>
+								that i shoot across the that i shoot across the sky<br>
+								watch me shoot across the<br>
+								<br>
+								<br>
+								중간중간에 이미지 들어갈수있게 뒷단작업 필요함(이미지 많이 들어감)</p>
+				</div>
+		</div>
+		<div class="visit"><a href="http://www.naver.com">사이트 방문하기</a></div>
+</div>
+
+<% include ../bottom %>
 </body>
 </html>

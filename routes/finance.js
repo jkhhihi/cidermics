@@ -4,7 +4,7 @@ var mysql = require("./model/mysql");
 
 var pool = require("./model/mysql");
 
-router.get('/finance', function(req, res, next) {
+router.get('/ftest', function(req, res, next) {
 	var consult_name = req.body.consult_name;
 	
 	//var CP = 1;
@@ -12,9 +12,9 @@ router.get('/finance', function(req, res, next) {
 		//res.render('front/cid_finance/cid_finance', {contents : data});	    	
 	//});});
 
-	res.render('front/cid_finance/cid_finance', { });});
+	res.render('front/cid_finance/cid_finance_test', { });});
 
-router.post('/finance', function(req, res, next) {
+router.post('/ftest', function(req, res, next) {
 	var consult_name = req.body.consult_name;
 	var consult_no = req.body.consult_no;
 	var no = consult_no + 1;
@@ -34,11 +34,37 @@ router.post('/finance', function(req, res, next) {
 	
 	//mysql.insert('insert into cider.cid_finance set consult_name = '+consult_name+'', consult_name,  function (err, data){
 
-	
-	res.redirect('/finance');
+	res.redirect('/ftest');
 	
 	});
 });
+
+router.get('/finance', function(req, res, next) {
+
+	res.render('front/cid_finance/cid_finance', { });
+
+});
+
+
+router.get('/finance/apply', function(req, res, next) {
+
+	res.render('front/cid_finance/cid_finance_apply', { });
+
+});
+
+router.get('/finance/info', function(req, res, next) {
+
+	res.render('front/cid_finance/cid_finance_info', { });
+
+});
+
+router.get('/finance/review', function(req, res, next) {
+
+	res.render('front/cid_finance/cid_finance_review', { });
+
+});
+
+
 
 
 module.exports = router;
