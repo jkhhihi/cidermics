@@ -122,8 +122,7 @@
 					<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cidermics.com%2F&amp;src=sdkpreparse">공유하기</a></div>
 				</div>
 		</div-->
-		<div class="row editor-introduce">
-				
+		<div class="row editor-introduce container" style="padding:0 10px 0 10px;">
 				<div class="col-xs-12 mob-editor-con">
 						<div class="row">
 								<div class="col-xs-12 editor-picture" align="center"><img class="img-responsive" width="80" src="<%= contents[0].user_sns_icon %>"></div>
@@ -149,9 +148,9 @@
 								</div>
 						</div>
 				</div>
-				<div class="col-xs-12 line-1px"></div>
+				
 		</div>
-		
+		<div class="col-xs-12 line-1px" style="margin-bottom:50px;"></div>
 		
 </div>
 <!--배너뿌림-->
@@ -207,12 +206,12 @@
     </script>
 
 		
-		<div class="row comment" align="center">
-				<div class="col-xs-12">
+		<div class="row comment container" align="center">
+				<div class="col-xs-12" style="padding:0;">
 					<div class="fb-comments" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-width="100%" data-numposts="5" data-mobile></div>
 				</div>
 		</div>
-		<div class="row pre-next">
+		<div class="row pre-next container">
 		
 		<% for(var i=0; i<contents.length; i++) {
 		if (preNext[i].con_no < contents[i].con_no && preNext[i+1] == null) { %>

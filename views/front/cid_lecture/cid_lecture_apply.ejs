@@ -71,15 +71,15 @@ $('#coupon-modal').modal(options)
 				<div class="btn-coupon"><button type="button" data-toggle="modal" data-target="#coupon-modal">쿠폰입력</button></div>
 				
 				<div id="coupon-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-       				 <div class="modal-dialog">
+       				 <div class="modal-dialog modal-lg">
            			 <div class="modal-content">
                 	 <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                      <h4 class="modal-title">쿠폰번호를 입력하세요.</h4>
                 	 </div>
                 	 <div class="modal-body">
-                   		<input type="text" style="color:#212121;"><button type="button" class="btn btn-primary">입력</button>
-                   		<a href="#"><p>할인쿠폰 신청하기</p></a>
+                   		<input type="text" style="color:#212121;"><button type="button" class="btn-sale-ok btn-primary">입력</button>
+                   		<a href="#"><p>할인쿠폰받기</p></a>
                  	 </div>
            		     </div>
         			 </div>
@@ -89,30 +89,28 @@ $('#coupon-modal').modal(options)
 		</div>
 		<div class="deposit-account">입금계좌  :  110-0000-0000 (신한,예금주:사이다경제) </div>
 </div>
-<div class="apply-input container" align="center">
-		<div class="row name" align="left">
-				<div class="col-xs-5 col-lg-3"><span>입금자명 : </span></div>
-				<div class="col-xs-7 col-lg-7"><input type="text"></div>
-		</div>
-		<div class="row cell" align="left">
-				<div class="col-xs-5 col-lg-3"><span>휴대폰 번호 : </span></div>
-				<div class="col-xs-7 col-lg-7"><input type="text"><p style="color:#FF0000; margin-top:15px; font-size:14px;">- 없이 입력해주시기 바랍니다.</p></div>
-		</div>
-		<div class="row mail" align="left">
-				<div class="col-xs-5 col-lg-3"><span>이메일 주소 : </span></div>
-				<div class="col-xs-7 col-lg-7"><input type="text"></div>
-		</div>
-		<div class="row job" align="left">
-				<div class="col-xs-5 col-lg-3"><span>소속 및 직무 : </span></div>
-				<div class="col-xs-7 col-lg-7"><input type="text"></div>
-		</div>
-		<div class="row route" align="left">
-				<div class="col-xs-5 col-lg-3"><span>알게 된 경로 : </span></div>
-				<div class="col-xs-7 col-lg-7"><input type="text"></div>
+<div class="apply-input container" align="center" >
+		<div class="row" align="left">
+				<div class="name col-xs-12 col-lg-6"><span>입금자명 : </span>
+				<input type="text">
+				</div>
+				<div class="cell col-xs-12 col-lg-6"><span>휴대폰 번호 : </span>
+				<input type="text">
+				<p>- 없이 입력해주시기 바랍니다.</p>
+				</div>
+				<div class="mail col-xs-12 col-lg-6"><span>이메일 주소 : </span>
+				<input type="text">
+				</div>
+				<div class="job col-xs-12 col-lg-6"><span>소속 및 직무 : </span>
+				<input type="text">
+				</div>
+				<div class="route col-xs-12 col-lg-6"><span>알게 된 경로 : </span>
+				<input type="text">
+				</div>
 		</div>
 		<div class="btn-apply">신청하기</div>
 </div>
-<div class="container" align="center">
+<div class="container cancle" align="center">
 		<p style="font-size:16px; font-weight:bold; color:#FF0000; width:600px; margin-top:50px; margin-left:15px;" align="left">※취소 및 환불규정</p>
 		<div class="apply-cancle" align="center">
 				<div class="cancle-con" align="left">
