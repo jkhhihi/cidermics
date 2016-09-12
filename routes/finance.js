@@ -16,8 +16,8 @@ router.get('/ftest', function(req, res, next) {
 
 router.post('/ftest', function(req, res, next) {
 	var consult_name = req.body.consult_name;
-	var consult_no = req.body.consult_no;
-	var no = consult_no + 1;
+	//var consult_no = req.body.consult_no;
+	//var no = consult_no + 1;
 	console.log(consult_name);
 	
 	
@@ -35,6 +35,22 @@ router.post('/ftest', function(req, res, next) {
 	//mysql.insert('insert into cider.cid_finance set consult_name = '+consult_name+'', consult_name,  function (err, data){
 
 	res.redirect('/ftest');
+	
+	});
+});
+
+
+router.post('/ftest/checkcode', function(req, res, next) {
+	var coup_code = req.body.coup_code;
+
+	mysql.select('select * from cider.cid_coupon where coup_code = '+coup_code+'', function (err, data){
+		
+		console.log(coup_code);
+		
+		
+		if(err){
+			res.redirect('/ftest');
+		} 
 	
 	});
 });

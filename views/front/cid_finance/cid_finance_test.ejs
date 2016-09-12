@@ -16,6 +16,61 @@
     //});
 //});
 </SCRIPT> 
+
+<script type="text/javascript">
+ var checkFirst = false;
+ var lastKeyword = '';
+ var loopSendKeyword = false;
+ 
+ function checkId() {
+  if (checkFirst == false) {
+   //0.5초 후에 sendKeyword()함수 실행
+   setTimeout("sendId();", 500);
+   loopSendKeyword = true;
+  }
+  checkFirst = true;
+ }
+
+ 
+ function sendId() {
+  if (loopSendKeyword == false) return;
+  
+  var keyword = document.search.u_id.value;
+  if (keyword == '') {
+   lastKeyword = '';
+   document.getElementById('checkMsg').style.color = "black";
+   document.getElementById('checkMsg').innerHTML = "아이디를 입력하세요.";
+  } else if (keyword != lastKeyword) {
+   lastKeyword = keyword;
+   
+   if (keyword != '') {
+    var params = "id="+encodeURIComponent(keyword);
+    sendRequest("id_check.jsp", params, displayResult, 'POST');
+   } else {
+   }
+  }
+  setTimeout("sendId();", 500);
+ }
+ 
+ 
+ function displayResult() {
+  if (httpRequest.readyState == 4) {
+   if (httpRequest.status == 200) {
+    var resultText = httpRequest.responseText;
+    var listView = document.getElementById('checkMsg');
+    if(resultText==0){
+     listView.innerHTML = "사용 할 수 있는 ID 입니다";
+     listView.style.color = "blue";
+    }else{
+     listView.innerHTML = "이미 등록된 ID 입니다";
+     listView.style.color = "red";
+    }
+   } else {
+    alert("에러 발생: "+httpRequest.status);
+   }
+  }
+ }
+</script>
 </head>
 <body>
 <!--콘텐츠뿌림-->
@@ -33,6 +88,28 @@
 	<input type="hidden" name="consult_no">
 </form>
 
+<tr>
+	<td><input type="text" name="user_num" id="user_number"><span id="idchk"></span></td>
+</tr>
 
+<form name="search" action="/ftest/checkcode" method="post">
+<div>
+  <h4>Ajax를 이용한 ID중복체크 및 비밀번호 유효성 확인</h4>
+</div>
+<table border="1">
+  <tr>
+     <td align="center"><span>아이디</span></td>
+     <td>
+        <input type="text" name="coup_code" id="u_id" onkeydown="checkId()" />  
+        <div id="checkMsg">아이디를 입력하세요.</div>
+     </td>
+  </tr>
+  
+  <tr>
+     <td colspan="2" align="right"><input type="submit" value="가입하기"></input></td>
+  </tr>
+</table>
+ 
+</form>
 </body>
 </html>

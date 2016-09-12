@@ -28,9 +28,9 @@ router.get('/lecture/apply', function(req, res, next) {
 
 });
 
-router.get('/lecture/question', function(req, res, next) {
+router.get('/lecture/sale', function(req, res, next) {
 
-	res.render('front/cid_lecture/cid_lecture_question', { });
+	res.render('front/cid_lecture/cid_lecture_sale', { });
 
 });
 
