@@ -16,7 +16,7 @@
 .finance-menu .title{margin-bottom:30px;}
 .finance-menu img{height:100px;}
 .finance-menu p{font-size:16px;}
-.finance-menu .menu1, .menu2, .menu3, .menu4{margin-bottom:30px;}
-.finance-menu .line1{display:none;}
+.finance-menu .menu1, .menu2, .menu3, .menu4{margin-bottom:30px; height:150px; padding:10px;}
+/*.finance-menu .line1{display:none;}*/
 }
 
