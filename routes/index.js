@@ -76,8 +76,6 @@ router.get('/', function(req, res, next) {
 	
 	 qry="select con_no, con_photo, con_title from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit 0,12";
 	 console.log(_tot);
-	 //qry="select con_no, con_photo, con_title from cider.cid_contents where con_release < '201501010000' order by con_no desc limit 0,24";
-	  //console.log(qry);
 	mysql.select(qry,
 	 function (err, data){
 		if (err) throw err;

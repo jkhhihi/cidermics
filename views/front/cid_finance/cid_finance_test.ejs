@@ -70,46 +70,60 @@
    }
   }
  }
+ 
+/* function checkid()
+ {
+ 	var sid = document.writeForm.id.value
+ 	if(sid == "") alert("입력된 아이디가 없습니다.")
+ 	else window.open("/ftest/checkcode"+sid,"","width=400 height=150")
+ }*/
 </script>
 </head>
 <body>
 <!--콘텐츠뿌림-->
-<form action="/finance" method="post">
+<form action="/ftest" method="post">
 	<br>
 	<br>
 	<br>
 	<br>
 	<br>
-	<br> NEW
+	
+	<% if( row.consult_name == null ){%>
+	<br> older
 	<div class="input-field col l12">
 		<input name="consult_name" type="text">
 		<input type="submit" value="Submit">
 	</div>
 	<input type="hidden" name="consult_no">
+	<%}else{%>
+	<br> new
+	<div class="input-field col l12">
+		<input name="consult_name" type="text">
+		<input type="submit" value="Submit">
+	</div>
+	<input type="hidden" name="consult_no">
+	<%}%>
+	
+	
 </form>
 
-<tr>
-	<td><input type="text" name="user_num" id="user_number"><span id="idchk"></span></td>
+
+
+
+<form name="writeForm" method="post" action="/ftest/checkcode">
+	<!--% if(id==null){%-->
+<tr><td>유효합니다.</td>
+	<td><input type="text" name="coup_code" style="ime-mode: disabled"><!--아이디를 영문만 입력가능하도록 설정-->
+		<input type="submit" value="중복확인"/> <!-- onclick="javas-ript:checkid()"-->
+	</td>
 </tr>
-
-<form name="search" action="/ftest/checkcode" method="post">
-<div>
-  <h4>Ajax를 이용한 ID중복체크 및 비밀번호 유효성 확인</h4>
-</div>
-<table border="1">
-  <tr>
-     <td align="center"><span>아이디</span></td>
-     <td>
-        <input type="text" name="coup_code" id="u_id" onkeydown="checkId()" />  
-        <div id="checkMsg">아이디를 입력하세요.</div>
-     </td>
-  </tr>
-  
-  <tr>
-     <td colspan="2" align="right"><input type="submit" value="가입하기"></input></td>
-  </tr>
-</table>
- 
+<!--%}else{%-->
+	<tr><td>유효하지않습니다.</td>
+		<a href="/ftest">다시 시도 </a>
+</tr>
+<!--%}%-->
+	
 </form>
+
 </body>
 </html>
