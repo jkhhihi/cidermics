@@ -1,16 +1,22 @@
-.mob-main-banner{display:none;}
-.web-main-banner{margin:0 0 50px 0;}
-.consulting-company .row div{font-family: 'Nanum Gothic', serif; font-size:18px;}
-.consulting-company .row div .img{width:100%; height:200px; background-color:#FFFF99; border-top:1px solid #1b87c9; border-left:1px solid #1b87c9; border-right:1px solid #1b87c9;}
-.consulting-company .row div .title{padding:20px 0 20px 0; margin-bottom:35px; border-bottom:1px solid #1b87c9; border-left:1px solid #1b87c9; border-right:1px solid #1b87c9;}
-
+.web-banner{background-color:#a9c522; height:auto; width:100%; padding-top:80px;}
+.web-banner p.title{font-size:26px; font-weight:bold;}
+.web-banner p.con{font-size:22px; font-weight:bold; line-height:1.8em; margin:20px 0 40px 0;}
+.mob-banner{display:none;}
+.finance-menu{background-color:#ececec; height:auto; width:100%; padding:60px 0;}
+.finance-menu .title{font-size:24px; font-weight:bold; color:#666; margin-bottom:60px;}
+.finance-menu img{height:120px; margin-bottom:10px;}
+.finance-menu p{font-size:18px; font-weight:bold; color:#333;}
+.finance-menu .line1{width:60%; height:3px; background-color:#ce2ca8;}
 
 @media all and (max-width:1024px) {
-.main-menu{display:none;}
-.web-main-banner{display:none;}
-.mob-main-banner{display:block; margin-top:0; margin-bottom:15px;}
-.mob-main-banner{margin:0 0 20px 0;}
-.consulting-company .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
-
+.line{height:1px;}
+.web-banner{display:none;}
+.mob-banner{display:block; margin-top:50px; font-size:18px;}
+.finance-menu{padding:30px 0;}
+.finance-menu .title{margin-bottom:30px;}
+.finance-menu img{height:100px;}
+.finance-menu p{font-size:16px;}
+.finance-menu .menu1, .menu2, .menu3, .menu4{margin-bottom:30px; height:150px; padding:10px;}
+/*.finance-menu .line1{display:none;}*/
 }
 
