@@ -18,15 +18,17 @@ router.get('/ftest', function(req, res, next) {
 
 router.post('/ftest', function(req, res, next) {
 	var consult_name = req.body.consult_name;
+	var consult_test = req.body.consult_test;
 	var coup_code = req.body.coup_code;
 	var row;
 	//var consult_no = req.body.consult_no;
 	//var no = consult_no + 1;
 	console.log(consult_name);
 	
+	var sets = {consult_name : consult_name, consult_test : consult_test};
 	
-	mysql.select('select * from cider.cid_coupon where coup_code = '+coup_code+'', function (err, data){
-	//pool.insert('INSERT INTO cider.cid_finance (consult_name) VALUES (?)',consult_name, function (err, data){
+	//mysql.select('select * from cider.cid_coupon where coup_code = '+coup_code+'', function (err, data){
+	pool.insert('INSERT INTO cider.cid_finance (consult_name) VALUES (?)',sets, function (err, data){
 		if(err){
 			res.redirect('back');
 		} 
