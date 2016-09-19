@@ -35,7 +35,6 @@
 
 
 <script>
-$('#coupon-modal').modal(options)
 
 function numberWithCommas(lec_price) {
 	    return lec_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -59,8 +58,6 @@ function next_submit(){
 
 <div class="line"></div>
 
-
-
 <form name="writeForm" method="post" action="/lecture/apply/codeapply">
 <div class="apply" align="center">
 		<div class="title">
@@ -68,7 +65,7 @@ function next_submit(){
 		</div>
 		<div class="line1"></div>
 		<div class="price"><input type="text" name="lec_price">원
-				<div class="btn-coupon"><button type="button" data-toggle="modal" data-target="#coupon-modal">쿠폰입력</button></div>
+				<div class="btn-coupon"><button type="button" data-toggle="modal" data-target="#coupon-modal" data-backdrop="static">쿠폰입력</button></div>
 				
 				<div id="coupon-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
        				 <div class="modal-dialog modal-lg">
