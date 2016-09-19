@@ -7,7 +7,6 @@
 .apply-input{font-size:18px; font-weight:bold;}
 .apply-input .row{margin:50px 0;}
 .apply-input .row span{display:inline-block; width:120px;}
-.apply-input .name, .cell, .mail, .job, .route{height:100px;}
 .apply-input .name input{border:#1b87c9 2px solid; width:50%; height:40px; padding:5px; font-size:20px;}
 .apply-input .cell input{border:#1b87c9 2px solid; width:50%; height:40px; padding:5px; font-size:20px;}
 .apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px; margin-bottom:20px;}
