@@ -49,13 +49,14 @@ router.post('/lecture/done', function(req, res, next) {
 	var app_path = req.body.app_path;
 	var lec_price = req.body.lec_price;
 	
+	var row;
 	var sets = {app_cate : 1, app_name : app_name, app_price : lec_price, app_phone : app_phone, app_email : app_email, app_job : app_job, app_path : app_path};
 	
 	pool.insert('insert into cider.cid_applyform set ?', sets, function (err, data){
 		if(err){
 			res.redirect('back');
 		} 
-		res.render('front/cid_finance/cid_finance_test', {row : data});
+		res.render('front/cid_lecture/cid_lecture_done', {row : data});
 	 });
 });
 
@@ -74,7 +75,12 @@ router.post('/lecture/apply/codeapply', function(req, res, next) {
 		res.redirect('/lecture/apply');
 	}
 });
+/*테스트용 */
+router.get('/lecture/apply2', function(req, res, next) {
 
+	res.render('front/cid_lecture/cid_lecture_apply2', { });
+
+});
 
 router.get('/lecture/detail', function(req, res, next) {
 
