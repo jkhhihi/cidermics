@@ -59,8 +59,6 @@ function next_submit(){
 
 <div class="line"></div>
 
-<% var lprice = lec_price; %>
-
 
 
 <form name="writeForm" method="post" action="/lecture/apply/codeapply">
@@ -69,7 +67,7 @@ function next_submit(){
 				<p>수강료</p>
 		</div>
 		<div class="line1"></div>
-		<div class="price"><input type="text" name="lec_price" value="<%=lprice%>">원
+		<div class="price"><input type="text" name="lec_price">원
 				<div class="btn-coupon"><button type="button" data-toggle="modal" data-target="#coupon-modal">쿠폰입력</button></div>
 				
 				<div id="coupon-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -114,7 +112,7 @@ function next_submit(){
 				</div>
 		</div>
 		<div class="btn-apply"><a onClick="next_submit()" style="cursor:pointer">신청하기</a></div>
-		<input type="hidden" name="lec_price" value="<%=lprice%>">
+		
 </div>
 </form>
 <div class="container cancle" align="center">
