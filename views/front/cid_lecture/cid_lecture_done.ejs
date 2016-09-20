@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사이다경제 | 콘텐츠</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/cid_lecture_sale.css" rel="stylesheet">
+<link href="/css/cid_lecture_done.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
@@ -51,29 +51,38 @@
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include ../top %>
 <div class="line"></div>
-<div class="sale" align="center">
+
+<div class="done" align="center">
+		<img src="/page_imgs/lecture_img/apply_done.svg">
 		<div class="title">
-				<p>할인쿠폰 받아가기</p>
+				<div>홍길동<span>님 신청이 완료 되었습니다.</span></div>
 		</div>
 		<div class="line1"></div>
-		<div class="row container">
-			<div class="col-lg-2 col-xs-12 num"><img class="" src="/page_imgs/lecture_img/sale-_icon_step1.svg"></div>
-			<div class="col-lg-10 col-xs-12 con" align="left"><img class="img-responsive" src="/page_imgs/lecture_img/con1.png"></div>
-			<div class="col-lg-2 col-xs-12 num"><img class="" src="/page_imgs/lecture_img/sale-_icon_step2.svg"></div>
-			<div class="col-lg-10 col-xs-12 con" align="left"><img class="img-responsive" src="/page_imgs/lecture_img/con2.png"></div>
-			<div class="col-lg-2 col-xs-12 num"><img class="" src="/page_imgs/lecture_img/sale-_icon_step3.svg"></div>
-			<div class="col-lg-10 col-xs-12 con" align="left"><img class="img-responsive" src="/page_imgs/lecture_img/con3.png"></div>
-			<div class="col-lg-2 col-xs-12 num"><img class="" src="/page_imgs/lecture_img/sale-_icon_step4.svg"></div>
-			<div class="col-lg-10 col-xs-12 con" align="left"><img class="img-responsive" src="/page_imgs/lecture_img/con4.png"></div>
-			<div class="col-lg-2 col-xs-12 num"><img class="" src="/page_imgs/lecture_img/sale-_icon_step5.svg"></div>
-			<div class="col-lg-10 col-xs-12 con" align="left"><img class="img-responsive" src="/page_imgs/lecture_img/con5.png"></div>
-			<div class="col-lg-2 col-xs-12 num"><img class="" src="/page_imgs/lecture_img/sale-_icon_step6.svg"></div>
-			<div class="col-lg-10 col-xs-12 con" align="left"><img class="img-responsive" src="/page_imgs/lecture_img/con6.png"></div>
+		<div class="price"><span>\200,000</span>원
 		</div>
+		<div class="deposit-account">입금계좌  :  110-0000-0000 (신한,예금주:사이다경제) </div>
 </div>
+</form>
 
-
-<!--강의 콘텐츠 뿌림-->
+<form name="applyform" method="post" action="/lecture/done">
+<div class="done-input container" align="center" >
+		<div class="row">
+				<div class="num col-xs-12 col-lg-12"><span>등록번호 : </span>
+				번호출력
+				</div>
+				<div class="name col-xs-12 col-lg-12"><span>입금자명 : </span>
+				이름출력
+				</div>
+				<div class="cell col-xs-12 col-lg-12"><span>휴대폰 번호 : </span>
+				번호출력
+				</div>
+				<div class="mail col-xs-12 col-lg-12"><span>이메일 주소 : </span>
+				메일출력
+				</div>
+		</div>
+		
+</div>
+</form>
 
 
 
