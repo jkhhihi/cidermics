@@ -125,6 +125,32 @@ passport.use('local', new LocalStrategy({
 }
 ));
 
+passport.use('applycancel', new LocalStrategy({
+	
+    usernameField : 'app_no',
+    passwordField : 'app_name',
+    passReqToCallback : true
+}
+
+,function(req, app_no, app_name, done) {
+	
+	mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
+		console.log("data");
+		console.log(data.length);
+		if(data.length < 1){
+			console.log('fail');
+			return done(null, false);
+		}else {
+			console.log('success');
+			return done(null, data);
+		}
+		if(err){
+			res.redirect('back');
+		}
+    });	
+}
+));
+
 passport.serializeUser(function(user, done) {
     done(null, user);
     // if you use Model.id as your idAttribute maybe you'd want
