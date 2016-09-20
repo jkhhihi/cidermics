@@ -63,9 +63,12 @@
 					<a href="/contents/detail/<%= contents[i].con_no %>">
 					<img class="img-responsive" src="<%= contents[i].con_photo %>"></a>
 					
-					
-					<p><a href="/contents/detail/<%= contents[i].con_no %>">
-						<%= contents[i].con_title %></a></p>
+				</div>
+				<div class="con row">	
+					<p style="font-size:18px;"><a href="/contents/detail/<%= contents[i].con_no %>">
+						<%= contents[i].con_title %></a></p>	
+					<div class="date col-xs-12 col-lg-6" align="left"><p>신청기간 : ~ 2016.10.09</p></div>
+					<div class="money col-xs-12 col-lg-6" align="right"><p align="center">\200,000</p></div>
 				</div>
 			</li>
 			<% } %>
