@@ -50,7 +50,7 @@ router.post('/lecture/done', function(req, res, next) {
 	var lec_price = req.body.lec_price;
 	
 	var row;
-	var sets = {app_cate : 1, app_name : app_name, app_price : lec_price, app_phone : app_phone, app_email : app_email, app_job : app_job, app_path : app_path};
+	var sets = {app_cate : 1, app_name : app_name, app_price : lec_price, app_phone : app_phone, app_email : app_email, app_job : app_job, app_path : app_path, app_process : "입금대기"};
 	
 	pool.insert('insert into cider.cid_applyform set ?', sets, function (err, data){
 		if(err){
