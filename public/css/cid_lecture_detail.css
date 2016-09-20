@@ -1,6 +1,21 @@
-.lecture .title p{margin-top:100px; font-size:24px; font-weight:bold;}
+.lecture .title p{margin-top:100px; font-size:28px; font-weight:bold;}
 .lecture .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px;}
-.lecture .contents{margin:100px 0; line-height:1.8em;}
+.lecture .contents{margin:100px 0; line-height:2.5em; font-family: "BMD";}
+.lecture .contents .q1{background-color:#173652; width:100%; padding:100px 0;}
+.lecture .contents .q1 .title{font-size:26px; color:#fff;}
+.lecture .contents .q1 .con{font-size:20px; margin-top:80px; background-color:#f9a356; width:auto; height:auto; border-radius:10px; padding:50px 100px;}
+.lecture .contents .q2{background-color:#eee; width:100%; padding:100px 0;}
+.lecture .contents .q2 .title{font-size:26px; color:#333;}
+.lecture .contents .q2 .con{color:#fff; font-size:20px; margin-top:80px; background-color:#508fc4; width:auto; height:auto; border-radius:10px; padding:50px 100px;}
+.lecture .contents .q3{background-color:#173652; width:100%; padding:100px 0;}
+.lecture .contents .q3 .title{font-size:26px; color:#fff;}
+.lecture .contents .q3 .con{font-size:20px; margin-top:80px; background-color:#f9a356; width:auto; height:auto; border-radius:10px; padding:50px 100px;}
+.lecture .contents .q4{background-color:#eee; width:100%; padding:100px 0;}
+.lecture .contents .q4 .title{font-size:26px; color:#333;}
+.lecture .contents .q4 .con{color:#fff; font-size:20px; margin-top:80px; background-color:#508fc4; width:auto; height:auto; border-radius:10px; padding:50px 100px;}
+.lecture .contents .q5{background-color:#173652; width:100%; padding:100px 0;}
+.lecture .contents .q5 .title{font-size:26px; color:#fff;}
+.lecture .contents .q5 .con{font-size:20px; margin-top:80px; background-color:#f9a356; width:auto; height:auto; border-radius:10px; padding:50px 100px;}
 .lecture .btn-coupon{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:20px 0;}
 .lecture .apply{border:#ececec 4px solid; width:60%; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:100px;}
 .lecture .apply .apply-place .map{border:#1b87c9 2px solid;}
@@ -21,7 +36,23 @@
 .lecture iframe{width:100% !important; height:100% !important;}
 
 @media all and (max-width:1024px) {
-.lecture .contents{margin:80px 0; padding:10px}
+.lecture .title p{font-size:24px; line-height:1.8em;}
+.lecture .contents{margin:50px 0; line-height:2.0em;}
+.lecture .contents .q1{padding:50px 5px;}
+.lecture .contents .q1 .title{font-size:18px;}
+.lecture .contents .q1 .con{font-size:14px; margin-top:40px; padding:30px 5px;}
+.lecture .contents .q2{padding:50px 5px;}
+.lecture .contents .q2 .title{font-size:18px;}
+.lecture .contents .q2 .con{font-size:14px; margin-top:40px; padding:30px 5px;}
+.lecture .contents .q3{padding:50px 5px;}
+.lecture .contents .q3 .title{font-size:18px;}
+.lecture .contents .q3 .con{font-size:14px; margin-top:40px; padding:30px 5px;}
+.lecture .contents .q4{padding:50px 5px;}
+.lecture .contents .q4 .title{font-size:18px;}
+.lecture .contents .q4 .con{font-size:14px; margin-top:40px; padding:30px 5px;}
+.lecture .contents .q5{padding:50px 5px;}
+.lecture .contents .q5 .title{font-size:18px;}
+.lecture .contents .q5 .con{font-size:14px; margin-top:40px; padding:30px 5px;}
 .lecture .apply{width:95%; border:#ececec 3px solid;}
 .web-professor-con{display:none;}
 .mob-professor-con{display:block;}
