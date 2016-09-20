@@ -5,17 +5,16 @@
 /*.apply .price input{ margin-right:10px;}*/
 .apply .btn-coupon button{background-color: initial; width:120px; height:35px; border-radius:2px; color:#1b87c9; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin:20px; 0;}
 .apply-input{font-size:16px; font-weight:bold;}
-.apply-input .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:65%;}
+.apply-input .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:70%;}
 .apply-input .row span{display:inline-block; width:120px;}
 .apply-input .name, .cell, .mail, .job{height:100px;}
 .apply-input .name input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px;}
 .apply-input .cell input{border:#1b87c9 1px solid; width:70px; height:30px; padding:5px; font-size:16px; margin:0 10px;}
 .apply-input .cell select{border:#1b87c9 1px solid; width:60px; height:30px; margin-right:10px; font-size:16px;}
 .apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px; margin-bottom:16px;}
-.apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px;}
-.apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px;}
+.apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px; width:130px;}
+.apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px; width:130px;}
 .apply-input .mail .mail1{margin-right:10px;}
-.apply-input .mail .mail2{margin-left:10px;}
 .apply-input .job input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px;}
 .apply-input .job select{border:#1b87c9 1px solid; width:150px; height:30px; margin-right:10px; font-size:16px;}
 .apply-input .route input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px;}
@@ -31,6 +30,21 @@
 .modal-body p{font-size:16px; color:#f24646; margin:30px 0 20px 0; width:120px; height:auto; border-radius:15px; background-color:#ececec; padding:10px;}
 .modal-lg{max-width:500px;}
 
+
+.apply-cancel{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; margin-top:50px; font-size:24px; font-weight:bold;}
+.apply-input-cancel{font-size:16px; font-weight:bold;}
+.apply-input-cancel .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:65%;}
+.apply-input-cancel .row span{display:inline-block; width:120px;}
+.apply-input-cancel .num, .name{height:100px;}
+.apply-input-cancel .cell{height:60px;}
+.apply-input-cancel .num input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px;}
+.apply-input-cancel .name input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px;}
+.apply-input-cancel .cell input{border:#1b87c9 1px solid; width:70px; height:30px; padding:5px; font-size:16px; margin:0 10px;}
+.apply-input-cancel .cell select{border:#1b87c9 1px solid; width:60px; height:30px; margin-right:10px; font-size:16px;}
+.apply-input-cancel .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px; margin-bottom:16px;}
+.apply-input-cancel .btn-apply{background-color:#ff7d7d; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0;}
+.apply-input-cancel .btn-apply a{color:#fff;}
+
 @media all and (max-width:1024px) {
 .modal-lg{width:95%}
 .modal-body{padding:2px !important;}
@@ -41,11 +55,11 @@
 /*.apply .price input{width:200px;}*/
 .apply-cancle{width:95%;}
 .apply-input{width:100% !important; font-size:16px;}
-.apply-input .row{margin:50px 5px 0 5px; padding:30px 5px;}
+.apply-input .row{margin:50px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input .row span{width:100px;}
-.apply-input .name{height:60px;}
-.apply-input .cell{height:100px;}
-.apply-input .mail{height:140px;}
+.apply-input .name{height:100px;}
+.apply-input .cell{height:140px;}
+.apply-input .mail{height:160px;}
 .apply-input .job{height:100px;}
 .apply-input .route{height:60px;}
 /*.apply-input .name span{display:block; margin-bottom:20px;}*/
@@ -55,10 +69,15 @@
 /*.apply-input .mail input{width:110px;}*/
 .apply-input .mail select{ margin-top:5px;}
 .apply-input .mail .mail1{margin-right:5px;}
-.apply-input .mail .mail2{margin-left:5px;}
 .apply-input .job span{display:block; margin-bottom:20px;}
 .apply-input .route span{display:block; margin-bottom:20px;}
 /*.apply-input .route input{width:50%}*/
 .apply-input .btn-apply{margin-top:60px; margin-bottom:20px;}
 .cancle p{width:95% !important;}
+
+
+.apply-input-cancel .row{width:97%; padding:30px 5px;}
+.apply-input-cancel .cell{height:100px;}
+.apply-input-cancel .cell span{display:block; margin-bottom:20px;}
+
 }
