@@ -51,34 +51,32 @@
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include ../top %>
 <div class="line"></div>
-
 <div class="done" align="center">
 		<img src="/page_imgs/lecture_img/apply_done.svg">
 		<div class="title">
-				<div>홍길동<span>님 신청이 완료 되었습니다.</span></div>
+				<div><%=row[0].app_name%><span>님 강의 신청이 완료 되었습니다.</span></div>
 		</div>
 		<div class="line1"></div>
-		<div class="price"><span>\200,000</span>원
+		<div class="price"><span>\<%=row[0].app_price%></span>원
 		</div>
 		<div class="deposit-account">입금계좌  :  100-031-739780 신한 김의현(사이다경제) </div>
 </div>
 </form>
 
-<form name="applyform" method="post" action="/lecture/done">
 <div class="done-input container" align="center" >
 		<p class="caution">※등록번호와 입금자명을 꼭 기억해주세요! 강의 신청자 확인과 취소시 필요합니다.</p>
 		<div class="row">
 				<div class="num col-xs-12 col-lg-12"><span>등록번호 : </span>
-				번호출력
+				<%=row[0].app_no%>
 				</div>
 				<div class="name col-xs-12 col-lg-12"><span>입금자명 : </span>
-				이름출력
+				<%=row[0].app_name%>
 				</div>
 				<div class="cell col-xs-12 col-lg-12"><span>휴대폰 번호 : </span>
-				번호출력
+				<%=row[0].app_phone%>
 				</div>
 				<div class="mail col-xs-12 col-lg-12"><span>이메일 주소 : </span>
-				메일출력
+				<%=row[0].app_email%>
 				</div>
 		</div>
 				<div class="apply-question">
@@ -86,7 +84,6 @@
 				</div>
 		
 </div>
-</form>
 
 
 
