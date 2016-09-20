@@ -7,6 +7,34 @@ var pool = require("./model/mysql");
 var cookieParser = require('cookie-parser');
 var passport = require('passport');
 
+function getWorldTime(tzOffset) { // 24시간제
+	  var now = new Date();
+	  var tz = now.getTime() + (now.getTimezoneOffset() * 60000) + (tzOffset * 3600000);
+	  now.setTime(tz);
+
+
+	  var s =
+	    leadingZeros(now.getFullYear(), 4) + '-' +
+	    leadingZeros(now.getMonth() + 1, 2) + '-' +
+	    leadingZeros(now.getDate(), 2) + ' ' +
+
+	    leadingZeros(now.getHours(), 2) + ':' +
+	    leadingZeros(now.getMinutes(), 2) + ':' +
+	    leadingZeros(now.getSeconds(), 2);
+
+	  return s;
+}
+
+function leadingZeros(n, digits) {
+	  var zero = '';
+	  n = n.toString();
+
+	  if (n.length < digits) {
+	    for (i = 0; i < digits - n.length; i++)
+	      zero += '0';
+	  }
+	  return zero + n;
+	}
 
 router.get('/lecture', function(req, res, next) {
 	
@@ -22,10 +50,6 @@ router.get('/lecture', function(req, res, next) {
 
 });
 
-function numberWithCommas(lec_price) {
-    return lec_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    console.log(lec_price);
-}
 
 router.get('/lecture/apply', function(req, res, next) {
 	var lec_price = 200000;
@@ -48,12 +72,15 @@ router.post('/lecture/done/insert', function(req, res, next) {
 	var app_job = req.body.app_job;
 	var app_path = req.body.app_path;
 	var lec_price = req.body.lec_price;
+	var app_comment = "";
 	
 	var app_email = email1 + "@" + email2;
 	var app_phone = phone1 + "-" + phone2 + "-" + phone3;
 	
+	var date = getWorldTime(+9);
+	
 	var row;
-	var sets = {app_cate : 1, app_name : app_name, app_price : lec_price, app_phone : app_phone, app_email : app_email, app_job : app_job, app_path : app_path, app_process : "입금대기"};
+	var sets = {app_cate : 1, app_name : app_name, app_price : lec_price, app_phone : app_phone, app_email : app_email, app_job : app_job, app_path : app_path, app_process : "입금대기",app_comment : app_comment, app_regDate : date, app_upDate : date,};
 	
 	pool.insert('insert into cider.cid_applyform set ?', sets, function (err, data){
 		if(err){
@@ -98,12 +125,17 @@ router.get('/lecture/cancel', function(req, res, next) {
 router.post('/lecture/cancel/process', passport.authenticate('applycancel', { failureRedirect: '/lecture/cancel', failureFlash: true }), function(req, res, next) {
 	var app_no = req.body.app_no;
 	var app_name = req.body.app_name;
+	var app_comment = req.body.app_comment;
+	console.log(app_comment);
 	var app_process;
+	
+	var date = getWorldTime(+9);
+	
 	mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
 
-		var sets = {app_no : app_no, app_process : "취소요청"    };
+		var sets = {app_no : app_no, app_process : "취소요청" , app_comment:app_comment, app_upDate : date};
 		
-		mysql.update('update cider.cid_applyform set app_process = :app_process where app_no = :app_no', sets, function (err, data){
+		mysql.update('update cider.cid_applyform set app_process = :app_process, app_comment= :app_comment,  app_upDate = :app_upDate where app_no = :app_no', sets, function (err, data){
 		});
 		res.render('front/cid_lecture/cid_lecture_candone', {row:data});
 	});
