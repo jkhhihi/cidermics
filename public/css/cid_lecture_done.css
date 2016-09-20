@@ -7,7 +7,8 @@
 .done .price{font-size:28px; font-weight:bold; color:#FF0000;}
 .done .deposit-account{font-size:26px; font-weight:bold; color:#212121; margin-top:20px; line-height:1.5em;}
 .done-input{font-size:16px; font-weight:bold;}
-.done-input .row{margin:50px 0; border:#999999 2px solid; margin-top:50px; padding:30px; width:65%}
+.done-input .caution{font-size:18px; color:#ff0000; margin:50px 0 20px 0;}
+.done-input .row{margin-bottom:50px; border:#999999 2px solid; padding:30px; width:65%}
 .done-input .row span{display:inline-block; width:120px;}
 .done-input .num{height:80px;}
 .done-input .name{height:80px;}
@@ -23,6 +24,8 @@
 .done-input .mail .mail2{margin-left:10px;}
 .done-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0;}
 .done-input .btn-apply a{color:#fff;}
+.apply-question p{background-color:#fce000; color:#212121 !important; width:200px; height:60px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:10px; margin-bottom:50px;}
+.apply-question p span{font-size:14px;}
 
 .done img.canimg{width:130px; margin-bottom:50px;}
 .done .advice{font-size:18px; color:#FF0000; margin-top:30px;}
@@ -42,7 +45,8 @@
 .done .price input{width:200px;}
 .done-cancle{width:95%;}
 .done-input{width:100% !important; font-size:16px;}
-.done-input .row{margin:50px 5px; padding:30px 5px; width:97%}
+.done-input .caution{line-height:1.8em; font-size:16px; margin:50px 0 0 0;}
+.done-input .row{margin:10px 5px 50px 5px; padding:30px 5px; width:97%}
 .done-input .row span{width:100px;}
 .done-input .num{height:60px}
 .done-input .name{height:60px;}

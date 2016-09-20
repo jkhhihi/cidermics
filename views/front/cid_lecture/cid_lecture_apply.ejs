@@ -142,13 +142,13 @@ function next_submit(){
 				</div>
 		</div>
 		
-		<div class="btn-apply"><a onClick="next_submit()" style="cursor:pointer">신청하기</a></div>
+		<a onClick="next_submit()" style="cursor:pointer"><div class="btn-apply">신청하기</div></a>
 		<input type="hidden" name="lec_price" value="<%=lprice%>">
 		
 </div>
 </form>
 <div class="container cancle" align="center">
-		<p style="font-size:16px; font-weight:bold; color:#FF0000; width:600px; margin-top:50px; margin-left:15px;" align="left">※취소 및 환불규정</p>
+		<a href="/lecture/sale"><p style="font-size:16px; font-weight:bold; color:#FF0000; width:600px; margin-top:50px; margin-left:15px;" align="left">※취소 및 환불규정</p></a>
 		<div class="apply-cancle" align="center">
 				<div class="cancle-con" align="left">
 						<p>1. 강연 환불 기준</p>
@@ -160,6 +160,13 @@ function next_submit(){
 						<p style="margin-left:18px;">전화(010-8834-5754) 또는<br>
 								이메일(contact@cidermics.com) 통해 가능합니다.</p>
 				</div>
+		</div>
+		
+		<div class="privacy" align="left">
+			<div class="title">*개인정보취급</div>
+			<div class="con"><p>1.수집된 개인정보는 본래의 목적 이외의 그 어떤 용도로도 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구하게 됩니다.</p>
+							 <p>2.수집된 이용자의 개인정보는 원칙적으로 처리 목적이 달성되면 즉시 파기됩니다.</p>
+			</div>
 		</div>
 </div>
 
