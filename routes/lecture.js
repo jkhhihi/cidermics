@@ -101,11 +101,21 @@ router.get('/lecture/cancel', function(req, res, next) {
 router.post('/lecture/cancel/process', passport.authenticate('applycancel', { failureRedirect: '/lecture/cancel', failureFlash: true }), function(req, res, next) {
 	var app_no = req.body.app_no;
 	var app_name = req.body.app_name;
+	var app_process;
 	mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
-		console.log(data);
-		res.render('front/cid_lecture/cid_lecture_candone', {row:data});  	
-	//res.redirect('/lecture/candone/');
+
+		var sets = {app_no : app_no, app_process : "취소요청"    };
+		
+		mysql.update('update cider.cid_applyform set app_process = :app_process where app_no = :app_no', sets, function (err, data){
+		});
+		res.render('front/cid_lecture/cid_lecture_candone', {row:data});
+	});
 });
+
+router.get('/lecture/candone2', function(req, res, next) {
+
+	res.render('front/cid_lecture/cid_lecture_candone2', { });
+
 });
 
 router.get('/lecture/detail', function(req, res, next) {
