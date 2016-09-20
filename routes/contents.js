@@ -49,8 +49,7 @@ router.get('/contents/:no', function(req, res, next) {
 	    _min="0"+_min;
 	 }
 	 
-	 var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
-	
+	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
 	
 	var sets = {con_category : no, con_release : _tot};
 	var row;

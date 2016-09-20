@@ -43,11 +43,17 @@ router.post('/lecture/done', function(req, res, next) {
 	var app_no = req.body.app_no;
 	var app_cate = req.body.app_cate;
 	var app_name = req.body.app_name;
-	var app_phone = req.body.app_phone;
-	var app_email = req.body.app_email;
+	var phone1 = req.body.app_phone1;
+	var phone2 = req.body.app_phone2;
+	var phone3 = req.body.app_phone3;
+	var email1 = req.body.app_email1;
+	var email2 = req.body.app_email2;
 	var app_job = req.body.app_job;
 	var app_path = req.body.app_path;
 	var lec_price = req.body.lec_price;
+	
+	var app_email = email1 + "@" + email2;
+	var app_phone = phone1 + "-" + phone2 + "-" + phone3;
 	
 	var row;
 	var sets = {app_cate : 1, app_name : app_name, app_price : lec_price, app_phone : app_phone, app_email : app_email, app_job : app_job, app_path : app_path, app_process : "입금대기"};
@@ -76,16 +82,31 @@ router.post('/lecture/apply/codeapply', function(req, res, next) {
 	}
 });
 /*테스트용 */
-router.get('/lecture/apply2', function(req, res, next) {
+router.get('/lecture/cancel', function(req, res, next) {
 
-	res.render('front/cid_lecture/cid_lecture_apply2', { });
+	res.render('front/cid_lecture/cid_lecture_cancel', { });
 
 });
 
-router.get('/lecture/detail', function(req, res, next) {
 
-	res.render('front/cid_lecture/cid_lecture_detail', { });
-
+router.post('/lecture/candone', function(req, res, next) {
+	var app_no = req.body.app_no;
+	var app_name = req.body.app_name;
+	var phone1 = req.body.app_phone1;
+	var phone2 = req.body.app_phone2;
+	var phone3 = req.body.app_phone3;
+	
+	var app_phone = phone1 + "-" + phone2 + "-" + phone3;
+	
+	var row;
+	var app_process;
+	
+	
+	
+	mysql.select('select * from cider.cid_applyform where app_no='+app_no+'', function (err, data){
+			console.log(app_no);
+			res.render('front/cid_lecture/cid_lecture_candone', {row:date});
+  });
 });
 
 
