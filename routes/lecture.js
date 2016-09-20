@@ -36,14 +36,7 @@ router.get('/lecture/apply', function(req, res, next) {
 
 });
 
-router.get('/lecture/apply', function(req, res, next) {
-	var lec_price = 200000;
-
-	console.log(lec_price);
-
-	res.render('front/cid_lecture/cid_lecture_apply', {lec_price:lec_price });
-});
-router.post('/lecture/done', function(req, res, next) {
+router.post('/lecture/done/insert', function(req, res, next) {
 	var app_no = req.body.app_no;
 	var app_cate = req.body.app_cate;
 	var app_name = req.body.app_name;
@@ -65,8 +58,12 @@ router.post('/lecture/done', function(req, res, next) {
 	pool.insert('insert into cider.cid_applyform set ?', sets, function (err, data){
 		if(err){
 			res.redirect('back');
-		} 
-		res.render('front/cid_lecture/cid_lecture_done', {row : data});
+		}
+		mysql.select('select * from cider.cid_applyform where app_phone ="'+app_phone+'" and app_name = "'+app_name+'"', function (err, data2){
+			console.log(data2);
+		//res.redirect('/lecture/done');
+		res.render('front/cid_lecture/cid_lecture_done', {row : data2});
+		});
 	 });
 });
 
@@ -112,11 +109,6 @@ router.post('/lecture/cancel/process', passport.authenticate('applycancel', { fa
 	});
 });
 
-router.get('/lecture/candone2', function(req, res, next) {
-
-	res.render('front/cid_lecture/cid_lecture_candone2', { });
-
-});
 
 router.get('/lecture/detail', function(req, res, next) {
 
