@@ -92,23 +92,22 @@
 <!--콘텐츠뿌림-->
 <div class="lecture container">
 			<ul class="grid effect-2" id="grid">
-			
-				<% for(var i=0; i<contents.length; i++) { %>
+		
 				<li>
 				<div align="center">
 					
-					<a href="/contents/detail/<%= contents[i].con_no %>">
-					<img class="img-responsive" src="<%= contents[i].con_photo %>"></a>
+					<a href="/lecture/detail">
+					<img class="img-responsive" src="/page_imgs/fixed_img/korea.png"></a>
 					
 				</div>
 				<div class="con row">	
-					<p style="font-size:18px;"><a href="/contents/detail/<%= contents[i].con_no %>">
-						<%= contents[i].con_title %></a></p>	
+					<p style="font-size:18px;"><a href="/lecture/detail">
+						취업생을 위한 기업학</a></p>	
 					<div class="date col-xs-12 col-lg-6" align="left"><p>신청기간 : ~ 2016.10.09</p></div>
 					<div class="money col-xs-12 col-lg-6" align="right"><p align="center">\200,000</p></div>
 				</div>
 			</li>
-			<% } %>
+
 			</ul>
 </div>
 
