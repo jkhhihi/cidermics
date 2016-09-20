@@ -7,7 +7,8 @@
 .lecture .apply .line2{background-color:#1b87c9; width:150px; height:1px; margin:15px 0;}
 .lecture .apply .line3{border-top:2px #ececec solid; margin:20px 0;}
 .lecture .apply .apply-deposit p{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px;}
-.lecture .apply .apply-question p{background-color:#fce000; color:#212121 !important; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px;}
+.lecture .apply .apply-question p{background-color:#fce000; color:#212121 !important; width:200px; height:60px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:10px;}
+.lecture .apply .apply-question p span{font-size:14px;}
 .lecture .apply .apply-cancle p{background-color:#ff7d7d; color:#efefef !important; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px;}
 .font-color-666{color:#666;}
 .professor-introduce{margin:30px 0 30px 0;}

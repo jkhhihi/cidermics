@@ -21,8 +21,11 @@
 .apply-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0;}
 .apply-input .btn-apply a{color:#fff;}
 .apply .deposit-account{font-size:30px; font-weight:bold; color:#212121; margin-top:30px; line-height:1.5em;}
-.apply-cancle{border:#ececec 3px solid; width:600px; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:100px;}
+.apply-cancle{border:#ececec 3px solid; width:600px; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:50px;}
 .apply-cancle .cancle-con{font-size:14px; color:#666;line-height:2.0em}
+.privacy{width:600px; margin-bottom:100px; font-weight:bold; color:#FF0000;}
+.privacy .title{font-size:18px; margin-top:20px;}
+.privacy .con{font-size:16px; margin-top:20px; line-height:1.8em;}
 .modal-title{color:#1b87c9;}
 .modal-body{margin-top:20px;}
 .modal-body input{border:#1b87c9 2px solid; height:50px; width:80%; border-top:none; border-left:none; border-right:none;}
@@ -54,6 +57,9 @@
 .apply .price{font-size:30px; font-weight:bold; color:#FF0000;}
 /*.apply .price input{width:200px;}*/
 .apply-cancle{width:95%;}
+.privacy{width:95%}
+.privacy .title{font-size:16px;}
+.privacy .con{font-size:14px;}
 .apply-input{width:100% !important; font-size:16px;}
 .apply-input .row{margin:50px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input .row span{width:100px;}

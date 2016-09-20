@@ -1,13 +1,13 @@
 .line{height:1px;}
 .done{background-color:#f4f4f4; width:100%; height:auto; padding:60px 0; margin-top:50px;}
-.done img{width:150px; margin-bottom:50px;}
+.done img{width:130px; margin-bottom:50px;}
 .done .title{font-size:36px; font-weight:bold;}
 .done .title span{font-size:26px; margin-left:10px;}
 .done .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px; margin-bottom:50px;}
 .done .price{font-size:28px; font-weight:bold; color:#FF0000;}
 .done .deposit-account{font-size:26px; font-weight:bold; color:#212121; margin-top:20px; line-height:1.5em;}
 .done-input{font-size:16px; font-weight:bold;}
-.done-input .row{margin:50px 0; border:#999999 2px solid; margin-top:50px; padding:30px;}
+.done-input .row{margin:50px 0; border:#999999 2px solid; margin-top:50px; padding:30px; width:65%}
 .done-input .row span{display:inline-block; width:120px;}
 .done-input .num{height:80px;}
 .done-input .name{height:80px;}
@@ -24,10 +24,17 @@
 .done-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0;}
 .done-input .btn-apply a{color:#fff;}
 
+.done img.canimg{width:130px; margin-bottom:50px;}
+.done .advice{font-size:18px; color:#FF0000; margin-top:30px;}
+.done-cancel{font-size:16px; font-weight:bold;}
+.done-cancel .row{margin:50px 0; border:#999999 2px solid; margin-top:50px; padding:30px; width:65%;}
+.done-cancel .num{height:60px;}
+.done-cancel .name{height:60px;}
+.done-cancel .cell{height:20px;}
 
 @media all and (max-width:1024px) {
 .done{padding:50px 0;}
-.done img{width:100px; margin-bottom:50px;}
+.done img{width:80px; margin-bottom:30px;}
 .done .title{font-size:26px; font-weight:bold; line-height:1.5em;}
 .done .title span{font-size:20px;}
 .done .deposit-account{padding:0 10px 0 10px; font-size:22px;}
@@ -35,15 +42,17 @@
 .done .price input{width:200px;}
 .done-cancle{width:95%;}
 .done-input{width:100% !important; font-size:16px;}
-.done-input .row{margin:50px 5px; padding:30px 5px;}
+.done-input .row{margin:50px 5px; padding:30px 5px; width:97%}
 .done-input .row span{width:100px;}
 .done-input .num{height:60px}
 .done-input .name{height:60px;}
-.done-input .cell{height:100px;}
-.done-input .mail{height:60px;}
-/*.apply-input .name span{display:block; margin-bottom:20px;}*/
+.done-input .cell{height:60px;}
+.done-input .mail{height:20px;}
+/*.apply-input .name span{display:block; margin-bottom:20px;}
 .done-input .cell span{display:block; margin-bottom:20px;}
-.done-input .mail span{display:block; margin-bottom:20px;}
+.done-input .mail span{display:block; margin-bottom:20px;}*/
 .done-input .btn-apply{margin-top:60px; margin-bottom:20px;}
 
+.done-cancel .row{width:97%;}
+.done img.canimg{width:80px; margin-bottom:30px;}
 }

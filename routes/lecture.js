@@ -129,7 +129,11 @@ router.get('/lecture/candone2', function(req, res, next) {
 	
 });
 
+router.get('/lecture/detail', function(req, res, next) {
 
+	res.render('front/cid_lecture/cid_lecture_detail', { });
+
+});
 
 router.get('/lecture/sale', function(req, res, next) {
 
