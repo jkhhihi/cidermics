@@ -106,17 +106,71 @@ function search_submit_mob(){
 	}
 	 	document.search_box_mob.submit();
 }
+
+$('.dropdown-toggle').dropdown()
 </script>
+
+<script>
+$(function(){
+
+	     $("ul.sub").hide();
+
+		 $("ul.menu li").hover(function(){
+
+		    $("ul:not(:animated)",this).slideDown("fast");
+
+			},
+
+			function(){
+
+			   $("ul",this).slideUp("fast");
+
+			});
+ });	
+</script>
+
+<style>
+.menu-bar .menu {
+  display: inline-block;
+  width: 100%;
+  margin: 0; padding: 0;
+}
+.menu-bar .menu li {
+  float: left;
+  list-style:none;
+  position: relative;
+}
+.menu-bar .menu li:hover>a { color:#1b87c9; }
+.menu-bar .menu a {
+  color:#333333;
+  display: block;
+  padding:26px 32px 0 10px;
+}
+.menu-bar .menu ul {
+  background-color:#fff;
+  display: none;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width:180px;
+  z-index:99;
+}
+.menu-bar .menu li ul{
+padding:20px;
+}
+</style>
+
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/cid_top_bottom.js"></script>
 <body>
 <div class="mob-header">
 		<header class="container-fulid">
-				<div class="mob-menu" align="left"><img class="img-responsive" src="../../page_imgs/fixed_img/mob_icon_menu.svg"></div>
+				<div class="mob-menu" align="left"><img class="img-responsive" src="/page_imgs/fixed_img/mob_icon_menu.svg"></div>
 				<div class="mob-logo" align="center"><a href="/"><img class="img-responsive" src="../../page_imgs/fixed_img/mob_icon_logo.png"></a></div>
 				
 				
-				<div id="mob-search" class="mob-search" align="right"><img src="../../page_imgs/fixed_img/mob_icon_search.svg"></div>
+				<div id="mob-search" class="mob-search" align="right"><img src="/page_imgs/fixed_img/mob_icon_search.svg"></div>
 				
 				<form name="search_box_mob" action="/search/process" method="post" align="center">
 					<div class="input"><input type="text" class="form-control mob-search-box" placeholder="search"  name="keyword" value=''>
@@ -133,7 +187,7 @@ function search_submit_mob(){
 		<div class="view">
 		<div class="scrollBlind">
 				<ul>
-						<div class="logo" align="center"><a href="/"><img src="../../page_imgs/fixed_img/cicon.svg" style="width:30px; margin:20px 0"></a></div>
+						<div class="logo" align="center"><a href="/"><img src="/page_imgs/fixed_img/cicon.svg" style="width:30px; margin:20px 0"></a></div>
 						<!--li><a href="/login">로그인</a></li-->
 						<div class="line1"></div>
 						
@@ -173,28 +227,25 @@ function search_submit_mob(){
 
 <div class="header row">
 		<header class="container">
-				<div class="logo col-sm-1"><a href="/"><img src="../../page_imgs/fixed_img/logo.jpg"></a></div>
+				<div class="logo col-sm-1"><a href="/"><img src="/page_imgs/fixed_img/logo.jpg"></a></div>
 					
 				
-	<div class="dropdown col-sm-5">
-  <button class="btn btn-default dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    <span>사이다 콘텐츠<span>
-    <!--span class="caret"></span-->
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="/contents/1">경제이야기</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="/contents/2">금융이야기</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="/contents/3">기업이야기</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="/contents/4">주식이야기</a></li>    
+<div class="dropdown col-sm-5">
+
+<div class='menu-bar'>
+  <ul class="menu">
+    <li><a href="#">사이다콘텐츠</a>
+      <ul class="sub">
+		<li><a href="/contents/1">경제이야기</a></li>
+    	<li><a href="/contents/2">금융이야기</a></li>
+    	<li><a href="/contents/3">기업이야기</a></li>
+    	<li><a href="/contents/4">주식이야기</a></li>
+      </ul>
+    </li>
+    <li><a href="/lecture">사이다강의</a>
+    </li> 
   </ul>
-  
-    <button class="btn btn-default dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    <span>사이다강의<span>
-    <!--span class="caret"></span-->
- 	</button>
+</div>
 
 </div>
 				
