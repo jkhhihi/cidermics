@@ -5,6 +5,7 @@ var mysql = require("./model/mysql");
 var pool = require("./model/mysql");
 
 var cookieParser = require('cookie-parser');
+var passport = require('passport');
 
 
 router.get('/lecture', function(req, res, next) {
@@ -81,52 +82,30 @@ router.post('/lecture/apply/codeapply', function(req, res, next) {
 		res.render('front/cid_lecture/cid_lecture_apply', {lec_price:lec_price });
 	}else {
 		console.log("No");
-		res.redirect('/lecture/apply');
+		res.send('<script>alert("쿠폰번호를 확인해주세요.");location.href="/lecture/apply";</script>');
+		//res.redirect('/lecture/apply');
 	}
 });
-/*테스트용 */
+
+
 router.get('/lecture/cancel', function(req, res, next) {
-
-	res.render('front/cid_lecture/cid_lecture_cancel', { });
-
+	
+	console.log(req.cookies);
+	if(req.cookies.auth){
+		res.redirect('/lecture/candone');
+	}else{
+		res.render('front/cid_lecture/cid_lecture_cancel', { });
+	}
 });
 
-
-router.post('/lecture/candone', function(req, res, next) {
+router.post('/lecture/cancel/process', passport.authenticate('applycancel', { failureRedirect: '/lecture/cancel', failureFlash: true }), function(req, res, next) {
 	var app_no = req.body.app_no;
 	var app_name = req.body.app_name;
-	var phone1 = req.body.app_phone1;
-	var phone2 = req.body.app_phone2;
-	var phone3 = req.body.app_phone3;
-	
-	var app_phone = phone1 + "-" + phone2 + "-" + phone3;
-	
-	var row;
-	var app_process;
-	/*
-		mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
-		
-		var cnt = data[0].cnt;	
-		if(cnt == 1){	
-			res.cookie('auth', true);
-			res.redirect('/lecture/candone2');
-		}else {
-			res.redirect('/adm');
-		}
-			
-	});*/
-	 res.render('front/cid_lecture/cid_lecture_candone', { });    	
+	mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
+		console.log(data);
+		res.render('front/cid_lecture/cid_lecture_candone', {row:data});  	
+	//res.redirect('/lecture/candone/');
 });
-
-router.get('/lecture/candone2', function(req, res, next) {
-	if(req.cookies.auth){
-		 mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
-			 res.render('front/cid_lecture/cid_lecture_candone2', { });    	
-		});
-	}else {
-		res.redirect("/lecture/cancel");
-	}
-	
 });
 
 router.get('/lecture/detail', function(req, res, next) {
