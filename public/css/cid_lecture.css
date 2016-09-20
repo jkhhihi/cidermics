@@ -1,10 +1,15 @@
 .lecture{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold; margin-top:20px; margin-bottom:50px;}
-.lecture div{margin-top:50px; margin-bottom:50px;}
 .lecture .grid p{margin-top:30px;}
 .lecture .grid li{width:100%;}
+.lecture ul .con{margin-bottom:60px; border-left:#999999 1px solid; border-bottom:#999999 1px solid; border-right:#999999 1px solid; padding-bottom:10px;}
+.lecture ul .con .date p{padding-top:5px;}
+.lecture ul .con .money p{background-color:#1b87c9; width:110px; height:30px; border-radius:30px; color:#fff; padding-top:5px;}
 @media all and (max-width:1024px) {
 .line{height:1px;}
-.lecture div{margin-top:30px; margin-bottom:30px;}
 .lecture .grid p{margin-top:15px;}
+.lecture ul .con .date{padding:5px;}
+.lecture ul .con .money{padding:5px;}
+.lecture ul .con .date p{margin-top:10px;}
+.lecture ul .con .money p{margin-top:0; margin-bottom:0;}
 .lecture .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 }
