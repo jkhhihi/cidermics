@@ -4,6 +4,9 @@ var mysql = require("./model/mysql");
 
 var pool = require("./model/mysql");
 
+var cookieParser = require('cookie-parser');
+
+
 router.get('/lecture', function(req, res, next) {
 	
 	var row;
@@ -100,14 +103,32 @@ router.post('/lecture/candone', function(req, res, next) {
 	
 	var row;
 	var app_process;
-	
-	
-	
-	mysql.select('select * from cider.cid_applyform where app_no='+app_no+'', function (err, data){
-			console.log(app_no);
-			res.render('front/cid_lecture/cid_lecture_candone', {row:date});
-  });
+	/*
+		mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
+		
+		var cnt = data[0].cnt;	
+		if(cnt == 1){	
+			res.cookie('auth', true);
+			res.redirect('/lecture/candone2');
+		}else {
+			res.redirect('/adm');
+		}
+			
+	});*/
+	 res.render('front/cid_lecture/cid_lecture_candone', { });    	
 });
+
+router.get('/lecture/candone2', function(req, res, next) {
+	if(req.cookies.auth){
+		 mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
+			 res.render('front/cid_lecture/cid_lecture_candone2', { });    	
+		});
+	}else {
+		res.redirect("/lecture/cancel");
+	}
+	
+});
+
 
 
 router.get('/lecture/sale', function(req, res, next) {
