@@ -2,18 +2,24 @@
 .apply .title p{font-size:24px; font-weight:bold;}
 .apply .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px; margin-bottom:20px;}
 .apply .price{font-size:36px; font-weight:bold; color:#FF0000;}
-.apply .price input{width:300px; margin-right:10px;}
+/*.apply .price input{ margin-right:10px;}*/
 .apply .btn-coupon button{background-color: initial; width:120px; height:35px; border-radius:2px; color:#1b87c9; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin:20px; 0;}
-.apply-input{font-size:18px; font-weight:bold;}
-.apply-input .row{margin:50px 0;}
+.apply-input{font-size:16px; font-weight:bold;}
+.apply-input .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:65%;}
 .apply-input .row span{display:inline-block; width:120px;}
-.apply-input .name input{border:#1b87c9 2px solid; width:50%; height:40px; padding:5px; font-size:20px;}
-.apply-input .cell input{border:#1b87c9 2px solid; width:50%; height:40px; padding:5px; font-size:20px;}
-.apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px; margin-bottom:20px;}
-.apply-input .mail input{border:#1b87c9 2px solid; width:50%; height:40px; padding:5px; font-size:20px;}
-.apply-input .job input{border:#1b87c9 2px solid; width:50%; height:40px; padding:5px; font-size:20px; margin-bottom:50px;}
-.apply-input .route input{border:#1b87c9 2px solid; width:50%; height:40px; padding:5px; font-size:20px;}
-.apply-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:100px 0 50px 0;}
+.apply-input .name, .cell, .mail, .job{height:100px;}
+.apply-input .name input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px;}
+.apply-input .cell input{border:#1b87c9 1px solid; width:70px; height:30px; padding:5px; font-size:16px; margin:0 10px;}
+.apply-input .cell select{border:#1b87c9 1px solid; width:60px; height:30px; margin-right:10px; font-size:16px;}
+.apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px; margin-bottom:16px;}
+.apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px;}
+.apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px;}
+.apply-input .mail .mail1{margin-right:10px;}
+.apply-input .mail .mail2{margin-left:10px;}
+.apply-input .job input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px;}
+.apply-input .job select{border:#1b87c9 1px solid; width:150px; height:30px; margin-right:10px; font-size:16px;}
+.apply-input .route input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px;}
+.apply-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0;}
 .apply-input .btn-apply a{color:#fff;}
 .apply .deposit-account{font-size:30px; font-weight:bold; color:#212121; margin-top:30px; line-height:1.5em;}
 .apply-cancle{border:#ececec 3px solid; width:600px; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:100px;}
@@ -32,16 +38,27 @@
 .line{height:1px;}
 .apply .deposit-account{padding:0 10px 0 10px; font-size:22px;}
 .apply .price{font-size:30px; font-weight:bold; color:#FF0000;}
-.apply .price input{width:200px;}
+/*.apply .price input{width:200px;}*/
 .apply-cancle{width:95%;}
 .apply-input{width:100% !important; font-size:16px;}
+.apply-input .row{margin:50px 5px 0 5px; padding:30px 5px;}
 .apply-input .row span{width:100px;}
-.apply-input .name input{width:62%; margin-bottom:20px;}
-.apply-input .cell input{width:62%;}
-.apply-input .cell p{color:#FF0000; margin-left:100px; font-size:14px; margin-bottom:40px;}
-.apply-input .mail input{width:62%; margin-bottom:20px;}
-.apply-input .job input{width:62%; margin-bottom:20px;}
-.apply-input .route input{width:62%;}
+.apply-input .name{height:60px;}
+.apply-input .cell{height:100px;}
+.apply-input .mail{height:140px;}
+.apply-input .job{height:100px;}
+.apply-input .route{height:60px;}
+/*.apply-input .name span{display:block; margin-bottom:20px;}*/
+.apply-input .cell span{display:block; margin-bottom:20px;}
+.apply-input .cell input{margin:0 5px;}
+.apply-input .mail span{display:block; margin-bottom:20px;}
+/*.apply-input .mail input{width:110px;}*/
+.apply-input .mail select{ margin-top:5px;}
+.apply-input .mail .mail1{margin-right:5px;}
+.apply-input .mail .mail2{margin-left:5px;}
+.apply-input .job span{display:block; margin-bottom:20px;}
+.apply-input .route span{display:block; margin-bottom:20px;}
+/*.apply-input .route input{width:50%}*/
 .apply-input .btn-apply{margin-top:60px; margin-bottom:20px;}
 .cancle p{width:95% !important;}
 }
