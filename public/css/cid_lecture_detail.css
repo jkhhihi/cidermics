@@ -26,9 +26,9 @@
 .lecture .apply .apply-question p span{font-size:14px;}
 .lecture .apply .apply-cancle p{background-color:#ff7d7d; color:#efefef !important; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px;}
 .font-color-666{color:#666;}
-.thum_img{margin-bottom:40px; width:600px;}
+.thum_img{margin-bottom:40px; width:40%;}
 .curriculum p{font-size:16px;}
-.curriculum{margin:20px 0 100px 0; background-color:#eee; width:70%; height:auto; padding:50px 0;}
+.curriculum{margin:20px 0 65px 0; background-color:#eee; width:70%; height:auto; padding:50px 0;}
 .curriculum .title{font-size:22px; font-weight:bold; margin-bottom:20px;}
 .curriculum .one, .two, .three, .four{font-size:16px; font-weight:bold; margin-bottom:10px; margin-top:40px;}
 .professor-introduce{margin:30px 0 30px 0;}
@@ -41,7 +41,7 @@
 .lecture iframe{width:100% !important; height:100% !important;}
 
 @media all and (max-width:1024px) {
-.lecture .title p{font-size:24px; line-height:1.8em;}
+.lecture .title p{font-size:22px; line-height:1.8em;}
 .lecture .contents{margin:40px 0; line-height:2.0em;}
 
 .lecture .contents .q1{padding:50px 5px;}
@@ -60,7 +60,7 @@
 .lecture .contents .q5 .title{font-size:18px;}
 .lecture .contents .q5 .con{font-size:14px; margin-top:40px; padding:30px 5px;}
 .lecture .apply{width:95%; border:#ececec 3px solid;}
-.thum_img{width:100%}
+.thum_img{width:80%}
 .curriculum p{font-size:14px;}
 .curriculum{width:95%; padding:50px 5px; line-height:1.8em;}
 .curriculum .title{font-size:20px;}
