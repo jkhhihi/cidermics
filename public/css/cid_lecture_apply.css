@@ -10,7 +10,7 @@
 .apply-input .name, .cell, .mail, .job{height:100px;}
 .apply-input .name input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px;}
 .apply-input .cell input{border:#1b87c9 1px solid; width:70px; height:30px; padding:5px; font-size:16px; margin:0 10px;}
-.apply-input .cell select{border:#1b87c9 1px solid; width:60px; height:30px; margin-right:10px; font-size:16px;}
+.apply-input .cell select{border:#1b87c9 1px solid; width:65px; height:30px; margin-right:10px; font-size:16px;}
 .apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px; margin-bottom:16px;}
 .apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px; width:130px;}
 .apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px; width:130px;}

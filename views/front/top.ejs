@@ -35,17 +35,17 @@
 
 $(document).ready(function() {
     $(document).bind("contextmenu", function(e){
-        alert("우클릭 금지합니다.");
+        alert("무단 복제를 막기위해 우클릭을 금지합니다.");
         return false;
     });
  
     $('img').bind("contextmenu",function(e){ 
-        alert("우클릭 금지합니다."); 
+        alert("무단 복제를 막기위해 우클릭 금지합니다."); 
         return false; 
     }); 
  
     $('img').bind("selectstart",function(e){ 
-        alert("우클릭 금지합니다."); 
+        alert("무단 복제를 막기위해 우클릭 금지합니다."); 
         return false;  
     }); 
 });
@@ -190,7 +190,7 @@ padding:20px 0 20px 10px;
 						<div class="logo" align="center"><a href="/"><img src="/page_imgs/fixed_img/cicon.svg" style="width:30px; margin:20px 0"></a></div>
 						<!--li><a href="/login">로그인</a></li-->
 						<div class="line1"></div>
-						    <li><a href="/lecture">사이다강의</a></li>
+						    <li class="contents_menu1"><a href="/lecture">사이다강의</a></li>
     						<div class="line1"></div>
 						<!--li><a href="/contents">사이다경제 콘텐츠</a></li-->
 						
@@ -206,8 +206,6 @@ padding:20px 0 20px 10px;
     							<li><a href="/contents/4">주식이야기</a></li>
     						</ul>
     						  
-    						<div class="line1"></div>
-    						<li><a href="/lecture">사이다강의</a></li>
     						<div class="line1"></div>
     					</div>
     					

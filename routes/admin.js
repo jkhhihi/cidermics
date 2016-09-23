@@ -241,7 +241,7 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201609290000'};
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201609300730'};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 
@@ -331,6 +331,35 @@ router.get('/contents/detail/:no', ensureAuthenticated, function(req, res, next)
 	
 });
 
+router.get('/lecture', ensureAuthenticated, function(req, res, next) {
+	var CP = 2;
+		mysql.select('SELECT * from cider.cid_applyform order by app_no desc;', function (err, data){
+			console.log(CP);
+			 res.render('admin/lecture/lecture_index', { CP : CP, lecture : data });	    	
+		});
+});
+
+
+router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	
+	var app_no = req.body.app_no;
+	var app_process = req.body.app_process;
+	
+	var date = getWorldTime(+9);
+	
+	var sets = {app_no : app_no, app_process : app_process, app_upDate : date };
+	
+	mysql.update('update cider.cid_applyform set app_process = :app_process, app_upDate = :app_upDate where app_no = :app_no', sets, function (err, data){
+		
+		console.log(err);
+		console.log(data);
+		
+    	res.redirect('/adm/lecture');
+    	
+    });
+});
 
 
 //2016년 8월 25일 기능추가
@@ -340,19 +369,22 @@ router.get('/contents/insert2', ensureAuthenticated, function(req, res, next) {
 var CP = 1;
 var now = new Date();
  var _year=  now.getFullYear();
-  var _mon =   now.getMonth()+1;
+  var _mon =   now.getMonth()+2;
+  console.log(_mon);
  _mon=""+_mon;
  if (_mon.length < 2 )
  {
     _mon="0"+_mon;
  }
-  var _date=now.getDate ();
+  var _date=now.getDate();
+  console.log(_date);
   _date =""+_date;
   if (_date.length < 2 )
 	 {
 	    _date="0"+_date;
 	 }
-  var _hor = now.getHours()+1;
+  var _hor = now.getHours() +1;
+  console.log(_hor);
  _hor =""+_hor;
  if (_hor.length < 2 )
  {
@@ -390,7 +422,7 @@ mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data)
 
 
 router.get('/consulting', ensureAuthenticated, function(req, res, next) {
-	var CP = 2;
+	var CP = 3;
 	mysql.select('select * from cider.cid_consulting order by cons_no desc', function (err, data){
 		 res.render('admin/consulting/consulting', { CP : CP, consulting : data });
 	});
@@ -398,7 +430,7 @@ router.get('/consulting', ensureAuthenticated, function(req, res, next) {
 });
 
 router.post('/consulting/insert', ensureAuthenticated, function(req, res, next) {
-	var CP = 2;
+	var CP = 3;
 	
 	var contents = req.body.contents;
 	var url = req.body.url;
@@ -422,14 +454,14 @@ router.post('/consulting/insert', ensureAuthenticated, function(req, res, next) 
 
 router.get('/consulting/insert', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 2;
+	var CP = 3;
 	res.render('admin/consulting/insert', { CP : CP });
 	
 });
 
 router.get('/consulting/detail/:no', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 2;
+	var CP = 3;
 	var no = req.params.no;
 	var user;
 	
@@ -449,7 +481,7 @@ router.get('/consulting/detail/:no', ensureAuthenticated, function(req, res, nex
 
 router.post('/consulting/update', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 2;
+	var CP = 3;
 	
 	var no = req.body.no;
 	var name = req.body.name;
@@ -473,7 +505,7 @@ router.post('/consulting/update', ensureAuthenticated, function(req, res, next) 
 
 router.get('/consulting/delete/:no', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 2;
+	var CP = 3;
 	var no = req.params.no;
 	
 	mysql.del('delete from cider.cid_consulting where cons_no = '+ no +'', function (err, data){

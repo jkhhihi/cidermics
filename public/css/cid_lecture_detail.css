@@ -1,6 +1,7 @@
 .lecture .title p{margin-top:100px; font-size:28px; font-weight:bold;}
 .lecture .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px;}
 .lecture .contents{margin:40px 0; line-height:2.5em; font-family: "BMD";}
+.lecture .contents span{color:#e21193;}
 .lecture .contents .q1{background-color:#173652; width:100%; padding:100px 0;}
 .lecture .contents .q1 .title{font-size:26px; color:#fff;}
 .lecture .contents .q1 .con{font-size:20px; margin-top:80px; background-color:#f9a356; width:auto; height:auto; border-radius:10px; padding:50px 100px;}
@@ -44,6 +45,7 @@
 .lecture .title p{font-size:22px; line-height:1.8em;}
 .lecture .contents{margin:40px 0; line-height:2.0em;}
 
+.lecture .contents span{color:#e21193;}
 .lecture .contents .q1{padding:50px 5px;}
 .lecture .contents .q1 .title{font-size:18px;}
 .lecture .contents .q1 .con{font-size:14px; margin-top:40px; padding:30px 5px;}

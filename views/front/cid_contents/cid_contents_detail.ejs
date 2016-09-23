@@ -23,7 +23,7 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>사이다경제 | 콘텐츠</title>
+<title><%= contents[0].con_title %> - 사이다경제 | 콘텐츠</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_contents_detail.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
@@ -100,21 +100,72 @@
 				</div>
 		</div>
 		
+		
+		
+		
+<script type="text/javascript">
+
+function CopyToClipboard ( tagToCopy, textarea ){ 
+
+        textarea.parentNode.style.display = "block"; 
+
+        var textToClipboard = ""; 
+        if ( "value" in tagToCopy ){    textToClipboard = tagToCopy.value;    } 
+        else {    textToClipboard = ( tagToCopy.innerText ) ? tagToCopy.innerText : tagToCopy.textContent;    } 
+
+        var success = false; 
+
+        if ( window.clipboardData ){ 
+                window.clipboardData.setData ( "Text", textToClipboard ); 
+                success = true; 
+        } 
+        else { 
+                textarea.value = textToClipboard; 
+
+                var rangeToSelect = document.createRange(); 
+
+                rangeToSelect.selectNodeContents( textarea ); 
+
+                var selection = window.getSelection(); 
+                selection.removeAllRanges(); 
+                selection.addRange( rangeToSelect ); 
+
+                success = true; 
+
+                try { 
+                    if ( window.netscape && (netscape.security && netscape.security.PrivilegeManager) ){ 
+                        netscape.security.PrivilegeManager.enablePrivilege( "UniversalXPConnect" ); 
+                    } 
+
+                    textarea.select(); 
+                    success = document.execCommand( "copy", false, null ); 
+                } 
+                catch ( error ){ 
+                    success = false; 
+                    console.log( error ); 
+                } 
+        } 
+
+        textarea.parentNode.style.display = "none"; 
+        textarea.value = ""; 
+
+        if ( success ){ alert( ' 클립보드에 복사되었습니다. \n "Ctrl+v"를 사용하여 원하는 곳에 붙여넣기 하세요. ' ); } 
+        else {    alert( " 복사하지 못했습니다. " );    } 
+
+} 
+
+</script>
+<div style="display: none;"><textarea id="myClipboard"></textarea></div>
+<br>
+<center>
+이 글의 트랙백 주소 복사하기
+<p onclick="CopyToClipboard( this, myClipboard )"> http://www.cidermics.com/contents/detail/<%=contents[0].con_no%></p></center>
+		
+		
 		<div class="contents container">
 				<p>&nbsp;</p>
 				<div class="row like" align="center">
 					<div class="fb-like" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
-					<!-- LikeBtn.com BEGIN -->
-<!--span class="likebtn-wrapper" data-href="https://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-theme="custom" data-dislike_enabled="false" data-btn_size="40" data-icon_l="hrt1" data-icon_d="thmb6" data-icon_size="23" data-icon_l_c_v="#0559fb" data-icon_d_c_v="#0559fb" data-i18n_like="추천"  data-identifier="item_1" >
-</span>
-<script>
-(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
-</script-->
-<!-- LikeBtn.com END -->
-					<!--div class="fb-like" data-href="https://www.cidermics.com/contents/detail/<%= contents[0].con_no %>'" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"> </div-->
-				<!--div class="col-xs-12 btn-like"><img src="/page_imgs/contents_img/btn_like.png"></div>
-				<div class="col-xs-12 number-like">
-						<p>777</p-->
 				</div>
 		</div>
 		<!--div class="row share" align="center">

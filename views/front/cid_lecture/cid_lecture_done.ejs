@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>사이다경제 | 콘텐츠</title>
+<title>사이다경제 | 강의</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_lecture_done.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
@@ -65,6 +65,7 @@
 
 <div class="done-input container" align="center" >
 		<p class="caution">※등록번호와 입금자명을 꼭 기억해주세요! 강의 신청자 확인 및 취소 시 필요합니다.</p>
+		
 		<div class="row">
 				<div class="num col-xs-12 col-lg-12"><span>등록번호 : </span>
 				<%=row[0].app_no%>
@@ -79,6 +80,8 @@
 				<%=row[0].app_email%>
 				</div>
 		</div>
+		<p class="caution">(신청 시각으로부터 48시간 이내 입금이 확인되지 않을 경우에는 신청이 자동으로 취소됩니다.)</p>
+		<br>
 				<div class="apply-question">
 				<a href="#" onClick="javascript:openWinKA();"><p>카톡문의<br><span>옐로우ID:@사이다경제</span></p></a>
 				</div>

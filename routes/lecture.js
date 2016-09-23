@@ -52,7 +52,7 @@ router.get('/lecture', function(req, res, next) {
 
 
 router.get('/lecture/apply', function(req, res, next) {
-	var lec_price = 200000;
+	var lec_price = 180000;
 
 	console.log(lec_price);
 
@@ -100,9 +100,9 @@ router.post('/lecture/apply/codeapply', function(req, res, next) {
 	
 	console.log(coup_code,lec_price);
 	
-	if(coup_code == "aaaa" || coup_code == "bbbb" || coup_code == "cccc" || coup_code == "ffff" ){
+	if(coup_code == "CKEH01" || coup_code == "CJSM02" || coup_code == "CJKH03" || coup_code == "CYHA04" ){
 		console.log("ok");
-		lec_price = lec_price - 50000;
+		lec_price = lec_price - 20000;
 		res.render('front/cid_lecture/cid_lecture_apply', {lec_price:lec_price });
 	}else {
 		console.log("No");
@@ -118,6 +118,7 @@ router.get('/lecture/cancel', function(req, res, next) {
 	if(req.cookies.auth){
 		res.redirect('/lecture/candone');
 	}else{
+		//res.send('<script>alert("신청 정보를 확인해주세요.");location.href="/lecture/cancel";</script>');
 		res.render('front/cid_lecture/cid_lecture_cancel', { });
 	}
 });
