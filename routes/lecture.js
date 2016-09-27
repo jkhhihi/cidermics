@@ -52,7 +52,7 @@ router.get('/lecture', function(req, res, next) {
 
 
 router.get('/lecture/apply', function(req, res, next) {
-	var lec_price = 180000;
+	var lec_price = 150000;
 
 	console.log(lec_price);
 
@@ -102,7 +102,7 @@ router.post('/lecture/apply/codeapply', function(req, res, next) {
 	
 	if(coup_code == "CKEH01" || coup_code == "CJSM02" || coup_code == "CJKH03" || coup_code == "CYHA04" ){
 		console.log("ok");
-		lec_price = lec_price - 20000;
+		lec_price = lec_price - 30000;
 		res.render('front/cid_lecture/cid_lecture_apply', {lec_price:lec_price });
 	}else {
 		console.log("No");
