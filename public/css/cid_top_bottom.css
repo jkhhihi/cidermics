@@ -13,7 +13,7 @@ a{color:#333; text-decoration:none;}
 header div{float:left;}
 header .menu{font-size:16px; font-weight:600;}
 header .login{padding-right:10px; font-size:14px; padding-top:15px; font-weight:600;}
-header .search{padding-top:19px;}
+header .search{padding-top:19px; padding-right:0;}
 /*.menu ul li{float:left; list-style:none; padding:25px;}*/
 
 .web-footer{display:block;}
