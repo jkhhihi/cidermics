@@ -361,6 +361,20 @@ router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
     });
 });
 
+router.get('/lecture/delete/:app_no', function(req, res, next) {
+	
+	var CP = 1;
+	var app_no = req.params.app_no;
+	
+	mysql.del('delete from cider.cid_applyform where app_no = '+ app_no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/lecture');
+		}else{
+			res.redirect('/adm/lecture');
+		}
+    });
+});
+
 
 //2016년 8월 25일 기능추가
 //관리자 입력 오류 부분 때문에 임시로 만든 부분

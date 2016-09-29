@@ -143,6 +143,7 @@ router.post('/lecture/cancel/process', passport.authenticate('applycancel', { fa
 });
 
 
+
 router.get('/lecture/detail', function(req, res, next) {
 
 	res.render('front/cid_lecture/cid_lecture_detail', { });
