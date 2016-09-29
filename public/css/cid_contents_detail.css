@@ -49,8 +49,9 @@
 .contents iframe{width:100% !important; height:100% !important;}
 
 @media all and (max-width:1024px) {	
+.appbanner{/*position:fixed;*/ z-index:999; width:100% !important;}	
 .bg-blue{margin-top:0 !important;}
-.contents{width:100% !important;}	
+.contents{width:100% !important; margin-top:20px;}	
 .contents_detail-mob_menu {display:block;}
 .contents .contents-in img{width:90% !important; margin-top:60px;}/*img 빼기*/
 .web-banner{display:none;}
@@ -89,3 +90,4 @@
 .recommendation p{margin-top:10px;}
 .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 }
+
