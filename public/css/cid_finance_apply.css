@@ -27,7 +27,9 @@
 .apply-input .job select{border:#1b87c9 1px solid; width:150px; height:30px; margin-right:10px; font-size:16px;}
 .apply-input .route input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px;}
 .apply-input .want textarea{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; width: 100%; height: 200px; margin-bottom:30px;}
-.apply-input .want-ex p{border:#cccccc 1px solid; color:#666; line-height:2.0em; padding:10px;}
+/*.apply-input .want-ex p{border:#cccccc 1px solid; color:#666; line-height:2.0em; padding:10px;}*/
+.apply-input .want-ex .con{border:#cccccc 1px solid; padding:10px;}
+.apply-input .want-ex .con img{width:370px;}
 .apply-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0 70px 0;}
 .apply-input .btn-apply a{color:#fff;}
 @media all and (max-width:1024px) {
@@ -62,7 +64,7 @@
 .apply-input .job span{display:block; margin-bottom:20px;}
 .apply-input .route span{display:block; margin-bottom:20px;}
 /*.apply-input .route input{width:50%}*/
-.apply-input .btn-apply{margin-top:60px; margin-bottom:50px;}
+.apply-input .btn-apply{margin-top:60px; margin-bottom:60px;}
 
 }
 
