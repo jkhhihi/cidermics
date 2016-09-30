@@ -63,9 +63,9 @@ router.get('/finance/apply', function(req, res, next) {
 
 });
 
-router.get('/finance/info', function(req, res, next) {
+router.get('/finance/contents', function(req, res, next) {
 
-	res.render('front/cid_finance/cid_finance_info', { });
+	res.render('front/cid_finance/cid_finance_contents', { });
 
 });
 
