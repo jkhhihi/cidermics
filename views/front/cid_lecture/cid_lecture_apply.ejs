@@ -142,7 +142,7 @@ function next_submit(){
 <div class="apply-input container" align="center" >
 		<div class="row" align="left">
 				<div class="name col-xs-12 col-lg-12"><span>입금자명 : </span>
-				<input type="text" name="app_name" maxlength=5 style="IME-MODE: disabled">
+				<input type="text" name="app_name" maxlength=5 style="IME-MODE: active;">
 				<div><h5 style= "color:red";>*필수항목</h5></div>
 				</div>
 				<div class="cell col-xs-12 col-lg-12"><span>휴대폰 번호 : </span>
@@ -154,7 +154,8 @@ function next_submit(){
        				 <option>018</option>
        				 <option>019</option>
 				   </select>
-    			-<input type="text" name="app_phone2" maxlength=4>-<input type="text" name="app_phone3" maxlength=4>
+    			-<input type="text" name="app_phone2" maxlength=4 style="text-align:center;IME-MODE:disabled;" onkeyPress="if ((event.keyCode<48) || (event.keyCode>57)) event.returnValue=false;" >-
+    			<input type="text" name="app_phone3" maxlength=4 style="text-align:center;IME-MODE:disabled;" onkeyPress="if ((event.keyCode<48) || (event.keyCode>57)) event.returnValue=false;" >
     			<div><h5 style= "color:red";>*필수항목</h5></div>
 				</div>
 				<div class="mail col-xs-12 col-lg-12"><span>이메일 주소 : </span>

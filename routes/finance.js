@@ -44,6 +44,12 @@ router.get('/ftest/checkcode', function(req, res, next) {
 	console.log(coup_code);
 });
 
+router.get('/finance/profile', function(req, res, next) {
+
+	res.render('front/cid_finance/cid_finance_profile', { });
+
+});
+
 router.get('/finance', function(req, res, next) {
 
 	res.render('front/cid_finance/cid_finance', { });
