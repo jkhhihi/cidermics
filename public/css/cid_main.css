@@ -1,5 +1,5 @@
 .mob-main-banner{display:none;}
-.appbanner{margin-bottom:50px;}
+.appbanner{display:none;}
 .main-menu{background:url(/page_imgs/fixed_img/mainimg2.jpg); background-size: cover;
     background-position: center; font-family: "BMD", sans-serif; color:#FFFFFF; width:100% !important; height:700px;}
 .main-menu .mainlogoimg img{padding-top:120px;}
@@ -22,7 +22,7 @@
 .contents_detail-mob_menu {display:block;}
 
 .main-menu{display:none;}
-.appbanner{margin-bottom:10px;}
+.appbanner{display:block; margin-bottom:10px;}
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}
 .mob-main-banner{margin-bottom:10px;}
