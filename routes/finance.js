@@ -64,9 +64,50 @@ router.get('/finance/apply', function(req, res, next) {
 });
 
 router.get('/finance/contents', function(req, res, next) {
+	
+	var no = req.params.no;
+	
+	var now = new Date();
+	 var _year=  now.getFullYear();
+   var _mon =   now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+   var _date=now.getDate ();
+   _date =""+_date;
+   if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+   var _hor = now.getHours  ();
+	 _hor =""+_hor;
+	 if (_hor.length < 2 )
+	 {
+	    _hor="0"+_hor;
+	 }
+	 var _min=now.getMinutes();
+	  _min =""+_min;
+	 if (_min.length < 2 )
+	 {
+	    _min="0"+_min;
+	 }
+	 
+	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+	
+	var sets = {con_category : no, con_release : _tot};
+	var row;
+	
+	qry="select con_no, con_photo, con_title from cider.cid_contents where con_category = '2' and con_release <= '"+_tot+"' order by con_no desc limit 0,12";
+	mysql.select(qry,
+			 function (err, data){	 
+				if (err) throw err;
+		 
+		 row = data;
+		 res.render('front/cid_finance/cid_finance_contents', { contents : row});
 
-	res.render('front/cid_finance/cid_finance_contents', { });
-
+	});
 });
 
 router.get('/finance/review', function(req, res, next) {
@@ -75,6 +116,69 @@ router.get('/finance/review', function(req, res, next) {
 
 });
 
+
+
+router.get('/addMore2/:idx/:p', function(req, res, next) {
+   
+   var idx = req.params.idx;
+   var p=req.params.p;
+   var now = new Date();
+    var _year=  now.getFullYear();
+     var _mon =   now.getMonth()+1;
+    _mon=""+_mon;
+    if (_mon.length < 2 )
+    {
+       _mon="0"+_mon;
+    }
+     var _date=now.getDate ();
+     _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+     var _hor = now.getHours ();
+    _hor =""+_hor;
+    if (_hor.length < 2 )
+    {
+       _hor="0"+_hor;
+    }
+    var _min=now.getMinutes();
+     _min =""+_min;
+    if (_min.length < 2 )
+    {
+       _min="0"+_min;
+    }
+    
+    var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+   console.log(idx+"=================");
+   var lang = req.params.lang;
+   var start = (idx - 1) * 12;
+   //var start= start +1;
+   //var end = idx * 12;
+   var end = 12;
+   var qry='';
+   console.log(start, end);
+   //mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ idx +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+      //mysql.select('select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+       //if(p==null)
+      // {
+      //   qry='select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'';
+      // } else {
+         qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' and con_category = "+ p +" order by con_no desc limit "+ start +", "+ end +"";
+      // }
+       //mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ p +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
+   console.log(qry);
+   
+   mysql.select(qry, function (err, data){
+       if (err) throw err;
+       console.log("data");
+       console.log(data);
+       console.log('select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'');
+       res.send({ contents : data });
+   });
+   
+   
+});
 
 
 

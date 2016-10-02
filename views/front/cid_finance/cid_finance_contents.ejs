@@ -10,26 +10,23 @@
 <title>사이다경제 | 재무</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_finance.css" rel="stylesheet">
+<link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<script src="/js/modernizr.custom.js"></script>
+
+<script src="/js/gotoup.js"></script>
 
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
-<script
-src="http://maps.googleapis.com/maps/api/js">
-</script>
-<script>
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(37.533656, 126.900734),
-    zoom:17,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+<meta property="og:title" content="사이다경제" />	
+<meta property="og:site_name" content="사이다경제">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.cidermics.com/contents/" />
+<meta property="og:description" content="사이다경제 경제,금융,주식,기업 콘텐츠" />
 
 <!--구글 애널리틱스 -->
 <script>
@@ -77,8 +74,86 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div class="col-xs-6 menu4"><a href="/finance/apply/"><img class="img-responsive" src="/page_imgs/finance_img/btn_menu4_mob.png"></a></div>
 </div>
 
-<!--콘텐츠 들어갈 자리-->	
-	
+<!--콘텐츠 들어갈 자리-->
+<div class="contents container">
+			<ul class="grid effect-2" id="grid">
+			
+				<% for(var i=0; i<contents.length; i++) { %>
+				<li>
+				<div>
+					
+					<a href="/contents/detail/<%= contents[i].con_no %>">
+					<img class="img-responsive" src="<%= contents[i].con_photo %>"></a>
+					
+					
+					<p><a href="/contents/detail/<%= contents[i].con_no %>">
+						<%= contents[i].con_title %></a></p>
+				</div>
+			</li>
+			<% } %>
+			</ul>
+</div>
+
+<div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.svg" style="width:40px; margin-bottom:20px;"></div>
+
+<script src="/js/masonry.pkgd.min.js"></script>
+		<script src="/js/imagesloaded.js"></script>
+		<script src="/js/classie.js"></script>
+		<script src="/js/AnimOnScroll.js"></script>
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+
+
+<% include ../bottom %>
+
+
+<script>
+		var idx = 2;
+		var p=2;
+		
+		
+		function addMore (){
+			var contents = '';
+			$.ajax({
+				url : '/addMore2/'+idx+"/"+2,
+				method : 'get',
+				success : function(data){
+					if (data.contents.length == 0){
+						alert('마지막 콘텐츠입니다.');
+						return;
+					}
+					idx ++;
+					$.each(data.contents, function (index, value){
+						contents += '<li> ' +
+							 			'<div class="con-border bg-w"> ' + 
+												'<a href="/contents/detail/'+value.con_no+'"> ' +
+													'<div class="con-img"> ' +
+														'<img src="'+value.con_photo+'"/> ' + 
+													'</div> ' +
+												'</a> ' +
+							 					'<a href="/contents/detail/'+value.con_no+'"> ' +
+							 						'<div class="con-title"><span><center>' + value.con_title +'</center></span></div>' +
+							 					'</a> '+
+							 			'</div> '+
+							 		'</li> ';
+							
+					});
+					$('#grid').append(contents);
+					new AnimOnScroll( document.getElementById( 'grid' ), {
+						minDuration : 0.4,
+						maxDuration : 0.7,
+						viewportFactor : 0.2
+					} );
+				}
+			});
+		}
+		
+	</script>
 
 <% include ../bottom %>
 </body>
