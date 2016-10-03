@@ -117,6 +117,40 @@ router.get('/finance/review', function(req, res, next) {
 });
 
 
+router.post('/finance/apply/insert', function(req, res, next) {
+	var fi_app_no = req.body.fi_app_no;
+	var fi_app_cate = req.body.fi_app_cate;
+	var fi_app_name = req.body.fi_app_name;
+	var phone1 = req.body.fi_app_phone1;
+	var phone2 = req.body.fi_app_phone2;
+	var phone3 = req.body.fi_app_phone3;
+	var email1 = req.body.fi_app_email1;
+	var email2 = req.body.fi_app_email2;
+	var fi_app_job = req.body.fi_app_job;
+	var fi_app_path = req.body.fi_app_path;
+	var fi_app_comment = req.body.fi_app_comment;
+	
+	var fi_app_email = email1 + "@" + email2;
+	var fi_app_phone = phone1 + "-" + phone2 + "-" + phone3;
+	
+	var date = getWorldTime(+9);
+	
+	var row;
+	var sets = {fi_app_cate : 1, fi_app_name : fi_app_name, fi_app_phone : fi_app_phone, fi_app_email : fi_app_email, fi_app_job : fi_app_job, fi_app_path : fi_app_path, fi_app_comment : fi_app_comment, fi_app_regDate : date, fi_app_upDate : date,};
+	
+	pool.insert('insert into cider.cid_fi_applyform set ?', sets, function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		mysql.select('select * from cider.cid_fi_applyform where fi_app_phone ="'+fi_app_phone+'" and fi_app_name = "'+fi_app_name+'"', function (err, data2){
+			console.log(data2);
+		//res.redirect('/lecture/done');
+		res.render('front/cid_finance/cid_finance_done', {row : data2});
+		});
+	 });
+});
+
+
 
 router.get('/addMore2/:idx/:p', function(req, res, next) {
    
