@@ -36,8 +36,9 @@
 .line{height:1px;}
 
 .finance-apply{padding:70px 0 10px 0;}
-.finance-apply img{height:100px;}
-.apply1{margin:50px 0;}
+.finance-apply img{height:50px;}
+.finance-apply p{font-size:16px;}
+.apply1{margin:30px 0;}
 /*.apply1 .title1{font-size:12px;}
 .apply1 .title2{font-size:16px;}
 .apply1 .title2 span{font-size:20px;}
@@ -47,7 +48,7 @@
 .apply1 .title2{padding:0 5px; margin-top:30px;}
 .entry{padding:20px 5px;}
 .apply-input{width:100% !important; font-size:16px;}
-.apply-input .row{margin:50px 5px 0 5px; padding:30px 5px; width:97%;}
+.apply-input .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input .row span{width:100px;}
 .apply-input .name{height:100px;}
 .apply-input .cell{height:140px;}

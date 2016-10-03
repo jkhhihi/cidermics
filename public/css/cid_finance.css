@@ -15,13 +15,17 @@
 .finance .finance_3{background-color:#ffffff; padding:60px 0;}
 .finance .finance_3 img{width:40%;}
 .finance p{margin-bottom:40px; border-radius: 5px; width:50px; height:50px; padding-top:12px; background-color:#186491; font-size:24px; font-weight:bold; color:#fff;}
-.finance .btn-apply p{margin:100px 0 60px 0; border:4px #ececec solid; border-radius: 5px; width:200px; height:50px; padding-top:8px; background-color:#186491; font-size:22px; font-weight:bold; color:#fff;}
+.finance .btn-apply-in p{margin:100px 0 60px 0; border:4px #ececec solid; border-radius: 5px; width:200px; height:50px; padding-top:8px; background-color:#186491; font-size:22px; font-weight:bold; color:#fff;}
 .planner-intro{margin-top:100px; margin-bottom:100px;}
 .planner-intro h3{font-weight:bold; margin:30px 0;}
 .planner-intro p{line-height:1.8em; font-size:16px;}
 .planner-intro p.blue{color:#1b87c9;}
 .planner-intro img.img-center {margin: 0 auto; width:220px;}
 .planner-intro .row div{margin-bottom:80px;}
+.contents-finance{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
+.contents-finance div div{margin:10px 0 10px 0;}
+.contents-finance div div p{margin-top:20px;}
+.contents-finance .icon-plus_con{margin:60px 0 50px 0;}
 
 @media all and (max-width:1024px) {
 .line{height:1px;}
@@ -41,7 +45,10 @@
 .finance .finance_3{padding:40px 0;}
 .finance .finance_3 img{width:95%;}
 .finance p{margin-bottom:20px; width:30px; height:30px; padding-top:4px; font-size:18px;}
-.finance .btn-apply p{margin:50px 0 50px 0;}
-.planner-intro{margin-top:50px; margin-bottom:50px;
+.finance .btn-apply-in p{margin:50px 0 50px 0;}
+.planner-intro{margin-top:50px; margin-bottom:50px;}
+.contents-finance .icon-plus_con{margin:10px 0 30px 0;}
+.contents-finance .icon-plus_con img{height:80px;}
+.contents-finance .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 }
 
