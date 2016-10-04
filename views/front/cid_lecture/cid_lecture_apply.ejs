@@ -59,6 +59,11 @@ function next_submit(){
 	document.applyform.app_phone3.focus();
 	  return;
 	}
+	if(document.applyform.app_phone2.value.length<=3){
+	 alert("휴대전화 번호를 정확히 입력해 주세요.");
+	document.applyform.app_phone2.focus();
+	return;
+	 }
 	if(document.applyform.app_email1.value==""){
 	 alert("이메일 아이디를 입력해 주세요.");
 	document.applyform.app_email1.focus();

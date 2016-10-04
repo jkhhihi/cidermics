@@ -68,6 +68,12 @@ function next_submit(){
 	document.fi_applyform.fi_app_phone3.focus();
 	  return;
 	}
+	if(document.fi_applyform.fi_app_phone2.value.length<=3){
+	 alert("휴대전화 번호를 정확히 입력해 주세요.");
+	document.fi_applyform.fi_app_phone2.focus();
+	return;
+	 }
+	 
 	if(document.fi_applyform.fi_app_email1.value==""){
 	 alert("이메일 아이디를 입력해 주세요.");
 	document.fi_applyform.fi_app_email1.focus();
@@ -78,6 +84,7 @@ function next_submit(){
 	document.fi_applyform.fi_app_email2.focus();
 	  return;
 	}
+	
 	for (i=0; i<document.fi_applyform.fi_app_email1.value.length; i++)
         {
          var ch = document.fi_applyform.fi_app_email1.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
