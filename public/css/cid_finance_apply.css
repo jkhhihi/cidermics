@@ -32,6 +32,16 @@
 .apply-input .want-ex .con img{width:370px;}
 .apply-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0 70px 0;}
 .apply-input .btn-apply a{color:#fff;}
+
+.apply-input-done{font-size:16px; font-weight:bold;}
+.apply-input-done .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:70%;}
+.apply-input-done .row span{display:inline-block; width:120px;}
+.apply-input-done .num, .name, .cell{height:100px;}
+.apply-input-done .mail{height:20px;}
+.apply-input-done .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0 70px 0;}
+.apply-input-done .btn-apply a{color:#fff;}
+
+
 @media all and (max-width:1024px) {
 .line{height:1px;}
 
@@ -66,6 +76,12 @@
 .apply-input .route span{display:block; margin-bottom:20px;}
 /*.apply-input .route input{width:50%}*/
 .apply-input .btn-apply{margin-top:60px; margin-bottom:60px;}
+
+.apply-input-done{width:100% !important; font-size:16px;}
+.apply-input-done .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
+.apply-input-done .row span{width:100px;}
+.apply-input-done .name{height:100px;}
+.apply-input-done .btn-apply{margin-top:60px; margin-bottom:60px;}
 
 }
 
