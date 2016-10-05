@@ -111,6 +111,9 @@ function next_submit(){
 	 	document.fi_applyform.submit();
 }
 </script>
+<style>
+	.entry_p{margin: 0 0 0;}
+</style>
 
 </head>
 <body>
@@ -139,7 +142,7 @@ function next_submit(){
 </div>
 
 <div class="entry" align="center">
-	<p><img class="img-responsive" src="/page_imgs/finance_img/entry.png"></p>
+	<p class="entry_p"><img class="img-responsive" src="/page_imgs/finance_img/entry.png"></p>
 </div>
 
 <form name="fi_applyform" method="post" action="/finance/apply/insert">
@@ -206,9 +209,17 @@ function next_submit(){
 여러가지 현실적인 도움을 받고 싶습니다~~</p-->
 				<div class="con"><img class="img-responsive" src="/page_imgs/finance_img/want-ex.png"></div>
 				</div>
+				&nbsp;
+				<div class="privacy" align="left">
+					<div class="title">*개인정보취급</div>
+					&nbsp;
+					<div class="con"><p>1.수집된 개인정보는 본래의 목적 이외의 그 어떤 용도로도 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구하게 됩니다.</p>
+							 		 <p>2.수집된 이용자의 개인정보는 원칙적으로 처리 목적이 달성되면 즉시 파기됩니다.</p>
+					</div>
+				</div>
 		</div>
 		
-		<a onClick="next_submit()" style="cursor:pointer"><div class="btn-apply">제출하기</div></a>
+		<a onClick="next_submit()" style="cursor:pointer"><div class="btn-apply">신청하기</div></a>
 		
 </div>
 </form>

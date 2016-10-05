@@ -59,6 +59,7 @@ function fileList(type, page){
 //			console.log(totalPage, startPage, lastPage, next, currentPage);
 			var img = '<div class="row"> ';
 			$.each(data.files, function(idx, val){
+				
 				if (idx % 3 == 0) {
 					img += '</div>';
 					img += '<div class="row"> ';
@@ -67,7 +68,7 @@ function fileList(type, page){
 							'<img class="responsive-img" src="/uploads/'+val+'"/> ' +
 							'<div class="fileName"> '+val+'</div>' + 
 					   '</div>';
-				if (idx == 8){
+				if (idx == 11){
 					img += '</div>';
 				}	
 			});
