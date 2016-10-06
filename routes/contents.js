@@ -262,21 +262,11 @@ router.get('/addMore2/:idx/:p', function(req, res, next) {
    console.log(idx+"=================");
    var lang = req.params.lang;
    var start = (idx - 1) * 12;
-   //var start= start +1;
-   //var end = idx * 12;
    var end = 12;
    var qry='';
    console.log(start, end);
-   //mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ idx +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
-      //mysql.select('select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'', function (err, data){
-       //if(p==null)
-      // {
-      //   qry='select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'';
-      // } else {
          qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' and con_category = "+ p +" order by con_no desc limit "+ start +", "+ end +"";
-      // }
-       //mysql.select('select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ p +'" order by con_no desc limit '+ start +', '+ end +'', function (err, data){
-   console.log(qry);
+       console.log(qry);
    
    mysql.select(qry, function (err, data){
        if (err) throw err;

@@ -63,6 +63,38 @@
 }
 </style>
 
+<script type="text/javascript">
+ var i = 0;
+$(document).ready(function() {
+ 
+    var currentPage = 1;
+    checkForHash();
+ 
+    $('#btn1').add('#btn2').add('#btn3').bind('click', function(e) {
+        currentPage = $(this).val();
+        showPage($(this).val());
+    });
+ 
+    $('#link').bind('click', function(e) {
+        document.location.hash = "#" + currentPage;
+    });
+});
+ 
+function checkForHash() {
+    if(document.location.hash){
+        var HashLocationName = document.location.hash;
+        HashLocationName = HashLocationName.replace("#","");
+        $("#display").html(HashLocationName)
+    } else {
+        $("#display").html($('#btn1').val())
+    }
+}
+ 
+function showPage(value) {
+    $("#display").html(value)
+}
+</script>
+
 </head>
 <body>
 <!--위로가기 버튼-->
@@ -221,20 +253,15 @@ function CopyToClipboard ( tagToCopy, textarea ){
 				<div class="swiper-container">
 						<div class="swiper-wrapper">
 								<div class="swiper-slide"><a href="/finance"><img class="img-responsive" src="/page_imgs/main_img/consulting.jpg"></a></div>
-								<div class="swiper-slide"><a href="https://play.google.com/store/apps/details?id=com.cidermics.cmics"><img class="img-responsive" src="/page_imgs/main_img/appbanner_main.jpg"></a></div>
 								<div class="swiper-slide"><a href="/lecture"><img class="img-responsive" src="/page_imgs/main_img/lecture.jpg"></a></div>
 								<!--div class="swiper-slide"><a href="/lecture/sale"><img class="img-responsive" src="/page_imgs/main_img/lecture_sale.jpg"></a></div-->
 								<div class="swiper-slide"><a href="#" onClick="javascript:openWinKA();"><img class="img-responsive" src="/page_imgs/main_img/kakaoplus.jpg"></a></div>
 								<div class="swiper-slide"><a href="#" onClick="javascript:openWinFB();"><img class="img-responsive" src="/page_imgs/main_img/facebooklike.jpg"></a></div>
+								
 						</div>
 						<!-- Add Pagination -->
 						<div class="swiper-pagination"></div>
 				</div>
-				<!--div class="row">
-					<div class="col-xs-3">banner1</div>
-					<div class="col-xs-3">banner2</div>
-					<div class="col-xs-3">banner3</div>
-				</div-->
 </div>
 <div class="web-main-banner container">
 				<!-- Swiper -->
@@ -246,15 +273,11 @@ function CopyToClipboard ( tagToCopy, textarea ){
 								<!--div class="swiper-slide"><a href="/lecture/sale"><img class="img-responsive" src="/page_imgs/main_img/lecture_sale.jpg"></a></div-->
 								<div class="swiper-slide"><a href="#" onClick="javascript:openWinKA();"><img class="img-responsive" src="/page_imgs/main_img/kakaoplus.jpg"></a></div>
 								<div class="swiper-slide"><a href="#" onClick="javascript:openWinFB();"><img class="img-responsive" src="/page_imgs/main_img/facebooklike.jpg"></a></div>
+								
 						</div>
 						<!-- Add Pagination -->
 						<div class="swiper-pagination"></div>
 				</div>
-				<!--div class="row">
-					<div class="col-xs-3">banner1</div>
-					<div class="col-xs-3">banner2</div>
-					<div class="col-xs-3">banner3</div>
-				</div-->
 </div>
 <!-- Swiper JS -->
 <script src="/js/swiper.js"></script>
@@ -321,57 +344,6 @@ function CopyToClipboard ( tagToCopy, textarea ){
 		</div>
 		<% } %>
 		
-		
-		<!---p class="title-relation">함께 읽으면 좋을 연관글</p> 주석처리했는데 checkno[0,1,2,3]에러나서 임시적으로 바꿈
-		<div class="row relation">
-				<div class="col-xs-12 col-sm-6">
-						<div class="row ">
-								<div class="col-xs-8 title"><%=contents[0].con_title%>[사이다경제] 매출 1조 달성한 유니클로,
-										그 비결은?</div>
-								<div class="col-xs-4 img" align="right"><img src="<%=contents[0].con_photo%>"></div>
-						</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-						<div class="row">
-								<div class="col-xs-8 title"><%=contents[0].con_title%>[사이다경제] 매출 1조 달성한 유니클로,
-										그 비결은?</div>
-								<div class="col-xs-4 img" align="right"><img src="<%=contents[0].con_photo%>"></div>
-						</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-						<div class="row">
-								<div class="col-xs-8 title"><%=contents[0].con_title%>[사이다경제] 매출 1조 달성한 유니클로,
-										그 비결은?</div>
-								<div class="col-xs-4 img" align="right"><img src="<%=contents[0].con_photo%>"></div>
-						</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-						<div class="row">
-								<div class="col-xs-8 title"><%=contents[0].con_title%>[사이다경제] 매출 1조 달성한 유니클로,
-										그 비결은?</div>
-								<div class="col-xs-4 img" align="right"><img src="<%=contents[0].con_photo%>"></div>
-						</div>
-				</div>
-				
-				<!--광고콘텐츠-->
-				<!--div class="col-xs-12 col-sm-6">
-						<div class="row ad">
-								<div class="col-xs-8 ad-title">[사이다경제] 매출 1조 달성한 유니클로,
-										그 비결은?</div>
-								<div class="col-xs-4 ad-img" align="right">
-									
-									<tenping class="adsbytenping" tenping-ad-client="6xmr0TKMV0ShrP8MUy99Kd4CTu2wnRg9EbV1gZ92sbBtZexdqeSekvzA1xpNoGnB" tenping-ad-type="CZAh6Dz83kfxX1Iv1NS%2f7w%3d%3d" style="margin: 0px auto; width: 300px; display: block;"></tenping><script async src='http://tenping.kr/scripts/adsbytenping.min.js' ></script>
-									<span>AD</span><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
-						</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-						<div class="row ad">
-								<div class="col-xs-8 ad-title">[사이다경제] 매출 1조 달성한 유니클로,
-										그 비결은?</div>
-								<div class="col-xs-4 ad-img" align="right"><span>AD</span><img src="/page_imgs/contents_upload_thum/img_rela1.png"></div>
-						</div>
-				</div>
-		</div-->
 		<p class="title-recommendation" align="center">사이다경제 추천</p>
 		
 		<div class="recommendation">

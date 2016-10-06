@@ -363,7 +363,7 @@ router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
 
 router.get('/lecture/delete/:app_no', function(req, res, next) {
 	
-	var CP = 1;
+	var CP = 2;
 	var app_no = req.params.app_no;
 	
 	mysql.del('delete from cider.cid_applyform where app_no = '+ app_no +'', function (err, data){
@@ -374,6 +374,32 @@ router.get('/lecture/delete/:app_no', function(req, res, next) {
 		}
     });
 });
+
+
+router.get('/finance', ensureAuthenticated, function(req, res, next) {
+	var CP = 3;
+		mysql.select('SELECT * from cider.cid_fi_applyform order by fi_app_no desc;', function (err, data){
+			console.log(CP);
+			 res.render('admin/finance/finance_index', { CP : CP, finance : data });	    	
+		});
+});
+
+
+router.get('/finance/delete/:app_no', function(req, res, next) {
+	
+	var CP = 3;
+	var fi_app_no = req.params.fi_app_no;
+	
+	mysql.del('delete from cider.cid_fi_applyform where fi_app_no = '+ fi_app_no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/finance');
+		}else{
+			res.redirect('/adm/finance');
+		}
+    });
+});
+
+
 
 
 //2016년 8월 25일 기능추가
@@ -436,7 +462,7 @@ mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data)
 
 
 router.get('/consulting', ensureAuthenticated, function(req, res, next) {
-	var CP = 3;
+	var CP = 9;
 	mysql.select('select * from cider.cid_consulting order by cons_no desc', function (err, data){
 		 res.render('admin/consulting/consulting', { CP : CP, consulting : data });
 	});
@@ -444,7 +470,7 @@ router.get('/consulting', ensureAuthenticated, function(req, res, next) {
 });
 
 router.post('/consulting/insert', ensureAuthenticated, function(req, res, next) {
-	var CP = 3;
+	var CP = 9;
 	
 	var contents = req.body.contents;
 	var url = req.body.url;
@@ -468,14 +494,14 @@ router.post('/consulting/insert', ensureAuthenticated, function(req, res, next) 
 
 router.get('/consulting/insert', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 3;
+	var CP = 9;
 	res.render('admin/consulting/insert', { CP : CP });
 	
 });
 
 router.get('/consulting/detail/:no', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 3;
+	var CP = 9;
 	var no = req.params.no;
 	var user;
 	
@@ -495,7 +521,7 @@ router.get('/consulting/detail/:no', ensureAuthenticated, function(req, res, nex
 
 router.post('/consulting/update', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 3;
+	var CP = 9;
 	
 	var no = req.body.no;
 	var name = req.body.name;
@@ -519,7 +545,7 @@ router.post('/consulting/update', ensureAuthenticated, function(req, res, next) 
 
 router.get('/consulting/delete/:no', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 3;
+	var CP = 9;
 	var no = req.params.no;
 	
 	mysql.del('delete from cider.cid_consulting where cons_no = '+ no +'', function (err, data){
