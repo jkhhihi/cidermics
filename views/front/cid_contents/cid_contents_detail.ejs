@@ -202,6 +202,9 @@ function CopyToClipboard ( tagToCopy, textarea ){
 <p onclick="CopyToClipboard( this, myClipboard )"> http://www.cidermics.com/contents/detail/<%=contents[0].con_no%></p>
 </center-->
 		
+		<div class="banner">
+		 <img class="img-responsive" src="/page_imgs/main_img/consulting.jpg">
+		</div>
 		
 		<div class="contents container">
 				<p>&nbsp;</p>
@@ -242,61 +245,12 @@ function CopyToClipboard ( tagToCopy, textarea ){
 				</div>
 				
 		</div>
-		<!--div class="col-xs-12 line-1px" style="margin-bottom:50px;"></div-->
+		<div class="col-xs-12 line-1px"></div>
 		
 </div>
 </div>
 </div>
-<!--배너뿌림-->
-<div class="mob-main-banner">
-				<!-- Swiper -->
-				<div class="swiper-container">
-						<div class="swiper-wrapper">
-								<div class="swiper-slide"><a href="/finance"><img class="img-responsive" src="/page_imgs/main_img/consulting.jpg"></a></div>
-								<div class="swiper-slide"><a href="/lecture"><img class="img-responsive" src="/page_imgs/main_img/lecture.jpg"></a></div>
-								<!--div class="swiper-slide"><a href="/lecture/sale"><img class="img-responsive" src="/page_imgs/main_img/lecture_sale.jpg"></a></div-->
-								<div class="swiper-slide"><a href="#" onClick="javascript:openWinKA();"><img class="img-responsive" src="/page_imgs/main_img/kakaoplus.jpg"></a></div>
-								<div class="swiper-slide"><a href="#" onClick="javascript:openWinFB();"><img class="img-responsive" src="/page_imgs/main_img/facebooklike.jpg"></a></div>
-								
-						</div>
-						<!-- Add Pagination -->
-						<div class="swiper-pagination"></div>
-				</div>
-</div>
-<div class="web-main-banner container">
-				<!-- Swiper -->
-				<div class="swiper-container">
-						<div class="swiper-wrapper">
-								<div class="swiper-slide"><a href="/finance"><img class="img-responsive" src="/page_imgs/main_img/consulting.jpg"></a></div>
-								<div class="swiper-slide"><a href="https://play.google.com/store/apps/details?id=com.cidermics.cmics"><img class="img-responsive" src="/page_imgs/main_img/appbanner_main.jpg"></a></div>
-								<div class="swiper-slide"><a href="/lecture"><img class="img-responsive" src="/page_imgs/main_img/lecture.jpg"></a></div>
-								<!--div class="swiper-slide"><a href="/lecture/sale"><img class="img-responsive" src="/page_imgs/main_img/lecture_sale.jpg"></a></div-->
-								<div class="swiper-slide"><a href="#" onClick="javascript:openWinKA();"><img class="img-responsive" src="/page_imgs/main_img/kakaoplus.jpg"></a></div>
-								<div class="swiper-slide"><a href="#" onClick="javascript:openWinFB();"><img class="img-responsive" src="/page_imgs/main_img/facebooklike.jpg"></a></div>
-								
-						</div>
-						<!-- Add Pagination -->
-						<div class="swiper-pagination"></div>
-				</div>
-</div>
-<!-- Swiper JS -->
-<script src="/js/swiper.js"></script>
-<!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        paginationClickable: true,
-        spaceBetween: 10,
-				//effect: 'fade',
-        centeredSlides: true,
-        autoplay: 5000,
-        autoplayDisableOnInteraction: false
-    });
-    </script>
 
-		
 		<div class="row comment container" align="center">
 				<div class="col-xs-12" style="padding:0;">
 					<div class="fb-comments" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-width="100%" data-numposts="5" data-mobile></div>

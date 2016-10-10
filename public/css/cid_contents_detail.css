@@ -4,7 +4,6 @@
 .margin0{margin:0 !important;}
 .padding0{padding:0 !important;}
 .mob-header{display:none;} 
-.mob-main-banner{display:none;}
 .contents{font-family: 'Nanum Gothic', serif; color:#212121; width:85% !important;}
 .contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:100px 0 50px 0;}
 .contents .icon-menu{margin-bottom:20px; }
@@ -20,11 +19,9 @@
 .web-editor-con .editor-intro{padding-top:20px;}
 .web-editor-con .editor-intro p{height:30px;}
 .web-editor-con .editor-sns img{margin:80px 0 0 5px;}
-.web-main-banner{margin-bottom:50px;}
-.web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;;}
 .like .number-like{width:60px; height:30px; border:1px solid #CCCCCC; border-radius:5px; padding-top:5px; margin-top:65px; float:inherit;}
-.comment{width:85% !important; margin-top:20px;}
-.pre-next{margin:40px 0 40px 0; width:85% !important;}
+.comment{width:85% !important; margin:60px 0 20px 0;}
+.pre-next{margin:80px 0 100px 0; width:85% !important;}
 .pre-next .con-pre{height:150px; background-color:#1b87c9; color:#FFFFFF; font-size:16px;}
 .con-pre p{margin-top:10px;}
 .con-pre p.pre-title{font-size:18px; line-height:1.5em;}
@@ -45,8 +42,8 @@
 .recommendation div{margin:10px 0 50px 0;}
 .recommendation p{margin-top:20px;}
 .contents_detail-mob_menu {display:none;}
-
-.contents iframe{width:100% !important; height:100% !important;}
+.contents iframe{width:100% !important;}
+.banner{margin:30px 0;}
 
 @media all and (max-width:1024px) {	
 .appbanner{/*position:fixed;*/ z-index:999; width:100% !important;}	
@@ -56,8 +53,6 @@
 .contents{width:100% !important; margin-top:20px;}	
 .contents_detail-mob_menu {display:block;}
 .contents .contents-in img{width:90% !important; margin-top:60px;}/*img 빼기*/
-.web-banner{display:none;}
-.mob-banner{display:block;}
 .contents .title{font-size:22px; margin:20px 0 10px 0; }
 .contents .date-view span{margin-right:5px; font-size:12px;}
 .contents .date-view span.bar{color:#ce2ca8;}
@@ -70,11 +65,11 @@
 .mob-editor-con .editor-sns img{margin-left:5px;}
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}
-.mob-main-banner{margin-bottom:10px;}
+.mob-main-banner{margin:20px 0 50px 0;}
 .mob-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:20px 0 5px 5px;}
 .like .btn-like img{width:50px;}
 .comment{width:98% !important;}
-.pre-next{width:98% !important;}
+.pre-next{margin:40px 0 60px 0; width:98% !important;}
 .pre-next .con-pre{width:50%; font-size:12px;}
 .con-pre p{margin-top:10px;}
 .con-pre p.pre-title{font-size:14px; line-height:1.5em;}
@@ -91,5 +86,6 @@
 .recommendation div{margin:10px 0 10px 0;}
 .recommendation p{margin-top:10px;}
 .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
+.contents iframe{height:100% !important;}
 }
 

@@ -14,19 +14,28 @@
 .entry{width:100%; height:auto; padding:30px 0; background-color:#ce2ca8;}
 .apply-input{font-size:16px; font-weight:bold;}
 .apply-input .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:70%;}
-.apply-input .row span{display:inline-block; width:120px;}
-.apply-input .name, .cell, .mail, .job, .route{height:100px;}
-.apply-input .name input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px;}
-.apply-input .cell input{border:#1b87c9 1px solid; width:70px; height:30px; padding:5px; font-size:16px; margin:0 10px;}
-.apply-input .cell select{border:#1b87c9 1px solid; width:65px; height:30px; margin-right:10px; font-size:16px;}
+.apply-input .row span{display:inline-block; width:100px;}
+.apply-input .name, .gender, .age, .mail, .job, .route{height:100px;}
+.apply-input .cell{height:120px;}
+.apply-input .name input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px; border-radius:2px;}
+.apply-input .gender .male{width:auto; height:30px; background-color:#22beb1; color:#fff; border-radius:2px; display:inline-block !important;}
+.apply-input .gender .male input{margin:8px 12px 0; cursor: pointer;}
+.apply-input .gender .male span{width:50px; cursor: pointer;}
+.apply-input .gender .female{width:auto; height:30px; background-color:#f66a6a; color:#fff; border-radius:2px; display:inline-block !important;}
+.apply-input .gender .female input{margin:8px 12px 0; cursor: pointer;}
+.apply-input .gender .female span{width:50px; cursor: pointer;}
+.apply-input .age input{border:#1b87c9 1px solid; width:50px; height:30px; margin-right:10px; font-size:16px; border-radius:2px; padding:5px;}
+.apply-input .cell input{border:#1b87c9 1px solid; width:70px; height:30px; padding:5px; font-size:16px; margin:0 10px; border-radius:2px;}
+.apply-input .cell select{border:#1b87c9 1px solid; width:65px; height:30px; margin-right:10px; font-size:16px; border-radius:2px;}
 .apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px; margin-bottom:16px;}
-.apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px; width:130px;}
-.apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px; width:130px;}
+.apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px; width:130px; border-radius:2px;}
+.apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px; width:130px; border-radius:2px;}
 .apply-input .mail .mail1{margin-right:10px;}
-.apply-input .job input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px;}
-.apply-input .job select{border:#1b87c9 1px solid; width:150px; height:30px; margin-right:10px; font-size:16px;}
-.apply-input .route input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px;}
-.apply-input .want textarea{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; width: 100%; height: 200px; margin-bottom:30px;}
+.apply-input .mail .mail2{margin-left:5px;}
+.apply-input .job input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; border-radius:2px;}
+.apply-input .job select{border:#1b87c9 1px solid; width:150px; height:30px; margin-right:10px; font-size:16px; border-radius:2px;}
+.apply-input .route input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; border-radius:2px;}
+.apply-input .want textarea{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; width: 100%; height: 200px; margin-bottom:30px; border-radius:2px;}
 /*.apply-input .want-ex p{border:#cccccc 1px solid; color:#666; line-height:2.0em; padding:10px;}*/
 .apply-input .want-ex .con{border:#cccccc 1px solid; padding:10px;}
 .apply-input .want-ex .con img{width:370px;}
@@ -62,7 +71,7 @@
 .apply-input .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input .row span{width:100px;}
 .apply-input .name{height:100px;}
-.apply-input .cell{height:140px;}
+.apply-input .cell{height:160px;}
 .apply-input .mail{height:160px;}
 .apply-input .job{height:100px;}
 .apply-input .route{height:100px;}
