@@ -3,6 +3,14 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);/*font-family: 'Nanum Pen Script', cursive;*/
 
 @import url("/font/font-BMDOHYEON-wallel.css");/* font-family: "BMD", sans-serif;*/
+
+@font-face{font-family:"Noto-Bold";
+		   src: local("/font/NotoSansMonoCJKkr-Bold.otf");
+		   font-weight:bold;}
+@font-face{font-family:"Noto-Regular";
+		   src: local("/font/NotoSansMonoCJKkr-Regular.otf");
+		   font-weight:normal;}		   
+
 /* CSS Document */
 body{font-family: 'Nanum Gothic', serif;}
 a{color:#333; text-decoration:none;}
