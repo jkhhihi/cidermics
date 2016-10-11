@@ -296,7 +296,6 @@ router.get('/contents/delete/:no', ensureAuthenticated, function(req, res, next)
 		}else{
 			res.redirect('/adm/contents');
 		}
-    	
     });
 });
 
@@ -382,6 +381,25 @@ router.get('/finance', ensureAuthenticated, function(req, res, next) {
 			console.log(CP);
 			 res.render('admin/finance/finance_index', { CP : CP, finance : data });	    	
 		});
+});
+
+router.get('/finance/detail/:fi_app_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 3;
+	var fi_app_no = req.params.fi_app_no;
+	
+	mysql.select('select * from cider.cid_fi_applyform', function (err, data2){
+		if(err){
+			res.redirect('back');
+		}
+		user = data2;
+		mysql.select('select * from cider.cid_fi_applyform where fi_app_no = '+ fi_app_no +'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			res.render('admin/finance/finance_detail', {CP : CP, finance : data});
+		});
+    });
 });
 
 

@@ -99,6 +99,12 @@ router.get('/bottom', function(req, res, next) {
 
 });
 
+router.get('/complete', function(req, res, next) {
+
+	res.render('front/complete', { });
+
+});
+
 router.get('/modal', function(req, res, next) {
 
 	res.render('front/modal', { });
