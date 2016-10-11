@@ -9,9 +9,9 @@
 .entry p{font-size:18px; color:#ffffff; font-weight:bold; text-align:center;}*/
 .apply1 .title1 img{width:390px;}
 .apply1 .title2 img{width:680px;}
-.entry img{width:550px;}
+.entry img{width:560px;}
 .apply1 .title2{margin-top:50px;}
-.entry{width:100%; height:auto; padding:30px 0; background-color:#ce2ca8;}
+.entry{width:100%; height:auto; padding:25px 0; background-color:#ce2ca8;}
 .apply-input{font-size:16px; font-weight:bold;}
 .apply-input .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:70%;}
 .apply-input .row span{display:inline-block; width:100px;}
@@ -31,7 +31,6 @@
 .apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px; width:130px; border-radius:2px;}
 .apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px; width:130px; border-radius:2px;}
 .apply-input .mail .mail1{margin-right:10px;}
-.apply-input .mail .mail2{margin-left:5px;}
 .apply-input .job input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; border-radius:2px;}
 .apply-input .job select{border:#1b87c9 1px solid; width:150px; height:30px; margin-right:10px; font-size:16px; border-radius:2px;}
 .apply-input .route input{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; border-radius:2px;}
@@ -66,7 +65,7 @@
 .entry p{font-size:14px;}*/
 .apply1 .title1{padding:0 5px;}
 .apply1 .title2{padding:0 5px; margin-top:30px;}
-.entry{padding:20px 5px;}
+.entry{padding:15px 5px;}
 .apply-input{width:100% !important; font-size:16px;}
 .apply-input .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input .row span{width:100px;}
