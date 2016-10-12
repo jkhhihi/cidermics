@@ -16,7 +16,7 @@
 .contents div div p{margin-top:20px;}
 .contents .icon-plus_con{margin:60px 0 50px 0;}
 .contents_detail-mob_menu {display:none;}
-.con-img{width:100%;}
+/*.con-img{background-color:#000;}*/
 
 @media all and (max-width:1024px) {
 .contents_detail-mob_menu {display:block;}

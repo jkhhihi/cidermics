@@ -44,7 +44,7 @@
 .contents_detail-mob_menu {display:none;}
 .contents iframe{width:100% !important;}
 .banner{margin:30px 0;}
-.con-img{width:100%;}
+/*.con-img{background-color:#000;}*/
 
 @media all and (max-width:1024px) {	
 .appbanner{/*position:fixed;*/ z-index:999; width:100% !important;}	
