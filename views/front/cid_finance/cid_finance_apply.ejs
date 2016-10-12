@@ -221,14 +221,13 @@ function Today(year,mon,day){
 <form name="fi_applyform" method="post" action="/finance/apply/insert">
 <div class="apply-input container" align="center" >
 		<div class="row" align="left">
-				<div class="name col-xs-12 col-lg-12 padding-0"><span>신청자명 : </span>
+				<P class="star1">*항목은 필수로 작성해주세요.</P>
+				<div class="name col-xs-12 col-lg-12 padding-0"><span><span class="star">(*)</span>신청자명 : </span>
 				<input type="text" name="fi_app_name" maxlength=5 style="IME-MODE: active;">
-				<div><h5 style= "color:red";>*필수항목</h5></div>
 				</div>
 				<!--div class="gender col-xs-12 col-lg-12 padding-0"><span>성별 : </span>
 				<div class="male"><label for="radio1"><input type="radio" id="radio1" name="radio" checked><span>남자</span></label></div>
 				<div class="female"><label for="radio2"><input type="radio" id="radio2" name="radio"><span>여자</span></label></div>
-				<div><h5 style= "color:red";>*필수항목</h5></div>
 				</div>
 				<div class="birthday col-xs-12 col-lg-12 padding-0"><span>생년월일 : </span>
 				<form name="form1">
@@ -236,7 +235,7 @@ function Today(year,mon,day){
 				</form>
 				<div><h5 style= "color:red";>*필수항목</h5></div>
 				</div-->
-				<div class="cell col-xs-12 col-lg-12 padding-0"><span>휴대폰 번호 : </span>
+				<div class="cell col-xs-12 col-lg-12 padding-0"><span><span class="star">(*)</span>휴대폰 번호 : </span>
 				   <select id="cell" title="select cell" name="fi_app_phone1">
        				 <option selected="selected">010</option>
        				 <option>011</option>
@@ -247,9 +246,8 @@ function Today(year,mon,day){
 				   </select>
     			-<input type="text" name="fi_app_phone2" maxlength=4 style="text-align:center;IME-MODE:disabled;" onkeyPress="if ((event.keyCode<48) || (event.keyCode>57)) event.returnValue=false;" >-
     			<input type="text" name="fi_app_phone3" maxlength=4 style="text-align:center;IME-MODE:disabled;" onkeyPress="if ((event.keyCode<48) || (event.keyCode>57)) event.returnValue=false;" >
-    			<div><h5 style= "color:red";>*필수항목</h5></div>
 				</div>
-				<div class="mail col-xs-12 col-lg-12 padding-0"><span>이메일 주소 : </span>
+				<div class="mail col-xs-12 col-lg-12 padding-0"><span><span class="star">(*)</span>이메일 주소 : </span>
 				<input type="text" name="fi_app_email1" class="mail1" style="IME-MODE: disabled" maxlength=20>@ 
 				<input type="text" name="fi_app_email2" class="mail2" size="11" style="IME-MODE: disabled">
 				<select id="email" title="select email"  name="emaillist" onchange="this.form.fi_app_email2.value=this[this.selectedIndex].value;">
@@ -265,7 +263,6 @@ function Today(year,mon,day){
        				 <option value="gmail.com">gmail.com</option>
        				 <option value="">직접입력</option>
 				   </select>
-				   <div><h5 style= "color:red";>*필수항목</h5></div>
 				</div>
 				<div class="job col-xs-12 col-lg-12 padding-0"><span>소속 및 직무 : </span>
 				<input type="text" name="fi_app_job" style="IME-MODE: disabled">

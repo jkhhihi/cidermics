@@ -15,10 +15,12 @@
 .entry{width:100%; height:auto; padding:25px 0; background-color:#ce2ca8;}
 .apply-input{font-size:16px; font-weight:bold;}
 .apply-input .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:70%;}
-.apply-input .row span{display:inline-block; width:95px;}
-.apply-input .name, .gender, .birthday, .cell, .mail, .job, .route{height:100px;}
+.apply-input .row span{display:inline-block; width:120px;}
+.star1{color:#ff0000; margin-bottom:20px;}
+.apply-input .row span .star{display:inline; color:#ff0000; margin-right:4px;}
+.apply-input .name, .gender, .birthday, .cell, .mail, .job, .route{height:80px;}
 .apply-input .name input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px; border-radius:2px;}
-.apply-input .gender .male{width:auto; height:30px; background-color:#22beb1; color:#fff; border-radius:2px; display:inline-block !important;}
+/*.apply-input .gender .male{width:auto; height:30px; background-color:#22beb1; color:#fff; border-radius:2px; display:inline-block !important;}
 .apply-input .gender .male input{margin:8px 12px 0; cursor: pointer;}
 .apply-input .gender .male span{width:50px; cursor: pointer;}
 .apply-input .gender .female{width:auto; height:30px; background-color:#f66a6a; color:#fff; border-radius:2px; display:inline-block !important;}
@@ -27,10 +29,10 @@
 .apply-input .birthday select{border:#1b87c9 1px solid; height:30px; margin-right:5px; font-size:16px; border-radius:2px; color:#979797;}
 .apply-input .birthday .year{width:75px;}
 .apply-input .birthday .month{width:50px; margin-left:10px;}
-.apply-input .birthday .day{width:50px; margin-left:10px;}
+.apply-input .birthday .day{width:50px; margin-left:10px;}*/
 .apply-input .cell input{border:#1b87c9 1px solid; width:70px; height:30px; padding:5px; font-size:16px; margin:0 10px; border-radius:2px;}
 .apply-input .cell select{border:#1b87c9 1px solid; width:65px; height:30px; margin-right:10px; font-size:16px; border-radius:2px; color:#979797;}
-.apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px; margin-bottom:16px;}
+.apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px;}
 .apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px; width:130px; border-radius:2px;}
 .apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px; width:130px; border-radius:2px; color:#979797;}
 .apply-input .mail .mail1{margin-right:10px;}
@@ -45,8 +47,8 @@
 .apply-input-done{font-size:16px; font-weight:bold;}
 .apply-input-done .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:70%;}
 .apply-input-done .row span{display:inline-block; width:120px;}
-.apply-input-done .num, .name, .cell{height:100px;}
-.apply-input-done .mail{height:20px;}
+.apply-input-done .d_num, .d_name, .d_cell{height:80px;}
+.apply-input-done .d_mail{height:20px;}
 .apply-input-done .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0 70px 0;}
 .apply-input-done .btn-apply a{color:#fff;}
 .privacy{padding:5px; font-size:13px; font-weight:bold; color:#FF0000;}
@@ -68,12 +70,12 @@
 .entry{padding:15px 5px;}
 .apply-input{width:100% !important; font-size:16px;}
 .apply-input .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
-.apply-input .row span{width:100px;}
-.apply-input .name{height:100px;}
-.apply-input .gender{height:100px;}
-.apply-input .birthday{height:120px;}
-.apply-input .cell{height:120px;}
-.apply-input .mail{height:170px;}
+.apply-input .row span{width:120px;}
+.apply-input .name{height:70px;}
+/*.apply-input .gender{height:100px;}
+.apply-input .birthday{height:120px;}*/
+.apply-input .cell{height:100px;}
+.apply-input .mail{height:130px;}
 .apply-input .job{height:100px;}
 .apply-input .route{height:100px;}
 /*.apply-input .name span{display:block; margin-bottom:20px;}*/
@@ -93,7 +95,6 @@
 .apply-input-done{width:100% !important; font-size:16px;}
 .apply-input-done .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input-done .row span{width:100px;}
-.apply-input-done .name{height:100px;}
 .apply-input-done .btn-apply{margin-top:60px; margin-bottom:60px;}
 
 }
