@@ -1,4 +1,4 @@
-.lecture .title p{margin-top:100px; font-size:28px; font-weight:bold;}
+.lecture .title p{margin-top:60px; font-size:28px; font-weight:bold;}
 .lecture .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px;}
 .lecture .contents{margin:40px 0; line-height:2.5em; font-family: "BMD";}
 .lecture .contents span{color:#e21193;}
@@ -40,11 +40,13 @@
 .web-professor-con .professor-intro p{height:16px;}
 .web-professor-con .professor-sns img{margin:80px 0 0 5px;}
 .lecture iframe{width:100% !important; height:100% !important;}
+.finished{font-size:22px; color:#ff0000; font-weight:bold;}
 
 @media all and (max-width:1024px) {
-.lecture .title p{font-size:22px; line-height:1.8em;}
+.lecture .title p.finished{margin-top:80px;}
+.lecture .title p{font-size:20px; line-height:1.8em; margin-top:20px;}
+.lecture .line1{margin-top:0;}
 .lecture .contents{margin:40px 0; line-height:2.0em;}
-
 .lecture .contents span{color:#e21193;}
 .lecture .contents .q1{padding:50px 5px;}
 .lecture .contents .q1 .title{font-size:18px;}
