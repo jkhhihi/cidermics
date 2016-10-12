@@ -39,7 +39,7 @@
 .apply-input .want textarea{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; width: 100%; height: 200px; margin-bottom:30px; border-radius:2px;}
 /*.apply-input .want-ex p{border:#cccccc 1px solid; color:#666; line-height:2.0em; padding:10px;}*/
 .apply-input .want-ex .con{border:#cccccc 1px solid; padding:20px; margin-bottom:10px;}
-.apply-input .want-ex .con img{width:80%;}
+.apply-input .want-ex .con img{width:360px;}
 .apply-input .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0 70px 0;}
 .apply-input .btn-apply a{color:#fff;}
 .apply-input-done{font-size:16px; font-weight:bold;}
@@ -49,7 +49,7 @@
 .apply-input-done .mail{height:20px;}
 .apply-input-done .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0 70px 0;}
 .apply-input-done .btn-apply a{color:#fff;}
-.privacy{margin: 30px; margin-bottom:10px; font-size:13px; font-weight:bold; color:#FF0000;}
+.privacy{padding:5px; font-size:13px; font-weight:bold; color:#FF0000;}
 
 
 @media all and (max-width:1024px) {
@@ -89,7 +89,7 @@
 /*.apply-input .route input{width:50%}*/
 .apply-input .btn-apply{margin-top:60px; margin-bottom:60px;}
 .apply-input .want-ex .con{padding:5px;}
-.apply-input .want-ex .con img{width:100%;}
+.apply-input .want-ex .con img{width:330px;}
 .apply-input-done{width:100% !important; font-size:16px;}
 .apply-input-done .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input-done .row span{width:100px;}

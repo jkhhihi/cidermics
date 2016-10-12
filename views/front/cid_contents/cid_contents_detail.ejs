@@ -203,8 +203,31 @@ function CopyToClipboard ( tagToCopy, textarea ){
 </center-->
 		
 		<div class="banner">
-		 <img class="img-responsive" src="/page_imgs/main_img/consulting.jpg">
+		<div class="swiper-container">
+						<div class="swiper-wrapper">
+								<div class="swiper-slide"><a href="/finance"><img class="img-responsive" src="/page_imgs/main_img/consulting.jpg"></a></div>
+								<div class="swiper-slide"><a href="https://play.google.com/store/apps/details?id=com.cidermics.cmics"><img class="img-responsive" src="/page_imgs/main_img/appbanner_main.jpg"></a></div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
 		</div>
+		</div>
+<!-- Swiper JS -->
+<script src="/js/swiper.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 10,
+				//effect: 'fade',
+        centeredSlides: true,
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false
+    });
+</script>
 		
 		<div class="contents container">
 				<p>&nbsp;</p>
