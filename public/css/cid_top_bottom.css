@@ -3,9 +3,10 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);/*font-family: 'Nanum Pen Script', cursive;*/
 
 @import url("/font/font-BMDOHYEON-wallel.css");/* font-family: "BMD", sans-serif;*/
-@import url("/font/NotoSansMonoCJKkr-Bold.otf");
 
-/*@font-face{font-family:"Noto-Bold";
+/*
+@import url("/font/NotoSansMonoCJKkr-Bold.otf");
+@font-face{font-family:"Noto-Bold";
 		   src: local("/font/NotoSansMonoCJKkr-Bold.otf");
 		   font-weight:bold;}
 @font-face{font-family:"Noto-Regular";
