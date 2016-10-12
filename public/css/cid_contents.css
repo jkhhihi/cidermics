@@ -9,6 +9,7 @@
 .contents-mob_menu{display:none;}
 .contents h4{color:#ce2ca8; font-weight:600;}
 /*.con-img{background-color:#000;}*/
+.con-img img{width:100%;}
 
 @media all and (max-width:1024px) {
 .bg-blue{margin-top:0 !important; height:100%;}	
