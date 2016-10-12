@@ -29,8 +29,8 @@
 
 .grid li a{margin-top:10px;
 }
-.grid li img{margin-top:10px;
-}
+/*.grid li img{margin-top:10px;
+}*/
 
 /* Effect 1: opacity */
 .grid.effect-1 li.animate {
