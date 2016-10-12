@@ -5,7 +5,7 @@
 .padding0{padding:0 !important;}
 .mob-header{display:none;} 
 .contents{font-family: 'Nanum Gothic', serif !important; color:#212121; width:85% !important;}
-.contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:100px 0 50px 0; font-family: "Noto-Bold", sans-serif;}
+.contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:100px 0 50px 0; font-family: "Noto SansMono CJK KR Bold", sans-serif;}
 .contents .icon-menu{margin-bottom:20px; }
 .contents .date-view span{margin-right:5px; font-size:16px;}
 .contents .date-view span.bar{color:#ce2ca8;}
