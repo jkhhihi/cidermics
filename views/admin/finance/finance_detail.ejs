@@ -16,6 +16,8 @@
     <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
 div#fixed {
     position: fixed;
@@ -33,52 +35,52 @@ div#fixed {
     <div class="row">
     <form class="col s12">
       <div class="row">
-				<div class="num col-xs-12 col-lg-12"><span>신청번호 : </span>
-				<%=finance[0].fi_app_no%>
-				</div>
-				<div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
+		<div class="input-field col s12"><label for="icon_prefix">등록번호 : </label>
+          <i class="material-icons">label_outline</i>
+          <input id="icon_prefix" type="text" class="validate" value="<%=finance[0].fi_app_no%>">
+          <!--label for="icon_prefix">신청자명 : </label-->
+        </div>
+		<div class="input-field col s6">
+          <i class="material-icons">account_circle</i>
           <input id="icon_prefix" type="text" class="validate" value="<%=finance[0].fi_app_name%>">
-          <label for="icon_prefix">신청자명 : </label>
+          <!--label for="icon_prefix">신청자명 : </label-->
         </div>
         <div class="input-field col s6">
-          <i class="material-icons prefix">phone</i>
+          <i class="material-icons">phone</i>
           <input id="icon_telephone" type="tel" class="validate" value="<%=finance[0].fi_app_phone%>">
-          <label for="icon_telephone">Telephone</label>
+          
         </div>
          <div class="input-field col s6">
-          <i class="material-icons prefix">email</i>
+          <i class="material-icons">email</i>
           <input id="icon_telephone" type="email" class="validate" value="<%=finance[0].fi_app_email%>">
-          <label for="icon_telephone">email</label>
+          
         </div>
          <div class="input-field col s6">
-          <i class="material-icons prefix">Job</i>
-          <input id="icon_group_work" type="work" class="validate" value="<%=finance[0].fi_app_job%>">
-          <label for="icon_telephone">직업/업종</label>
+           <i class="material-icons">supervisor_account</i><label for="icon_prefix">직종 : </label>
+          <input id="icon_group_work" type="email" class="validate" value="<%=finance[0].fi_app_job%>">
+          
         </div>
-				<div class="mail col-xs-12 col-lg-12"><span>이메일 주소 : </span>
-				<%=finance[0].fi_app_email%>
-				</div>
-				<div class="mail col-xs-12 col-lg-12"><span>이메일 주소 : </span>
-				<%=finance[0].fi_app_job%>
-				</div>
-				<div class="mail col-xs-12 col-lg-12"><span>신청 경로 : </span>
-				<%=finance[0].fi_app_path%>
-				</div>
-				<div class="input-field col s6">
+        <div class="input-field col s6">
+           <i class="material-icons">swap_horiz</i><label for="icon_prefix">경로 : </label>
+          <input id="icon_group_work" type="email" class="validate" value="<%=finance[0].fi_app_path%>">
+          
+        </div>
+        <div class="input-field col s6">
+           <i class="material-icons">av_timer</i><label for="icon_prefix">날짜 : </label>
+          <input id="icon_group_work" type="email" class="validate" value="<%=finance[0].fi_app_upDate%>">
+          
+        </div>
+				
+		<div class="input-field col s12">
           <i class="material-icons prefix">mode_edit</i>
           <textarea id="icon_prefix2" class="materialize-textarea"><%-finance[0].fi_app_comment%></textarea>
           <label for="icon_prefix2">글 내용</label>
         </div>
-				<div class="mail col-xs-12 col-lg-12"><span>신청 날짜 : </span><%=finance[0].fi_app_upDate%>
-				</div>
-		</div>
+	  </div>
     </form>
   </div>
 		
-		<a href="/adm/finance" style="cursor:pointer"><div class="btn-apply">뒤로가기</div></a>
-		
-</div>
-    </div>
+	<a href="/adm/finance" style="cursor:pointer"><div class="waves-effect waves-light btn">뒤로가기</div></a>
+
   </body>
 </html>
