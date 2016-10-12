@@ -17,6 +17,7 @@
 .contents .icon-plus_con{margin:60px 0 50px 0;}
 .contents_detail-mob_menu {display:none;}
 /*.con-img{background-color:#000;}*/
+.con-img img{width:100%;}
 
 @media all and (max-width:1024px) {
 .contents_detail-mob_menu {display:block;}
