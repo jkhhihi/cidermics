@@ -124,9 +124,14 @@ function showPage(value) {
 <div class="contents container">
 		<div class="row">
 				<div class="col-xs-12 title"><%= contents[0].con_title%></div>
-				<!--div class="col-xs-6 icon-menu"><%= contents[0].cate_name %><img src="/page_imgs/contents_img/icon_menu_in.png"></div-->
-				<div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_upDate %></span><br><span class="views"><%=contents[0].con_viewCount%> 읽음</span></div>
-				<div class="col-xs-6 editor" align="right"><%= contents[0].cate_name %><br>written by <%=contents[0].con_writer%></div>
+				<div class="col-xs-12 icon-menu">
+					<%= contents[0].cate_name %>
+					
+					<!--img src="/page_imgs/contents_img/icon_menu_in.png"--></div>
+				<div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_upDate %></span><br>
+						<span class="views"><%=contents[0].con_viewCount%> 읽음</span></div>
+				<div class="col-xs-6 editor" align="right"><br>
+						written by <%=contents[0].con_writer%></div>
 				<div class="col-xs-12 line-1px"></div>
 				
 				
