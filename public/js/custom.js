@@ -96,6 +96,62 @@ function fileList(type, page){
 	});
 }
 
+
+function fileList(type, page){
+	var pages = '';
+	$.ajax({
+		url : '/adm/lecture/files/'+ page,
+		method : 'GET',
+		success : function(data){
+			
+			var totalPage = data.pagination[0];
+			var startPage = data.pagination[1];
+			var lastPage = data.pagination[2];
+			var next = data.pagination[3];
+			var currentPage = data.pagination[4];
+			
+//			console.log(totalPage, startPage, lastPage, next, currentPage);
+			var img = '<div class="row"> ';
+			$.each(data.files, function(idx, val){
+				
+				if (idx % 3 == 0) {
+					img += '</div>';
+					img += '<div class="row"> ';
+				}
+				img += '<div class="col m4 center-align img-select"> ' +
+							'<img class="responsive-img" src="/page_imgs/lecture_img/'+val+'"/> ' +
+							'<div class="fileName"> '+val+'</div>' + 
+					   '</div>';
+				if (idx == 11){
+					img += '</div>';
+				}	
+			});
+			
+			$('.images').html(img);
+			var paging = '<li ' +disabled(currentPage)+'><a class="pageGo" href="javascript:pageGo('+ (currentPage - 1)+')"><i class="material-icons">chevron_left</i></a></li> ';
+			for (var i = startPage; i < lastPage + 1; i++){
+				paging += '<li '+ active(currentPage, i) +'><a class="pageGo" href="javascript:pageGo('+i+')">'+i+'</a></li>';
+			}
+			if(next){
+				paging += '<li class="waves-effect"><a class="pageGo" href="javascript:pageGo('+ (currentPage+1) +')"><i class="material-icons">chevron_right</i></a></li>';					
+			}
+			$('.pagination').html(paging);
+			
+			$('.img-select').click(function(){
+				var hasClass = $(this).hasClass('img-selected');
+				if(hasClass){
+					$(this).removeClass('img-selected');
+				}else{
+					$(this).addClass('img-selected');
+				}
+				var img = $(this).find('img').attr('src');
+			});
+		}
+	});
+}
+
+
+
 function pageGo(page) {
 	fileList(1,page);
 }
@@ -273,6 +329,44 @@ $(document).ready(function(){
 		
 	});
 	
+$(document).ready(function(){
+		
+		$('.btn-contents').click(function(){
+			var src = $('.img-selected').find('img');
+			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			$.each(src, function(idx, val){
+				F_body.append(val);
+			});
+			$('#modal1').closeModal();
+		});
+		
+		$('#insert').click(function(e){
+			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			var contents = F_body.html();
+			var title = $('#title').val();
+			var photo = $('[name=photo]').val();
+			var Q1 = $('#Q1').val();
+			var A1 = $('#A1').val();
+			
+			
+			if(title == "") {
+				alert('제목을 작성해주세요');
+				return;
+			}
+			if(photo == ""){
+				alert('포스터 이미지를 설정해주세요');
+				return;
+			}
+			$('[name=title]').val(title);
+			$('[name=contents]').val(contents);
+			$('[name=userNo]').val(userNo);
+			$('[name=writer]').val(writer);
+			
+			$('#cform').attr('action', '/adm/lecture/insert');
+			$('#cform').attr('method', 'post');
+			$('#cform').submit();
+		});
+	
 	$('#cons_insert').click(function(e){
 		var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
 		var contents = F_body.html();
@@ -300,7 +394,6 @@ $(document).ready(function(){
 		$('#csform').attr('action', '/adm/consulting/insert');
 		$('#csform').attr('method', 'post');
 		$('#csform').submit();
-		
 	});
 	
 	$('#cons_update').click(function(e){

@@ -40,8 +40,8 @@ function getWorldTime(tzOffset) { // 24시간제
 	    leadingZeros(now.getDate(), 2) + ' ' +
 
 	    leadingZeros(now.getHours(), 2) + ':' +
-	    leadingZeros(now.getMinutes(), 2) + ':' +
-	    leadingZeros(now.getSeconds(), 2);
+	    leadingZeros(now.getMinutes(), 2)// + ':' +
+	    //leadingZeros(now.getSeconds(), 2);
 
 	  return s;
 }
@@ -171,29 +171,6 @@ router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next
 	res.send({'pagination' : pagination, 'files': obj});
 });
 
-/*router.post('/contents/insert/search', ensureAuthenticated, function(req, res, next) {
-	
-	var CP = 1;
-	var search;
-	var key = req.body.key;
-	var keyword = req.body.keyword;
-	console.log(keyword+"=============123");
-	mysql.select('SELECT * from cider.cid_contents where con_title like \'%' + keyword + '%\' order by con_no desc', function (err, data){
-		if(err){
-			res.redirect('back');
-			search = data;
-			console.log(search);
-			console.log('=====================');
-			console.log('=====================');
-			console.log(keyword);
-			console.log('=====================');
-			console.log('=====================');
-		}
-		res.render('admin/contents/insert', {CP : CP, search:data});
-	
-	});
-});*/
-
 router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, next) {
 	
 	var form = new formidable.IncomingForm();
@@ -201,7 +178,6 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
 	form.parse(req);
 //	form.on("fileBegin", function (name, file){
 //		console.log('upload come on3');
-//		
 //    });
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
@@ -332,14 +308,92 @@ router.get('/contents/detail/:no', ensureAuthenticated, function(req, res, next)
 
 router.get('/lecture', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
-		mysql.select('SELECT * from cider.cid_applyform order by app_no desc;', function (err, data){
-			console.log(CP);
-			 res.render('admin/lecture/lecture_index', { CP : CP, lecture : data });	    	
+			 res.render('admin/lecture/lecture_index', { CP : CP });	    	
+		});
+
+router.get('/lecture/insert', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	var cate;
+	mysql.select('select * from cider.cid_lec_cate', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		cate = data;
+			res.render('admin/lecture/insert', {cate : cate, CP : CP});
+			});
+		});
+
+router.get('/lecture/files/:page', ensureAuthenticated, function(req, res, next){
+	var page;
+	if (typeof req.params.page == 'undefined'){
+		page = 1;
+	}
+	page = req.params.page;
+	var obj = [];
+	var start = (page - 1) * 9;
+	var end = page * 9 -1;
+	var dir = __dirname + "/../public/page_imgs/lecture_img/";
+	var files = fs.readdirSync(dir)
+	    .map(function(v) {
+	        return { name:v,
+	                 time:fs.statSync(dir + v).mtime.getTime()
+	               }; 
+	     })
+	     .sort(function(a, b) { return a.time - b.time; })
+	     .map(function(v) { return v.name; });
+	
+	files.reverse();
+	for (var i = start; i < end+1; i++){
+		obj.push(files[i]);
+	}
+	var pagination = [];
+	var totalPage = Math.ceil(files.length / 9);
+	var startPage;
+	var lastPage;
+	if(page % 5 != 0){ startPage = Math.floor(page/5) * 5 + 1; lastPage = Math.ceil(page/5) * 5; }
+	else{ startPage = (page/5) * 5 - 4; lastPage = parseInt(page) };
+	
+	var next = true;
+	
+	if (lastPage >= totalPage){
+		lastPage = totalPage;
+		next = false;
+	}
+	pagination.push(totalPage, startPage, lastPage, next, parseInt(page));
+	res.send({'pagination' : pagination, 'files': obj});
+});
+
+router.post('/lecture/insert/upload', ensureAuthenticated, function(req, res, next) {
+	var form = new formidable.IncomingForm();
+	form.parse(req);
+    form.on("file", function (name, file){
+        fs.readFile(file.path, function(error, data){
+        	var filePath = __dirname + '/../public/page_imgs/lecture_img/' + file.name;
+        	fs.writeFile(filePath, data, function(error){
+        		if(error){
+        			//throw err;
+        			//res.redirect('back');
+        		}else {
+        		}
+        	});
+
+        });
+    });
+    form.on("end", function() {
+		  res.redirect('back');
 		});
 });
 
+router.get('/lecture/list', ensureAuthenticated, function(req, res, next) {
+	var CP = 2;
+		mysql.select('SELECT * from cider.cid_applyform order by app_no desc;', function (err, data){
+			console.log(CP);
+			 res.render('admin/lecture/lecture_list', { CP : CP, lecture : data });	    	
+		});
+});
 
-router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
+router.post('/lecture/list/update', ensureAuthenticated, function(req, res, next) {
 	
 	var CP = 2;
 	
@@ -360,7 +414,7 @@ router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
     });
 });
 
-router.get('/lecture/delete/:app_no', function(req, res, next) {
+router.get('/lecture/list/delete/:app_no', function(req, res, next) {
 	
 	var CP = 2;
 	var app_no = req.params.app_no;
