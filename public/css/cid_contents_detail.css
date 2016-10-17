@@ -53,7 +53,7 @@ br{line-height:1.5em;}
 .contents{width:100% !important; margin-top:20px; font-family: 'Nanum Gothic', serif !important;}	
 .contents_detail-mob_menu {display:block;}
 .contents .contents-in img{width:90% !important;}/*img 빼기*/
-.contents .title{font-size:22px; margin:20px 0 10px 0; }
+.contents .title{font-size:22px; margin:20px 0 25px 0; }
 .contents .date-view span{margin-right:5px; font-size:12px;}
 .contents .editor span{margin-right:5px; font-size:12px;}
 .contents .date-view span.bar{color:#ce2ca8;}
