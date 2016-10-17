@@ -37,6 +37,8 @@
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
 <!--구글 애널리틱스 -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -94,6 +96,9 @@ function showPage(value) {
     $("#display").html(value)
 }
 </script>
+<style>
+	.row{};
+</style>
 
 </head>
 <body>
@@ -129,7 +134,7 @@ function showPage(value) {
 					
 					<img src="/page_imgs/contents_img/icon_menu_in.png"></div-->
 				<div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_upDate %></span><br>
-						<span class="views"><%=contents[0].con_viewCount%> 읽음</span></div>
+					<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span class="date"><%=contents[0].con_viewCount%></span></div>
 				<div class="col-xs-6 editor" align="right"><span class="cate_name"><%= contents[0].cate_name %></span><br>
 						<span class="write">written by <%=contents[0].con_writer%></span></div>
 				<div class="col-xs-12 line-1px"></div>

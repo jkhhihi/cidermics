@@ -329,6 +329,8 @@ $(document).ready(function(){
 		
 	});
 	
+});
+
 $(document).ready(function(){
 		
 		$('.btn-contents').click(function(){
@@ -340,90 +342,183 @@ $(document).ready(function(){
 			$('#modal1').closeModal();
 		});
 		
+		
 		$('#insert').click(function(e){
 			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
 			var contents = F_body.html();
+			var cate = $('[name=category]').val();
 			var title = $('#title').val();
 			var photo = $('[name=photo]').val();
-			var Q1 = $('#Q1').val();
-			var A1 = $('#A1').val();
+			var userinfo = $('#user').val();
+			
+			var arr = userinfo.split("/");
+			var userNo = arr[0];
+			var writer = arr[1];
 			
 			
+			if(cate == null) {
+				alert('카테고리를 지정해주세요');
+				return;
+			}
 			if(title == "") {
 				alert('제목을 작성해주세요');
 				return;
 			}
 			if(photo == ""){
-				alert('포스터 이미지를 설정해주세요');
+				alert('썸네일 설정해주세요');
 				return;
 			}
+			if(userinfo == ""){
+				alert('에디터를 선택해주세요');
+				return;
+			}
+			
+			
+			
+			//console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title + ' | url + ' + url );
 			$('[name=title]').val(title);
 			$('[name=contents]').val(contents);
 			$('[name=userNo]').val(userNo);
 			$('[name=writer]').val(writer);
 			
-			$('#cform').attr('action', '/adm/lecture/insert');
+			$('#cform').attr('action', '/adm/contents/insert');
 			$('#cform').attr('method', 'post');
 			$('#cform').submit();
+			
+//			var formData = new FormData();
+//			formData.append('contents', contents); 
+//			formData.append('cate', cate); 
+//			formData.append('title', title); 
+//			var xhr = new XMLHttpRequest();
+//			
+//			xhr.open("POST", '/adm/contents/insert');
+//			xhr.send(formData);
+			
 		});
-	
-	$('#cons_insert').click(function(e){
-		var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
-		var contents = F_body.html();
-		var name = $('#name').val();
-		var url = $('#url').val();
-		var photo = $('[name=photo]').val();
 		
-		if(url == null) {
-			alert('사이트URL를 지정해주세요');
-			return;
-		}
-		if(name == "") {
-			alert('회사명을 작성해주세요');
-			return;
-		}
-		if(photo == ""){
-			alert('썸네일 설정해주세요');
-			return;
-		}
+		$('#update').click(function(e){
+			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			var contents = F_body.html();
+			var cate = $('[name=category]').val();
+			var title = $('#title').val();
+			var photo = $('[name=photo]').val();
+			var userinfo = $('#user').val();
+			
+			var rdate =  $('#rdate').val();
+			
+			var arr = userinfo.split("/");
+			var userNo = arr[0];
+			var writer = arr[1];
+			//var num_check=/^[0-9]*$/; //0~9만 인정하겠다는 정규식
+			
+			if(cate == null) {
+				alert('카테고리를 지정해주세요');
+				return;
+			}
+			if(title == "") {
+				alert('제목을 작성해주세요');
+				return;
+			}
+			if(photo == ""){
+				alert('썸네일 설정해주세요');
+				return;
+			}
+			if(userinfo == ""){
+				alert('에디터를 선택해주세요');
+				return;
+			}
+			if(rdate == ""){
+				alert('날짜를 입력해주세요');
+				return;
+			}
+			/*
+			if(num_check.test(rdate))
+			{
+				//if( L_szNum < 3 || L_szNum > 6 )
+				if( L_szNum < 12 )
+				{
+				alert("3~6글자만 입력할수 있습니다.");
+				document.rdate.value="";
+				document.rdate.focus();
+				return false;
+				}
+			}
+			else{
+				alert ( "숫자만 입력할 수 있습니다." );
+				document.rdate.value="";
+				document.rdate.focus();
+			}*/
+			
+			console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title );
+			$('[name=title]').val(title);
+			$('[name=contents]').val(contents);
+			$('[name=userNo]').val(userNo);
+			$('[name=writer]').val(writer);
+			
+			$('#cform').attr('action', '/adm/contents/update');
+			$('#cform').attr('method', 'post');
+			$('#cform').submit();
+			
+		});
 		
-		$('[name=name]').val(name);
-		$('[name=contents]').val(contents);
-		$('[name=url]').val(url);
+		$('#cons_insert').click(function(e){
+			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			var contents = F_body.html();
+			var name = $('#name').val();
+			var url = $('#url').val();
+			var photo = $('[name=photo]').val();
+			
+			if(url == null) {
+				alert('사이트URL를 지정해주세요');
+				return;
+			}
+			if(name == "") {
+				alert('회사명을 작성해주세요');
+				return;
+			}
+			if(photo == ""){
+				alert('썸네일 설정해주세요');
+				return;
+			}
+			
+			$('[name=name]').val(name);
+			$('[name=contents]').val(contents);
+			$('[name=url]').val(url);
+			
+			$('#csform').attr('action', '/adm/consulting/insert');
+			$('#csform').attr('method', 'post');
+			$('#csform').submit();
+			
+		});
 		
-		$('#csform').attr('action', '/adm/consulting/insert');
-		$('#csform').attr('method', 'post');
-		$('#csform').submit();
+		$('#cons_update').click(function(e){
+			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			var contents = F_body.html();
+			var name = $('#name').val();
+			var url = $('#url').val();
+			var photo = $('[name=photo]').val();
+			
+			if(url == null) {
+				alert('사이트URL를 지정해주세요');
+				return;
+			}
+			if(name == "") {
+				alert('회사명을 작성해주세요');
+				return;
+			}
+			if(photo == ""){
+				alert('썸네일 설정해주세요');
+				return;
+			}
+			
+			$('[name=name]').val(name);
+			$('[name=contents]').val(contents);
+			$('[name=url]').val(url);
+			
+			$('#csform').attr('action', '/adm/consulting/update');
+			$('#csform').attr('method', 'post');
+			$('#csform').submit();
+			
+		});
+		
 	});
-	
-	$('#cons_update').click(function(e){
-		var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
-		var contents = F_body.html();
-		var name = $('#name').val();
-		var url = $('#url').val();
-		var photo = $('[name=photo]').val();
-		
-		if(url == null) {
-			alert('사이트URL를 지정해주세요');
-			return;
-		}
-		if(name == "") {
-			alert('회사명을 작성해주세요');
-			return;
-		}
-		if(photo == ""){
-			alert('썸네일 설정해주세요');
-			return;
-		}
-		
-		$('[name=name]').val(name);
-		$('[name=contents]').val(contents);
-		$('[name=url]').val(url);
-		
-		$('#csform').attr('action', '/adm/consulting/update');
-		$('#csform').attr('method', 'post');
-		$('#csform').submit();
-		
-	});
-	
-});
