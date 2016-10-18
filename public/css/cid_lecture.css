@@ -1,13 +1,73 @@
-.lecture{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold; margin-top:9px; margin-bottom:50px;}
-.lecture .grid p{margin-top:30px;}
-.lecture .grid li{width:100%;}
-.lecture ul .con{margin-bottom:60px; border-left:#999999 1px solid; border-bottom:#999999 1px solid; border-right:#999999 1px solid; padding-bottom:10px;}
-.lecture ul .con .date p{padding-top:5px;}
-.lecture ul .con .money p{background-color:#1b87c9; width:110px; height:66px; border-radius:10px; color:#fff;}
+.main-lecture{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold; margin-top:9px; margin-bottom:50px;}
+.main-lecture .grid p{margin-top:30px;}
+.main-lecture .grid li{width:100%;}
+.main-lecture ul .con{margin-bottom:60px; border-left:#999999 1px solid; border-bottom:#999999 1px solid; border-right:#999999 1px solid; padding-bottom:10px;}
+.main-lecture ul .con .date p{padding-top:5px;}
+.main-lecture ul .con .money p{background-color:#1b87c9; width:110px; height:66px; border-radius:10px; color:#fff;}
 .con p{font-size:18px; line-height:1.8em;}
-p.title{display:none;}
+p.main-title{display:none;}
+
+/*디테일 페이지 부분*/
+.lecture .title p{margin-top:60px; font-size:28px; font-weight:bold;}
+.lecture .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px;}
+.lecture .contents{margin:40px 0; line-height:2.5em; font-family: "BMD";}
+.lecture .contents .con{font-family: 'Nanum Gothic', serif; color:#212121; font-size:16px; font-weight:600; margin-top:20px; width:80%; height:auto; border-radius:10px; padding:30px 0;}
+.lecture .contents .q1{background-color:#173652; width:100%; padding:90px 0;}
+.lecture .contents .q1 .title{font-size:24px; color:#fff;}
+.lecture .contents .q1 .con{background-color:#f9a356; }
+.lecture .contents .q2{background-color:#eee; width:100%; padding:90px 0;}
+.lecture .contents .q2 .title{font-size:24px; color:#333;}
+.lecture .contents .q2 .con{color:#fff; background-color:#508fc4;}
+.lecture .contents .q3{background-color:#173652; width:100%; padding:90px 0;}
+.lecture .contents .q3 .title{font-size:24px; color:#fff;}
+.lecture .contents .q3 .con{background-color:#f9a356;}
+.lecture .contents .q4{background-color:#eee; width:100%; padding:90px 0;}
+.lecture .contents .q4 .title{font-size:24px; color:#333;}
+.lecture .contents .q4 .con{color:#fff; background-color:#508fc4;}
+.lecture .contents .q5{background-color:#173652; width:100%; padding:90px 0;}
+.lecture .contents .q5 .title{font-size:24px; color:#fff;}
+.lecture .contents .q5 .con{background-color:#f9a356;}
+.lecture .btn-coupon{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:20px 0;}
+.lecture .apply{border:#ececec 4px solid; width:60%; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:100px;}
+.lecture .apply .apply-place .map{border:#1b87c9 2px solid;}
+.lecture .apply .line2{background-color:#1b87c9; width:150px; height:1px; margin:15px 0;}
+.lecture .apply .line3{border-top:2px #ececec solid; margin:20px 0;}
+.lecture .apply .apply-deposit p{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px;}
+.lecture .apply .apply-question p{background-color:#fce000; color:#212121 !important; width:200px; height:60px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:10px;}
+.lecture .apply .apply-question p span{font-size:14px;}
+.lecture .apply .apply-cancle p{background-color:#ff7d7d; color:#efefef !important; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px;}
+.font-color-666{color:#666;}
+.point{color:#ce2ca8;}
+.point1{color:#CE1417; font-size:18px;}
+.point2{color:#ffacc9; font-size:18px;}
+.thum_img{margin-bottom:40px; width:35%;}
+.curriculum{margin:20px 0 65px 0; background-color:#eee; width:70%; height:auto; padding:50px 0 15px 0;}
+.curriculum p{font-size:16px;}
+.curriculum .title{font-size:22px; font-weight:bold; margin-bottom:20px;}
+.curriculum .one, .two, .three, .four{font-size:16px; font-weight:bold; margin:35px 0;}
+.professor-introduce{margin:30px 0 30px 0;}
+.professor-introduce .line-1px{width:100%; height:1px; background-color:#2f8ecd;}
+.mob-professor-con{display:none;}
+.professor-introduce .web-professor-con{height:180px; border:solid 1px #2f8ecd; border-radius:10px; margin:20px 0; padding-top:20px;}
+.web-professor-con .professor-intro{padding-top:20px;}
+.web-professor-con .professor-intro p{height:16px;}
+.web-professor-con .professor-sns img{margin:80px 0 0 5px;}
+.lecture iframe{width:100% !important; height:100% !important;}
+.finished{font-size:22px; color:#ff0000; font-weight:bold;}
+
+/*신청 페이지 부분*/
+
+
+/*할인쿠폰 페이지 부분*/
+.sale{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; }
+.sale .title p{font-size:24px; font-weight:bold;}
+.sale .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px; margin-bottom:20px;}
+.sale .num img{width:100px; margin-top:50px;}
+.sale .con img{width:70%; margin-top:50px; margin-bottom:80px;}
+.btn-coupon{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:20px 0;}
+
 @media all and (max-width:1024px) {
-p.title{
+p.main-title{
 	display:block;
 	font-family: "BMD", sans-serif;
     font-size: 16px;
@@ -15,11 +75,58 @@ p.title{
     margin:70px 0 5px 5px;
     }
 .line{height:1px;}
-.lecture .grid p{margin-top:15px;}
-.lecture ul .con .date{padding:5px;}
-.lecture ul .con .money{padding:5px;}
-.lecture ul .con .date p{margin-top:5px;}
-.lecture ul .con .money p{margin-top:0; margin-bottom:0;}
-.lecture .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
+.main-lecture .grid p{margin-top:15px;}
+.main-lecture ul .con .date{padding:5px;}
+.main-lecture ul .con .money{padding:5px;}
+.main-lecture ul .con .date p{margin-top:5px;}
+.main-lecture ul .con .money p{margin-top:0; margin-bottom:0;}
+.main-lecture .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
+
+/*디테일 페이지 부분*/
+.lecture .title p.finished{margin-top:80px;}
+.lecture .title p{font-size:20px; line-height:1.8em; margin-top:20px;}
+.lecture .line1{margin-top:0;}
+.lecture .contents{margin:40px 0; line-height:2.0em;}
+.lecture .contents .con{font-size:14px; font-weight:900; width:98%; margin-top:0; padding:30px 0;}
+.lecture .contents .q1{padding:40px 0;}
+.lecture .contents .q1 .title{font-size:18px;}
+.lecture .contents .q1 .con{}
+.lecture .contents .q2{padding:40px 0;}
+.lecture .contents .q2 .title{font-size:18px;}
+.lecture .contents .q2 .con{}
+.lecture .contents .q3{padding:40px 0;}
+.lecture .contents .q3 .title{font-size:18px;}
+.lecture .contents .q3 .con{}
+.lecture .contents .q4{padding:40px 0;}
+.lecture .contents .q4 .title{font-size:18px;}
+.lecture .contents .q4 .con{}
+.lecture .contents .q5{padding:40px 0;}
+.lecture .contents .q5 .title{font-size:18px;}
+.lecture .contents .q5 .con{}
+.lecture .apply{width:95%; border:#ececec 3px solid;}
+.point{color:#ce2ca8;}
+.point1{color:#CE1417; font-size:16px;}
+.point2{color:#ffacc9; font-size:16px;}
+.thum_img{width:80%}
+.curriculum{width:98%; padding:50px 0 20px 0; line-height:1.8em;}
+.curriculum p{font-size:14px;}
+.curriculum .title{font-size:18px;}
+.curriculum .one, .two, .three, .four{margin:20px 0; font-size:14px;}
+.curriculum .two{font-size:14px;}
+.curriculum .three{font-size:14px;}
+.curriculum .four{font-size:14px;}
+.web-professor-con{display:none;}
+.mob-professor-con{display:block;}
+.professor-introduce .mob-professor-con{height:auto; border:solid 1px #2f8ecd; border-radius:10px; margin:20px 0; padding:10px;}
+.mob-professor-con .professor-intro{margin:10px 0 10px 0;}
+.mob-professor-con .professor-sns img{margin-left:5px;}
+
+/*신청 페이지 부분*/
+
+
+/*할인쿠폰 페이지 부분*/
+.sale .title p{margin-top:20px;}
+.sale .num img{width:65px; margin-top:30px;}
+.sale .con img{width:100%; margin-top:10px; margin-bottom:20px;}
 
 }

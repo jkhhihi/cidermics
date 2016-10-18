@@ -25,7 +25,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= contents[0].con_title %> - 사이다경제 | 콘텐츠</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/cid_contents_detail.css" rel="stylesheet">
+<link href="/css/cid_contents.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
@@ -328,9 +328,11 @@ function CopyToClipboard ( tagToCopy, textarea ){
 		</div>
 		<% } %>
 		
-		<p class="title-recommendation" align="center">사이다경제 추천</p>
-		
 		<div class="recommendation">
+		
+			<div class="line1"></div>
+			<h4>사이다경제 추천</h4>
+			<div class="line1" style="margin-top:32px !important; margin-bottom:50px !important;"></div>
 
 			<ul class="grid effect-2" id="grid">
 				<% for(var j = 0; j<cont.length; j++){ %>
