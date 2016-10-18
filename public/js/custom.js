@@ -96,7 +96,7 @@ function fileList(type, page){
 	});
 }
 
-
+/*
 function fileList(type, page){
 	var pages = '';
 	$.ajax({
@@ -149,8 +149,7 @@ function fileList(type, page){
 		}
 	});
 }
-
-
+*/
 
 function pageGo(page) {
 	fileList(1,page);
