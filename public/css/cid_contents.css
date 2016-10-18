@@ -13,7 +13,7 @@
 
 /*콘텐츠 디테일 부분*/
 .bg-blue{background-color:#1b87c9;}
-.bg-white{background-color:#ffffff; box-shadow:0 0 10px rgba(0, 0, 0, 0.8);}
+.bg-white{background-color:#ffffff; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8);}
 br{line-height:1.5em;}
 .margin0{margin:0 !important;}
 .padding0{padding:0 !important;}
