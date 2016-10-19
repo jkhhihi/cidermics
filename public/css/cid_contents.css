@@ -10,6 +10,7 @@
 .main-contents .contents h4{color:#ce2ca8; font-weight:600;}
 /*.con-img{background-color:#000;}*/
 .main-contents .con-img img{width:100%;}
+.icon-plus_con img{width:40px; margin-bottom:80px;}
 
 /*콘텐츠 디테일 부분*/
 .bg-blue{background-color:#1b87c9;}
@@ -69,6 +70,7 @@ br{line-height:1.5em;}
 .main-contents .contents .icon-plus_con img{height:80px;}
 .main-contents .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 .main-contents .contents-mob_menu{display:block; margin-bottom:20px;}
+.icon-plus_con img{width:35px; margin-bottom:40px;}
 
 /*콘텐츠 디테일 부분*/
 .appbanner{/*position:fixed;*/ z-index:999; width:100% !important;}	

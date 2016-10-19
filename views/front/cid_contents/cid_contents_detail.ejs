@@ -137,7 +137,7 @@ function showPage(value) {
 					
 					<img src="/page_imgs/contents_img/icon_menu_in.png"></div-->
 				<div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_upDate %></span><br>
-					<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><span class="date"><%=contents[0].con_viewCount%></span></div>
+					<span><img src="/page_imgs/contents_img/icon_view.svg" style="width:25px; margin-right:5px;"></span><span class="date"><%=contents[0].con_viewCount%></span></div>
 				<div class="col-xs-6 editor" align="right"><span class="cate_name"><%= contents[0].cate_name %></span><br>
 						<span class="write">written by <%=contents[0].con_writer%></span></div>
 				<div class="col-xs-12 line-1px"></div>
@@ -328,7 +328,7 @@ function CopyToClipboard ( tagToCopy, textarea ){
 		</div>
 		<% } %>
 		
-		<div class="recommendation">
+		<div class="recommendation" style="margin-bottom:70px;">
 		
 			<div class="line1"></div>
 			<h4>사이다경제 추천</h4>
