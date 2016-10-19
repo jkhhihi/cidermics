@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사이다경제 | 강의</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/cid_lecture_apply.css" rel="stylesheet">
+<link href="/css/cid_lecture.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
@@ -116,13 +116,13 @@ function next_submit(){
 <% var lprice = lec_price; %>
 
 <form name="writeForm" method="post" action="/lecture/apply/codeapply">
-<div class="apply" align="center">
+<div class="main-apply" align="center">
 		<div class="title">
 				<p>수강료</p>
 		</div>
 		<div class="line1"></div>
 		<div class="price">\<input type="text" name="lec_price" size="7" value="<%=lprice%>" style="background-color:transparent; border:none;" readonly>원
-				<div class="btn-coupon"><button type="button" data-toggle="modal" data-target="#coupon-modal" data-backdrop="static">쿠폰입력</button></div>
+				<div class="apply-btn-coupon"><button type="button" data-toggle="modal" data-target="#coupon-modal" data-backdrop="static">쿠폰입력</button></div>
 				
 				<div id="coupon-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
        				 <div class="modal-dialog modal-lg">
@@ -214,8 +214,8 @@ function next_submit(){
 		</div>
 		
 		<div class="privacy" align="left">
-			<div class="title">*개인정보취급</div>
-			<div class="con"><p>1.수집된 개인정보는 본래의 목적 이외의 그 어떤 용도로도 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구하게 됩니다.</p>
+			<div class="privacy-title">*개인정보취급</div>
+			<div class="privacy-con"><p>1.수집된 개인정보는 본래의 목적 이외의 그 어떤 용도로도 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구하게 됩니다.</p>
 							 <p>2.수집된 이용자의 개인정보는 원칙적으로 처리 목적이 달성되면 즉시 파기됩니다.</p>
 			</div>
 		</div>
