@@ -62,6 +62,7 @@ br{line-height:1.5em;}
 .recommendation .line1{width:auto; height:4px; background-color:#ce2ca8; margin:0 20px;}
 .recommendation h4{font-size:18px; color:#a51082; font-weight:600; margin-bottom:-20px;}
 .recommendation{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
+.recommendation-con{width:86% !important;}
 /*.recommendation div{margin:10px 0 50px 0;}*/
 .recommendation p{margin-top:20px;}
 .recommendation a:hover{color:#333;}
@@ -126,7 +127,8 @@ br{line-height:1.5em;}
 .relation .title{font-size:16px; line-height:1.5em; margin:0;}
 .relation .ad .ad-title{font-size:16px; line-height:1.5em; margin:0;}
 .title-recommendation{font-size:16px;}
-.recommendation{font-size:16px;}
+.recommendation{font-size:16px; width:100%;}
+.recommendation-con{width:100% !important;}
 /*.recommendation div{margin:10px 0 10px 0;}*/
 .recommendation p{margin-top:10px;}
 .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
