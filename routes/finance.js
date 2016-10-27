@@ -87,9 +87,11 @@ router.get('/finance/done', function(req, res, next) {
 });
 
 router.get('/finance', function(req, res, next) {
-
-	res.render('front/cid_finance/cid_finance', { });
-
+	var finance;
+	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
+		
+	res.render('front/cid_finance/cid_finance', {finance : data});
+	});
 });
 
 
