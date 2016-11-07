@@ -54,27 +54,27 @@ input[type=submit] {
           	  <th data-field="app_cate">강의번호</th>
               <th data-field="app_name">사용자이름</th>
               <th data-field="app_price">입금금액</th>
-              <th data-field="app_phone">전화번호</th>
+              <!--th data-field="app_phone">전화번호</th>
               <th data-field="app_email">이메일주소</th>
               <th data-field="app_job">직업</th>
               <th data-field="app_path">경로</th>
+              <th data-field="app_comment">취소사유</th-->
               <th data-field="app_process">진행상태</th>
-              <th data-field="app_comment">취소사유</th>
               <th data-field="date">등록날짜</th>
-              <th data-field=""></th>
+              <!--th data-field=""></th-->
               <th data-field=""></th>
           </tr>
         </thead>
         <tbody>
-        <form action="/adm/lecture/list/update" method="post">
+        <!--form action="/adm/lecture/list/update" method="post"-->
 		<% for(var i = 0; i<lecture.length; i++) { %>
 			<tr>
 				<input type="hidden" name="app_no" value="<%= lecture[i].app_no %>" />
 				<td><%= lecture[i].app_no %></td>
 				<td><%= lecture[i].app_cate %></td>
-				<td><%= lecture[i].app_name %></td>
+				<td><a href="/adm/lecture/detail/<%= lecture[i].app_no %>"><%= lecture[i].app_name %></td>
 				<td><%= lecture[i].app_price %></td>
-				<td><%= lecture[i].app_phone %></td>
+				<!--td><%= lecture[i].app_phone %></td>
 				<td><%= lecture[i].app_email %></td>
 				<td><%= lecture[i].app_job %></td>
 				<td><%= lecture[i].app_path %></td>
@@ -86,13 +86,14 @@ input[type=submit] {
         		<option> 삭제대기 </option>
                 </select>
                 </td>
-				<td><%= lecture[i].app_comment %></td>
+				<td><%= lecture[i].app_comment %></td-->
+				<td><%= lecture[i].app_process %></td>
 				<td><%= lecture[i].app_upDate %></td>
-				<td><input type="submit" value="수정"></td>
+				<!--td><input type="submit" value="수정"></td-->
 				<td><p class="acss"><a href="/adm/lecture/list/delete/<%= lecture[i].app_no %>">삭제</a></p></td>
 			</tr>
 		<% } %>
-		</form>
+		<!--/form-->
         </tbody>
       </table>
     </div>

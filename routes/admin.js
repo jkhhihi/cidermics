@@ -137,8 +137,8 @@ router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next
 	}
 	page = req.params.page;
 	var obj = [];
-	var start = (page - 1) * 9;
-	var end = page * 9 -1;
+	var start = (page - 1) * 12;
+	var end = page * 12 -1;
 	
 	var dir = __dirname + "/../public/uploads/";
 	var files = fs.readdirSync(dir)
@@ -155,7 +155,7 @@ router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next
 		obj.push(files[i]);
 	}
 	var pagination = [];
-	var totalPage = Math.ceil(files.length / 9);
+	var totalPage = Math.ceil(files.length / 12);
 	var startPage;
 	var lastPage;
 	if(page % 5 != 0){ startPage = Math.floor(page/5) * 5 + 1; lastPage = Math.ceil(page/5) * 5; }
@@ -217,7 +217,7 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201610310730'};
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201611301730'};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 
@@ -393,12 +393,36 @@ router.get('/lecture/list', ensureAuthenticated, function(req, res, next) {
 		});
 });
 
-router.post('/lecture/list/update', ensureAuthenticated, function(req, res, next) {
+router.get('/lecture/detail/:app_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	var app_no = req.params.app_no;
+	
+	mysql.select('select * from cider.cid_applyform', function (err, data2){
+		if(err){
+			res.redirect('back');
+		}
+		user = data2;
+		mysql.select('select * from cider.cid_applyform where app_no = '+ app_no +'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			res.render('admin/lecture/lecture_detail', {CP : CP, lecture : data});
+		});
+    });
+});
+
+
+router.post('/lecture/detail/update', ensureAuthenticated, function(req, res, next) {
+
 	
 	var CP = 2;
 	
 	var app_no = req.body.app_no;
 	var app_process = req.body.app_process;
+	
+	console.log(app_process);
+	console.log(app_no);
 	
 	var date = getWorldTime(+9);
 	
@@ -409,7 +433,7 @@ router.post('/lecture/list/update', ensureAuthenticated, function(req, res, next
 		console.log(err);
 		console.log(data);
 		
-    	res.redirect('/adm/lecture');
+    	res.redirect('/adm/lecture/list/');
     	
     });
 });
@@ -421,9 +445,9 @@ router.get('/lecture/list/delete/:app_no', function(req, res, next) {
 	
 	mysql.del('delete from cider.cid_applyform where app_no = '+ app_no +'', function (err, data){
 		if(err){
-			res.redirect('/adm/lecture');
+			res.redirect('/adm/lecture/list');
 		}else{
-			res.redirect('/adm/lecture');
+			res.redirect('/adm/lecture/list');
 		}
     });
 });

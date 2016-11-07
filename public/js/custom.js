@@ -60,11 +60,11 @@ function fileList(type, page){
 			var img = '<div class="row"> ';
 			$.each(data.files, function(idx, val){
 				
-				if (idx % 3 == 0) {
+				if (idx % 4 == 0) {
 					img += '</div>';
 					img += '<div class="row"> ';
 				}
-				img += '<div class="col m4 center-align img-select"> ' +
+				img += '<div class="col m3 center-align img-select"> ' +
 							'<img class="responsive-img" src="/uploads/'+val+'"/> ' +
 							'<div class="fileName"> '+val+'</div>' + 
 					   '</div>';

@@ -142,12 +142,14 @@ passport.use('applycancel', new LocalStrategy({
 		console.log(data.length);
 		if(data.length < 1){
 			console.log('fail');
+			//res.send('<script>alert("쿠폰번호를 확인해주세요.");location.href="/lecture/apply";</script>');
 			return done(null, false);
 		}else {
 			console.log('success');
 			return done(null, data);
 		}
 		if(err){
+			
 			res.redirect('back');
 		}
     });	

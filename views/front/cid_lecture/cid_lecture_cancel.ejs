@@ -47,6 +47,47 @@ function next_submit(){
 	 
 	 	document.applyform.submit();
 }
+
+
+function next_submit(){
+	if(document.applyform.app_no.value==""){
+	 alert("등록번호를 입력해 주세요.");
+	document.applyform.app_no.focus();
+	  return;
+	}
+	if(document.applyform.app_name.value==""){
+	 alert("입금자명을 입력해 주세요.");
+	document.applyform.app_name.focus();
+	  return;
+	}
+	if(document.applyform.app_phone2.value==""){
+	 alert("휴대전화 번호를 입력해 주세요.");
+	document.applyform.app_phone2.focus();
+	  return;
+	}
+	if(document.applyform.app_phone3.value==""){
+	 alert("휴대전화 번호를 입력해 주세요.");
+	document.applyform.app_phone3.focus();
+	  return;
+	}
+	if(document.applyform.app_phone2.value.length<=3){
+	 alert("휴대전화 번호를 정확히 입력해 주세요.");
+	document.applyform.app_phone2.focus();
+	return;
+	 }
+	 for (i=0; i<document.applyform.app_phone2.value.length; i++)
+     {
+     	 var ch = document.applyform.app_phone2.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+		if ( ch < "0" || ch > "9" )
+    	 {
+            alert("휴대폰 번호는 숫자로만 입력 가능 합니다!");
+            document.applyform.app_phone2.focus();
+            return;
+         }
+      }
+	 
+	 	document.applyform.submit();
+}
 </script>
 
 <script language="javascript">
@@ -72,7 +113,7 @@ function next_submit(){
 				<div class="num col-xs-12 col-lg-12 padding-0"><span><span class="star">(*)</span>등록번호 : </span>
 				<input type="text" name="app_no" maxlength=5 style="IME-MODE: disabled">
 				</div>
-				<div class="name col-xs-12 col-lg-12 padding-0"><span><span class="star">(*)</span>입금자명 : </span>
+				<div class="name col-xs-12 col-lg-12 padding-0"><span><span class="star">(*)</span>성함 : </span>
 				<input type="text" name="app_name" maxlength=5 style="IME-MODE: disabled">
 				</div>
 				<div class="cell col-xs-12 col-lg-12 padding-0"><span><span class="star">(*)</span>휴대폰 번호 : </span>
@@ -99,7 +140,7 @@ function next_submit(){
 		<p style="font-size:16px; font-weight:bold; color:#FF0000; width:600px; margin-top:50px; margin-left:15px;" align="left">※취소 및 환불규정</p>
 		<div class="apply-cancle" align="center">
 				<div class="cancle-con" align="left">
-						<p>1. 강연 환불 기준</p>
+						<p>1. 강연 환불 기준(무료 강의는 해당하지 않습니다.)</p>
 						<p style="margin-left:18px;">강연 개시 1주전 100%<br>
 								72시간전 70%<br>
 								48시간전 50%<br>
