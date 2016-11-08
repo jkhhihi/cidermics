@@ -22,7 +22,7 @@ exports.select = function(sql, callback) {
 		});	
 		
 	});
-}
+};
 
 exports.insert = function(sql, sets, callback) {
 	pool.getConnection(function(err, connection){
@@ -38,7 +38,7 @@ exports.insert = function(sql, sets, callback) {
 		});	
 		
 	});
-}
+};
 
 exports.update = function(sql, sets, callback) {
 	pool.getConnection(function(err, connection){
@@ -65,7 +65,7 @@ exports.update = function(sql, sets, callback) {
 		});	
 		
 	});
-}
+};
 
 exports.del = function(sql, callback) {
 	pool.getConnection(function(err, connection){
@@ -81,4 +81,4 @@ exports.del = function(sql, callback) {
 		});	
 		
 	});
-}
+};
