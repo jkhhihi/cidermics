@@ -1,5 +1,9 @@
 .mob-main-banner{display:none;}
 .appbanner{display:none;}
+.appbanner-bg{position:relative; background-image:url(/page_imgs/main_img/bg-appbanner2.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
+.appbanner-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; left:41%; bottom:6%;}
+.appbanner-bg ul li{ width:22%; text-align:center; text-align:center; float:left; list-style:none;}
+.appbanner-bg ul li img{width:100%; max-width:427px;}
 .main-menu{background:url(/page_imgs/fixed_img/mainimg2.jpg); background-size: cover;
  background-position: center; font-family: "BMD", sans-serif; color:#FFFFFF; width:100% !important; height:700px;}
 .main-menu .mainlogoimg img{padding-top:120px;}
@@ -24,6 +28,9 @@
 .contents_detail-mob_menu {display:block;}
 .main-menu{display:none;}
 .appbanner{display:block; margin-bottom:10px;}
+.appbanner-bg{background-image:url(/page_imgs/main_img/mob_bg-appbanner2.jpg);}
+.appbanner-bg .ul-place{left:56%; bottom:20%;}
+.appbanner-bg ul li{width:30%; float:none;}
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}
 .mob-main-banner{margin-bottom:10px;}
