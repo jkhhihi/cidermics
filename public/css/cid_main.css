@@ -29,8 +29,8 @@
 .main-menu{display:none;}
 .appbanner{display:block; margin-bottom:10px;}
 .appbanner-bg{background-image:url(/page_imgs/main_img/mob_bg-appbanner2.jpg);}
-.appbanner-bg .ul-place{left:56%; bottom:20%;}
-.appbanner-bg ul li{width:30%; float:none;}
+.appbanner-bg .ul-place{left:50%; bottom:8%;}
+.appbanner-bg ul li{width:42%; float:none;}
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}
 .mob-main-banner{margin-bottom:10px;}
