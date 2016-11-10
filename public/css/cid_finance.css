@@ -94,6 +94,7 @@ background-color:#186491; font-size:20px; font-weight:bold; color:#fff;}
 
 
 @media all and (max-width:1024px) {
+.web-banner{padding:100px 10px 0 10px;}
 .web-banner p.title{font-size:20px;}
 .web-banner p.con{font-size:16px; margin:10px 0 0 0;}
 .finance-menu-web{display:none;}
