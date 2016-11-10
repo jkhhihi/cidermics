@@ -1,5 +1,4 @@
-.line{height:1px;}
-.done{background-color:#f4f4f4; width:100%; height:auto; padding:60px 0; margin-top:50px;}
+.done{background-color:#f4f4f4; width:100%; height:auto; padding:60px 0;}
 .done img{width:130px; margin-bottom:50px;}
 .done .title{font-size:36px; font-weight:bold;}
 .done .title span{font-size:26px; margin-left:10px;}
@@ -36,7 +35,7 @@
 .done-cancel .cell{height:20px;}
 
 @media all and (max-width:1024px) {
-.done{padding:50px 0;}
+.done{padding:50px 0; margin-top:55px;}
 .done img{width:80px; margin-bottom:30px;}
 .done .title{font-size:26px; font-weight:bold; line-height:1.5em;}
 .done .title span{font-size:20px;}

@@ -1,5 +1,7 @@
+.menu{margin-top:70px;}
+
 /*검색 부분*/
-.contents .con-search{margin:50px 0; font-family: 'Nanum Gothic', serif; font-size:16px; font-weight:bold;}
+.contents .con-search{margin:120px 0; font-family: 'Nanum Gothic', serif; font-size:16px; font-weight:bold;}
 .contents .con-search .line1{width:auto; height:4px; background-color:#ce2ca8; margin:0 20px;}
 .contents .con-search h4{font-size:18px; color:#a51082; font-weight:600;}
 
@@ -28,7 +30,7 @@ br{line-height:1.5em;}
 .padding0{padding:0 !important;}
 .mob-header{display:none;} 
 .contents{font-family: 'Nanum Gothic', serif !important; color:#212121; width:85% !important;}
-.contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:70px 0 35px 0;}
+.contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:140px 0 35px 0;}
 .contents .icon-menu{margin-bottom:20px; }
 .contents .date-view span.bar{color:#ce2ca8;}
 .contents .date-view span.icon-view img{width:25px; margin-right:5px;}
@@ -74,6 +76,8 @@ br{line-height:1.5em;}
 
 
 @media all and (max-width:1024px) {
+.menu{margin-top:0;}	
+	
 /*검색 부분*/
 .contents .con-search{margin:70px 0 50px 0;}	
 
