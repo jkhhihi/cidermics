@@ -8,6 +8,7 @@ $(".mob-menu").click(function() {
 $(".close").click(function() {
   $("#menu").removeClass("open");
 });
+
 $(".mob-menu").click(function () {
     $("#menu,.page_cover,html").addClass("open");
     window.location.hash = "#open"; 

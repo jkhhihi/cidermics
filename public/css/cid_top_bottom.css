@@ -62,8 +62,8 @@ header .search{padding-top:19px; padding-right:0;}
 body{font-family: 'Nanum Gothic', serif;}
 #menu .scrollBlind{
    width:100%;
-    height:100%;
-    overflow-y:scroll;
+   height:100%;
+   overflow-y:scroll;
 }
 .view{
     width:100%;
@@ -119,6 +119,7 @@ html.open {
 }
 #menu.open {
   left : 0px;
+  z-index :999;
 }
 #menu ul{margin-top:20px; padding:0;}
 #menu ul li{color:#FFFFFF; font-family:font-family: 'Nanum Gothic', serif; font-size:21px; font-weight:600; margin-bottom:20px;}
