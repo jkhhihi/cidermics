@@ -6,8 +6,10 @@
 .main-lecture ul .con .money p{background-color:#1b87c9; width:110px; height:66px; border-radius:10px; color:#fff;}
 .con p{font-size:18px; line-height:1.8em;}
 p.main-title{display:none;}
+.banner{margin-top:70px;}
 
 /*디테일 페이지 부분*/
+.lecture{margin-top:70px;}
 .lecture .title p{margin-top:60px; font-size:28px; font-weight:bold;}
 .lecture .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px;}
 .lecture .contents{margin:40px 0; line-height:2.5em; font-family: "BMD";}
@@ -72,7 +74,7 @@ p.main-title{display:none;}
 
 /*신청 페이지 부분*/
 .padding-0{padding:0 !important;}
-.main-apply{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; margin-top:50px;}
+.main-apply{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; margin-top:70px;}
 .main-apply .title p{font-size:24px; font-weight:bold;}
 .main-apply .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px; margin-bottom:20px;}
 .main-apply .price{font-size:36px; font-weight:bold; color:#FF0000;}
@@ -106,7 +108,7 @@ p.main-title{display:none;}
 .modal-body button{background-color:#1b87c9; width:55px; height:38px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
 .modal-body p{font-size:16px; color:#f24646; margin:30px 0 20px 0; width:120px; height:auto; border-radius:15px; background-color:#ececec; padding:10px;}
 .modal-lg{max-width:500px;}
-.apply-cancel{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; margin-top:50px; font-size:24px; font-weight:bold;}
+.apply-cancel{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; font-size:24px; font-weight:bold;}
 .apply-input-cancel .star1{color:#ff0000; margin-bottom:20px;}
 .apply-input-cancel .row span .star{display:inline; color:#ff0000; margin-right:4px;}
 .apply-input-cancel{font-size:16px; font-weight:bold;}
@@ -123,7 +125,7 @@ p.main-title{display:none;}
 .apply-input-cancel .reason textarea{border:#1b87c9 1px solid; border-radius:2px; width:60%; height:100px; resize:none; margin-top:20px;}
 
 /*할인쿠폰 페이지 부분*/
-.sale{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; }
+.sale{background-color:#f4f4f4; width:100%; height:auto; padding:170px 0;}
 .sale .title p{font-size:24px; font-weight:bold;}
 .sale .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px; margin-bottom:20px;}
 .sale .num img{width:100px; margin-top:50px;}
@@ -131,6 +133,7 @@ p.main-title{display:none;}
 .btn-coupon{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:20px 0;}
 
 @media all and (max-width:1024px) {
+.banner{margin-top:0;}
 p.main-title{
 	display:block;
 	font-family: "BMD", sans-serif;
@@ -138,7 +141,6 @@ p.main-title{
     color: #1b87c9;
     margin:70px 0 5px 5px;
     }
-.line{height:1px;}
 .main-lecture .grid p{margin-top:15px;}
 .main-lecture ul .con .date{padding:5px;}
 .main-lecture ul .con .money{padding:5px;}
@@ -147,6 +149,7 @@ p.main-title{
 .main-lecture .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 
 /*디테일 페이지 부분*/
+.lecture{margin-top:0;}
 .lecture .title p.finished{margin-top:80px;}
 .lecture .title p{font-size:20px; line-height:1.8em; margin-top:20px;}
 .lecture .line1{margin-top:0;}
@@ -189,7 +192,7 @@ p.main-title{
 .modal-lg{width:95%}
 .modal-body{padding:2px !important;}
 .modal-body input{width:220px;}
-.line{height:1px;}
+.main-apply{margin-top:55px;}
 .main-apply .deposit-account{padding:0 10px 0 10px; font-size:22px;}
 .main-apply .price{font-size:30px; font-weight:bold; color:#FF0000;}
 /*.apply .price input{width:200px;}*/
@@ -217,6 +220,7 @@ p.main-title{
 /*.apply-input .route input{width:50%}*/
 .apply-input .btn-apply{margin-top:60px; margin-bottom:20px;}
 .cancle p{width:95% !important;}
+.apply-cancel{margin-top:55px;}
 .apply-input-cancel .row{width:97%; padding:30px 5px;}
 .apply-input-cancel .num{height:70px;}
 .apply-input-cancel .name{height:70px;}
@@ -225,6 +229,7 @@ p.main-title{
 .apply-input-cancel .reason textarea{width:100%;}
 
 /*할인쿠폰 페이지 부분*/
+.sale{padding:100px 0;}
 .sale .title p{margin-top:20px;}
 .sale .num img{width:65px; margin-top:30px;}
 .sale .con img{width:100%; margin-top:10px; margin-bottom:20px;}
