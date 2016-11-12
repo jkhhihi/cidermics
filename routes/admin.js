@@ -481,7 +481,7 @@ router.get('/finance/detail/:fi_app_no', ensureAuthenticated, function(req, res,
 });
 
 
-router.get('/finance/delete/:app_no', function(req, res, next) {
+router.get('/finance/delete/:fi_app_no', function(req, res, next) {
 	
 	var CP = 3;
 	var fi_app_no = req.params.fi_app_no;
