@@ -33,15 +33,16 @@ p.main-title{display:none;}
 .lecture .contents .q5 .title{font-size:24px; color:#fff;}
 .lecture .contents .q5 .con{background-color:#f9a356;}
 
+/*강의2*/
+.lecture .lec2-title{font-size:24px; color:#333; padding:50px 0;}
 .lecture .contents .lec2-question-main{background-color:#30303b; width:100%; padding:90px 0;}
 .lecture .contents .lec2-question-main .title{font-size:24px; color:#fff;}
 .lecture .contents .lec2-question-main .con{background-color:#fff;}
-.lecture .contents .lec2-question-main .qcon{background-color:#fff;}
-
-.lecture .contents .lec2-question{background-color:#eee; width:100%; padding:90px 0;}
+.lecture .contents .lec2-question-main .qcon{background-color:#fff; width:60%;}
+.lecture .contents .lec2-question{background-color:#eee; width:100%; padding:50px 0;}
 .lecture .contents .lec2-question .title{font-size:24px; color:#000;}
 .lecture .contents .lec2-question .con{background-color:#fff;}
-
+/*----*/
 
 .lecture .btn-coupon{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:20px 0;}
 .lecture .apply{border:#ececec 4px solid; width:60%; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:100px;}
@@ -170,6 +171,15 @@ p.main-title{
 .lecture .contents .q5{padding:40px 0;}
 .lecture .contents .q5 .title{font-size:18px;}
 .lecture .contents .q5 .con{}
+
+/*강의2*/
+.lecture .lec2-title{font-size:14px; padding:35px 0;}
+.lecture .contents .lec2-question-main{padding:50px 0;}
+.lecture .contents .lec2-question-main .title{font-size:24px;}
+.lecture .contents .lec2-question-main .con{font-size:22px;}
+.lecture .contents .lec2-question-main .qcon{width:85%;}
+/*----*/
+
 .lecture .apply{width:95%; border:#ececec 3px solid;}
 .point{color:#ce2ca8;}
 .point1{color:#CE1417; font-size:16px;}
