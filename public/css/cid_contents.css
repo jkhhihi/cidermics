@@ -1,3 +1,4 @@
+body{font-family: 'Nanum Gothic', serif;}
 .menu{margin-top:70px;}
 
 .appbanner-bg{position:relative; background-image:url(/page_imgs/main_img/bg-appbanner2.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
@@ -7,7 +8,7 @@
 
 
 /*검색 부분*/
-.contents .con-search{margin:120px 0; font-family: 'Nanum Gothic', serif; font-size:16px; font-weight:bold;}
+.contents .con-search{margin:120px 0; font-size:16px; font-weight:bold;}
 .contents .con-search .line1{width:auto; height:4px; background-color:#ce2ca8; margin:0 20px;}
 .contents .con-search h4{font-size:18px; color:#a51082; font-weight:600;}
 
@@ -17,7 +18,7 @@
 .bg-blue{background-color:#1b87c9;}
 .main-contents{background-color:#ffffff; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8); padding-top:50px;}
 .main-contents .contents-menu .menu img{margin:0 15px 20px 15px;}
-.main-contents .contents{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
+.main-contents .contents{font-size:16px; text-align:center; font-weight:bold;}
 .main-contents .contents div div{margin:10px 0 10px 0;}
 .main-contents .contents div div p{margin-top:20px;}
 .main-contents .contents .icon-plus_con{margin:60px 0 50px 0;}
@@ -29,20 +30,19 @@
 .icon-plus_con img{width:40px; margin-bottom:80px;}
 
 /*콘텐츠 디테일 부분*/
+.contents .contents-in{padding:0 15px;}
 .appbanner-bg{margin-top:70px; position:relative; background-image:url(/page_imgs/main_img/bg-appbanner2.jpg);
 background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
 .appbanner-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; right:12%; bottom:6%;}
 .appbanner-bg ul li{ width:22%; text-align:center; float:right; list-style:none;}
 .appbanner-bg ul li img{width:100%; max-width:427px;}
-
-
 .bg-blue{background-color:#1b87c9;}
 .bg-white{background-color:#ffffff; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8);}
 br{line-height:1.5em;}
 .margin0{margin:0 !important;}
 .padding0{padding:0 !important;}
 .mob-header{display:none;} 
-.contents{font-family: 'Nanum Gothic', serif !important; color:#212121; width:85% !important;}
+.contents{color:#212121; width:85% !important;}
 .contents .title{font-size:36px; font-weight:bold; line-height:1.2em; margin:140px 0 35px 0;}
 .contents .icon-menu{margin-bottom:20px; }
 .contents .date-view span.bar{color:#ce2ca8;}
@@ -76,7 +76,7 @@ br{line-height:1.5em;}
 .relation .ad .ad-img span{position:absolute; top:0; left:0; width:40px; padding:5px 10px; text-align:left; background:rgba(0,0,0,0.5); color:#FFFFFF;}
 .recommendation .line1{width:auto; height:4px; background-color:#ce2ca8; margin:0 20px;}
 .recommendation h4{font-size:18px; color:#a51082; font-weight:600; margin-bottom:-20px;}
-.recommendation{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
+.recommendation{font-size:16px; text-align:center; font-weight:bold;}
 .recommendation-con{width:86% !important;}
 /*.recommendation div{margin:10px 0 50px 0;}*/
 .recommendation p{margin-top:20px;}
@@ -107,14 +107,15 @@ br{line-height:1.5em;}
 .icon-plus_con img{width:35px; margin-bottom:40px;}
 
 /*콘텐츠 디테일 부분*/
+.contents .contents-in{padding:0 8px;}
 .appbanner-bg{margin-top:0;}
 .appbanner{/*position:fixed;*/ z-index:999; width:100% !important;}	
 .bg-blue{margin-top:0 !important; height:100%;}
 .mob-bg-blue{background-color:#1b87c9; height:100%; padding-top:10px;}
 .mob-bg-white{background-color:#fff; width:95%; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8); margin-bottom:10px; border-radius: 5px;}
-.contents{width:100% !important; margin-top:20px; font-family: 'Nanum Gothic', serif !important;}	
+.contents{width:100% !important; margin-top:20px;}	
 .contents_detail-mob_menu {display:block;}
-.contents .contents-in img{width:90% !important;}/*img 빼기*/
+.contents .contents-in img{width:100% !important;}/*img 빼기*/
 .contents .title{font-size:22px; margin:20px 0 25px 0; }
 .contents .date-view span{margin-right:5px; font-size:12px;}
 .contents .date-view span.icon-view img{width:20px; margin-right:5px;}
