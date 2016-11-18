@@ -1,6 +1,7 @@
+body{font-family: 'Nanum Gothic', serif;}
 .web-banner{/*background-color:#a9c522;*/ height:auto; width:auto; padding:130px 10px 0 10px;}
-.web-banner p.title{font-family: 'Nanum Gothic', cursive; font-size:44px; font-weight:bold;}
-.web-banner p.con{font-family: 'Nanum Gothic', cursive; font-size:32px; font-weight:bold; line-height:1.8em; margin:20px 0 40px 0;}
+.web-banner p.title{font-size:44px; font-weight:bold;}
+.web-banner p.con{font-size:32px; font-weight:bold; line-height:1.8em; margin:20px 0 40px 0;}
 .finance-menu-web{background-color:#ececec; height:auto; width:100%; padding:60px 0 20px 0;}
 .finance-menu-web .title{font-size:24px; font-weight:bold; color:#666; margin-bottom:50px;margin-top:20px;}
 .finance-menu-web .apply_no{font-size:24px; font-weight:bold; color:#303030; margin-bottom:10px; margin-top:10px;}
@@ -27,7 +28,7 @@ background-color:#186491; font-size:20px; font-weight:bold; color:#fff;}
 .planner-intro p.blue{color:#1b87c9;}
 .planner-intro img.img-center {margin: 0 auto; width:220px;}
 .planner-intro .row div{margin-bottom:80px;}
-.contents-finance{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
+.contents-finance{font-size:16px; text-align:center; font-weight:bold;}
 .contents-finance div div{margin:10px 0 10px 0;}
 .contents-finance div div p{margin-top:20px;}
 .contents-finance .icon-plus_con{margin:60px 0 50px 0;}

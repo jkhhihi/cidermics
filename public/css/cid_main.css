@@ -1,3 +1,4 @@
+body{font-family: 'Nanum Gothic', serif;}
 .mob-main-banner{display:none;}
 .appbanner{display:none;}
 .appbanner-bg{position:relative; background-image:url(/page_imgs/main_img/bg-appbanner2.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
@@ -15,7 +16,7 @@
 .menu p a{color:#fff;}
 .web-main-banner{margin-bottom:50px;}
 .web-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;}
-.contents{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold;}
+.contents{font-size:16px; text-align:center; font-weight:bold;}
 .contents div div{margin:10px 0 10px 0;}
 .contents div div p{margin-top:20px;}
 .contents .icon-plus_con{margin:60px 0 50px 0;}

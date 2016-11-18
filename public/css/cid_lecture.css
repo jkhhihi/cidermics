@@ -1,4 +1,5 @@
-.main-lecture{font-family: 'Nanum Gothic', serif; font-size:16px; text-align:center; font-weight:bold; margin-top:9px; margin-bottom:50px;}
+body{font-family: 'Nanum Gothic', serif;}
+.main-lecture{font-size:16px; text-align:center; font-weight:bold; margin-top:9px; margin-bottom:50px;}
 .main-lecture .grid p{margin-top:30px;}
 .main-lecture .grid li{width:100%;}
 .main-lecture ul .con{margin-bottom:60px; border-left:#999999 1px solid; border-bottom:#999999 1px solid; border-right:#999999 1px solid; padding-bottom:10px;}
@@ -41,7 +42,7 @@ p.main-title{display:none;}
 .lecture .contents .lec2-question-main .qcon{background-color:#fff; width:60%;}
 .lecture .contents .lec2-question{background-color:#eee; width:100%; padding:50px 0;}
 .lecture .contents .lec2-question .title{font-size:24px; color:#000;}
-.lecture .contents .lec2-question .con{background-color:#fff;}
+.lecture .contents .lec2-question .con{font-family: 'Nanum Gothic', serif; background-color:#fff;}
 /*----*/
 
 .lecture .btn-coupon{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:20px 0;}
@@ -134,6 +135,7 @@ p.main-title{display:none;}
 .btn-coupon{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:20px 0;}
 
 @media all and (max-width:1024px) {
+body{font-family: 'Nanum Gothic', serif;}
 .banner{margin-top:0;}
 p.main-title{
 	display:block;
