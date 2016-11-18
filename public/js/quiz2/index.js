@@ -2,16 +2,18 @@ $('#quiz').quiz({
   //resultsScreen: '#results-screen',
   //counter: false,
   //homeButton: '#custom-home',
-  counterFormat: 'Question %current of %total',
+  counterFormat: '퀴즈  %total 개 중 %current번 ',
   questions: [
     {
-      'q': 'Is jQuery required for this plugin?',
+      'q': 'Q. 다음 물건 중 수요의 가격 탄력성이 높은 것은?',
       'options': [
-        'Yes',
-        'No'
+        '비누',
+        '샴푸',
+        '시계',
+        '밀가루'
       ],
-      'correctIndex': 0,
-      'correctResponse': 'Good job, that was obvious.',
+      'correctIndex': 3,
+      'correctResponse': '정답입니다.',
       'incorrectResponse': 'Well, if you don\'t include it, your quiz won\'t work'
     },
     {

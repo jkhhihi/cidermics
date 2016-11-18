@@ -11,7 +11,7 @@
 
 
 <!--공유 meta tags-->
-<meta name="title" content="<%= contents[0].con_title %>" />
+<!--meta name="title" content="<%= contents[0].con_title %>" /-->
 <meta property="og:image" content="http://www.cidermics.com<%= contents[0].con_photo %>" />
 <meta property="fb:app_id" content="116627908812749">
 
@@ -99,6 +99,28 @@ function checkForHash() {
 function showPage(value) {
     $("#display").html(value)
 }
+
+function CaricaFoto(img){ 
+foto1= new Image(); 
+foto1.src=(img); 
+Controlla(img); 
+} 
+function Controlla(img){ 
+if((foto1.width!=0)&&(foto1.height!=0)){ 
+viewFoto(img); 
+} 
+else{ 
+funzione="Controlla('"+img+"')"; 
+intervallo=setTimeout(funzione,20); 
+} 
+} 
+
+function viewFoto(img){ 
+largh=foto1.width+20; 
+altez=foto1.height+20; 
+stringa="width="+largh+",height="+altez; 
+finestra=window.open(img,"",stringa); 
+} 
 </script>
 <style>
 	.row{

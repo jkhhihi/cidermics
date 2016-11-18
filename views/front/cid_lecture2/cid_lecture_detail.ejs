@@ -89,7 +89,7 @@ function openSNSFB(){
 <div class="lecture" >
 		
 		<div class="title container" align="center">
-				<!--p class="finished">** 본 강의는 마감되었습니다 **<p-->
+				<p class="finished">** 본 강의는 마감되었습니다 **<p>
 				<p class="finished" style="color:#000;">부모님을 위한 경제/금융 세미나</p>
 				<div class="line1"></div>
 		</div>
@@ -99,8 +99,7 @@ function openSNSFB(){
 		</div>
 		<div class="lec2-title">
 		<div class="container">
-			<p class="title">꼭 필요한 것 같은데, 어렵고 복잡한 <span style="color: rgb(225, 61, 61);">금융</span>.. <span style="color: rgb(0, 117, 200);">보험</span>..<br> 우리 아이, 내 가족을 위한 건데 잘 알아야겠죠?</p>
-		
+					<p class="title">꼭 필요한 것 같은데,<br> 어렵고 복잡한 <span style="color: rgb(225, 61, 61);">금융</span>.. <span style="color: rgb(0, 117, 200);">보험</span>..<br> 우리 아이, 내 가족을 위한 건데 <br>잘 알아야겠죠?</p>
 		<!--p class="title">필요하긴 한 것 같은데, 잘 모르는 <span style="color: rgb(0, 117, 200);">보험</span>!</p>
 		<p class="title">친구, 친구의 친구, 부모님 아시는 분..</p>
 		<p class="title">'<span style="color: rgb(225, 61, 61);">지인만 믿고 보험에 들었다가<br>놓치는 건 없을까?</span>'</p>
@@ -261,16 +260,7 @@ function CopyToClipboard ( tagToCopy, textarea ){
 <center>
 이 글의 트랙백 주소 복사하기
 <p onclick="CopyToClipboard( this, myClipboard )"> http://www.cidermics.com/lecture/detail</p></center-->
-		<div class="banner">
-		<div class="swiper-container">
-						<div class="swiper-wrapper">
-								<div class="swiper-slide"><a href="/finance"><img class="img-responsive" src="/page_imgs/main_img/consulting.jpg"></a></div>
-						</div>
-						<!-- Add Pagination -->
-						<div class="swiper-pagination"></div>
-		</div>
-		</div>
-
+		
 		<div class="contents container">
 				<div class="row like" align="center">
 					<div class="fb-like" data-href="http://www.cidermics.com/lecture/detail/2" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
@@ -278,6 +268,36 @@ function CopyToClipboard ( tagToCopy, textarea ){
 		</div>
 		
 		
+		
+		
+		
+		<div class="banner">
+		<div class="swiper-container">
+						<div class="swiper-wrapper">						
+								<div class="swiper-slide"><a href="/finance"><img class="img-responsive" src="/page_imgs/main_img/consulting.jpg"></a></div>
+								<div class="swiper-slide"><a href="/appdown"><img class="img-responsive" src="/page_imgs/main_img/appbanner2.jpg"></a></div>
+						</div>
+						<!-- Add Pagination -->
+						<div class="swiper-pagination"></div>
+		</div>
+		</div>
+<!-- Swiper JS -->
+<script src="/js/swiper.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 10,
+				//effect: 'fade',
+        centeredSlides: true,
+        <!--autoplay: 9000,-->
+        autoplayDisableOnInteraction: false
+    });
+</script>
+
 		<div class="row professor-introduce" style="padding:10px;">
 				<div class="col-xs-12 mob-professor-con">
 						<div class="row">
@@ -302,6 +322,8 @@ function CopyToClipboard ( tagToCopy, textarea ){
 						</div>
 				</div>
 		</div>
+
+		
 		<div class="container apply" align="center">
 				<div class="apply-date" align="left">
 						<p>날짜</p>
@@ -334,16 +356,17 @@ function CopyToClipboard ( tagToCopy, textarea ){
 				
 				<div class="line3"></div>
 				
-				<div class="line2"></div>
+				<!--div class="line2"></div>
 					<p class="apply_no">신청자 현황 </p>
 					<p class="apply_no">(18일 강의) 현재  <span style="color: rgb(255, 0, 0);">"<%= lecture[0].appno%>"</span>명이 신청하였습니다.</p>
 					<p class="apply_no">(19일 강의) 현재 <span style="color: rgb(255, 0, 0);">"<%= lecture2[0].appno%>"</span>명이 신청하였습니다.</p>
-				<div class="line2"></div>
+				<div class="line2"></div-->
 
 				
 				<div class="line3"></div>
 				<div class="apply-deposit">
-				<a href="/lecture/apply/2"><p>신청하기</p>
+					<!--a href="/lecture/apply/2"><p>신청하기</p-->
+					<a href="#" onclick="alert('무료 세미나가 마감되었습니다. 더 좋은 세미나로 찾아뵙겠습니다.')"><p>신청하기</p>
 				</div>
 				
 				<div class="line3"></div>
@@ -353,7 +376,8 @@ function CopyToClipboard ( tagToCopy, textarea ){
 				
 				<div class="line3"></div>
 				<div class="btn-apply-cancle">
-				<a href="/lecture/cancel"><p>취소 요청</p>
+					<!--a href="/lecture/cancel"><p>취소 요청</p-->
+					<a href="#" onclick="alert('무료 세미나가 마감되었습니다. 더 좋은 세미나로 찾아뵙겠습니다.')"><p>취소 요청</p>
 				</div>
 		</div>
 		</div>

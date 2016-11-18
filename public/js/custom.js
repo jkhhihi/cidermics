@@ -96,60 +96,6 @@ function fileList(type, page){
 	});
 }
 
-/*
-function fileList(type, page){
-	var pages = '';
-	$.ajax({
-		url : '/adm/lecture/files/'+ page,
-		method : 'GET',
-		success : function(data){
-			
-			var totalPage = data.pagination[0];
-			var startPage = data.pagination[1];
-			var lastPage = data.pagination[2];
-			var next = data.pagination[3];
-			var currentPage = data.pagination[4];
-			
-//			console.log(totalPage, startPage, lastPage, next, currentPage);
-			var img = '<div class="row"> ';
-			$.each(data.files, function(idx, val){
-				
-				if (idx % 3 == 0) {
-					img += '</div>';
-					img += '<div class="row"> ';
-				}
-				img += '<div class="col m4 center-align img-select"> ' +
-							'<img class="responsive-img" src="/page_imgs/lecture_img/'+val+'"/> ' +
-							'<div class="fileName"> '+val+'</div>' + 
-					   '</div>';
-				if (idx == 11){
-					img += '</div>';
-				}	
-			});
-			
-			$('.images').html(img);
-			var paging = '<li ' +disabled(currentPage)+'><a class="pageGo" href="javascript:pageGo('+ (currentPage - 1)+')"><i class="material-icons">chevron_left</i></a></li> ';
-			for (var i = startPage; i < lastPage + 1; i++){
-				paging += '<li '+ active(currentPage, i) +'><a class="pageGo" href="javascript:pageGo('+i+')">'+i+'</a></li>';
-			}
-			if(next){
-				paging += '<li class="waves-effect"><a class="pageGo" href="javascript:pageGo('+ (currentPage+1) +')"><i class="material-icons">chevron_right</i></a></li>';					
-			}
-			$('.pagination').html(paging);
-			
-			$('.img-select').click(function(){
-				var hasClass = $(this).hasClass('img-selected');
-				if(hasClass){
-					$(this).removeClass('img-selected');
-				}else{
-					$(this).addClass('img-selected');
-				}
-				var img = $(this).find('img').attr('src');
-			});
-		}
-	});
-}
-*/
 
 function pageGo(page) {
 	fileList(1,page);
@@ -298,23 +244,6 @@ $(document).ready(function(){
 			alert('날짜를 입력해주세요');
 			return;
 		}
-		/*
-		if(num_check.test(rdate))
-		{
-			//if( L_szNum < 3 || L_szNum > 6 )
-			if( L_szNum < 12 )
-			{
-			alert("3~6글자만 입력할수 있습니다.");
-			document.rdate.value="";
-			document.rdate.focus();
-			return false;
-			}
-		}
-		else{
-			alert ( "숫자만 입력할 수 있습니다." );
-			document.rdate.value="";
-			document.rdate.focus();
-		}*/
 		
 		console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title );
 		$('[name=title]').val(title);
