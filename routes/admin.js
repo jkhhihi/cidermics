@@ -129,6 +129,19 @@ router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
 
 
 
+router.get('/uMent/:user_no', function(req, res, next) {
+	var user_no =  req.params.user_no;
+		mysql.select('select * from cider.cid_user', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			user_no = data;
+
+			res.send({ userC : data });
+			});
+		});
+
+
 
 router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next){
 	var page;

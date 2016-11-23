@@ -130,17 +130,17 @@ $( document ).ready(function(){
                     <select id="user">
                         <option value="">에디터를 정해주세요</option>
                         <% for(var i=0; i < user.length; i++) {  %> 
-                          <option value="<%=user[i].user_no%>"> > <%=user[i].user_name%> </option>
+                          <option value="<%=user[i].user_no%>"> <%=user[i].user_name%> </option>
                         <% } %>
                     </select>
                     <label>에디터</label>
                 </div>
+                
 				<div class="input-field col s12">
-				    <textarea name="userText" class="materialize-textarea"></textarea>
+				    <textarea name="userText" class="materialize-textarea"> </textarea>
                     <label>에디터 한마디</label>
 				</div>
-				
-				
+				<input type="button" id="execute" value="execute"/>
 				<input type="hidden" name="contents">
 				<input type="hidden" name="writer">			
 				<input type="hidden" name="userNo">
@@ -161,4 +161,26 @@ $( document ).ready(function(){
     </div>
   </body>
   <script src="/js/custom.js"></script>
+  
+<script>
+		$('#execute').click(function(){
+			var user_no = '';
+			$.ajax({
+				url : '/uMent/'+user_no,
+				method : 'get',
+				success : function(data){
+					alert('마지막 콘텐츠입니다.');
+					document.write(user_name);
+					document.write(user_comment);
+					document.write("user_comment");
+					value.user_name;
+					'<li> ' +
+							 			'<div class="con-border bg-w"> ' + 
+												'<p>dd</p>'+
+							 			'</div> '+
+							 		'</li> ';
+				}
+			});
+		});
+	</script>
   </html>

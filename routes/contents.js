@@ -176,8 +176,8 @@ router.get('/addMore/:idx', function(req, res, next) {
    var qry="";
    
    var now = new Date();
-    var _year=  now.getFullYear();
-     var _mon =   now.getMonth()+1;
+   var _year=  now.getFullYear();
+   var _mon =   now.getMonth()+1;
     _mon=""+_mon;
     if (_mon.length < 2 )
     {
