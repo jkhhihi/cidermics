@@ -75,9 +75,11 @@ router.get('/ftest/checkcode', function(req, res, next) {
 });
 
 router.get('/finance/profile', function(req, res, next) {
-
-	res.render('front/cid_finance/cid_finance_profile', { });
-
+	var finance;
+	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
+		
+	res.render('front/cid_finance/cid_finance_profile', {finance : data});
+	});
 });
 
 router.get('/finance/done', function(req, res, next) {
@@ -102,7 +104,7 @@ router.get('/finance/apply', function(req, res, next) {
 });
 
 router.get('/finance/contents', function(req, res, next) {
-	
+	var finance;
 	var no = req.params.no;
 	
 	var now = new Date();
@@ -143,16 +145,17 @@ router.get('/finance/contents', function(req, res, next) {
 				if (err) throw err;
 		 
 		 row = data;
-		 res.render('front/cid_finance/cid_finance_contents', { contents : row});
+		 
+			mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
+				
+			
 
+		 res.render('front/cid_finance/cid_finance_contents', { contents : row, finance:data});
+			});
 	});
 });
 
-router.get('/finance/review', function(req, res, next) {
 
-	res.render('front/cid_finance/cid_finance_review', { });
-
-});
 
 
 router.post('/finance/apply/insert', function(req, res, next) {
@@ -254,6 +257,44 @@ router.get('/addMore2/:idx/:p', function(req, res, next) {
    
 });
 
+
+router.get('/finance/review', function(req, res, next) {
+
+	var finance;
+	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
+		
+	res.render('front/cid_finance/cid_finance_review', {finance : data});
+	});
+
+
+});
+
+router.get('/finance/menu', function(req, res, next) {
+
+	var finance;
+	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
+		
+	res.render('front/cid_finance/cid_finance_menu', {finance : data});
+	});
+});
+
+router.get('/finance/menu', function(req, res, next) {
+
+	var finance;
+	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
+		
+	res.render('front/cid_finance/cid_finance_menu', {finance : data});
+	});
+});
+
+router.get('/finance/menu', function(req, res, next) {
+
+	var finance;
+	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
+		
+	res.render('front/cid_finance/cid_finance_menu', {finance : data});
+	});
+});
 
 
 module.exports = router;

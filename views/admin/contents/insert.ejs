@@ -127,7 +127,7 @@ $( document ).ready(function(){
 				</div>
 				
 				<div class="input-field col s12">
-                    <select id="user">
+                    <select id="user" onchange="valueChanged(this.value)">
                         <option value="">에디터를 정해주세요</option>
                         <% for(var i=0; i < user.length; i++) {  %> 
                           <option value="<%=user[i].user_no%>"> <%=user[i].user_name%> </option>
@@ -135,12 +135,68 @@ $( document ).ready(function(){
                     </select>
                     <label>에디터</label>
                 </div>
+                <script>
+                	$("#user").change(function(){
+                		  //alert($(this).val());
+                		 // if(this.val('경제/금융을 사이다처럼 시원하게 풀어드리겠습니다 :')){
+                		 	var chk=$(this).val();
+                		 	var res="";
+                		 	if(chk=="1")
+                		  	{
+                		  		res="경제/금융을 사이다처럼 시원하게 풀어드리겠습니다 :)";
+                		  	}
+                		  	if(chk=="3")
+                		  	{
+                		  		res="진인사대천명";
+                		  	}
+                		  	if(chk=="4")
+                		  	{
+                		  		res="정치, 국제 이슈를 쉽게 경제로 풀어드리는 황원지 입니다:)";
+                		  	}
+                		  	if(chk=="5")
+                		  	{
+                		  		res="Busy getting stronger";
+                		  	}
+                		  	if(chk=="7")
+                		  	{
+                		  		res="함께 공부하는 경제이야기!";
+                		  	}
+                		  	if(chk=="8")
+                		  	{
+                		  		res="바르게 바라보고, 바르게 쓰겠습니다.";
+                		  	}
+                		  	if(chk=="9")
+                		  	{
+                		  		res="일상 속 경제이슈를 쉽고 재밌게 알려드립니다!";
+                		  	}
+                		  	if(chk=="10")
+                		  	{
+                		  		res="좋은 글을 쓰도록 하겠습니다.";
+                		  	}
+                		  	if(chk=="13")
+                		  	{
+                		  		res="투자에 관심이 많고, 실제로 직접투자를 계속 해오고 있습니다.";
+                		  	}
+                		  	if(chk=="15")
+                		  	{
+                		  		res="육감적으로";
+                		  	}
+                		  	if(chk=="16")
+                		  	{
+                		  		res="시노자키 아이를 좋아합니다.";
+                		  	}
+                		  	
+                		  
+                		  //$("#userText").val($(this).val());
+                		  $("#userText").val(res);
+    
+});
+                </script>
                 
 				<div class="input-field col s12">
-				    <textarea name="userText" class="materialize-textarea"> </textarea>
+				    <textarea name="userText" id="userText" class="materialize-textarea"> </textarea>
                     <label>에디터 한마디</label>
 				</div>
-				<input type="button" id="execute" value="execute"/>
 				<input type="hidden" name="contents">
 				<input type="hidden" name="writer">			
 				<input type="hidden" name="userNo">
@@ -162,25 +218,5 @@ $( document ).ready(function(){
   </body>
   <script src="/js/custom.js"></script>
   
-<script>
-		$('#execute').click(function(){
-			var user_no = '';
-			$.ajax({
-				url : '/uMent/'+user_no,
-				method : 'get',
-				success : function(data){
-					alert('마지막 콘텐츠입니다.');
-					document.write(user_name);
-					document.write(user_comment);
-					document.write("user_comment");
-					value.user_name;
-					'<li> ' +
-							 			'<div class="con-border bg-w"> ' + 
-												'<p>dd</p>'+
-							 			'</div> '+
-							 		'</li> ';
-				}
-			});
-		});
-	</script>
+
   </html>

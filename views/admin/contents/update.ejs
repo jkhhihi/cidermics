@@ -145,18 +145,76 @@ div#fixed {
             
             
             <div class="input-field col s12">
-                    <select id="user">
+                    <select id="user"  onchange="valueChanged(this.value)">
                         <option value="">에디터를 정해주세요</option>
                         <% for(var i=0; i < user.length; i++) {  %> 
                           
-                            <option value="<%=user[i].user_no%>/<%=user[i].user_name%>" data-icon="<%= user[i].profile_img %>" <% if( contents[0].user_no == user[i].user_no){ %> selected <%} %>> <%=user[i].user_name%> </option>
-                         
+                         <option value="<%=user[i].user_no%>/<%=user[i].user_name%>" data-icon="<%= user[i].profile_img %>" <% if( contents[0].user_no == user[i].user_no){ %> selected <%} %>> <%=user[i].user_name%> </option>
                         <% } %>
                     </select>
                     <label>에디터</label>
+                    
+                    <script>
+                	$("#user").change(function(){
+                		  //alert($(this).val());
+                		 // if(this.val('경제/금융을 사이다처럼 시원하게 풀어드리겠습니다 :')){
+                		 	var chk=$(this).val();
+                		 	var res="";
+                		 	if(chk=="1/사이다경제")
+                		  	{
+                		  		res="경제/금융을 사이다처럼 시원하게 풀어드리겠습니다 :)";
+                		  	}
+                		  	if(chk=="3/조석민")
+                		  	{
+                		  		res="진인사대천명";
+                		  	}
+                		  	if(chk=="4/황원지")
+                		  	{
+                		  		res="정치, 국제 이슈를 쉽게 경제로 풀어드리는 황원지 입니다:)";
+                		  	}
+                		  	if(chk=="5/강준구")
+                		  	{
+                		  		res="Busy getting stronger";
+                		  	}
+                		  	if(chk=="7/이동규")
+                		  	{
+                		  		res="함께 공부하는 경제이야기!";
+                		  	}
+                		  	if(chk=="8/이윤범")
+                		  	{
+                		  		res="바르게 바라보고, 바르게 쓰겠습니다.";
+                		  	}
+                		  	if(chk=="9/유토미")
+                		  	{
+                		  		res="일상 속 경제이슈를 쉽고 재밌게 알려드립니다!";
+                		  	}
+                		  	if(chk=="10/최효선")
+                		  	{
+                		  		res="좋은 글을 쓰도록 하겠습니다.";
+                		  	}
+                		  	if(chk=="13/연두")
+                		  	{
+                		  		res="투자에 관심이 많고, 실제로 직접투자를 계속 해오고 있습니다.";
+                		  	}
+                		  	if(chk=="15/김이오")
+                		  	{
+                		  		res="육감적으로";
+                		  	}
+                		  	if(chk=="16/이영돈")
+                		  	{
+                		  		res="시노자키 아이를 좋아합니다.";
+                		  	}
+                		  	
+                		  
+                		  //$("#userText").val($(this).val());
+                		  $("#userText").val(res);
+    
+});
+                </script>
+                    
                 </div>
                 <div class="input-field col s12">
-                    <textarea name="userText" class="materialize-textarea"><%- contents[0].user_comment %></textarea>
+                    <textarea name="userText" id="userText" class="materialize-textarea"><%- contents[0].user_comment %></textarea>
                     <label>에디터 한마디</label></div>
                     
              <div class="input-field col s12">
