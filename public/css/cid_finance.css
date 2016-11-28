@@ -95,6 +95,12 @@ background-color:#186491; font-size:20px; font-weight:bold; color:#fff;}
 .apply-input-done .btn-apply a{color:#fff;}
 .privacy{padding:5px; font-size:13px; font-weight:bold; color:#FF0000;}
 
+.apply{display:none;}
+.apply-bg{position:relative; background-image:url(/page_imgs/main_img/bg-appbanner2.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
+.apply-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; right:35%; bottom:50%;}
+.apply-bg ul li{ width:22%; text-align:center; float:right; list-style:none;}
+.apply-bg ul li img{width:100%; max-width:427px;}
+
 
 @media all and (max-width:1024px) {
 .web-banner{padding:100px 10px 0 10px;}
@@ -161,6 +167,9 @@ background-color:#186491; font-size:20px; font-weight:bold; color:#fff;}
 .apply-input-done .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input-done .row span{width:100px;}
 .apply-input-done .btn-apply{margin-top:60px; margin-bottom:60px;}
+
+.apply-bg .ul-place{left:50%; bottom:8%;}
+.apply-bg ul li{width:42%; float:none;}
 
 }
 
