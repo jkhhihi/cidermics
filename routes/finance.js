@@ -269,21 +269,21 @@ router.get('/finance/review', function(req, res, next) {
 
 });
 
-router.get('/finance/menu', function(req, res, next) {
+router.get('/finance/process', function(req, res, next) {
 
 	var finance;
 	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
 		
-	res.render('front/cid_finance/cid_finance_menu', {finance : data});
+	res.render('front/cid_finance/cid_finance_process', {finance : data});
 	});
 });
 
-router.get('/finance/menu', function(req, res, next) {
+router.get('/finance/necessary', function(req, res, next) {
 
 	var finance;
 	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
 		
-	res.render('front/cid_finance/cid_finance_menu', {finance : data});
+	res.render('front/cid_finance/cid_finance_necessary', {finance : data});
 	});
 });
 
