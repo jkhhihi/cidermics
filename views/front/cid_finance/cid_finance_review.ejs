@@ -7,25 +7,31 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>상담 후기 - 사이다경제 | 재무</title>
+<title>사이다경제 | 재무</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_finance.css" rel="stylesheet">
-<link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="/css/component.css" />
-<script src="/js/modernizr.custom.js"></script>
 
 <script src="/js/gotoup.js"></script>
 
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
-<meta property="og:title" content="사이다재무 오픈!" />	
-<meta property="og:site_name" content="사이다재무 오픈!">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://www.cidermics.com/finance/" />
+<script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(37.533656, 126.900734),
+    zoom:17,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 
 <!--구글 애널리틱스 -->
 <script>
@@ -41,102 +47,41 @@
 
 </head>
 <body>
-<!--위로가기 버튼-->
+	<!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
+	
 <% include ../top %>
 
 <div class="line"></div>
-<div class="web-banner" align="center">
-	<p class="title">재무설계 상담</p>
-	<p class="con">내 월급은 통장을 스칠 뿐?<br>
-<span style="color:#1b87c9">사이다경제</span>가 당신을 위해 준비한 <span style="color:#ce2ca8">재무설계!</span></p>
-<img class="img-responsive" src="/page_imgs/finance_img/web_bacter_mainimg.png">
-</div>
 
 <!--div class="mob-banner">
 <img class="img-responsive" src="/page_imgs/finance_img/mob_banner_finance.jpg">
 </div-->
-
 <% include cid_finance_menu %>
 
 
-<!--콘텐츠 들어갈 자리-->
-<div class="contents-finance container">
-			<ul class="grid effect-2" id="grid">
-		
-				<li>
-				<div align="center">
-					
-					<a href="#">
-					<img class="img-responsive" src="/page_imgs/lecture_img/lec_thum_2.png"></a>
-					
+		<div class="planner-intro container">
+				<div class="row">
+						<div class="col-lg-4 col-sm-6 text-center"> <img class="img-circle img-responsive img-center" src="/page_imgs/employee_profile/planner1.jpg" alt="">
+								<h3>임동운 <small>재무상담사</small> </h3>
+								<p class="blue">“재무적으로 지금보다 확실히 더욱 행복한 삶을 살 수 있는 방법을 알려드리겠습니다.”</p>
+								<p>금융경력 7년<br>국제공인재무설계사(CFP)<br>투자권유대행인<br>생명보험 및 손해보험 설계사<br>변액보험판매관리사<br>종합자산관리사(IFP)</p>
+						</div>
+						<div class="col-lg-4 col-sm-6 text-center"> <img class="img-circle img-responsive img-center" src="/page_imgs/employee_profile/planner2.jpg" alt="">
+								<h3>안민관 <small>재무상담사</small> </h3>
+								<p class="blue">“저금리 대안! 실전 투자 전문가!<br>목표설정부터 목표달성까지 함께하겠습니다.”</p>
+								<p>재무 상담 경력 5년<br>주식 투자 경력 7년<br>증권사 투자권유 대행인<br>펀드투자상담사<br>생명보험 / 손해보험 / 변액보험<br>세무 / 회계 자격 보유</p>
+
+						</div>
+						<div class="col-lg-4 col-sm-6 text-center"> <img class="img-circle img-responsive img-center" src="/page_imgs/employee_profile/planner3.jpg" alt="">
+								<h3>정우혁 <small>재무상담사</small> </h3>
+								<p class="blue">“양심적으로 설계하겠습니다”</p>
+								<p>경영학 학사<br>삼성증권 근무<br>생명보험 손해보험 설계사<br>변액보험 판매관리사<br>재테크 모임/ 주식투자 모임 운영<br>변액보험 전문과 과정 수료</p>
+						</div>
+						
 				</div>
-				<div class="con row">	
-					<p><a href="#">부모님을 위한 경제/금융 세미나</a></p>	
-					<div class="date col-xs-12 col-lg-6" align="left"><p>신청기간 : ~ 2016.11.17</p></div>
-					<div class="money col-xs-12 col-lg-6" align="right" ><p align="center" style = "height:33px;">무료</p><h6>* 선착순</h6></div>
-				</div>
-			</li>
-		</ul>
-</div>
-
-<div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.svg"></div>
-
-<script src="/js/masonry.pkgd.min.js"></script>
-		<script src="/js/imagesloaded.js"></script>
-		<script src="/js/classie.js"></script>
-		<script src="/js/AnimOnScroll.js"></script>
-		<script>
-			new AnimOnScroll( document.getElementById( 'grid' ), {
-				minDuration : 0.4,
-				maxDuration : 0.7,
-				viewportFactor : 0.2
-			} );
-		</script>
-
-
-<script>
-		var idx = 2;
-		var p=2;
-		
-		
-		function addMore (){
-			var contents = '';
-			$.ajax({
-				url : '/addMore2/'+idx+"/"+2,
-				method : 'get',
-				success : function(data){
-					if (data.contents.length == 0){
-						alert('마지막 콘텐츠입니다.');
-						return;
-					}
-					idx ++;
-					$.each(data.contents, function (index, value){
-						contents += '<li> ' +
-							 			'<div class="con-border bg-w"> ' + 
-												'<a href="/contents/detail/'+value.con_no+'"> ' +
-													'<div class="con-img" align="center"> ' +
-														'<img src="'+value.con_photo+'"/> ' + 
-													'</div> ' +
-												'</a> ' +
-							 					'<a href="/contents/detail/'+value.con_no+'"> ' +
-							 						'<div class="con-title"><span><center>' + value.con_title +'</center></span></div>' +
-							 					'</a> '+
-							 			'</div> '+
-							 		'</li> ';
-							
-					});
-					$('#grid').append(contents);
-					new AnimOnScroll( document.getElementById( 'grid' ), {
-						minDuration : 0.4,
-						maxDuration : 0.7,
-						viewportFactor : 0.2
-					} );
-				}
-			});
-		}
-		
-	</script>
+		</div>
+	
 
 <% include ../bottom %>
 </body>
