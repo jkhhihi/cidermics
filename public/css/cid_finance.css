@@ -109,6 +109,9 @@ background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-
 .apply-input-done .btn-apply a{color:#fff;}
 .privacy{padding:5px; font-size:13px; font-weight:bold; color:#FF0000;}
     
+/*상담프로세스 부분*/
+.process div div{margin-top:60px; margin-bottom:60px;}
+.process div div p{margin-top:20px; font-size:18px; line-height:1.5em; font-weight:bold;}
 
 @media all and (max-width:1024px) {
 .web-banner{padding:80px 10px 0 10px;}
