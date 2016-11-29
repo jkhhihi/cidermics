@@ -49,7 +49,7 @@
 .modal-body{margin-top:20px;}
 .modal-body input{border:#1b87c9 2px solid; height:400px; width:80%; border-top:none; border-left:none; border-right:none;}
 .modal-body button{background-color:#1b87c9; width:55px; height:38px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
-.modal-body p{font-size:16px; color:#f24646; margin:30px 0 20px 0; width:120px; height:auto; border-radius:15px; background-color:#ececec; padding:10px;}
+.modal-body .modal-paper{padding: 5px 0px 10px 0px; width:80%;}
 .modal-lg{max-width:500px;}
 body { padding-right: 0px !important }
 </style>
@@ -71,13 +71,17 @@ body { padding-right: 0px !important }
            		  <div class="modal-content">
                 	 <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                     <h4 class="modal-title">생생 후기</h4><h6 align="left">상담일 : <%=rev[i].rev_regDate%></h6>
+                     <h4 class="modal-title"><b>생생 후기</b></h4><h6 align="left" style="margin-bottom: 0px;">상담 날짜 : <%=rev[i].rev_regDate%></h6>
                 	 </div>
                 	 
                 	 <div class="modal-body">
                    		<img class="img-responsive" src="<%= rev[i].rev_img %>">
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/Q1.png">
+                   		<div class="modal-paper" style="color:#000; margin-top:10px;" align="left"><%-rev[i].rev_QA1%></div>
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/Q2.png">
+                   		<div class="modal-paper" style="color:#000; margin-top:10px;" align="left"><%-rev[i].rev_QA2%></div>
                    		<h5 class="modal-title" style="color:#000; margin-top:10px;"><%=rev[i].rev_title%></h5>
-                   		<a href="#" data-dismiss="modal"><p>닫기</p></a>
+                   		<a href="#" data-dismiss="modal"><p style="color:#000; margin:30px 0 20px 0; width:120px; height:auto; border-radius:15px; background-color:#e0e0e0; padding:10px;">닫기</p></a>
                  	 </div>
            		  </div>
         		 </div>
