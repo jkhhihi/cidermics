@@ -38,7 +38,21 @@
   ga('send', 'pageview');
 
 </script>
-
+<style>
+	.modal-lg{width:95%}
+.modal-body{padding:2px !important;}
+.modal-body input{width:220px;}
+.main-apply{margin-top:55px;}
+.main-apply .deposit-account{padding:0 10px 0 10px; font-size:22px;}
+.main-apply .price{font-size:30px; font-weight:bold; color:#FF0000;}
+.modal-title{color:#1b87c9;}
+.modal-body{margin-top:20px;}
+.modal-body input{border:#1b87c9 2px solid; height:400px; width:80%; border-top:none; border-left:none; border-right:none;}
+.modal-body button{background-color:#1b87c9; width:55px; height:38px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
+.modal-body p{font-size:16px; color:#f24646; margin:30px 0 20px 0; width:120px; height:auto; border-radius:15px; background-color:#ececec; padding:10px;}
+.modal-lg{max-width:500px;}
+body { padding-right: 0px !important }
+</style>
 </head>
 <body>
 <!--위로가기 버튼-->
@@ -51,27 +65,48 @@
 </div-->
 
 <% include cid_finance_menu %>
-
-
+<% for(var i=0; i<rev.length; i++) { %>
+				<div id="coupon-modal<%=rev[i].rev_no%>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" align="center" style="">
+       			 <div class="modal-dialog modal-lg">
+           		  <div class="modal-content">
+                	 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title">생생 후기</h4><h6 align="left">상담일 : <%=rev[i].rev_regDate%></h6>
+                	 </div>
+                	 
+                	 <div class="modal-body">
+                   		<img class="img-responsive" src="<%= rev[i].rev_img %>">
+                   		<h5 class="modal-title" style="color:#000; margin-top:10px;"><%=rev[i].rev_title%></h5>
+                   		<a href="#" data-dismiss="modal"><p>닫기</p></a>
+                 	 </div>
+           		  </div>
+        		 </div>
+    		    </div>
+<% } %>
+    		   
 <!--콘텐츠 들어갈 자리-->
 <div class="contents-finance container">
+	
 			<ul class="grid effect-2" id="grid">
-		
+				<% for(var i=0; i<rev.length; i++) { %>
 				<li>
 				<div align="center">
 					
-					<a href="#">
-					<img class="img-responsive" src="/page_imgs/lecture_img/lec_thum_2.png"></a>
+					<img class="img-responsive" src="<%= rev[i].rev_img %>" data-toggle="modal" data-target="#coupon-modal<%=rev[i].rev_no%>" data-backdrop="static" >
 					
 				</div>
+				
 				<div class="con row">	
-					<p><a href="#">부모님을 위한 경제/금융 세미나</a></p>	
-					<div class="date col-xs-12 col-lg-6" align="left"><p>신청기간 : ~ 2016.11.17</p></div>
-					<div class="money col-xs-12 col-lg-6" align="right" ><p align="center" style = "height:33px;">무료</p><h6>* 선착순</h6></div>
+					<p><a href="#"><%=rev[i].rev_title%></a></p>	
+					<!--div class="date col-xs-12 col-lg-6" align="left"><p>신청기간 : ~ 2016.11.17</p></div>
+					<div class="money col-xs-12 col-lg-6" align="right" ><p align="center" style = "height:33px;">무료</p><h6>* 선착순</h6></div-->
 				</div>
-			</li>
-		</ul>
+				</li>
+				<% } %>
+			</ul>
 </div>
+
+				
 
 <div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.svg"></div>
 

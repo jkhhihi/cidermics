@@ -261,12 +261,14 @@ router.get('/addMore2/:idx/:p', function(req, res, next) {
 router.get('/finance/review', function(req, res, next) {
 
 	var finance;
+	var rev;
 	mysql.select('SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform;', function (err, data){
 		
-	res.render('front/cid_finance/cid_finance_review', {finance : data});
+		mysql.select('SELECT * FROM cider.cid_fi_review;', function (err, data2){
+		
+	res.render('front/cid_finance/cid_finance_review', {finance : data, rev:data2});
 	});
-
-
+ });
 });
 
 router.get('/finance/process', function(req, res, next) {
