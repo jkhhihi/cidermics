@@ -37,6 +37,20 @@ background-color:#186491; font-size:20px; font-weight:bold; color:#fff;}
 /*.con-img{background-color:#000;}*/
 .con-img img{width:100%;}
 .icon-plus_con img{width:40px; margin-bottom:100px;}
+.apply-bg{position:relative; background-image:url(/page_imgs/finance_img/web_bacter_mainimg.png);
+background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:971px; max-height:306px;}
+.apply-bg .but-apply{width:100%; height:auto;}
+.apply-bg .but-apply .btn-apply-in{box-shadow: 0px 0px 10px 2px #333;
+    border: 3px #ececec solid;
+    border-radius: 5px;
+    width: 250px;
+    height: 60px;
+    padding-top: 12px;
+    background-color: #186491;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;}
+
 
 /*apply부분*/
 .padding-0{padding:0 !important;}
@@ -94,16 +108,13 @@ background-color:#186491; font-size:20px; font-weight:bold; color:#fff;}
 .apply-input-done .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0 70px 0;}
 .apply-input-done .btn-apply a{color:#fff;}
 .privacy{padding:5px; font-size:13px; font-weight:bold; color:#FF0000;}
-
-.apply{display:none;}
-.apply-bg{position:relative; background-image:url(/page_imgs/main_img/bg-appbanner2.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
-.apply-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; right:35%; bottom:50%;}
-.apply-bg ul li{ width:22%; text-align:center; float:right; list-style:none;}
-.apply-bg ul li img{width:100%; max-width:427px;}
-
+    
+/*상담프로세스 부분*/
+.process div div{margin-top:60px; margin-bottom:60px;}
+.process div div p{margin-top:20px; font-size:18px; line-height:1.5em; font-weight:bold;}
 
 @media all and (max-width:1024px) {
-.web-banner{padding:100px 10px 0 10px;}
+.web-banner{padding:80px 10px 0 10px;}
 .web-banner p.title{font-size:20px;}
 .web-banner p.con{font-size:16px; margin:10px 0 0 0;}
 .finance-menu-web{display:none;}
@@ -125,6 +136,14 @@ background-color:#186491; font-size:20px; font-weight:bold; color:#fff;}
 .contents-finance .icon-plus_con img{height:80px;}
 .contents-finance .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 .icon-plus_con img{width:35px; margin-bottom:40px;}
+.apply-bg img{height:40px;}
+.apply-bg .but-apply{padding-top:30px;}
+.apply-bg .but-apply .btn-apply-in{
+    width: 200px;
+    height: 50px;
+    padding-top: 10px;
+    background-color: #186491;
+    font-size: 20px;}
 
 /*apply부분*/
 .finance-apply{padding:80px 0 10px 0; margin-top:0;}
@@ -167,9 +186,6 @@ background-color:#186491; font-size:20px; font-weight:bold; color:#fff;}
 .apply-input-done .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
 .apply-input-done .row span{width:100px;}
 .apply-input-done .btn-apply{margin-top:60px; margin-bottom:60px;}
-
-.apply-bg .ul-place{left:50%; bottom:8%;}
-.apply-bg ul li{width:42%; float:none;}
 
 }
 
