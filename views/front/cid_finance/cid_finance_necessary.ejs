@@ -18,20 +18,7 @@
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
-<script
-src="http://maps.googleapis.com/maps/api/js">
-</script>
-<script>
-function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(37.533656, 126.900734),
-    zoom:17,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+<link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:400,700' rel='stylesheet' type='text/css'>
 
 <!--구글 애널리틱스 -->
 <script>
@@ -45,8 +32,35 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
 
+<style>
+body { padding-right: 0px !important }
+.menu1{
+	background-image:url("/page_imgs/finance_img/necessary/patt1.jpg");
+	height:400px;
+}
+.menu2{
+	background-image:url("/page_imgs/finance_img/necessary/patt2.jpg");
+	height:400px;
+}
+
+.background1{
+	text-align:center;
+	font-size:medium;
+	padding: 60px;
+	color:#fff;
+}
+@media all and (max-width:1024px) {
+
+.background1{
+	margin-top:20px;
+	padding: 40px;
+}
+}
+</style>
+
 </head>
 <body>
+	 
 	<!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 	
@@ -60,8 +74,113 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <% include cid_finance_menu %>
 
 <div class="finance" align="center">
-<div class="finance_1">"사이다경제는 어떤 금융기관에도 소속되지 않은 경제 콘텐츠 회사로<br>올바른 경제/금융 지식을 전파하고자 사이다재무 서비스를 기획했습니다."</div>
-<div class="finance_2">사이다재무는 <span style="color: rgb(0, 0, 255);">"이런분들을 위한"</span> 서비스 입니다!</div>
+	<div class="finance_1">"사이다경제는 어떤 금융기관에도 소속되지 않은 경제 콘텐츠 회사로<br>올바른 경제/금융 지식을 전파하고자 사이다재무 서비스를 기획했습니다."</div>
+</div>
+
+<div class="col-lg-4 col-xs-12 menu1">
+	
+	<div class="background1">
+		<img class="img-responsive" src="/page_imgs/finance_img/necessary/1.png" data-toggle="modal" data-target="#coupon-modal1" data-backdrop="static">
+		<img class="img-responsive" src="/page_imgs/finance_img/necessary/necessary-icon1.svg">
+	</div>
+</div>
+<div class="col-lg-4 col-xs-12 menu2">
+	<div class="background1">
+		<img class="img-responsive" src="/page_imgs/finance_img/necessary/2.png">
+		<img class="img-responsive" src="/page_imgs/finance_img/necessary/necessary-icon2.svg">
+	</div>
+</div>
+<div class="col-lg-4 col-xs-12 menu1">
+	<div class="background1">
+		<img class="img-responsive" src="/page_imgs/finance_img/necessary/3.png">
+		<img class="img-responsive" src="/page_imgs/finance_img/necessary/necessary-icon3.svg">
+	</div>
+</div>
+
+<div class="finance_2">"사이다경제 재무상담은 이외에도 상담이 필요하신 <span style="color: rgb(0, 0, 255);">"모든 분들"</span>에게 열려있습니다."</div>
+
+
+<div id="coupon-modal1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" align="center" style="">
+       			 <div class="modal-dialog modal-lg">
+           		  <div class="modal-content">
+                	 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title"><b>사회초년생 사례</b></h4>
+                	 </div>
+                	 
+                	 <div class="modal-body">
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/Q1.png">
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/Q2.png">
+                   		<a href="#" data-dismiss="modal"><p style="color:#000; margin:30px 0 20px 0; width:120px; height:auto; border-radius:15px; background-color:#e0e0e0; padding:10px;">닫기</p></a>
+                 	 </div>
+           		  </div>
+        		 </div>
+    		    </div>
+	
+	<p class="speech" style="color:#000;">사회초년생 사례 <br>
+		<span style="font-size: 10pt;">ex)  저는 30대 남자인데요 이제 막 결혼을 했습니다.<br>
+		현재 전세로 살고있는데 빨리 내집마련도 하고싶고..<br>
+		내년이면 아이가 태어날텐데 아이앞으로 필요한<br>
+		돈들은 어떻게 준비해야 할지 막막합니다.<br>
+		막상 은행에 모으기는 하지만 <br>
+		솔직히 이자가 너무 없어서<br>
+		이게 잘하고 있는건가 싶기도하고..<br>
+		주식이나 펀드는 무섭기도 하고요 돈관리를 어떻게 해야 하는지 
+		여러가지 현실적인 도움을 받고 싶습니다~~
+		</span>
+	</p>
+	<img class="img-responsive" src="/page_imgs/finance_img/necessary/human.jpg">
+
+<p class="speech1" style="color:#000;">결혼적령기 사례<br>
+	<span style="font-size: 10pt;">내년 결혼을 앞두고 있습니다.<br>
+			날짜도 잡았고 약 1년 정도 남아있는 상태인데요.<br><br>
+			얼마 전에 적금이 만기가 됐습니다.<br>
+			요즘은 은행이율이 너무 낮아서..<br>
+			어디다 잠깐 두어야 할지 모르겠네요..<br>
+			근데 또 아는 친구가 보험 일을 하는데요..<br>
+			얼마 전에 저희 보험을 보더니<br>
+			부족한 보장이 많다고<br>
+			결혼 전에 들어두라며 종신보험을 추천했습니다.<br>
+			문제는 저희가 그전에 부모님이 들어준 보험도<br>
+			결혼 후에는 직접 관리하기로 해서<br>
+			보험료를 대충 계산해보니 둘이 합쳐<br>
+			한 달에 70만 원 가량은 되는 거 같더군요..<br>
+			보통 다른 사람들도 결혼하면 이정도 내나요??<br>
+			제 생각엔 너무 많은 거 같아서요..<br>
+			좀 보험료를 필요한 거 위주로만 해서<br>
+			줄이는 방법은 없을까요?<br>
+			목돈 넣어둘 곳도 같이 추천해서 좀 결혼하기 전에<br>
+			어떻게 하는 게 좋은지 같이 알려주시면 좋겠습니다..<br>
+	</span>
+</p>
+	<img class="img-responsive" src="/page_imgs/finance_img/necessary/human.jpg">
+
+	<p class="speech" style="color:#000;">신혼부부 사례<br>
+		<span style="font-size: 10pt;">내년 결혼을 앞두고 있습니다.<br>
+			날짜도 잡았고 약 1년 정도 남아있는 상태인데요.<br><br>
+			얼마 전에 적금이 만기가 됐습니다.<br>
+			요즘은 은행이율이 너무 낮아서..<br>
+			어디다 잠깐 두어야 할지 모르겠네요..<br>
+			근데 또 아는 친구가 보험 일을 하는데요..<br>
+			얼마 전에 저희 보험을 보더니<br>
+			부족한 보장이 많다고<br>
+			결혼 전에 들어두라며 종신보험을 추천했습니다.<br>
+			문제는 저희가 그전에 부모님이 들어준 보험도<br>
+			결혼 후에는 직접 관리하기로 해서<br>
+			보험료를 대충 계산해보니 둘이 합쳐<br>
+			한 달에 70만 원 가량은 되는 거 같더군요..<br>
+			보통 다른 사람들도 결혼하면 이정도 내나요??<br>
+			제 생각엔 너무 많은 거 같아서요..<br>
+			좀 보험료를 필요한 거 위주로만 해서<br>
+			줄이는 방법은 없을까요?<br>
+			목돈 넣어둘 곳도 같이 추천해서 좀 결혼하기 전에<br>
+			어떻게 하는 게 좋은지 같이 알려주시면 좋겠습니다..<br>
+		</span>
+	</p>
+	<img class="img-responsive" src="/page_imgs/finance_img/necessary/human.jpg">
+
+	
+	
 	<div class="want-ex col-xs-12 padding-0"> 예시 ) <br><br>1. 사회초년생 사례		
 		<div class="con">ex)  저는 30대 남자인데요 이제 막 결혼을 했습니다.<br>
 현재 전세로 살고있는데 빨리 내집마련도 하고싶고..<br>
@@ -105,8 +224,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			맞나 싶어서 여쭤봅니다..<br>
 			저같은 사회 초년생도 재무설계 받아도 되나요?<br>
 		</div>
-	</div>		
-</div>
+	</div>
 
 	
 
