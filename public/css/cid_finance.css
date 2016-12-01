@@ -123,8 +123,8 @@ background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-
 .finance-menu-web{display:none;}
 .finance-menu-mob{display:block; background-color:#ececec; height:auto; width:100%;}
 .finance-menu-mob .menu{height:auto; border:1px #cecece solid; font-size:16px; font-weight:bold; padding:0;}
-.finance-menu-mob .menu img{width:35px; padding:10px 0;}
-.finance-menu-mob .menu p{margin-bottom:0; margin-top:16px;}
+.finance-menu-mob .menu img{width:35px; padding:5px 5px;}
+.finance-menu-mob .menu p{margin-bottom:0; margin-top:8px;}
 .apply_no{font-size:18px; line-height:1.5em; paddind:0;}
 .finance .finance_1{padding:40px 0;}
 .finance .finance_1 img{width:95%;}
@@ -172,7 +172,7 @@ background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-
 .apply-input .job{height:100px;}
 .apply-input .route{height:100px;}
 /*.apply-input .name span{display:block; margin-bottom:20px;}*/
-.apply-input .cell span{display:block; margin-bottom:20px;}
+.apply-input .cell span{margin-bottom:20px;}
 .apply-input .cell input{margin:0 5px;}
 .apply-input .birthday span{display:block; margin-bottom:10px;}
 .apply-input .mail span{display:block; margin-bottom:10px;}
@@ -189,5 +189,6 @@ background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-
 .apply-input-done .row span{width:100px;}
 .apply-input-done .btn-apply{margin-top:60px; margin-bottom:60px;}
 
+.process .main-title{font-size:18px; padding:0 5px;}
 }
 
