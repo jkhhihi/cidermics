@@ -22,6 +22,23 @@ window.onhashchange = function () {
 
 });
 
+
+$(document).ready(function(){
+	
+	$("#tab-menu2-contents").hide();
+	
+	$(".tab-menu1").click(function() {
+	  $("#tab-menu1-contents").show();
+	  $("#tab-menu2-contents").hide();
+	});
+
+	$(".tab-menu2").click(function() {
+		  $("#tab-menu2-contents").show();
+		  $("#tab-menu1-contents").hide();
+	});
+
+});
+
 /*
 $(document).ready(function(){
     $(".contents_menu").click(function(){
