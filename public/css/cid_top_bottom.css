@@ -58,6 +58,13 @@ header .search{padding-top:19px; padding-right:0;}
 
 @media all and (max-width:1024px) {
 body{font-family: 'Nanum Gothic', serif;}
+#menu ul{margin-top:10px; padding:0;}
+#menu ul li{color:#FFFFFF; font-size:18px; margin-top:20px;}
+#menu ul li a{color:#fff;}
+#menu ul div.line1{height:2px; width:auto; background-color:#fff; opacity:1; margin-bottom:20px;}
+#menu ul div.contents_sub_menu ul{margin-left:72px;}
+#menu ul div.contents_sub_menu ul li{color:#FFFFFF; font-size:16px; margin-bottom:20px;}
+.contents_sub_menu{margin-bottom:20px;}
 #menu .scrollBlind{
    width:100%;
    height:100%;
@@ -67,6 +74,9 @@ body{font-family: 'Nanum Gothic', serif;}
 .scrollBlind .menu {margin-left:30px;}
 .scrollBlind .menu li{border-bottom:solid 2px;}
 .scrollBlind .menu li img{width:30px; display:inline; margin-right:15px;}
+
+.scrollBlind .tab-menu{font-size:16px; color:#fff;}/*모바일 탭메뉴...*/
+
 .view{
     width:100%;
     height:100%;
@@ -126,15 +136,7 @@ html.open {
   z-index :999;
   box-shadow:5px 5px 20px #333;
 }
-#menu ul{margin-top:20px; padding:0;}
-#menu ul li{color:#FFFFFF; font-size:18px; margin-bottom:20px;}
-#menu ul li a{color:#fff;}
-#menu ul div.line1{height:2px; width:auto; background-color:#fff; opacity:1; margin-bottom:20px;}
-#menu ul div.contents_sub_menu ul{margin-left:72px;}
-#menu ul div.contents_sub_menu ul li{color:#FFFFFF; font-size:16px; margin-bottom:20px;}
-.contents_sub_menu{
-	margin-bottom:20px;
-}
+
 .header{display:none;}
 .login input{display:none;}
 .mob-header header{position:relative;}
