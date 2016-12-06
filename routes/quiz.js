@@ -21,12 +21,12 @@ router.get('/quiz3', function(req, res, next) {
 	var questions = [];
 
 	//select db quiz data
-	mysql.select('select ....', function (err, data){
+	mysql.select('select * from cider.cid_quiz', function (err, data){
 	    if (err) throw err;
 	    
 	    
 	    for (var i; i<= data.length; i++) {
-	       var q = data[i].q;
+	       var quiz_no = data[i].quiz_no;
 	       var options = data[i].options;
 	       var correctIndex = data[i].correctIndex;
 	       var correctResponse = data[i].correctResponse;
@@ -34,7 +34,7 @@ router.get('/quiz3', function(req, res, next) {
 	       
 	       var obj = new Object();
 	       
-	       obj.q = q;
+	       obj.quiz_no = quiz_no;
 	       obj.options = options;
 	       obj.correctIndex = correctIndex;
 	       obj.correctResponse = correctResponse;
