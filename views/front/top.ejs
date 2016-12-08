@@ -54,14 +54,6 @@ document.ondragstart=function(){return false;} // 선택 방지
 //document.onmousedown=function(){return false;}
 
 
-
-$(document).ready(function(){
-    $(".contents_menu").click(function(){
-        $(".contents_sub_menu").slideToggle();
-    });
-});
-
-
 $(document).ready(function(){
     $('#search').click(function(){ // ID가 toggleButton인 요소를 클릭하면
         var state = $('.web-search-box').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
@@ -126,6 +118,25 @@ $(function(){
 
 			});
  });	
+ 
+
+
+$(document).ready(function(){
+$('.contents_menu').click(function(e){
+      e.preventDefault();
+      if($(this).is('.on')){
+         $(this).removeClass('on');
+         $('.contents_sub_menu').slideUp();
+         $('.contents_menu').text("▼");
+      }else{
+         $(this).addClass('on');
+         $('.contents_sub_menu').slideDown();
+         $('.contents_menu').text("▲");
+      }
+});
+});
+
+
 </script>
 
 <style>
@@ -166,7 +177,7 @@ padding:20px 0 20px 10px;
 <div class="mob-header">
 		<header class="container-fulid">
 				<div class="mob-menu" align="left"><img class="img-responsive" src="/page_imgs/fixed_img/mob_icon_menu.svg"></div>
-				<div class="mob-logo" align="center"><a href="/"><img class="img-responsive" src="/page_imgs/fixed_img/mob_icon_logo.png"></a></div>
+				<div class="mob-logo" align="center"><a href="/"><img class="img-responsive" src="/page_imgs/fixed_img/mob_icon_logo.svg"></a></div>
 				
 				
 				<div id="mob-search" class="mob-search" align="right"><img src="/page_imgs/fixed_img/mob_icon_search.svg"></div>
@@ -191,35 +202,29 @@ padding:20px 0 20px 10px;
 							<div class="tab-menu1 col-xs-6" align="center" style="cursor:pointer;">Sections</div>
 							<div class="tab-menu2 col-xs-6" align="center" style="cursor:pointer;">Company Info</div>
 						</div>
-				<ul>		
-						<div id="tab-menu1-contents">
-							<div class="line1" align="center"></div>
-								<ul class="menu" align="left">
-									<li><img src="/page_imgs/fixed_img/mob_icon_menu_finance.svg"><a href="/finance/necessary">사이다재무<span>&nbsp&nbsp▶</span></a></li>
-    								<li><img src="/page_imgs/fixed_img/mob_icon_menu_lecture.svg"><a href="/lecture">사이다강의<span>&nbsp&nbsp▶</span></a></li>
-						    		<li><img src="/page_imgs/fixed_img/mob_icon_menu_contents.svg"><a href="/contents">사이다콘텐츠</a><span class="contents_menu" style="cursor:pointer;">&nbsp&nbsp▶</span></li>
+						<div id="tab-menu1-contents" align="left">
+								<ul class="menu">
+									<li><a href="/finance/necessary"><img src="/page_imgs/fixed_img/mob_icon_menu_finance.svg">사이다재무</a></li>
+    								<li><a href="/lecture"><img src="/page_imgs/fixed_img/mob_icon_menu_lecture.svg">사이다강의</a></li>
+						    		<li><a href="/contents"><img src="/page_imgs/fixed_img/mob_icon_menu_contents.svg">사이다콘텐츠</a>
+						    		<span class="contents_menu" style="cursor:pointer; margin-left:10px;">▲</span></li>
 								</ul>
-							<div class="contents_sub_menu" align="left">
+							<div class="contents_sub_menu">
 								<ul>
-						   	 		<li><a href="/contents/1">-경제이야기</a></li>
-    								<li><a href="/contents/2">-금융이야기</a></li>
-    								<li><a href="/contents/3">-기업이야기</a></li>
-    								<li><a href="/contents/4">-주식이야기</a></li>
+						   	 		<li><a href="/contents/1">- 경제이야기</a></li>
+    								<li><a href="/contents/2">- 금융이야기</a></li>
+    								<li><a href="/contents/3">- 기업이야기</a></li>
+    								<li><a href="/contents/4">- 주식이야기</a></li>
     							</ul>
     						</div>
-    					</div>
-    			</ul>
-    			
-    			<ul>		
-    					<div id="tab-menu2-contents">
-    						<div class="line1" align="center"></div>
-								<ul align="left" style="margin-left:72px;">	
-									<li><a href="/our_company">Our Company</a></li>
-									<li><a href="/our_team">Our Team</a></a></li>
-									<li><a href="/contact">Contact Us</a></li>
+    					</div>	
+    					<div id="tab-menu2-contents" align="center">
+								<ul>	
+									<a href="/our_company"><li><span>Our Company</span></li></a>
+									<a href="/our_team"><li><span>Our Team</span></li></a>
+									<a href="/contact"><li><span>Contact Us</span></li></a>
 								</ul>
 						</div>	
-				</ul>
 		</div>
 			<div class="link row">
 			 <div class="col-xs-5"><a href="https://www.facebook.com/cidermics/">FACEBOOK</a></div>
@@ -239,7 +244,7 @@ padding:20px 0 20px 10px;
 
 <div class="header">
 		<header class="container">
-				<div class="logo" style="width:10%;"><a href="/"><img src="/page_imgs/fixed_img/logo.jpg"></a></div>
+				<div class="logo" style="width:10%;"><a href="/"><img src="/page_imgs/fixed_img/logo.svg"></a></div>
 					
 				
 <div class="dropdown" style="width:50%;">
