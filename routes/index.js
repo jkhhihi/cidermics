@@ -74,7 +74,11 @@ router.get('/', function(req, res, next) {
 	 //alert(_mon.length);
 	 //alert(_tot);
 	
-	 qry="select con_no, con_photo, con_title from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit 0,12";
+	 //qry="select con_no, con_photo, con_title,(select con_upData from cider.cid_contents a where a.con_upDate > DATE_ADD(a.con_upDate,INTERVAL 1 DAY) as new from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit 0,12";
+	 //=====2016년 12월 7일 수정 본  sjshin ======
+	 //=====오늘 날자 읽어와서 -1 즉 하루 뺀 날자와 비교 하여 큰것 즉 오늘 날자일 경우 new  하루 이상일 경우 old 로 표기됨 
+	 //=====웹페이지 에서 if 문 사용하여 new 일경우 신규로 표시하면 됨    
+	 qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark.svg','') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,12";
 	 console.log(_tot);
 	mysql.select(qry,
 	 function (err, data){
