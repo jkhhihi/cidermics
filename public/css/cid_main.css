@@ -4,7 +4,7 @@ body{font-family: 'Nanum Gothic', serif;}
 .appbanner-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; right:12%; bottom:6%;}
 .appbanner-bg ul li{ width:22%; text-align:center; float:right; list-style:none;}
 .appbanner-bg ul li img{width:100%; max-width:427px;}
-.main-menu{background:url(/page_imgs/fixed_img/mainimg2.jpg); background-size: cover;
+.main-menu{background:url(/page_imgs/fixed_img/mainimg.jpg); background-size: cover;
  background-position: center; font-family: "BMD", sans-serif; color:#FFFFFF; width:100% !important; height:700px; margin-top:70px;}
 .main-menu .mainlogoimg img{padding-top:120px;}
 .main-menu p{font-size:38px; text-align:center; margin:60px 0 60px 0;}
