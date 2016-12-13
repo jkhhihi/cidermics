@@ -169,6 +169,12 @@ passport.deserializeUser(function(user, done) {
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+	//2016년 12월 8일 추가됨
+	
+  res.setTimeout(120000, function(){
+        console.log('Request has timed out.');
+            //res.send(408);
+        });
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
