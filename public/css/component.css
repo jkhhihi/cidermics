@@ -25,6 +25,7 @@
 	border: none;
 	display: block;
 	max-width: 100%;
+	border-radius:4px;
 }
 
 .grid li a{margin-top:10px;
