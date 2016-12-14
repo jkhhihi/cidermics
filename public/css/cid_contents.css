@@ -112,7 +112,7 @@ br{line-height:1.5em;}
 .appbanner{/*position:fixed;*/ z-index:999; width:100% !important;}	
 .bg-blue{margin-top:0 !important; height:100%;}
 .mob-bg-blue{background-color:#1b87c9; height:100%; padding-top:10px; padding-bottom:20px;}
-.mob-bg-white{background-color:#fff; width:95%; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8); margin-bottom:10px; border-radius: 5px;}
+.mob-bg-white{background-color:#fff; width:95%; box-shadow:0 8px 40px rgba(0, 0, 0, 0.8); margin-bottom:10px; border-radius: 5px;}
 .contents{width:100% !important; margin-top:20px;}	
 .contents_detail-mob_menu {display:block;}
 .contents .contents-in img{width:100% !important;}/*img 빼기*/
