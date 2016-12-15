@@ -100,7 +100,7 @@ router.get('/index', ensureAuthenticated, function(req, res, next) {
 });
 
 
-router.get('/contents/insert', ensureAuthenticated, function(req, res, next) {
+router.get('/contents/insert', function(req, res, next) {
 	
 	var CP = 1;
 	var cate;

@@ -72,7 +72,67 @@
         </div>
 </div>
 </div>
-
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+		<a id="kakao-link-btn" href="javascript:sendLink()">
+			<img src="//dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"/>
+		</a>
+		<script type='text/javascript'>
+            	var url = window.location.href;
+            	Kakao.init('22802e61eeee5e4b969b820a4ea88b6a'); //Javascript키
+				//Kakao.init('c8f4142aea1479e97b61a487bb76de19'); //네이티브앱키
+			    // 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+				Kakao.Link.createTalkLinkButton({
+			      container: '#kakao-link-btn',
+			      label: 'TEST',
+			      image: {
+			        src: 'http://www.cidermics.com/uploads/EC682-00.jpg',
+			        width: '300',
+			        height: '200'
+			      },
+			      webButton: {
+			        text: 'TEST2',
+			        url: 'http://www.cidermics.com/contents/detail/682',
+			      }
+			    });
+			
+			/*
+			horizontalButton: [{
+						webButton: {
+						label: 'TEST',
+						text: '사이다경제',
+						image: {
+						src: 'http://www.cidermics.com/uploads/EC682-00.jpg',
+						width: '300',
+						height: '200'
+							}
+						}
+					}, {
+					appButton: {
+						label: 'TEST',
+						text: '사이다경제',
+						image: {
+						src: 'http://www.cidermics.com/uploads/EC682-00.jpg',
+						width: '300',
+						height: '200'
+							}
+						}
+					}]
+					
+			*/
+			/*
+			label: '테스트용 메세지입니다.',
+			text: '사이다경제',
+						image: {
+						src: 'http://www.cidermics.com/uploads/EC682-00.jpg',
+						width: '300',
+						height: '200'
+							}
+			
+			});
+			
+		}*/
+		//]]>
+		</script>
 
 <% include ../bottom %>
 
