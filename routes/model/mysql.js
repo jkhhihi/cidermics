@@ -24,24 +24,6 @@ exports.select = function(sql, callback) {
 	});
 };
 
-/*
-exports.insert = function(sql, sets, callback) {
-	pool.getConnection(function(err, connection){
-		connection.query(sql, sets, function(err, rows, fields) {
-			
-			if (err) throw err;
-			//console.log(err);
-			//console.log('result : ');
-			//console.log(rows);
-			
-			connection.release();
-			callback(err, rows);
-		});	
-		
-	});
-};
-*/
-//노도 작업
 exports.insert = function(sql, sets, callback) {
    pool.getConnection(function(err, connection){
       console.log(sets);
@@ -58,6 +40,33 @@ exports.insert = function(sql, sets, callback) {
    });
 };
 
+
+//2016년 12월 16일 수정 사항(재무 테스트용 및 insert 테스트)=====
+/*
+exports.insert = function(sql, sets, callback) {
+   pool.getConnection(function(err, connection){
+      //console.log(sets);
+	  //if (!sets) return sql;
+      var query = connection.query(sql, sets, function(err, rows, fields) {
+         //if (err) throw err;
+         //console.log(err);
+         //console.log('result : ');
+         //console.log(rows);
+         
+          if(err){
+           
+            return callback(err); 
+       	  
+       		}
+		 connection.release();
+		 //callback(err, rows);
+		 callback(null,rows);
+      });  
+     
+     // console.log(query.sql);
+   });
+};
+*/
 exports.update = function(sql, sets, callback) {
 	pool.getConnection(function(err, connection){
 		

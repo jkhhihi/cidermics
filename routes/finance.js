@@ -185,6 +185,11 @@ router.post('/finance/apply/insert', function(req, res, next) {
 		if(err){
 			res.redirect('back');
 		}
+		//2016년 12월 16일 수정 사항(재무 테스트용)=====
+		 setTimeout(function() {
+             console.log('test....');
+         }, 3000);
+		 //=============================================
 		mysql.select('select * from cider.cid_fi_applyform where fi_app_phone ="'+fi_app_phone+'" and fi_app_name = "'+fi_app_name+'"', function (err, data2){
 			console.log(data2);
 		//res.redirect('/lecture/done');
